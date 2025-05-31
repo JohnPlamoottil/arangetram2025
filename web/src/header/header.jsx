@@ -5,6 +5,7 @@ import React from "react";
 const Header = () => {
   return (
     <header style={styles.header}>
+      <img src="src/assets/logo.png"></img>
       <h1 style={styles.title}>Our Arangetram Performance 2025</h1>
       <nav>
         <a href="/" style={styles.link}>
