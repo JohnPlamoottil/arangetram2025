@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
 import Header from "./header/header";
+import Footer from "./footer/footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <div className="card">
         <button></button>
         <p></p>
+        <Footer />
       </div>
       <p className="read-the-docs"></p>
     </>
