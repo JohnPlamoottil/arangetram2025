@@ -29,7 +29,7 @@ Arangetram is a Tamil word, which means the ‘etram’ or ascending on the ‘a
 
 ## Instructor - Biodata of the instructor 
 Jinoo Varghese, the Artistic Director of Soorya Dance School is an accomplished exponent of Bharatanatyam and Kuchipudi style of dancing and well known choreographer of Indian dance forms. From the age of 4, she had training from eminent gurus - Kalamandalam Mohana Tulsi, Kalakshetra Vilasini, Girija Chandran (Regatta) etc. She received Govt of India National Talent Scholarship for Bharatanatyam at the age of 12. Dance was her passion and now she is the Artistic Director of Soorya Dance School, Northbrook Illinois.
-<http://www.youtube.com/@sooryadanceschool3866>
+[Dance School Channel](http://www.youtube.com/@sooryadanceschool3866)
 
 NATTUVANGAM
 Smt. Jinoo Varghese is an accomplished dancer and instructor of Bharatanatyam and is the Artistic Director of Soorya Dance School. She started learning dance at the age of 5 under Guru Mohana Tulsi, and she further learned Bharatanatyam under Smt. Girija Chandran. She is the recipient of the merit scholarship from CCRT, New Delhi in the field of Bharatanatyam. She has worked closely with many eminent gurus in India on their productions all over India. She has performed as a soloist at prestigious venues receiving critical acclaim. As a choreographer, she has created numerous short works and evening-length productions. Through her dance academy, Soorya Dance School at Northbrook, IL, she is able to put her passion for dance into action.
@@ -67,7 +67,7 @@ Shri Cherthala S Dinesh, earning a diploma in the instrument. Preyesh has accomp
 
 
 ## Program Guide 
-****Seating @3:30 
+**Seating @3:30**
 
 Good evening everyone. I am MC1, one of the MCs of the
 evening. In 5 minutes, we will be starting the 'Samarpanam
@@ -92,7 +92,7 @@ the Hallway by 5pm. Please be sure to grab a brochure on your
 way in.
 
 # Welcome Message
-[MC] Start time - Sharp 4:00pm
+**[MC] Start time - Sharp 4:00pm**
 Respected Priests, Invited Guests, Family and Friends, I
 welcome you all to the eagerly awaited "SAMARPANAM 2025"
 Bharathanatyam Arangetram of 6 talented young dancers -
@@ -101,13 +101,14 @@ Plamoottil, Michele Eapen & Rose Thomas - which is being
 held under the guidance of Smt. Jinoo Varghese, the artistic
 director of Soorya Dance School. 
 These young girls have worked very hard to achieve their dreams and this was possible only because of the love and unwavering support of their parents. 
-I would like to invite, to the stage, 
-the parents of Amarya - John and Latha Chirayil - , (pause), 
+I would like to invite, to the stage  ...
 the parents of Andrea - Jerril and Shipla Thomas (pause), 
-the parents of Jana - and Lija Scaria, 
+the parents of Jana - Father and Lija Scaria, 
+the parents of Michelle - Priyan & Jincy Eapen (pause), 
+the parents of Rose - Bejoy and Marissa Thomas (pause),
 the parents of Jenna - John and Leena Plamoottil (pause),
-parents of Michelle - Priyan & Jincy Eapen (pause), and
-parents of Rose - Bejoy and Marisa Thomas (pause). 
+the parents of Amarya - John and Latha Chirayil Koola, (pause).
+
 I would like to invite - for the welcome address on behalf of the parents.
 # Prayer by Priest
 Thank you - and all of the parents for all of your hardwork.
