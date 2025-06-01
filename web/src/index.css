@@ -23,11 +23,14 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
+  margin: auto;
   min-width: 320px;
   min-height: 100vh;
+  background: url(./assets/Temple.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-position: center;
 }
 
 h1 {
