@@ -1,0 +1,19 @@
+.video-page {
+  padding: 40px;
+  background-color: #f8f8f8;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.video-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.video-player {
+  max-width: 800px;
+  width: 100%;
+  border: 4px solid #222;
+  border-radius: 8px;
+}

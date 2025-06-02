@@ -1,0 +1,145 @@
+.header {
+  background-color: #626466; /* dark gray */
+  color: white;
+  padding: 37px;
+}
+
+.header-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.logo {
+  height: 198px;
+  width: 169px;
+  object-fit: contain;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 55px;
+  font-family: "Amita", cursive;
+  font-weight: 900;
+  color: #f87171; /* indian red */
+  margin: 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-family: cursive;
+  color: #f87171; /* indian red */
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 900px;
+  text-align: right;
+  font-weight: bolder;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+  font-family: "Amita", "Arial", sans-serif;
+}
+
+.nav-link {
+  font-size: 23px;
+  color: indianred; /* indian red*/
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+.dropdown {
+  display: block;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  align-items: right;
+  background-color: #626466;
+  width: 4rem;
+  height: 2rem;
+}
+
+.dancers {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: 50px;
+  color: indianred;
+  width: 200px;
+  font-family: "Amita", "Arial", sans-serif;
+  position: absolute;
+  background-color: azure;
+  opacity: 0.9;
+}
+
+.dancer_text {
+  font-family: "Amita", "Arial", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  color: indianred;
+}
+@media (max-width: 768px) {
+  /* Stack logo and content vertically */
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Stack title and burger horizontally */
+  .header-top {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Show burger icon */
+  .header-top {
+    flex-direction: row;
+    justify-content: flex-start; /* Align to the left */
+    align-items: right;
+    gap: 16px; /* Space between burger and text */
+  }
+
+  .dropdown {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Hide nav links by default on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* When menu is open, display links */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Optional: Make links full width on mobile */
+  .nav-link {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+}

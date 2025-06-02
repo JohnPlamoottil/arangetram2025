@@ -1,0 +1,14 @@
+.journey {
+  font-size: 1.9rem;
+  text-align: right;
+  background-image: url(../assets/Temple.png);
+}
+
+.performers {
+  font-family: "Amita", "Arial", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  color: yellowgreen;
+}
