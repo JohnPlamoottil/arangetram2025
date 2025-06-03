@@ -1,10 +1,11 @@
 import React from "react";
 import "./video.css"; // optional for styling
-// import video from "../../assets/bharatanatyam_2019.mp4";
+import Navigation from "../navigation-links";
 
 const Video = () => {
   return (
     <div className="video-page">
+      <Navigation />
       <h1 className="video-title">Our First Competition</h1>
       <div className="overlay"></div>
 
