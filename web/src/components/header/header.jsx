@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./header.css";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
+import Navigation from "../navigation-links";
 
 const Header = () => {
-  const [menuOpen] = useState(false);
+  // const [menuOpen] = useState(false);
 
   return (
     <header className="header">
@@ -18,31 +19,7 @@ const Header = () => {
             <div>
               <h1 className="title">Welcome to Our Arangetram</h1>
               <h2 className="subtitle">A Night to Remember</h2>
-
-              {/* Navigation Links */}
-              <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-                <a href="/" className="nav-link">
-                  Home
-                </a>
-                <a href="/program" className="nav-link">
-                  Repertoire (Program)
-                </a>
-                <a href="/instructor" className="nav-link">
-                  Guru (Instructor)
-                </a>
-                <a href="/orchestra" className="nav-link">
-                  Musicians (Orchestra)
-                </a>
-                <a href="/venue" className="nav-link">
-                  Venue (Date & Location)
-                </a>
-                <a href="/livestream" className="nav-link">
-                  Watch Livestream
-                </a>
-                <a href="/faqs" className="nav-link">
-                  Frequently Asked Q?s FAQs
-                </a>
-              </nav>
+              <Navigation />
               <div className="performersheader">
                 Andrea Thomas, Jana Scaria, Michelle Eapen, Rose Thomas, Jenna
                 Plamoottil, Amarya Koola
