@@ -41,12 +41,12 @@
   font-weight: bolder;
 }
 .performersheader {
-  font-family: "Amita", "Arial", sans-serif;
+  font-family: "Amita";
   font-size: 29px;
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  color: indianred;
+  color: brown;
 }
 .instructions {
   font-family: "Amita", "Arial", sans-serif;
@@ -106,7 +106,7 @@
   font-size: 50px;
   text-align: center;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400px;
   color: indianred;
 }
 @media (max-width: 768px) {

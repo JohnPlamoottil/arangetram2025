@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./header.css";
 import logo from "../../assets/logo.png";
-// import "./vendor/fonts.css";
+import "../../vendor/fonts.css";
 
 const Header = () => {
   const [menuOpen] = useState(false);

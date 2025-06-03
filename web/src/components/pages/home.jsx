@@ -31,14 +31,33 @@ function Home() {
       </button>
       {menuOpen && (
         <div className="dancers">
-          <div className="dancer_text">Andrea</div>
-          <div className="dancer_text">Jana</div>
-          <div className="dancer_text">Michelle</div>
-          <div className="dancer_text">Rose</div>
-          <div className="dancer_text">Jenna</div>
-          <div className="dancer_text">Amarya</div>
+          {/* <div className="dancer_text">Andrea</div> */}
+          <a href="/andrea" className="dancer_text">
+            Andrea
+          </a>
+          {/* <div className="dancer_text">Jana</div> */}
+          <a href="/jana" className="dancer_text">
+            Jana
+          </a>
+          {/* <div className="dancer_text">Michelle</div> */}
+          <a href="/michelle" className="dancer_text">
+            Michelle
+          </a>
+          {/* <div className="dancer_text">Rose</div> */}
+          <a href="/rose" className="dancer_text">
+            Rose
+          </a>
+          {/* <div className="dancer_text">Jenna</div> */}
+          <a href="/jenna" className="dancer_text">
+            Jenna
+          </a>
+          {/* <div className="dancer_text">Amarya</div> */}
+          <a href="/amarya" className="dancer_text">
+            Amarya
+          </a>
         </div>
       )}
+
       {/* <h1 className="performers">
         Andrea Thomas, Jana Scaria, Michelle Eapen,
       </h1> */}
