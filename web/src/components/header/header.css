@@ -42,11 +42,19 @@
 }
 .performersheader {
   font-family: "Amita", "Arial", sans-serif;
-  font-size: 39px;
+  font-size: 29px;
   text-align: center;
   font-style: normal;
   font-weight: 900;
   color: indianred;
+}
+.instructions {
+  font-family: "Amita", "Arial", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  color: black;
 }
 
 .nav-links {

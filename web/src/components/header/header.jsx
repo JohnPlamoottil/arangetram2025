@@ -44,10 +44,12 @@ const Header = () => {
                 </a>
               </nav>
               <div className="performersheader">
-                Andrea Thomas, Jana Scaria, Michelle Eapen,
+                Andrea Thomas, Jana Scaria, Michelle Eapen, Rose Thomas, Jenna
+                Plamoottil, Amarya Koola
               </div>
-              <div className="performersheader">
-                Rose Thomas, Jenna Plamoottil, Amarya Koola
+              <div className="instructions">
+                Please select the appropirate dancer from the dropdown selecton
+                on the leftside of this page.
               </div>
             </div>
           </div>
