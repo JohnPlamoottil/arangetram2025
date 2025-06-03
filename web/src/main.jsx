@@ -10,7 +10,6 @@ createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/program" element={}></> */}
         <Route path="/video" element={<Video />} />
       </Routes>
     </Router>
