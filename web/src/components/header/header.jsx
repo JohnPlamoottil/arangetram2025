@@ -24,25 +24,31 @@ const Header = () => {
                 <a href="/" className="nav-link">
                   Home
                 </a>
-                <a href="/about" className="nav-link">
+                <a href="/program" className="nav-link">
                   Repertoire (Program)
                 </a>
-                <a href="/program" className="nav-link">
+                <a href="/instructor" className="nav-link">
                   Guru (Instructor)
                 </a>
-                <a href="/program" className="nav-link">
+                <a href="/orchestra" className="nav-link">
                   Musicians (Orchestra)
                 </a>
-                <a href="/program" className="nav-link">
+                <a href="/venue" className="nav-link">
                   Venue (Date & Location)
                 </a>
-                <a href="/program" className="nav-link">
+                <a href="/livestream" className="nav-link">
                   Watch Livestream
                 </a>
-                <a href="/program" className="nav-link">
+                <a href="/faqs" className="nav-link">
                   Frequently Asked Q?s FAQs
                 </a>
               </nav>
+              <div className="performersheader">
+                Andrea Thomas, Jana Scaria, Michelle Eapen,
+              </div>
+              <div className="performersheader">
+                Rose Thomas, Jenna Plamoottil, Amarya Koola
+              </div>
             </div>
           </div>
         </div>

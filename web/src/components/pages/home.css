@@ -6,9 +6,18 @@
 
 .performers {
   font-family: "Amita", "Arial", sans-serif;
-  font-size: 50px;
-  text-align: center;
+  font-size: 30px;
+  text-align: left;
   font-style: normal;
   font-weight: 900;
-  color: yellowgreen;
+  color: indianred;
+}
+
+.group_photo {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  width: 58rem;
+  height: 40rem;
+  max-width: 100%;
 }

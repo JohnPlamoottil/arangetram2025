@@ -1,14 +1,15 @@
-import "./App.css";
+import "./Home.css";
 import React, { useState } from "react";
-import Header from "./header/header";
-import Footer from "./footer/footer";
-import Video from "./video";
+import Header from "../header/header";
+import Footer from "../footer/footer";
+// import Video from "./video"; went to main.jsx
+import temporary_grp_photo from "../../assets/group.png";
 
-import "../vendor/fonts.css";
+import "../../vendor/fonts.css";
 
 import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-function App() {
+function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
@@ -38,37 +39,31 @@ function App() {
           <div className="dancer_text">Amarya</div>
         </div>
       )}
-      <h1 className="performers">
+      {/* <h1 className="performers">
         Andrea Thomas, Jana Scaria, Michelle Eapen,
-      </h1>
-      <img src="../web/src/assets/group.png" alt="group photo"></img>
-      <h1 className="performers">
+      </h1> */}
+      <img
+        className="group_photo"
+        src={temporary_grp_photo}
+        alt="group photo"
+      ></img>
+      {/* <h1 className="performers">
         Rose Thomas, Jenna Plamoottil, & Amarya Koola
-      </h1>
-      <img src="../assets/group.png" alt="group photo" />
+      </h1> */}
+      {/* <img src={temporary_grp_photo} alt="group photo" /> */}
       <div className="card">
         <button></button>
         <Footer />
       </div>
       <p className="read-the-docs"></p>
-      <Router>
-        <Routes>
-          {/* Other routes */}
-          <Route
-            path="/"
-            element={
-              <div>
-                <Link to="/video" className="nav-link">
-                  Bharatanatyam Journey 2018 to 2025 (First Competition Video)
-                </Link>
-              </div>
-            }
-          />
-          <Route path="/video" element={<Video />} />
-        </Routes>
-      </Router>
+
+      <div>
+        <Link to="/video" className="nav-link">
+          Bharatanatyam Journey 2018 to 2025 (First Competition Video)
+        </Link>
+      </div>
     </>
   );
 }
 
-export default App;
+export default Home;

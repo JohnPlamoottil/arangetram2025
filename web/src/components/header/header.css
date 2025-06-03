@@ -1,7 +1,7 @@
 .header {
-  background-color: #626466; /* dark gray */
+  background-color: silver; /* silver */
   color: white;
-  padding: 37px;
+  padding: 10px 0px 3px 0px; /* top right bottom left */
 }
 
 .header-container {
@@ -40,6 +40,14 @@
   text-align: right;
   font-weight: bolder;
 }
+.performersheader {
+  font-family: "Amita", "Arial", sans-serif;
+  font-size: 39px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  color: indianred;
+}
 
 .nav-links {
   display: flex;
@@ -51,6 +59,8 @@
   font-size: 23px;
   color: indianred; /* indian red*/
   text-decoration: none;
+  font-family: "Amita", sans-serif;
+  font-weight: 900;
 }
 
 .nav-link:hover {
