@@ -8,7 +8,7 @@ Check-Off List
 - [x] download huge files and transfer to ext HDD
 - [x] download photos from google drive 37GB
 - [ ] sort thru photos c jenna - June3-4-5
-- [ ] one group photo for Home page 
+- [ ] one group photo for Home page sliding animation pointing to dropdown selection
 - [ ] in the Program page, need one photo pose for each dance 
 - [ ] collage for each dancer for their page 
 - [ ] biography 
@@ -25,6 +25,7 @@ Check-Off List
 - [x] amarya bio
 - [ ] amarya shishya
 - [ ] FAQ page (dropdown and form)
+- [x] [FAQ souce] (https://www.w3schools.com/howto/howto_js_accordion.asp)
 - [ ] Program Page (use Jinoos agenda in Read Me)
 - [ ] Guru Page 
 - [ ] Orchestra Page
@@ -110,10 +111,10 @@ Looking into the  future,  Bharatanatyam will continue to  shape her identity
 Jennas Shishya
 
 ## History of Bharatanatyam
-Bharatanatyam is one of the most ancient forms of classical Indian dances, expressed through Nritta (rhythmic movements), Nritya (expression), and Natya (mime). It is a classical dance style from South India known for its grace, rhythm, and sculpturesque poses. This classical dance had its origins thousands of years ago in the Natya Sastra, a comprehensive guide to the intricacies of dance, drama and music written by the sage Bharata. In the word Bharata are the three components of the dance: Bha for Bhava (expression), Ra for Raaga (melody), and Ta for Taala (rhythm). Bharatanatyam is unique in its use of geometric precision, rhythmic complexity, and a distinctive language of gestures. By combining these elements with music, Bharatanatyam expresses the yearning of the human soul for union with the eternal.
+used June4
 
 ## History of Arangetram
-Arangetram is a Tamil word, which means the ‘etram’ or ascending on the ‘arangam’ or performance on stage by a dancer. In this concert-length solo recital to the public, a dancer presents a full repertoire of dances (Maargam), demonstrating extensive knowledge of the art form through a variety of pieces, keeping a balance between “nritta and nritya”. To reach this juncture in the career of a dancer requires years of intense and rigorous training. The Arangetram is the first step in the transition from an amateur to a professional dancer.
+used June4
 
 ## Quote
 added on June3
