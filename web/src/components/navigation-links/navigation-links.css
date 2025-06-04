@@ -1,0 +1,17 @@
+.nav-links {
+  display: flex;
+  gap: 16px;
+  font-family: "Amita", "Arial", sans-serif;
+  background-color: silver;
+}
+.nav-link {
+  font-size: 23px;
+  color: indianred; /* indian red*/
+  text-decoration: none;
+  font-family: "Amita", sans-serif;
+  font-weight: 900;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}

@@ -1,6 +1,53 @@
 # Arangetram Performance 2025
+Check-Off List
+- [x] video page 
+- [x] quote
+- [x] dropdown selection and using Link tag 
+- [x] Nav Links updated from a tags
+- [x] navigation header on all pages 
+- [ ] download huge files and transfer to ext HDD
+- [ ] download photos from google drive 
+- [ ] sort thru photos
+- [ ] one group photo for Home page 
+- [ ] in the Program page, need one photo pose for each dance 
+- [ ] collage for each dancer for their page 
+- [ ] biography 
+- [ ] andrea bio
+- [ ] andrea shishya
+- [ ] michelle bio
+- [x] michelle shishya
+- [ ] jana bio
+- [ ] jana shishya
+- [ ] jenna bio 
+- [ ] jenna shishya
+- [x] rose bio
+- [ ] rose shishya
+- [x] amarya bio
+- [ ] amarya shishya
+- [ ] FAQ page (dropdown and form)
+- [ ] Program Page (use Jinoos agenda in Read Me)
+- [ ] Guru Page 
+- [ ] Orchestra Page
+- [ ] venue page 
+- [ ] drone footage of CLC entry (or photo montage)
+- [ ] calendar June2025
+- [ ] livestream link PENDING
+- [ ] guestbook (backend work)
+- [ ] 
+- [ ]Footer on all the pages
+- - [ ]Dance Director Jinoo Varghese - (847) 668-0349
+- - [ ]Parents of Andrea
+- - [ ]Parents of Michelle
+- - [ ]Parents of Jana
+- - [ ]Parents of Rose
+- - [ ]Parents of Jenna
+- - [ ]Parents of Amarya 
+- - [ ]Developer Kanna JJ Plamoottil (847) 338-6855
+- [ ] anything else
 
-## Performers
+
+
+### Performers
 (Pictures of dancers animation CSS)
 Andrea Thomas
 Jana Scaria
@@ -8,6 +55,10 @@ Michelle Eapen
 Rose Thomas
 Jenna Plamoottil
 Amarya Koola
+
+
+1. finish all the components (nav-links) browser router links 
+2. dancer updates 
 
 Performer's autobiography
 Shishya memoires: Parents Shishya for their Daughter
@@ -18,6 +69,25 @@ We are incredibly proud of her journey, not just as a dancer but as a kind, dete
 Michelle, we love you deeply and are so proud of you. May you continue to dance through life with the same joy and purpose.
 — With love,Amma and Appa
 
+Rose’s Bharatanayam Bio: 
+
+Rose Thomas, a dedicated Bharatanatyam dancer, found passion in dance at the age of 5. She started her journey at Soorya Dance School under the careful guidance of Guru Smt. Jinoo Varghese. 
+
+Over the years, Rose explored many forms of art in various ways. She learned a cinematic style of dance with the guidance of her teacher, Varsha Vijayan. Additionally, she followed her passion for music when she became a member of her church choir. The focus and time management skills she has developed through both music and dance have shaped her approach to academics and life, helping her balance high-level commitments with confidence.
+
+In addition to her artistic pursuits, as a rising junior Rose is a student leader at Stevenson High School with a strong record of service and involvement. As a two-year Class Board Representative, she has played a key role in shaping her school community by helping organize student events, including dances, spirit weeks, and unity-building activities. Rose serves as a Student Led Activities Leader, where she helps facilitate student engagement school wide. Academically, she is a Science Olympiad two-time state qualifier, and actively involved in service through Future Doctors of America, where she builds her passion for the field of medicine. Moreover, Rose has been inducted as a member of the National Honor Society. 
+
+With the blessings of God, the guidance of her guru, and the unwavering support of her family and friends, Rose’s dedication to dance has led her to this milestone—completing her Arangetram today.
+rose Shishya - pending
+
+Amarya’s Bharatanayam bio:
+
+Amarya, a sixteen-year-old passionate Bharatanatyam dancer, began her journey at the age of five under the guidance of Guru Smt. Jinoo Varghese at the Soorya Dance School. Over the years, her love for dance has flourished as she trained in cinematic dance under Varsha Vijayan. 
+Dance has been a powerful expression of her culture, creativity, and identity. She has become disciplined and confident, learning how to balance all her responsibilities with grace. Above all, dance has taught her the importance of friendship, community, and self-growth.
+A rising junior at Stevenson High School, Amarya is a dedicated student leader. She serves on her class board and soon begins her term as Class Vice President. Beyond school, she is a two-year representative on her church’s youth council and assists with its social media content to inform and engage the community.
+Academically, Amarya has been fond of science and participates in clubs such as Science Olympiad and HOSA. She is also a member of Best Buddies and volunteers at her high school’s preschool program. Her love for working with children and medicine has encouraged her to pursue a career as a pediatrician.
+Whether on stage or in service, Amarya approaches every commitment with passion and purpose. Dance continues to be an inspiring force in her life, and she plans to pursue it beyond her arangetram, using it as a way to both honor her heritage and evolve as an artist. Amarya is proud to showcase her years of dedication and work that were poured into today’s performance.
+john and latha shishya - PENDING
 
 RSVP section form to fill out per each dancer
 Calendar month view DATE and TIME
@@ -29,11 +99,9 @@ Bharatanatyam is one of the most ancient forms of classical Indian dances, expre
 Arangetram is a Tamil word, which means the ‘etram’ or ascending on the ‘arangam’ or performance on stage by a dancer. In this concert-length solo recital to the public, a dancer presents a full repertoire of dances (Maargam), demonstrating extensive knowledge of the art form through a variety of pieces, keeping a balance between “nritta and nritya”. To reach this juncture in the career of a dancer requires years of intense and rigorous training. The Arangetram is the first step in the transition from an amateur to a professional dancer.
 
 ## Quote
-“In a society that worships love, freedom and beauty, dance is sacred. It is a prayer for the future, a remembrance of the past and a joyful exclamation of thanks for the present.” 
-- Amelia Atwater-Rhodes
+added on June3
 
-” Yatho Hasta Thatho Drishti, Yatho Drishti “
-"Where the hands(hasta) are, go the eyes (drishti); where the eyes are, goes the mind (manah); where the mind goes, there is an expression of inner feeling (bhava) and where there is bhava, mood or sentiment (rasa) is evoked”
+
 
 ## Instructor - Biodata of the instructor 
 Jinoo Varghese, the Artistic Director of Soorya Dance School is an accomplished exponent of Bharatanatyam and Kuchipudi style of dancing and well known choreographer of Indian dance forms. From the age of 4, she had training from eminent gurus - Kalamandalam Mohana Tulsi, Kalakshetra Vilasini, Girija Chandran (Regatta) etc. She received Govt of India National Talent Scholarship for Bharatanatyam at the age of 12. Dance was her passion and now she is the Artistic Director of Soorya Dance School, Northbrook Illinois.
@@ -110,12 +178,12 @@ held under the guidance of Smt. Jinoo Varghese, the artistic
 director of Soorya Dance School. 
 These young girls have worked very hard to achieve their dreams and this was possible only because of the love and unwavering support of their parents. 
 I would like to invite, to the stage  ...
-the parents of Andrea - Jerril and Shipla Thomas (pause), 
-the parents of Jana - Father and Lija Scaria, 
-the parents of Michelle - Priyan & Jincy Eapen (pause), 
-the parents of Rose - Bejoy and Marissa Thomas (pause),
-the parents of Jenna - John and Leena Plamoottil (pause),
-the parents of Amarya - John and Latha Chirayil Koola, (pause).
+the parents of Andrea - Jeril and Shipla Thomas (708-548-4971), 
+the parents of Jana - Santosh and Lija Scaria (847-714-6548), 
+the parents of Michelle - Priyan & Jincy Eapen (224-388-8571), 
+the parents of Rose - Bejoy and Marisa Thomas (847-722-6976),
+the parents of Jenna - John and Leena Plamoottil (847-219-9914),
+the parents of Amarya - John and Latha Chirayil Koola, (773-426-4993).
 
 I would like to invite - for the welcome address on behalf of the parents.
 # Prayer by Priest

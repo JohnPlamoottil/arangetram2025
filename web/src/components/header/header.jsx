@@ -2,7 +2,8 @@ import React from "react";
 import "./header.css";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
-import Navigation from "../navigation-links";
+import corner from "../../assets/decorative_corner.png";
+// import Navigation from "../navigation-links/navigation-links";
 
 const Header = () => {
   // const [menuOpen] = useState(false);
@@ -12,6 +13,7 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <img src={logo} alt="Logo" className="logo" />
+        <img src={corner} alt="Corner" className="right-corner" />
 
         {/* Text */}
         <div className="header-content">
@@ -19,7 +21,7 @@ const Header = () => {
             <div>
               <h1 className="title">Welcome to Our Arangetram</h1>
               <h2 className="subtitle">A Night to Remember</h2>
-              <Navigation />
+              {/* <Navigation /> */}
               <div className="performersheader">
                 Andrea Thomas, Jana Scaria, Michelle Eapen, Rose Thomas, Jenna
                 Plamoottil, Amarya Koola

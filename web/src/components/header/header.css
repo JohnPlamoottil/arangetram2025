@@ -16,6 +16,16 @@
   object-fit: contain;
 }
 
+.right-corner {
+  position: absolute; /* Stick to screen corner */
+  top: 0;
+  right: 0;
+  width: 150px; /* Adjust size */
+  height: auto;
+  transform: rotate(270deg); /* Rotate as needed (270° = turn left) */
+  opacity: 2; /* slightly transparent */
+}
+
 .header-text {
   display: flex;
   flex-direction: column;
@@ -28,6 +38,7 @@
   color: #f87171; /* indian red */
   margin: 0;
   text-align: center;
+  position: relative;
 }
 
 .subtitle {
@@ -57,23 +68,6 @@
   color: black;
 }
 
-.nav-links {
-  display: flex;
-  gap: 16px;
-  font-family: "Amita", "Arial", sans-serif;
-}
-
-.nav-link {
-  font-size: 23px;
-  color: indianred; /* indian red*/
-  text-decoration: none;
-  font-family: "Amita", sans-serif;
-  font-weight: 900;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
 .dropdown {
   display: block;
   font-size: 1rem;
@@ -85,6 +79,7 @@
   background-color: #626466;
   width: 4rem;
   height: 2rem;
+  margin-left: 47px;
 }
 
 .dancers {
