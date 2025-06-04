@@ -18,7 +18,7 @@ Check-Off List
 - [x] michelle shishya
 - [ ] jana bio
 - [ ] jana shishya
-- [ ] jenna bio 
+- [x] jenna bio 
 - [ ] jenna shishya
 - [x] rose bio
 - [ ] rose shishya
@@ -91,6 +91,23 @@ john and latha shishya - PENDING
 
 RSVP section form to fill out per each dancer
 Calendar month view DATE and TIME
+
+Jenna Bharatanayam bio: 
+
+Jenna's journey with Bharatanatyam has been deeply interlaced with her personal growth and development. 
+She joined  Soorya Dance School at the age of four with the continuing  leadership under the guidance  of  Guru Smt. Jinoo Varghese. 
+Through Bharatanayam, Jenna has learned to express emotions in such a way that words sometimes cannot. 
+Through this journey, she gained a profound appreciation for the significance of tradition, mythology, and story-telling that has enriched her life outside of dance. 
+As she continues her studies, Jenna found that the life lessons from Bharatanatyam such as resilience, discipline, and dedication are  just as important in her academic and personal life.
+Her performances at social events including the  Chicago Malayalee Association, Kalashastra, Onam festivals, and Flowers TV  are milestones in her journey.
+Every performance reflects a celebration of her culture and a reminder of how far she achieved as both a dancer and an individual. 
+Outside of dance, Jenna is a upcoming  sophomore at Warren Township High School where she is involved in other extracurriculars like track and field. Jenna uses the concepts and ideologies of Bharatanatyam in all that she does. 
+Whether it is her diligence in academics or her contributions to the church youth groups, her disciplined mindset and determination stem directly from her dance training.
+ The art of dance has not only improved her performance but also helped her get  leadership roles in her life.
+Jenna has the opportunity here to choreograph various dances allowing her to connect better with others, especially when organizing activities for the  younger generation. 
+Looking into the  future,  Bharatanatyam will continue to  shape her identity and empower her to approach each new chapter with the same passion and commitment that she discovered with classical dance. With the support from her family/ friends and especially her guru, she has the opportunity to  complete her arangetram today!
+
+Jennas Shishya
 
 ## History of Bharatanatyam
 Bharatanatyam is one of the most ancient forms of classical Indian dances, expressed through Nritta (rhythmic movements), Nritya (expression), and Natya (mime). It is a classical dance style from South India known for its grace, rhythm, and sculpturesque poses. This classical dance had its origins thousands of years ago in the Natya Sastra, a comprehensive guide to the intricacies of dance, drama and music written by the sage Bharata. In the word Bharata are the three components of the dance: Bha for Bhava (expression), Ra for Raaga (melody), and Ta for Taala (rhythm). Bharatanatyam is unique in its use of geometric precision, rhythmic complexity, and a distinctive language of gestures. By combining these elements with music, Bharatanatyam expresses the yearning of the human soul for union with the eternal.
