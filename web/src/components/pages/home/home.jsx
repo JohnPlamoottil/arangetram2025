@@ -31,6 +31,16 @@ function Home() {
             className="dancer_text"
             to={{
               pathname: "dancer",
+              search: "?dancer=Michelle",
+            }}
+          >
+            Michelle
+          </Link>
+
+          <Link
+            className="dancer_text"
+            to={{
+              pathname: "dancer",
               search: "?dancer=andrea",
             }}
           >
@@ -45,16 +55,6 @@ function Home() {
             }}
           >
             Jana
-          </Link>
-
-          <Link
-            className="dancer_text"
-            to={{
-              pathname: "dancer",
-              search: "?dancer=Michelle",
-            }}
-          >
-            Michelle
           </Link>
 
           <Link

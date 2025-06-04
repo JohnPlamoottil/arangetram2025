@@ -23,7 +23,7 @@ const Header = () => {
               <h2 className="subtitle">A Night to Remember</h2>
               {/* <Navigation /> */}
               <div className="performersheader">
-                Andrea Thomas, Jana Scaria, Michelle Eapen, Rose Thomas, Jenna
+                Michelle Eapen, Andrea Thomas, Jana Scaria, Rose Thomas, Jenna
                 Plamoottil, Amarya Koola
               </div>
               <div className="instructions">
