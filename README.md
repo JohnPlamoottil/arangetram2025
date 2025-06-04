@@ -6,8 +6,8 @@ Check-Off List
 - [x] Nav Links updated from a tags
 - [x] navigation header on all pages 
 - [x] download huge files and transfer to ext HDD
-- [x] download photos from google drive 
-- [ ] sort thru photos - June3-4-5
+- [x] download photos from google drive 37GB
+- [ ] sort thru photos c jenna - June3-4-5
 - [ ] one group photo for Home page 
 - [ ] in the Program page, need one photo pose for each dance 
 - [ ] collage for each dancer for their page 
