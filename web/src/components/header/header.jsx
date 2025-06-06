@@ -2,7 +2,7 @@ import React from "react";
 import "./header.css";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
-import corner from "../../assets/decorative_corner.png";
+import corner from "../../assets/decorative_corner.svg";
 // import Navigation from "../navigation-links/navigation-links";
 
 const Header = () => {

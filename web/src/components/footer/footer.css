@@ -6,6 +6,8 @@
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 16px;
   margin-top: 171px;
+  position: relative;
+  overflow: hidden;
 }
 
 .footer__content {
@@ -21,4 +23,35 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
+}
+
+@keyframes pulsate {
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 rgb(183, 196, 213);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 50px rgb(98, 138, 189);
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+    box-shadow: 0 0 0 100px rgba(47, 128, 237);
+  }
+}
+
+.about__circle {
+  width: 426px;
+  height: 426px;
+  border-radius: 1351%;
+  background-color: #2f80ed;
+  position: absolute;
+  top: -152px;
+  left: -129px;
+  z-index: 1;
+}
+
+.about__circle_animation_blurred {
+  animation: pulsate 1.3s ease-in-out infinite both;
 }

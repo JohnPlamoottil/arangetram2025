@@ -22,7 +22,11 @@
   right: 0;
   width: 150px; /* Adjust size */
   height: auto;
-  transform: rotate(270deg); /* Rotate as needed (270° = turn left) */
+  image-orientation: from-image;
+  /* transform: rotate(180); Rotate as needed (270° = turn left) */
+  transform: rotate(270deg);
+  /* -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg); */
   opacity: 2; /* slightly transparent */
 }
 
@@ -154,5 +158,14 @@
   .nav-link {
     padding: 10px 0;
     border-bottom: 1px solid #333;
+  }
+  .right-corner {
+    position: absolute; /* Stick to screen corner */
+    top: 0;
+    right: 0;
+    width: 150px; /* Adjust size */
+    height: auto;
+    transform: rotate(270); /* Rotate as needed (270° = turn left) */
+    opacity: 2; /* slightly transparent */
   }
 }

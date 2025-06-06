@@ -108,8 +108,8 @@ function Home() {
           “In a society that worships love, freedom and beauty, dance is sacred.
           It is a prayer for the future, a remembrance of the past and a joyful
           exclamation of thanks for the present.”
-          <p className="quote-author-two">- Amelia Atwater Rhodes</p>
         </p>
+        <p className="quote-author-two">- Amelia Atwater Rhodes</p>
       </div>
       <Footer />
       <div>

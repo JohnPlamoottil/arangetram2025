@@ -37,17 +37,22 @@ Check-Off List
 - [ ] 
 - [ ]Footer on all the pages
 - - [ ]Dance Director Jinoo Varghese - (847) 668-0349
-- - [ ]Parents of Andrea
-- - [ ]Parents of Michelle
-- - [ ]Parents of Jana
-- - [ ]Parents of Rose
-- - [ ]Parents of Jenna
-- - [ ]Parents of Amarya 
+- - [ ]Parents of Andrea - Jeril and Shipla Thomas (708-548-4971)
+- - [ ]Parents of Michelle Priyan & Jincy Eapen (224-388-8571)
+- - [ ]Parents of Jana Santosh and Lija Scaria (847-714-6548)
+- - [ ]Parents of Rose Bejoy and Marisa Thomas (847-722-6976)
+- - [ ]Parents of Jenna John and Leena Plamoottil (847-219-9914)
+- - [ ]Parents of Amarya  John and Latha Chirayil Koola, (773-426-4993)
 - - [ ]Developer Kanna JJ Plamoottil (847) 338-6855
 - [ ] anything else
+- [ ] faqs into a box, remove the margin bw each Q? and apply border , box model CSS 
 
-
-
+the parents of Andrea - , 
+the parents of Jana - , 
+the parents of Michelle - , 
+the parents of Rose - ,
+the parents of Jenna - ,
+the parents of Amarya - .
 ### Performers
 (Pictures of dancers animation CSS)
 Andrea Thomas

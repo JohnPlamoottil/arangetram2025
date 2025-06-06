@@ -1,17 +1,24 @@
 import React from "react";
 import Navigation from "../../navigation-links/navigation-links";
 import "./faqs.css";
+import Footer from "../../footer/footer";
 
 const FAQs = () => {
   function handleClick(e) {
     const button = e.target;
-    button.classList.toggle("active");
+    button.classList.toggle("slide");
     const panel = button.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
     } else {
-      panel.style.display = "block";
+      panel.style.maxHeight = panel.scrollHeight + "px";
     }
+
+    // if (panel.style.display === "block") {
+    //   panel.style.display = "none";
+    // } else {
+    //   panel.style.display = "block";
+    // }
   }
   // first off theres is an eventhandler called handle click that will handle any clickEvent on the button on the page
   // now the function takes in an event as a function,
@@ -22,6 +29,7 @@ const FAQs = () => {
       <section className="questions">
         <h2 className="title_FAQ">Frequently Asked Questions (FAQs)</h2>
         <button className="accordion" onClick={handleClick}>
+          {/* <span className="plus_sign">+</span> */}
           What is Bharatanatyam?
         </button>
         <div className="panel">
@@ -109,24 +117,32 @@ const FAQs = () => {
       <div className="faq-form">
         <p className="faq-instructions">
           If you have any more questions concerning the event, please send them
-          using the form below. We’ll update the site with the answer!
+          using the form below:
+        </p>
+        <p className="faq-instructions">
+          We’ll update the site with the answer.
         </p>
 
         <form>
           <label className="form_question">Question</label>
-          <input type="text" name="question" required />
+          <textarea className="faq-textarea" name="question" required />
 
-          <label className="form_name">Name (Optional)</label>
-          <input type="text" name="name" />
+          <div className="contact">
+            <label className="form_name">
+              Name (Optional) <input type="text" name="name" />
+            </label>
 
-          <label className="form_email">Email (Optional)</label>
-          <input type="email" name="email" />
+            <label className="form_email">
+              Email (Optional) <input type="email" name="email" />
+            </label>
+          </div>
 
           <button className="form_submit" type="submit">
             Send Message
           </button>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };
