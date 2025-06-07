@@ -16,6 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .footer__text {
@@ -48,7 +49,7 @@
   background-color: #2f80ed;
   position: absolute;
   top: -152px;
-  left: -129px;
+  left: -350px;
   z-index: 1;
 }
 

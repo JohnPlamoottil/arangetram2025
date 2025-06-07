@@ -6,7 +6,6 @@ import Footer from "../../footer/footer";
 import temporary_grp_photo from "../../../assets/group.png";
 import Navigation from "../../navigation-links/navigation-links";
 import "../../../vendor/fonts.css";
-
 import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function Home() {
@@ -112,11 +111,6 @@ function Home() {
         <p className="quote-author-two">- Amelia Atwater Rhodes</p>
       </div>
       <Footer />
-      <div>
-        <Link to="/video" className="nav-link">
-          Bharatanatyam Journey 2018 to 2025 (First Competition Video)
-        </Link>
-      </div>
     </>
   );
 }

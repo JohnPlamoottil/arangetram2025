@@ -1,11 +1,30 @@
 import React from "react";
 import Navigation from "../../navigation-links/navigation-links";
+import "./livestream.css";
+import frameImage from "../../../assets/macbookpro.png";
 
 const Livestream = () => {
   return (
-    <div>
-      This is the livestream page
-      <Navigation />;
+    <div
+      className="video-page"
+      style={{ textAlign: "center", padding: "2rem" }}
+    >
+      <Navigation />
+      <h1 className="video-title">Our Live Performance</h1>
+      <div className="video-overlay"></div>
+
+      <div className="video-wrapper">
+        <img src={frameImage} alt="Frame" className="video-frame" />
+        <iframe
+          src="https://www.youtube.com/embed/BL1tvAUCR2A?si=e2e6u3TFYe3j0f3k"
+          title="Dance Performance Dec9 2022 Jenna & Amarya +Boys"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          className="graduation_video2025"
+        ></iframe>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,59 @@
+.header {
+  background-color: silver; /* silver */
+  padding: 10px 0px 3px 0px; /* top right bottom left */
+}
+
+.video-page {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #f8f8f8; */
+  text-align: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.video-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: "Amita";
+  background-color: silver;
+}
+
+.video-subtitle {
+  font-family: "Amita";
+  background-color: silver;
+}
+
+.video-player {
+  max-width: 800px;
+  width: 100%;
+  border: 4px solid #222;
+  border-radius: 8px;
+  background-image: url(../../assets/macbookpro.png);
+  text-align: center;
+  font-size: 1.9rem;
+  right: 3px;
+}
+
+.video-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.video-wrapper video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.graduation_video2025 {
+  width: 756px;
+  height: 474px;
+  position: absolute;
+  text-align: center;
+  left: 105px;
+  top: 21px;
+  border: none;
+}
