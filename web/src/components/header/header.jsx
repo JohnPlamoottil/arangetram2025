@@ -3,7 +3,7 @@ import "./header.css";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
 // import corner from "../../assets/decorative_corner.svg";
-import green_varnum_corner from "../../assets/green_varnum_corner.jpeg";
+import green_varnum_corner from "../../assets/green_varnum_corner.png";
 
 const Header = () => {
   return (
