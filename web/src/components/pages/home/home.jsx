@@ -2,17 +2,23 @@ import "./Home.css";
 import React, { useState } from "react";
 import Header from "../../header/header";
 import Footer from "../../footer/footer";
-// import Video from "./video"; went to main.jsx
-import temporary_grp_photo from "../../../assets/group.png";
+import tillana from "../../../assets/tillana.png";
 import Navigation from "../../navigation-links/navigation-links";
 import "../../../vendor/fonts.css";
 import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import dance_bkgd from "../../../assets/dance_bkgd.png";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
       <div>
+        <img
+          className="dance_bkgd"
+          src={dance_bkgd}
+          alt="tillana picture"
+        ></img>
+
         <Header />
         <main className="journey"></main>
       </div>
@@ -33,7 +39,7 @@ function Home() {
               search: "?dancer=Michelle",
             }}
           >
-            Michelle
+            Michelle Eapen
           </Link>
 
           <Link
@@ -43,7 +49,7 @@ function Home() {
               search: "?dancer=andrea",
             }}
           >
-            Andrea
+            Andrea Thomas
           </Link>
 
           <Link
@@ -53,7 +59,7 @@ function Home() {
               search: "?dancer=Jana",
             }}
           >
-            Jana
+            Jana Scaria
           </Link>
 
           <Link
@@ -63,7 +69,7 @@ function Home() {
               search: "?dancer=Rose",
             }}
           >
-            Rose
+            Rose Thomas
           </Link>
 
           <Link
@@ -73,7 +79,7 @@ function Home() {
               search: "?dancer=Jenna",
             }}
           >
-            Jenna
+            Jenna Plamoottil
           </Link>
 
           <Link
@@ -83,15 +89,11 @@ function Home() {
               search: "?dancer=Amarya",
             }}
           >
-            Amarya
+            Amarya Koola
           </Link>
         </div>
       )}
-      <img
-        className="group_photo"
-        src={temporary_grp_photo}
-        alt="group photo"
-      ></img>
+      <img className="group_photo" src={tillana} alt="group photo"></img>
       <div className="quote-container">
         <blockquote className="quote">
           ” Yatho Hasta Thatho Drishti, Yatho Drishti “

@@ -7,9 +7,9 @@ Check-Off List
 - [x] navigation header on all pages 
 - [x] download huge files and transfer to ext HDD
 - [x] download photos from google drive 37GB
-- [ ] sort thru photos c jenna - June3-4-5
-- [ ] one group photo for Home page sliding animation pointing to dropdown selection
-- [ ] in the Program page, need one photo pose for each dance 
+- [x] sort thru photos c jenna - June3-4-5
+- [x] one group photo for Home page sliding animation pointing to dropdown selection
+- [ ] in the Program page, use same from brochure
 - [ ] collage for each dancer for their page 
 - [ ] biography 
 - [ ] andrea bio
@@ -35,24 +35,8 @@ Check-Off List
 - [ ] livestream link PENDING
 - [ ] guestbook (backend work)
 - [ ] 
-- [ ]Footer on all the pages
-- - [ ]Dance Director Jinoo Varghese - (847) 668-0349
-- - [ ]Parents of Andrea - Jeril and Shipla Thomas (708-548-4971)
-- - [ ]Parents of Michelle Priyan & Jincy Eapen (224-388-8571)
-- - [ ]Parents of Jana Santosh and Lija Scaria (847-714-6548)
-- - [ ]Parents of Rose Bejoy and Marisa Thomas (847-722-6976)
-- - [ ]Parents of Jenna John and Leena Plamoottil (847-219-9914)
-- - [ ]Parents of Amarya  John and Latha Chirayil Koola, (773-426-4993)
-- - [ ]Developer Kanna JJ Plamoottil (847) 338-6855
-- [ ] anything else
-- [ ] faqs into a box, remove the margin bw each Q? and apply border , box model CSS 
+- [x]Footer on all the pages June11 2026
 
-the parents of Andrea - , 
-the parents of Jana - , 
-the parents of Michelle - , 
-the parents of Rose - ,
-the parents of Jenna - ,
-the parents of Amarya - .
 ### Performers
 (Pictures of dancers animation CSS)
 Andrea Thomas

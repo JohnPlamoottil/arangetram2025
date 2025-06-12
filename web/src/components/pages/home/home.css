@@ -3,7 +3,17 @@
   text-align: right;
   background-image: url(../assets/Temple.png);
 }
-
+.dance_bkgd {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* Adjust to control transparency */
+  z-index: 0;
+}
 .performers {
   font-family: "Amita", "Arial", sans-serif;
   font-size: 25px;
@@ -17,7 +27,7 @@
   display: flex;
   margin: 0 auto;
   justify-content: center;
-  width: 58rem;
+  width: 60rem;
   height: 40rem;
   max-width: 100%;
 }

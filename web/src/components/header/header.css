@@ -6,19 +6,20 @@
 
 .header-container {
   display: flex;
-  align-items: flex-start;
-  gap: 24px;
+  justify-content: space-between;
 }
 
 .logo {
-  height: 198px;
-  width: 169px;
+  height: 254px;
+  width: 309px;
   object-fit: contain;
+  margin-right: 50px;
+  margin-top: 50px;
 }
 
 .right-corner {
-  position: absolute; /* Stick to screen corner */
-  top: 0;
+  position: relative; /* Stick to screen corner */
+  top: -120px;
   right: 0;
   width: 150px; /* Adjust size */
   height: auto;
@@ -36,23 +37,27 @@
 }
 
 .title {
-  font-size: 55px;
+  font-size: 25px;
   font-family: "Amita", cursive;
   font-weight: 900;
-  color: #f87171; /* indian red */
+  color: brown;
   margin: 0;
   text-align: center;
   position: relative;
 }
+.main_title {
+  font-size: 50px;
+  text-align: center;
+}
 
 .subtitle {
   font-size: 1.5rem;
-  font-family: cursive;
+  font-family: "Amita";
   color: #f87171; /* indian red */
   margin-top: 8px;
   margin-bottom: 8px;
   font-weight: 900px;
-  text-align: right;
+  text-align: center;
   font-weight: bolder;
 }
 .performersheader {
@@ -62,6 +67,7 @@
   font-style: normal;
   font-weight: 900;
   color: brown;
+  white-space: normal;
 }
 .instructions {
   font-family: "Amita", "Arial", sans-serif;
@@ -102,7 +108,7 @@
 
 .dancer_text {
   font-family: "Amita", "Arial", sans-serif;
-  font-size: 50px;
+  font-size: 25px;
   text-align: center;
   font-style: normal;
   font-weight: 400px;

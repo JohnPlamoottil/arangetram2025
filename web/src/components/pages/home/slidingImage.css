@@ -1,0 +1,32 @@
+/* src/components/SlidingImage.css */
+.image-wrapper {
+  overflow: hidden;
+}
+
+.slide-in {
+  width: 300px;
+  animation: slideInFromLeft 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* @keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

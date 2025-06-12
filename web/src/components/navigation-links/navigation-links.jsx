@@ -11,27 +11,27 @@ const Navigation = () => {
       </NavLink>
 
       <NavLink to="/program" className="nav-link">
-        Repertoire (Program)
+        Repertoire
       </NavLink>
 
       <NavLink to="/instructor" className="nav-link">
-        Guru (Instructor)
+        Guru
       </NavLink>
 
       <NavLink to="/orchestra" className="nav-link">
-        Musicians (Orchestra)
+        Musicians
       </NavLink>
 
       <NavLink to="/venue" className="nav-link">
-        Venue (Date & Location)
+        Venue
       </NavLink>
 
       <NavLink to="/livestream" className="nav-link">
-        Watch Livestream
+        Livestream
       </NavLink>
 
       <NavLink to="/faqs" className="nav-link">
-        Frequently Asked Q?s FAQs
+        FAQs
       </NavLink>
 
       <NavLink to="/guestbook" className="nav-link">

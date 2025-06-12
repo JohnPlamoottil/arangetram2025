@@ -11,6 +11,8 @@
   font-family: "Amita", sans-serif;
   font-weight: 900;
   text-align: center;
+  display: block;
+  width: 254px;
 }
 
 .nav-link:hover {

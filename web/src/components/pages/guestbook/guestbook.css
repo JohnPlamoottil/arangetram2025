@@ -1,0 +1,42 @@
+/* in App.css or Guestbook.css */
+.guestbook {
+  font-family: "Amita";
+  text-align: center;
+  font-size: 25px;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fefefe9a;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.group_photo {
+  width: 100%;
+  height: 100%;
+}
+
+.guestbook form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guestbook input,
+.guestbook textarea {
+  font-family: "Amita";
+  font-size: 15px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.entries {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
