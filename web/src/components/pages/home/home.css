@@ -23,12 +23,12 @@
   color: indianred;
 }
 
-.group_photo {
+.home_group_photo {
   display: flex;
   margin: 0 auto;
   justify-content: center;
-  width: 60rem;
-  height: 40rem;
+  width: 48%;
+  height: 100%;
   max-width: 100%;
 }
 

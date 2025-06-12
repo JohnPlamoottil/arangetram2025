@@ -3,6 +3,7 @@ import "./header.css";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
 // import corner from "../../assets/decorative_corner.svg";
+import green_varnum_corner from "../../assets/green_varnum_corner.png";
 
 const Header = () => {
   return (
@@ -10,6 +11,13 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <img src={logo} alt="Logo" className="logo" />
+
+        {/* slanted group image */}
+        <img
+          className="green_varnum_corner"
+          src={green_varnum_corner}
+          alt="varnum group"
+        />
 
         {/* Text */}
         <div className="header-content">

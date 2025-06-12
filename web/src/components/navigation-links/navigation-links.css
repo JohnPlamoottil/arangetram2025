@@ -1,18 +1,17 @@
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 30px;
   font-family: "Amita", "Arial", sans-serif;
   background-color: silver;
+  justify-content: center;
 }
 .nav-link {
   font-size: 23px;
-  color: indianred; /* indian red*/
+  display: flex;
+  color: indianred;
   text-decoration: none;
   font-family: "Amita", sans-serif;
   font-weight: 900;
-  text-align: center;
-  display: block;
-  width: 254px;
 }
 
 .nav-link:hover {

@@ -16,20 +16,25 @@
   margin-right: 50px;
   margin-top: 50px;
 }
-
-.right-corner {
-  position: relative; /* Stick to screen corner */
-  top: -120px;
+.green_varnum_corner {
+  /* min-height: 100%;
+  min-width: 100%; */
+  opacity: 2px;
+  width: 36rem;
+}
+/* .right-corner REMOVED THE CORNER IMAGE -messing up the right side{
+  position: relative; Stick to screen corner */
+/* top: -120px;
   right: 0;
   width: 150px; /* Adjust size */
-  height: auto;
-  image-orientation: from-image;
-  /* transform: rotate(180); Rotate as needed (270° = turn left) */
-  transform: rotate(270deg);
-  /* -webkit-transform: rotate(270deg);
+/* height: auto;
+  image-orientation: from-image; */
+/* transform: rotate(180); Rotate as needed (270° = turn left) */
+/* transform: rotate(270deg); */
+/* -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg); */
-  opacity: 2; /* slightly transparent */
-}
+/* opacity: 2; slightly transparent 
+} */
 
 .header-text {
   display: flex;
