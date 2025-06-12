@@ -2,6 +2,7 @@ import React from "react";
 import "./footer.css";
 import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import youtubelogo from "../../assets/youtubelogo.png";
+import soorya_studio from "../../assets/soorya_studio.png";
 
 const Footer = () => {
   function handleClick(e) {
@@ -142,6 +143,13 @@ const Footer = () => {
         >
           <img src={youtubelogo} alt="YouTube" width="30" height="30" />
         </a>
+        <img
+          className="soorya_studio"
+          src={soorya_studio}
+          alt="studio location"
+          width="200"
+          height="200"
+        ></img>
       </div>
     </footer>
   );

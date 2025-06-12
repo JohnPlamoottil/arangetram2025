@@ -96,8 +96,9 @@
 
 .margam {
   display: flex;
-  max-width: 100%;
+  max-width: 70%;
   max-height: fit-content;
+  margin: 0 auto;
 }
 
 .form_question {

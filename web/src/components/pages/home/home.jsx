@@ -93,7 +93,7 @@ function Home() {
           </Link>
         </div>
       )}
-      <img className="group_photo" src={tillana} alt="group photo"></img>
+      <img className="home_group_photo" src={tillana} alt="group photo"></img>
       <div className="quote-container">
         <blockquote className="quote">
           ” Yatho Hasta Thatho Drishti, Yatho Drishti “
