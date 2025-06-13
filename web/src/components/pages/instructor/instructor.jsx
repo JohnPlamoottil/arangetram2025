@@ -5,6 +5,7 @@ const Instructor = () => {
   return (
     <div>
       <Navigation />
+      <div className="guru_container"> Instructor</div>
     </div>
   );
 };
