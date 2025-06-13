@@ -119,7 +119,7 @@
   font-weight: 400px;
   color: indianred;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   /* Stack logo and content vertically */
   .header-container {
     flex-direction: column;
@@ -141,7 +141,17 @@
     align-items: right;
     gap: 16px; /* Space between burger and text */
   }
-
+  .logo {
+    height: 254px;
+    width: 309px;
+    object-fit: contain;
+    margin-right: 50px;
+    margin-top: 50px;
+  }
+  .green_varnum_corner {
+    opacity: 2px;
+    width: 21rem;
+  }
   .dropdown {
     display: block;
     font-size: 1.8rem;

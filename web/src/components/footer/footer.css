@@ -130,3 +130,6 @@
 .youtube-link {
   margin-left: 34px;
 }
+
+@media screen and (max-width: 768px) {
+}
