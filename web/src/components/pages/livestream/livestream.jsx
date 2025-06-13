@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "../../navigation-links/navigation-links";
 import "./livestream.css";
 import frameImage from "../../../assets/macbookpro.png";
+import Footer from "../../footer/footer";
 
 const Livestream = () => {
   return (
@@ -25,6 +26,7 @@ const Livestream = () => {
           className="graduation_video2025"
         ></iframe>
       </div>
+      <Footer />
     </div>
   );
 };
