@@ -177,7 +177,7 @@
 
   /* Optional: Make links full width on mobile */
   .nav-link {
-    padding: 10px 0;
+    padding: 10px 10px 10px 10px;
     border-bottom: 1px solid #333;
   }
   .right-corner {
