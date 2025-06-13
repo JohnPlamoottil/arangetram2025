@@ -13,7 +13,7 @@ Check-Off List
 - [ ] collage for each dancer for their page 
 - [ ] biography 
 - [ ] andrea bio
-- [ ] andrea shishya
+- [x] andrea shishya
 - [ ] michelle bio
 - [x] michelle shishya
 - [ ] jana bio
@@ -99,6 +99,18 @@ Looking into the  future,  Bharatanatyam will continue to  shape her identity
 
 Jennas Shishya
 
+Andreas mom note to her! Shilpa and Jeril:
+
+Watching our Andrea grow has been one of the greatest joys of our lives. From her earliest days, she has carried a quiet strength and a soft heart — gentle in nature, yet bold in spirit. She is calm and composed in public, but in the company of those she loves, her playful, mischievous side shines through. Among her closest friends, she is loud, confident, and full of life — never afraid to speak her mind and lift others up.
+
+She gives selflessly, often putting others’ happiness before her own. Whether it's a toy, time, or a piece of her favorite treat, she never hesitates to share. At home, she’s the cool big sister — teasing, laughing, and playing endlessly with her little brother, finding joy in simply being with him (and often in annoying him too!). She is soft-spoken but firm, kind but fearless — a beautiful balance that makes her truly special.
+
+Dance has been a constant in her life — a space where her inner world comes alive. Over the years, it has helped her find grace, discipline, and deep connection to tradition. Through every movement and every expression, we see her love for the art and the quiet dedication behind it.
+
+As parents, we feel truly blessed to watch her grow into the young woman she is — full of heart, full of spirit, and full of promise.
+
+With love and pride,
+Appa & Amma
 ## History of Bharatanatyam
 used June4
 
