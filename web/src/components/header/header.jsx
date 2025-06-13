@@ -1,8 +1,8 @@
 import React from "react";
 import "./header.css";
+import "../../components/pages/home/slidingImage.css";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
-// import corner from "../../assets/decorative_corner.svg";
 import green_varnum_corner from "../../assets/green_varnum_corner.png";
 
 const Header = () => {

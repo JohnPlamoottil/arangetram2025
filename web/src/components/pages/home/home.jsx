@@ -16,7 +16,7 @@ function Home() {
         <img
           className="dance_bkgd"
           src={dance_bkgd}
-          alt="tillana picture"
+          alt="white bkgd with 4 shadow dancers"
         ></img>
 
         <Header />
@@ -96,7 +96,7 @@ function Home() {
       <img className="home_group_photo" src={tillana} alt="group photo"></img>
       <div className="quote-container">
         <blockquote className="quote">
-          ” Yatho Hasta Thatho Drishti, Yatho Drishti “
+          ”Yatho Hasta Thatho Drishti, Yatho Drishti“
         </blockquote>
         <p className="quote-meaning">
           "Where the hands(hasta) are, go the eyes (drishti); where the eyes
