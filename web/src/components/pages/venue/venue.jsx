@@ -13,11 +13,6 @@ const Venue = () => {
       <div className="embedded_map">
         <APIProvider apiKey={apiKey}>
           <Map
-            style={{ width: "1048x", height: "768px" }}
-            zoom={15}
-            center={{ lat: 42.354492334658644, lng: -88.01122761349113 }}
-          />
-          <Map
             style={{ width: "1048px", height: "768px" }}
             zoom={15}
             center={{ lat: 42.354492334658644, lng: -88.01122761349113 }}
