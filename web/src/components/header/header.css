@@ -17,10 +17,7 @@
   margin-top: 50px;
 }
 .green_varnum_corner {
-  /* min-height: 100%;
-  min-width: 100%; */
-  opacity: 2px;
-  width: 45rem;
+  width: 50%;
 }
 /* .right-corner REMOVED THE CORNER IMAGE -messing up the right side{
   position: relative; Stick to screen corner */
@@ -150,7 +147,7 @@
   }
   .green_varnum_corner {
     opacity: 2px;
-    width: 21rem;
+    width: 50%;
   }
   .dropdown {
     display: block;
@@ -179,14 +176,5 @@
   .nav-link {
     padding: 10px 10px 10px 10px;
     border-bottom: 1px solid #333;
-  }
-  .right-corner {
-    position: absolute; /* Stick to screen corner */
-    top: 0;
-    right: 0;
-    width: 150px; /* Adjust size */
-    height: auto;
-    transform: rotate(270); /* Rotate as needed (270° = turn left) */
-    opacity: 2; /* slightly transparent */
   }
 }
