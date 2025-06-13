@@ -5,7 +5,8 @@
 
 .slide-in {
   width: 300px;
-  animation: slideInFromLeft 1s ease-out forwards;
+  position: relative;
+  animation: slideInFromRight 15s ease-out forwards;
   opacity: 0;
 }
 
