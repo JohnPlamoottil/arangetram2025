@@ -124,7 +124,7 @@ added on June3
 
 ## Instructor - Biodata of the instructor 
 Jinoo Varghese, the Artistic Director of Soorya Dance School is an accomplished exponent of Bharatanatyam and Kuchipudi style of dancing and well known choreographer of Indian dance forms. From the age of 4, she had training from eminent gurus - Kalamandalam Mohana Tulsi, Kalakshetra Vilasini, Girija Chandran (Regatta) etc. She received Govt of India National Talent Scholarship for Bharatanatyam at the age of 12. Dance was her passion and now she is the Artistic Director of Soorya Dance School, Northbrook Illinois.
-[Dance School Channel](http://www.youtube.com/@sooryadanceschool3866)
+
 
 NATTUVANGAM
 Smt. Jinoo Varghese is an accomplished dancer and instructor of Bharatanatyam and is the Artistic Director of Soorya Dance School. She started learning dance at the age of 5 under Guru Mohana Tulsi, and she further learned Bharatanatyam under Smt. Girija Chandran. She is the recipient of the merit scholarship from CCRT, New Delhi in the field of Bharatanatyam. She has worked closely with many eminent gurus in India on their productions all over India. She has performed as a soloist at prestigious venues receiving critical acclaim. As a choreographer, she has created numerous short works and evening-length productions. Through her dance academy, Soorya Dance School at Northbrook, IL, she is able to put her passion for dance into action.
@@ -147,6 +147,12 @@ In August 2003, the Performing Arts Building was officially renamed the James Lu
 Deepu Karunakaran is a Diploma holder in Carnatic Music and Violin from the Kalakshetra Foundation. He started learning music at the age of 5 under Guru Janardhanan Potty. He has performed in many countries with leading Bharatanatyam artists as well as Kalakshetra artists. His strongest role is as a vocalist, and in this capacity, he has toured all over the world. He has been teaching Carnatic music to many students in India. He has won the Central Government Of India Scholarship for Classical V ocal from 2000 to 2002. He is also a recipient of
 the Vijayalakshmi Endowment award for the best supporting vocal of the year 2008 from Krishna Gana Sabha in Chennai.
 
+
+              Next will be a solo presentation by Andrea Jerril Thomas. First, I
+              would like to invite onto the stage to say a few words.
+              <br />
+
+
 # MRIDANGAM
 Kiran R. Pai is a B-HIGH graded mridangam artist from All India Radio Chennai. He began his journey of learning mridangam from the institution Kalabhavan in Cochin. He later received advanced training from Sri. Balakrishna Kamath. He commenced his musical career in Chennai in the year 2011 from the reputed
 Kalakshetra Foundation under gurus Sri. K.P. Anilkumar and Sri. Gurubharadwaj, and completed his diploma along with Post Graduation from the University of Madras. Currently, he's pursuing mridangam under the guidance of Sri. Neyveli R. Narayanan. He has achieved awards for the Best Mridangam Accompaniment from
@@ -162,154 +168,45 @@ Shri Cherthala S Dinesh, earning a diploma in the instrument. Preyesh has accomp
 
 
 ## Program Guide 
-**Seating @3:30**
 
-Good evening everyone. I am MC1, one of the MCs of the
-evening. In 5 minutes, we will be starting the 'Samarpanam
-2025' function. Everyone please take your seats now so we
-can start the program at 4:00pm. The doors will be closed at
-4pm and we request that everyone be seated during the
-program to avoid any disruption. We also ask that you please
-silence your cell phones as it will also be a disruption to the
-program. Coffee will be available in the Hallway by 5pm. Please
-be sure to grab a brochure on your way in.
 
-Good evening everyone. I am MC2, one of the MCs of the
-evening. In 5 minutes, we will be starting the 'Samarpanam
-2025' function. Everyone please take your seats now so we can
-start the program at 4:00pm. The doors will be closed at 4pm
-and we request that everyone be seated during the program to
-avoid any disruption. We also ask that you please silence your
-cell phones as it will also be a disruption to the program. Please
-move towards the center of the auditorium so that those who
-are coming late can quikly be seated. Coffee will be available in
-the Hallway by 5pm. Please be sure to grab a brochure on your
-way in.
+
+
+
 
 # Welcome Message
-**[MC] Start time - Sharp 4:00pm**
-Respected Priests, Invited Guests, Family and Friends, I
-welcome you all to the eagerly awaited "SAMARPANAM 2025"
-Bharathanatyam Arangetram of 6 talented young dancers -
-Amarya Koola, Andrea Jeril Thomas, Jana Scaria, Jenna
-Plamoottil, Michele Eapen & Rose Thomas - which is being
-held under the guidance of Smt. Jinoo Varghese, the artistic
-director of Soorya Dance School. 
-These young girls have worked very hard to achieve their dreams and this was possible only because of the love and unwavering support of their parents. 
-I would like to invite, to the stage  ...
-the parents of Andrea - Jeril and Shipla Thomas (708-548-4971), 
-the parents of Jana - Santosh and Lija Scaria (847-714-6548), 
-the parents of Michelle - Priyan & Jincy Eapen (224-388-8571), 
-the parents of Rose - Bejoy and Marisa Thomas (847-722-6976),
-the parents of Jenna - John and Leena Plamoottil (847-219-9914),
-the parents of Amarya - John and Latha Chirayil Koola, (773-426-4993).
 
-I would like to invite - for the welcome address on behalf of the parents.
+
 # Prayer by Priest
-Thank you - and all of the parents for all of your hardwork.
-For any function, the presence of priests is important for God's
-blessing. I respectfully invite Rev. Fr. - , to the stage to bless
-this occasion.
-I would like to invite Rev. Fr. - to offer a short prayer.
+
 # Few Announcements
-Thank you Achens for your blessings on this occassion.
-Today's program will be completed in 3.5 hours with a 10
-minute break during the program. Coffee and refreshments are
-available outside in the hallway. Dinner will be served at the
-conculsion of the program. Please note that food and
-beverages are not allowed in the auditorium. Please move
-towards the center of the auditorium so that those who are
-coming late can quikly be seated. Without any further delay we
-are starting the program. Our 6 dancers have worked very hard
-for the past 4 years for this big day, please encourage them at
-every opportunity. We hope that you enjoy the program.
+
+
 # Introducing Musicians
-I would like to put the spotlight on the musicians, who are the
-glue holding the performance together. The musical accompaniment transforms the dance and elevates the audience to a higher dimension.
-The musicians for the evening are
-Nattuvangam - Smt. Jinoo Varghese (pause)
-Vocal - Sri.Deepu Karunakaran (pause)
-Mridangam - Sri Kiran R. Pai (pause)
-Violin - Sri Rijesh Gopalakrishnan (pause)
-Flute- Sri Preyesh Mampoyil Kudiru Parambu (pause)
-I request the musicians to start the performance with a prayer song.
-Thank You!
+
 
 # Prayer Song by Musicians
-4:25 PM to 4:28 PM
 
-Lets welcome the dancers to introduce their first item of this
-Arangetram recital
 
-Invocatory Item - Group
-Sri Gurubya Namaha!
-Namaskaram, On behalf of Soorya Dance School and our
-teacher Smt.Jinoo Varghese, I take immense pleasure in
-presenting to you today - Samarpanam. We commence our
-Arangetram with a ‘Pushpanjali’ - The word ‘Anjali’ means ‘an
-offering’, Pushpanjali is an offering of flowers by the dancer. It
-is an invocation piece done at the beginning of a performance.
-This item is unique as this is in praise of Mother Mary, as we
-humbly seek your blessings for a smooth performance today,
-as we come to you for guidance and knowledge. Pushpanjali
-set in Ragam - Ragamalika and Talam - Adi
 
-Ragam - Tillang
-Talam - Adi
+                           Let us watch Andrea's solo performance. <br />
+              [MC2] - Next item is ‘Sada shiva Kavuthuvam’, Kauthuvams are
+              traditional invocatory pieces performed in praise of a deity,
+              blending rhythmic syllables with expressive storytelling. In this
+              item, the dancer offers reverence to Lord Sadashiva, the eternal
+              and auspicious form of Shiva — the cosmic dancer, creator, and
+              destroyer. Through dynamic movements, precise rhythm, and powerful
+              abhinaya, this piece invokes Lord Shiva’s grace and grandeur,
+              celebrating his divine energy and timeless presence in the
+              universe. Ragam: Kalyani & Talam: Sankeerna Jathi triputa talam
 
-Pushpanjali, meaning “offering of flowers,” is the traditional invocatory piece that begins a Bharatanatyam Margam. In this item, the dancer offers flowers as a mark of respect to the deity, the guru, the musicians, and the audience. Set to a lively rhythm, Pushpanjali combines graceful movements and rhythmic footwork, invoking divine blessings for an auspicious beginning. It sets the tone for the performance that follows, symbolizing devotion, humility, and the dancer’s readiness to embark on a sacred artistic journey.
 
-[MC1] slow saying
-Let us take a look at the talent that has gone into the creation of this beautiful performance.
-First, rhythmic beats of Nattuvangam by Smt. Jinoo Varghese -
-Smt Jinoo Varghese is an accomplished dancer and instructor
-of Bharatanatyam and is the Artistic Director of Soorya Dance
-School. She started learning dance at the age of 5 under Guru
-Mohana Tulsi, further learned Bharatanatyam under Smt.Girija
-Chandran. She is the recipient of the merit scholarship from
-CCRT, New Delhi in the field of Bharatanatyam. She has
-worked closely with many eminent gurus in India on their
-productions all over India. She has performed as a soloist at
-prestigious venues receiving critical acclaim. As a
-choreographer, she has created numerous
-short works and evening-length productions. Through her
-dance academy, Soorya Dance school at Northbrook, IL, she is
-able to put her passion for dance into action.
-Please join me in recognizing Smt. Jinoo Varghese. (clap)
-Next, Melodious Vocals by Sri Deepu Karunakaran is a
-Diploma holder in Carnatic Music and Violin from Kalakshetra
-Foundation. He started learning music at the age of 5 under
-Guru Janardhanan Potty. Further learned Vocal from Later
-under Late Shri Vairamangalam. S. Lakshminarayanan,Violin
-from Shri. Pakkala Ramadas, Lec in Kalakshetra. He has performed with the most
-eminent Indian Classical Dancers such as the Dhananjayans,
-Leela Samson, Prof.C.V Chandrasekhar, Priyadarshini Govind,
-Sreelatha Vinod, Shobhana, Sheejith Krishna, Shijith Nambiar,
-Kiran Subrahmanyam. He has performed in many countries
-with leading bharatanatyam artistes as well as Kalakshetra
-artistes. His strongest role is as a vocalist, and in this capacity
-he has toured all over the world. He has been teaching Carnatic
-music for many students in India.
-He has won the Central Government Of India Scholarship for
-Classical Vocal, in the year 2000-2002. Recipient of the
-Vijayalakshmi Endowment award for the best supporting vocal
-of the year 2008 from Krishna Gana Sabha, Chennai
-Please join me in recognizing Sri Deepu Karunakaran (clap)
 
-Next will be a solo presentation by Andrea Jerril Thomas. 
-First, I would like to invite onto the stage to say a few words. [ speak]
-Let us watch Andrea's solo performance.
 
-[MC2] - Next item is ‘Sada shiva Kavuthuvam’,
-Kauthuvams are traditional invocatory pieces performed in
-praise of a deity, blending rhythmic syllables with expressive
-storytelling. In this item, the dancer offers reverence to Lord
-Sadashiva, the eternal and auspicious form of Shiva — the
-cosmic dancer, creator, and destroyer. Through dynamic
-movements, precise rhythm, and powerful abhinaya, this piece
-invokes Lord Shiva’s grace and grandeur, celebrating his divine
-energy and timeless presence in the universe. Ragam: Kalyani
-& Talam: Sankeerna Jathi triputa talam
+
+
+
+
 
 # Solo 1 Andrea Jeril Thomas
 Ragam: Kalyani
