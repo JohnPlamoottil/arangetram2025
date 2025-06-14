@@ -33,7 +33,7 @@ const Header = () => {
               </h3>
               <div className="instructions">
                 Please select the appropirate dancer from the dropdown selecton
-                on the leftside of this page.
+                on the leftside of this page to view their Shishya.
               </div>
             </div>
           </div>
