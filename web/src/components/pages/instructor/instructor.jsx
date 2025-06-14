@@ -28,17 +28,19 @@ const Instructor = () => {
             Shreemathi Smt. Jinoo Varghese <br />
             Soorya Dance School
           </h2>
-          <img className="avatar" src={avatar} alt="avatar"></img>
-          <img
-            className="soorya_school"
-            src={soorya_dance_school}
-            alt="school"
-          ></img>
+          <div className="instructor__image-container">
+            <img className="avatar" src={avatar} alt="avatar" />
+            <img
+              className="soorya_school"
+              src={soorya_dance_school}
+              alt="school"
+            />
+          </div>
           <img
             className="instructor_with_girls"
             src={instructor_with_girls}
             alt="instructor_with_girls"
-          ></img>
+          />
           <button className="accordion_program" onClick={handleClick}>
             Instructor - Biography (click to open) <br />
           </button>
@@ -73,7 +75,7 @@ const Instructor = () => {
             className="instructor_with_girls_onstage"
             src={instructor_with_girls_onstage}
             alt="instructor_with_girls_ onstage"
-          ></img>
+          />
           <button className="accordion_program" onClick={handleClick}>
             Nattuvangam (click to open)
           </button>
