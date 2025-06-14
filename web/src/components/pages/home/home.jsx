@@ -1,5 +1,5 @@
 import "./Home.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../../header/header";
 import Footer from "../../footer/footer";
 import tillana from "../../../assets/tillana.png";
