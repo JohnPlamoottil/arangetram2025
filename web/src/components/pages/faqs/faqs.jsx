@@ -30,7 +30,6 @@ const FAQs = () => {
       <section className="questions">
         <h2 className="title_FAQ">Frequently Asked Questions (FAQs)</h2>
         <button className="accordion" onClick={handleClick}>
-          {/* <span className="plus_sign">+</span> */}
           What is Bharatanatyam?
         </button>
         <div className="panel">
