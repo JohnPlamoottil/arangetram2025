@@ -8,14 +8,21 @@
   height: 100%;
 }
 .instructor_with_girls_onstage {
-  width: 100%;
+  width: 610%;
 }
 
 .instructor_with_girls {
   width: 100%;
 }
 .guru_second {
-  width: 100%;
+  width: 65%;
+  text-align: center;
+}
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Full viewport height */
 }
 
 .instructor__image-container {

@@ -72,11 +72,13 @@ const Instructor = () => {
               Illinois.
             </p>
           </div>
-          <img
-            className="instructor_with_girls_onstage"
-            src={instructor_with_girls_onstage}
-            alt="instructor_with_girls_ onstage"
-          />
+          <div className="center-image">
+            <img
+              className="instructor_with_girls_onstage"
+              src={instructor_with_girls_onstage}
+              alt="instructor_with_girls_ onstage"
+            />
+          </div>
           <button className="accordion_program" onClick={handleClick}>
             Nattuvangam (click to open)
           </button>
@@ -102,7 +104,9 @@ const Instructor = () => {
           </div>
         </section>
       </div>
-      <img className="guru_second" src={guru_second} alt="guru_second" />
+      <div className="center-image">
+        <img className="guru_second" src={guru_second} alt="centered" />
+      </div>
       <Footer />
     </div>
   );
