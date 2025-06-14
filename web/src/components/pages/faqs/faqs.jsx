@@ -14,12 +14,6 @@ const FAQs = () => {
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
-
-    // if (panel.style.display === "block") {
-    //   panel.style.display = "none";
-    // } else {
-    //   panel.style.display = "block";
-    // }
   }
   // first off theres is an eventhandler called handle click that will handle any clickEvent on the button on the page
   // now the function takes in an event as a function,
