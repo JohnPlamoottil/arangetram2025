@@ -50,7 +50,13 @@
 .accordion:hover {
   background-color: #ccc;
 }
-
+.sidenote {
+  background-color: silver;
+  font-family: "Amita";
+  font-size: 15px;
+  text-align: center;
+  color: indianred;
+}
 /* Style the accordion panel. Note: hidden by default */
 .panel_program {
   padding: 0 18px;

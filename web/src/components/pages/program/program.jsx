@@ -21,8 +21,12 @@ const Program = () => {
         <section className="question">
           <h2 className="title_Program">
             Program Schedule (Repertoire) <br />
-            Seating Promptly Begins at 3:30pm CST
+            Doors will open at 3:30pm CST
           </h2>
+          <p className="sidenote">
+            We welcome you to come early and enjoy the decorations and to take
+            pics in lobby before seating.
+          </p>
           <button className="accordion_program" onClick={handleClick}>
             Master of Ceremony (M.C.) Introductions <br />
           </button>
