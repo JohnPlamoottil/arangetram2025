@@ -149,6 +149,7 @@ the Vijayalakshmi Endowment award for the best supporting vocal of the year 2008
 Kiran R. Pai is a B-HIGH graded mridangam artist from All India Radio Chennai. He began his journey of learning mridangam from the institution Kalabhavan in Cochin. He later received advanced training from Sri. Balakrishna Kamath. He commenced his musical career in Chennai in the year 2011 from the reputed
 Kalakshetra Foundation under gurus Sri. K.P. Anilkumar and Sri. Gurubharadwaj, and completed his diploma along with Post Graduation from the University of Madras. Currently, he's pursuing mridangam under the guidance of Sri. Neyveli R. Narayanan. He has achieved awards for the Best Mridangam Accompaniment from
 the Spirit of Y outh and the HCL Best Concert Award from the Music Academy. He also won the CCRT Scholarship for Junior Artists from the Ministry of Culture.
+[instagram profile] <https://www.instagram.com/kiran_r_pai/?hl=en>;
 
 # VIOLINIST
 Sri Rijesh Gopalakrishnan started learning violin and vocals under the tutelage of his father Gopalakrishnan Cheruvila at the age of 4. He started performing at the age of 8 and simultaneously learned T abala under Haris Bhai. Further, he moved to Chennai for advanced training in vocal and violin at the famous Kalakshetra Foundation, where he received his Diploma. Rijesh has been part of national and international festivals such as the Konark Festival, Soorya Festival, and Khajhraho Festival. He has visited countries such as Singapore,
