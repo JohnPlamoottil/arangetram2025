@@ -14,3 +14,23 @@
 .instructor_with_girls {
   width: 100%;
 }
+
+.instructor__image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 390px) {
+  .avatar {
+    width: 220px;
+    height: auto;
+  }
+  .soorya_school {
+    flex-direction: column;
+    width: 320px;
+    height: 100%;
+  }
+  .instructor__image-container {
+    flex-direction: column;
+  }
+}
