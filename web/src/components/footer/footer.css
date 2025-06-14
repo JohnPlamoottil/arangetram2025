@@ -112,10 +112,11 @@
   margin-left: 34px;
 }
 .moms_and_daughters {
-  width: 80%;
+  width: 95%;
   height: fit-content;
-  margin-top: 350px;
+  margin-top: 10px;
   margin-right: 200px;
+  margin-left: 1%;
 }
 @media screen and (max-width: 768px) {
   .footer {
