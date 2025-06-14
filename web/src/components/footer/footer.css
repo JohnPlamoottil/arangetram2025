@@ -7,6 +7,7 @@
   font-family: "Amita";
   font-size: 16px;
   background-color: silver;
+  margin-top: 72px;
 }
 .footer__wrapper {
   display: flex;
@@ -29,10 +30,6 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
-  justify-items: center; */
 
   padding: 2rem;
 }
