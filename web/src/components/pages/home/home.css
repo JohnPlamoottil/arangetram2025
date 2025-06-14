@@ -31,7 +31,12 @@
   height: 100%;
   max-width: 100%;
 }
-
+.dropwdown__title {
+  font-family: "Amita";
+  font-size: 30px;
+  color: indianred;
+  background-color: tan;
+}
 .quote-container {
   max-width: 800px;
   margin: 40px auto;
