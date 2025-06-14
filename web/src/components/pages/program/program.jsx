@@ -130,9 +130,12 @@ const Program = () => {
               glue holding the performance together. The musical accompaniment
               transforms the dance and elevates the audience to a higher
               dimension. <br />
+              I request the musicians to start the performance with a prayer
+              song. Thank You! <br />
               The musicians for the evening are: <br />
-              Nattuvangam - Smt. Jinoo Varghese <br />
-              <span className="program__Vocals">
+              Nattuvangam - Smt. Jinoo Varghese (Instructor)
+              <br />
+              <span className="program__Musicians">
                 Vocals - Sri.Deepu Karunakaran{" "}
               </span>
               <br />
@@ -155,9 +158,54 @@ const Program = () => {
               Sabha, Chennai Please join me in recognizing Sri Deepu Karunakaran{" "}
               <br />
               Mridangam - Sri Kiran R. Pai <br />
+              I would like to continue to recognize the talents of our
+              musicians. Kiran R. Pai is a B-HIGH graded mridangam artist from
+              All India Radio Chennai. He began his journey of learning
+              mridangam from the institution Kalabhavan in Cochin. He later
+              received advanced training from Sri. Balakrishna Kamath. He
+              commenced his musical career in Chennai in the year 2011 from the
+              reputed Kalakshetra Foundation under gurus Sri. K.P. Anilkumar and
+              Sri. Gurubharadwaj, and completed his diploma along with Post
+              Graduation from the University of Madras. Currently, he's pursuing
+              mridangam under the guidance of Sri. Neyveli R. Narayanan. He has
+              achieved awards for the Best Mridangam Accompaniment from the
+              Spirit of Youth and the HCL Best Concert Award from the Music
+              Academy. He also won the CCRT Scholarship for Junior Artists from
+              the Ministry of Culture. Please join me in recognizing Sri Kiran
+              R. Pai. <br />
               Violin - Sri Rijesh Gopalakrishnan <br />
-              Flute- Sri Preyesh Mampoyil Kudiru Parambu <br />I request the
-              musicians to start the performance with a prayer song. Thank You!
+              Sri Rijesh Gopalakrishnan started learning violin and vocals under
+              the tutelage of his father Gopalakrishnan Cheruvila at the age of
+              4. He started performing at the age of 8 and simultaneously
+              learned Tabala under Haris Bhai. Further, he moved to Chennai for
+              advanced training in vocal and violin at the famous Kalakshetra
+              Foundation, where he received his Diploma. Rijesh has been part of
+              national and international festivals such as the Konark Festival,
+              Soorya Festival, and Khajhraho Festival. He has visited countries
+              such as Singapore, Malaysia, Japan, and the United States to name
+              a few. He has also been performing for the past 20 years. Please
+              join me in recognizing Sri Rijesh Gopalakrishnan (clap) <br />
+              Flute- Sri Preyesh Mampoyil Kudiru Parambu <br />
+              Preyesh Mampoyil Kudiru Parambu is a passionate Carnatic flautist
+              and a disciple of Vidwan Shri Shailesh Ramamurthy. An alumnus of
+              Chembai Memorial Government Music College, Palakkad, he represents
+              the second generation of musicians in his family. His father was a
+              renowned Mridangist, and his siblings are accomplished in
+              classical dance and vocal music. Preyesh began vocal training at
+              age 7 and later trained in flute under Shri Rajagopal, Shri
+              Palakkad Krishna Iyer, and currently under Shri Shailesh
+              Ramamurthy. He also learned Mridangam from his father and
+              furthered it with Vidwans Shri Alappuzha Chandrashekaran Nair and
+              Shri Cherthala S Dinesh, earning a diploma in the instrument.
+              Preyesh has accompanied prominent dance artists like Kalakshetra
+              Rajalakshmi and Kalamandalam Preetha Rajagopal. His solo
+              performances include a 2022 recital at the Sharjah Festival and
+              appearances at the Indian Pavilion in Global Village, Dubai. He
+              also had the honor of performing with an Arabic band led by Mr.
+              Khalil Ghadri. Beyond performing, Preyesh has composed several
+              musical albums. He is currently based in the UAE and performs
+              regularly in India and abroad. Please join me in recognizing Sri
+              Preyesh Mampoyil Kudiru Parambu (clap) <br />
             </p>
             <p>
               Lets welcome the dancers to introduce their first item of this
@@ -167,8 +215,6 @@ const Program = () => {
 
           <button className="accordion_program" onClick={handleClick}>
             Pushpanjali - Group Dance <br />
-            4:30 -4:38pm
-            <br />
           </button>
           <div className="panel_program">
             <p>
@@ -196,17 +242,6 @@ const Program = () => {
               invoking divine blessings for an auspicious beginning. It sets the
               tone for the performance that follows, symbolizing devotion,
               humility, and the dancer’s readiness to embark on a sacred
-              artistic journey.
-            </p>
-            <p>
-              Pushpanjali, meaning “offering of flowers,” is the traditional
-              invocatory piece that begins a Bharatanatyam Margam. In this item,
-              the dancer offers flowers as a mark of respect to the deity, the
-              guru, the musicians, and the audience. Set to a lively rhythm,
-              Pushpanjali combines graceful movements and rhythmic footwork,
-              invoking divine blessings for an auspicious beginning. It sets the
-              tone for the performance that follows, symbolizing devotion,
-              humility, and the dancer’s readiness to embark on a sacred
               artistic journey. <br />
             </p>
           </div>
@@ -215,53 +250,279 @@ const Program = () => {
             Solo 1 - Andrea Jeril Thomas
           </button>
           <div className="panel_program">
-            <p></p>
+            <p>
+              [MC1] Next will be a solo presentation by Andrea Jerril Thomas.{" "}
+              <br />
+              First, I would like to invite onto the stage to say a few words.
+              <br />
+              Let us watch Andrea's solo performance. <br />
+              [MC2] - Next item is ‘Sada shiva Kavuthuvam’, Kauthuvams are
+              traditional invocatory pieces performed in praise of a deity,
+              blending rhythmic syllables with expressive storytelling. In this
+              item, the dancer offers reverence to Lord Sadashiva, the eternal
+              and auspicious form of Shiva — the cosmic dancer, creator, and
+              destroyer. Through dynamic movements, precise rhythm, and powerful
+              abhinaya, this piece invokes Lord Shiva’s grace and grandeur,
+              celebrating his divine energy and timeless presence in the
+              universe. Ragam: Kalyani & Talam: Sankeerna Jathi triputa talam
+            </p>
+            <p>
+              Ragam: Kalyani <br />
+              Talam: Sankeerna Jathi triputa talam <br />
+              ‘Sada Shiva Kavuthuvam’, Kauthuvams are traditional invocatory
+              pieces performed in praise of a deity, blending rhythmic syllables
+              with expressive storytelling. In this item, the dancer offers
+              reverence to Lord Sadashiva, the eternal and auspicious form of
+              Shiva — the cosmic dancer, creator, and destroyer. Through dynamic
+              movements, precise rhythm, and powerful abhinaya, this piece
+              invokes Lord Shiva’s grace and grandeur, celebrating his divine
+              energy and timeless presence in the universe.
+            </p>
           </div>
+
           <button className="accordion_program" onClick={handleClick}>
-            What do I wear?
+            Solo 2 - Jana Scaria
           </button>
           <div className="panel_program">
             <p>
-              The host typically wears traditional Indian wear. The guest can
-              wear formal, semi-formal or business attire.
+              [MC1] Next will be a solo presentation by Jana Scaria. First, I
+              would like to invite onto the stage to say a few words. [ speaks]
+              Let us watch Jana's solo performance. <br />
+              [MC(2)] ‘Esther’ is a Padam based on the biblical story of Esther,
+              the beautiful Jewish queen. The dancer describes the story where
+              Esther asks the king to a dinner party. The king was happy and
+              granted her a wish, Esther reveals her true purpose and explains
+              Haman's wicked plan to destroy her and her people. The King
+              ordered to execute Haman on the gallows he built for Mordecai. The
+              Story of Esther emphasizes the power of God, instructing us we
+              should use his blessings to help others. Orchestra plays Ragam
+            </p>
+            <p>
+              Ragam: Ragamalika <br />
+              Talam: Adi <br />
+              ‘Esther’ is a Padam based on the biblical story of Esther, the
+              beautiful Jewish queen. The dancer describes the story where
+              Esther asks the king to a dinner party. The king was happy and
+              granted her a wish, Esther reveals her true purpose and explains
+              Haman's wicked plan to destroy her and her people. The King
+              ordered to execute Haman on the gallows he built for Mordecai. The
+              Story of Esther emphasizes the power of God, instructing us we
+              should use his blessings to help others.
             </p>
           </div>
           <button className="accordion_program" onClick={handleClick}>
-            What do I bring?
+            Solo 3 - Michelle Eapen
           </button>
           <div className="panel_program">
             <p>
-              Your prescence is the greatest gift to the hosts. In some events,
-              a non-profit cause is designated by the performer. You may choose
-              to donate to that cause but there is no obligation to do so.
+              [MC1] Next will be a solo presentation by Michelle Eapen. First, I
+              would like to invite onto the stage to say a few words. [ speak]
+              Let us watch Michelle's solo performance. <br />
+              [MC2] - ‘Durge Durge Jaya Jaya Durge’ appears to be a devotional
+              phrase in Sanskrit dedicated to the goddess Durga, a Hindu deity
+              symbolizing strength and protection. The words “Durge Durge”
+              invoke the name of Durga twice, emphasizing her power. “Jaya Jaya”
+              translates to “victory, victory,” praising her triumph. This
+              phrase is commonly chanted during festivals like Navaratri, where
+              Durga is celebrated for her victory over evil. The repetition of
+              her name and the phrase’s meaning emphasize devotion and
+              reverence. Orchestra plays Ragam
+            </p>
+            <p>
+              Ragam: Revathi <br />
+              Talam: Adi <br />
+              ‘Durge Durge Jaya Jaya Durge’ appears to be a devotional phrase in
+              Sanskrit dedicated to the goddess Durga, a Hindu deity symbolizing
+              strength and protection. The words “Durge Durge” invoke the name
+              of Durga twice, emphasizing her power. “Jaya Jaya” translates to
+              “victory, victory,” praising her triumph. This phrase is commonly
+              chanted during festivals like Navaratri, where Durga is celebrated
+              for her victory over evil. The repetition of her name and the
+              phrase’s meaning emphasize devotion and reverence.
             </p>
           </div>
           <button className="accordion_program" onClick={handleClick}>
-            How long is each dance item?
+            Varnum -Group Dance
           </button>
           <div className="panel_program">
             <p>
-              Each dance item is roughly 10 minutes in duration. the"varnum"
-              (centerpiece) is longer - closer to 40minutes. Overall, expect the
-              program to last about 3 hours.
+              [MC1] This Varnam is a tribute to Kerala — a land shaped by
+              legend, where sage Parasurama is believed to have reclaimed the
+              earth from the sea. Through graceful movements and expressive
+              storytelling, the dancer explores Kerala’s natural beauty,
+              spiritual harmony, and rich cultural heritage. <br />
+              [MC2]The piece celebrates the state’s classical art forms,
+              including the dramatic elegance of Kathakali and the gentle grace
+              of Mohiniyattam, capturing the vibrant soul of God’s Own Country.{" "}
+              <br />
+              Ragam: Ragamalika <br />
+              Talam: Adi <br />
+              This Varnam is a tribute to Kerala — a land shaped by legend,
+              where sage Parasurama is believed to have reclaimed the earth from
+              the sea. Through graceful movements and expressive storytelling,
+              the dancer explores Kerala’s natural beauty, spiritual harmony,
+              and rich cultural heritage. The piece celebrates the state’s
+              classical art forms, including the dramatic elegance of Kathakali
+              and the gentle grace of Mohiniyattam, capturing the vibrant soul
+              of God’s Own Country
             </p>
           </div>
           <button className="accordion_program" onClick={handleClick}>
-            Are there coffee breaks and intermission?
+            Intermission
           </button>
           <div className="panel_program">
             <p>
-              There are short breaks between dance items. There are two larger
-              breaks for costume changes after 2 to 3 dance items.
+              MC1 announces coffee break <br />
+              We will now take a 10 minute coffee break. Coffee is available
+              outside of the theater. Please do not bring food or drink into the
+              auditorium. Please be back by in the auditorium by 6:10. Thank
+              you. <br />
+              MC2 announces short intermission <br />
+              We are now half way done with our program. I request everyone to
+              be seated and to not exit while the program is still going on
+              (unless it is an emergency ). Continuous movement will cause much
+              disturbance for the audience trying to watch the program. We will
+              now resume the program.
             </p>
           </div>
           <button className="accordion_program" onClick={handleClick}>
-            Can I leave early if I have other commitments?
+            Musical Interlude
+          </button>
+          <div className="panel_program">
+            <p>Next is a musical interlude 6:21-6:25pm</p>
+          </div>
+          <button className="accordion_program" onClick={handleClick}>
+            Solo 4 - Rose Thomas
           </button>
           <div className="panel_program">
             <p>
-              We would love for you to stay for the whole program and join us
-              for dinner. However, we understand if you have to leave earlier.
+              [MC1] Next will be a solo presentation by Rose Thomas. First, I
+              would like to invite [] onto the stage to say a few words. <br />
+              Let us watch Rose's solo performance. <br />
+              Pradosha Samayadi’ is a vibrant composition that describes the
+              dance of Lord Shiva during Pradosha Samaya (bimonthly occasion on
+              the thirteenth day of every fortnight in the Hindu calendar).The
+              composer describes His Tandava in a very spectacular way and talks
+              about how Nandi plays the Mridangam and Lord Ganesha plays the
+              Nattuvangam and Lord Shiva dances Blissfully. Goddess Parvathi
+              also enjoys his dance.
+            </p>
+            <p>
+              Ragam: Purvi Kalyani <br />
+              Talam: Adi <br />
+              ‘Pradosha Samayadi’ is a vibrant composition that describes the
+              dance of Lord Shiva during Pradosha Samaya (bimonthly occasion on
+              the thirteenth day of every fortnight in the Hindu calendar).The
+              composer describes His Tandava in a very spectacular way and talks
+              about how Nandi plays the Mridangam and Lord Ganesha plays the
+              Nattuvangam and Lord Shiva dances Blissfully. Goddess Parvathi
+              also enjoys his dance.
+            </p>
+          </div>
+          <button className="accordion_program" onClick={handleClick}>
+            Solo 5 - Jenna Plamoottil
+          </button>
+          <div className="panel_program">
+            <p>
+              [MC1] Next will be a solo presentation by Jenna Plamoottil. <br />
+              First, I would like to invite onto the stage to say a few words. [
+              speak] <br />
+              Let us watch Jenna's solo performance. <br />
+              ‘Magdalena Mariam’, is based on a renowned Malayalam poem by
+              Mahakavi Vallathol Narayana Menon. It portrays a powerful moment
+              from Mary Magdalene’s life — from being condemned as a sinner to
+              finding redemption. As she is brought before Jesus to be stoned,
+              He responds with compassion, urging the crowd that only one
+              without sin may cast the first stone. The piece ends with Mary’s
+              heartfelt repentance at His feet, symbolizing forgiveness, grace,
+              and transformation.
+            </p>
+            <p>
+              Ragam: Ragamalika <br />
+              Talam: Adi <br />
+              ‘Magdalena Mariam’, is based on a renowned Malayalam poem by
+              Mahakavi Vallathol Narayana Menon. It portrays a powerful moment
+              from Mary Magdalene’s life — from being condemned as a sinner to
+              finding redemption. As she is brought before Jesus to be stoned,
+              He responds with compassion, urging the crowd that only one
+              without sin may cast the first stone. The piece ends with Mary’s
+              heartfelt repentance at His feet, symbolizing forgiveness, grace,
+              and transformation.
+            </p>
+          </div>
+          <button className="accordion_program" onClick={handleClick}>
+            Solo 6 - Amarya Koola
+          </button>
+          <div className="panel_program">
+            <p>
+              [MC1] Next will be a solo presentation by Amarya Koola. <br />
+              First, I would like to invite onto the stage to say a few words. [
+              speak] <br />
+              Let us watch Amarya's solo performance. <br />
+              ‘Tarangam’ means waves and features stories from Lord Krishna’s
+              life — his childhood, playful pranks, and marriage to Rukmini.
+              This piece highlights Krishna’s divine beauty and the deep love of
+              the gopis. It portrays the story of Krishna’s headache being cured
+              by the dust of Radha’s feet, symbolizing her pure, selfless
+              devotion.
+            </p>
+            <p>
+              Ragam: Ragamalika <br />
+              Talam: Adi <br />
+              ‘Tarangam’ means waves and features stories from Lord Krishna’s
+              life — his childhood, playful pranks, and marriage to Rukmini.
+              This piece highlights Krishna’s divine beauty and the deep love of
+              the gopis. It portrays the story of Krishna’s headache being cured
+              by the dust of Radha’s feet, symbolizing her pure, selfless
+              devotion.
+            </p>
+          </div>
+          <button className="accordion_program" onClick={handleClick}>
+            Thillana - Group Dance
+          </button>
+          <div className="panel_program">
+            <p>
+              [MC1] Next is a musical interlude <br />
+              [MC2] We have come to the last item of today's performance. <br />
+              Let's hear the details of this item directly from the dancers. To
+              conclude today’s arangetram recital we will be presenting
+              Thillana. ‘Thillana’, is a vibrant finale to a Bharatanatyam
+              performance. This thillana is in praise of Lord Shiva that
+              combines the idea of Bhakthi rasa. After the thillana, a short
+              prayer is offered known as 'Mangalam', which seeks divine
+              blessings for the well-being of everybody. Thillana
+            </p>
+            <p>
+              Ragam: Atana <br />
+              Talam: Adi <br />
+              ‘Thillana’, is a vibrant finale to a Bharatanatyam performance.
+              This thillana is in praise of Lord Shiva that combines the idea of
+              Bhakthi rasa.
+            </p>
+          </div>
+          <button className="accordion_program" onClick={handleClick}>
+            Mangalam
+          </button>
+          <div className="panel_program">
+            <p>
+              A short prayer seeking divine blessings for the well-being of
+              everyone.
+            </p>
+          </div>
+          <button className="accordion_program" onClick={handleClick}>
+            Vote of Thanks
+          </button>
+          <div className="panel_program">
+            <p>
+              [MC] I would like to invite the Guru of the artists and the
+              Artistic Director of Soorya Dance School, Smt. Jinoo Varghese, to
+              the stage <br />
+              [Jinoo] Vote of Thanks, Gift presentations (musicans) and plaque
+              presentations to the dancers. Gift presentations.... <br />
+              [MC1] Thank you all for being such a great audience. We would like
+              to extend our Thanks to the College of Lake County for this
+              excellent theatre and a special thanks to the team for their
+              excellent support. Thank you, and have a good night!
             </p>
           </div>
         </section>
