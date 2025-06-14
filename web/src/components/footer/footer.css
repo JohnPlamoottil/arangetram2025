@@ -93,6 +93,9 @@
 .about__circle_animation_blurred {
   animation: pulsate 1.3s ease-in-out infinite both;
 }
+.moms_and_daughters {
+  width: 100%;
+}
 
 .facebook-link svg {
   transition: transform 0.2s ease;

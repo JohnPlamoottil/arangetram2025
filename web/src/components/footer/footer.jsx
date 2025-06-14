@@ -3,6 +3,7 @@ import "./footer.css";
 import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import youtubelogo from "../../assets/youtubelogo.png";
 import soorya_studio from "../../assets/soorya_studio.png";
+import moms_daughters from "../../assets/moms_daughters.png";
 
 const Footer = () => {
   function handleClick(e) {
@@ -108,6 +109,13 @@ const Footer = () => {
         </p>
         <div className="about__circle"></div>
         <div className="about__circle about__circle_animation_blurred"></div>
+      </div>
+      <div>
+        <img
+          className="moms_and_daughters"
+          src={moms_daughters}
+          alt="moms__daughters"
+        ></img>
       </div>
       <div>
         <Link to="/video" className="nav-link">
