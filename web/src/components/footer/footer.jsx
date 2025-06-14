@@ -33,61 +33,63 @@ const Footer = () => {
           </div>
         </div>
         <div className="box-container">
-          <div className="box-item">
-            <button className="accordion" onClick={handleClick}>
-              Parents of Andrea
-            </button>
-            <div className="panel">
-              Jeril and Shilpa Thomas
-              <p>(708) 548-4971</p>
+          <div>
+            <div className="box-item">
+              <button className="accordion" onClick={handleClick}>
+                Parents of Andrea
+              </button>
+              <div className="panel">
+                Jeril and Shilpa Thomas
+                <p>(708) 548-4971</p>
+              </div>
+            </div>
+            <div className="box-item">
+              <button className="accordion" onClick={handleClick}>
+                Parents of Michelle
+              </button>
+              <div className="panel">
+                Priyan and Jincy Eapen
+                <p>(224) 388-8571</p>
+              </div>
+            </div>
+            <div className="box-item">
+              <button className="accordion" onClick={handleClick}>
+                Parents of Jana
+              </button>
+              <div className="panel">
+                Santosh and Lija Scaria
+                <p>(847) 714-6548</p>
+              </div>
             </div>
           </div>
 
-          <div className="box-item">
-            <button className="accordion" onClick={handleClick}>
-              Parents of Michelle
-            </button>
-            <div className="panel">
-              Prince and Jincy Eapen
-              <p>(224) 388-8571</p>
+          <div>
+            <div className="box-item">
+              <button className="accordion" onClick={handleClick}>
+                Parents of Rose
+              </button>
+              <div className="panel">
+                Bejoy and Marisa Thomas
+                <p>(847) 722-6976</p>
+              </div>
             </div>
-          </div>
-
-          <div className="box-item">
-            <button className="accordion" onClick={handleClick}>
-              Parents of Jana
-            </button>
-            <div className="panel">
-              Santosh and Lija Scaria
-              <p>(847) 714-6548</p>
+            <div className="box-item">
+              <button className="accordion" onClick={handleClick}>
+                Parents of Jenna
+              </button>
+              <div className="panel">
+                John and Leena Plamoottil
+                <p>(847) 219-9914</p>
+              </div>
             </div>
-          </div>
-
-          <div className="box-item">
-            <button className="accordion" onClick={handleClick}>
-              Parents of Rose
-            </button>
-            <div className="panel">
-              Bejoy and Marisa Thomas
-              <p>(847) 722-6976</p>
-            </div>
-          </div>
-          <div className="box-item">
-            <button className="accordion" onClick={handleClick}>
-              Parents of Jenna
-            </button>
-            <div className="panel">
-              John and Leena Plamoottil
-              <p>(847) 219-9914</p>
-            </div>
-          </div>
-          <div className="box-item">
-            <button className="accordion" onClick={handleClick}>
-              Parents of Amarya
-            </button>
-            <div className="panel">
-              John and Latha Chirayil Koola
-              <p>(773) 426-4993</p>
+            <div className="box-item">
+              <button className="accordion" onClick={handleClick}>
+                Parents of Amarya
+              </button>
+              <div className="panel">
+                John and Latha Chirayil Koola
+                <p>(773) 426-4993</p>
+              </div>
             </div>
           </div>
         </div>
@@ -118,38 +120,41 @@ const Footer = () => {
           Northbrook, IL 60062 <br />
           Phone: (224) 715-5846
         </p>
-        <a
-          href="https://www.facebook.com/sooryadanceschool"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="facebook-link"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="32"
-            width="32"
-            viewBox="0 0 320 512"
-            fill="#1877F2"
-          >
-            <path d="M279.14 288l14.22-92.66h-88.91V127.89c0-25.35 12.42-50.06 52.24-50.06H293V6.26S273.57 0 256.36 0c-73.22 0-121.06 44.38-121.06 124.72v70.62H89.33V288h46V512h92.66V288z" />
-          </svg>
-        </a>
-
-        <a
-          href="https://www.youtube.com/@sooryadanceschool3866" // Replace with your actual channel URL
-          target="_blank"
-          rel="noopener noreferrer"
-          className="youtube-link"
-        >
-          <img src={youtubelogo} alt="YouTube" width="30" height="30" />
-        </a>
-        <img
-          className="soorya_studio"
-          src={soorya_studio}
-          alt="studio location"
-          width="200"
-          height="200"
-        ></img>
+        <div>
+          <div>
+            <a
+              href="https://www.facebook.com/sooryadanceschool"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="facebook-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="32"
+                width="32"
+                viewBox="0 0 320 512"
+                fill="#1877F2"
+              >
+                <path d="M279.14 288l14.22-92.66h-88.91V127.89c0-25.35 12.42-50.06 52.24-50.06H293V6.26S273.57 0 256.36 0c-73.22 0-121.06 44.38-121.06 124.72v70.62H89.33V288h46V512h92.66V288z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@sooryadanceschool3866" // Replace with your actual channel URL
+              target="_blank"
+              rel="noopener noreferrer"
+              className="youtube-link"
+            >
+              <img src={youtubelogo} alt="YouTube" width="30" height="30" />
+            </a>
+          </div>
+          <img
+            className="soorya_studio"
+            src={soorya_studio}
+            alt="studio location"
+            width="200"
+            height="200"
+          ></img>
+        </div>
       </div>
     </footer>
   );
