@@ -1,4 +1,4 @@
-import "./Home.css";
+import "./home.css";
 import { useState } from "react";
 import Header from "../../header/header";
 import Footer from "../../footer/footer";
