@@ -6,6 +6,7 @@ import avatar from "../../../assets/avatar.jpg";
 import instructor_with_girls from "../../../assets/instructor_with_girls.png";
 import soorya_dance_school from "../../../assets/soorya_dance_school.png";
 import instructor_with_girls_onstage from "../../../assets/instructor_with_girls_onstage.png";
+import guru_second from "../../../assets/guru_second.png";
 
 const Instructor = () => {
   function handleClick(e) {
@@ -101,7 +102,7 @@ const Instructor = () => {
           </div>
         </section>
       </div>
-
+      <img className="guru_second" src={guru_second} alt="guru_second" />
       <Footer />
     </div>
   );
