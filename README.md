@@ -8,8 +8,9 @@ Check-Off List
 - [x] download huge files and transfer to ext HDD
 - [x] download photos from google drive 37GB
 - [x] sort thru photos c jenna - June3-4-5
-- [x] one group photo for Home page sliding animation pointing to dropdown selection
-- [ ] in the Program page, use same from brochure
+- [x] one group photo for Home page 
+- [ ] sliding animation pointing to dropdown selection
+- [x] in the Program page, use same from brochure
 - [ ] collage for each dancer for their page 
 - [ ] biography 
 - [ ] andrea bio
@@ -24,27 +25,27 @@ Check-Off List
 - [ ] rose shishya
 - [x] amarya bio
 - [ ] amarya shishya
-- [ ] FAQ page (dropdown and form)
+- [x] FAQ page (dropdown and form)
 - [x] [FAQ souce] (https://www.w3schools.com/howto/howto_js_accordion.asp)
-- [ ] Program Page (use Jinoos agenda in Read Me)
+- [x] Program Page (use Jinoos agenda in Read Me)
 - [ ] Guru Page 
 - [ ] Orchestra Page
 - [ ] venue page 
-- [ ] drone footage of CLC entry (or photo montage)
+- [x] drone footage of CLC entry (or photo montage)
 - [ ] calendar June2025
-- [ ] livestream link PENDING
-- [ ] guestbook (backend work)
-- [ ] 
+- [x] livestream link PENDING
+- [x] guestbook (backend work)
+- [ ] Postman setup after all data is put into site  
 - [x]Footer on all the pages June11 2026
 
 ### Performers
 (Pictures of dancers animation CSS)
-Andrea Thomas
-Jana Scaria
-Michelle Eapen
-Rose Thomas
-Jenna Plamoottil
-Amarya Koola
+Andrea Thomas - 2
+Jana Scaria - 3
+Michelle Eapen - 1
+Rose Thomas - 4
+Jenna Plamoottil - 5
+Amarya Koola - 6
 
 
 1. finish all the components (nav-links) browser router links 
