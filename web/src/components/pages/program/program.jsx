@@ -137,79 +137,16 @@ const Program = () => {
               I request the musicians to start the performance with a prayer
               song. Thank You! <br />
               The musicians for the evening are: <br />
-              Nattuvangam - Smt. Jinoo Varghese (Instructor)
+              Nattuvangam - Smt. Jinoo Varghese (Guru/Instructor)
               <br />
               <span className="program__Musicians">
                 Vocals - Sri.Deepu Karunakaran{" "}
               </span>
               <br />
-              Melodious Vocals by Sri Deepu Karunakaran is a Diploma holder in
-              Carnatic Music and Violin from Kalakshetra Foundation. He started
-              learning music at the age of 5 under Guru Janardhanan Potty.
-              Further learned Vocal from Later under Late Shri Vairamangalam. S.
-              Lakshminarayanan,Violin from Shri. Pakkala Ramadas, Lec in
-              Kalakshetra. He has performed with the most eminent Indian
-              Classical Dancers such as the Dhananjayans, Leela Samson, Prof.C.V
-              Chandrasekhar, Priyadarshini Govind, Sreelatha Vinod, Shobhana,
-              Sheejith Krishna, Shijith Nambiar, Kiran Subrahmanyam. He has
-              performed in many countries with leading bharatanatyam artistes as
-              well as Kalakshetra artistes. His strongest role is as a vocalist,
-              and in this capacity he has toured all over the world. He has been
-              teaching Carnatic music for many students in India. He has won the
-              Central Government Of India Scholarship for Classical Vocal, in
-              the year 2000-2002. Recipient of the Vijayalakshmi Endowment award
-              for the best supporting vocal of the year 2008 from Krishna Gana
-              Sabha, Chennai Please join me in recognizing Sri Deepu Karunakaran{" "}
-              <br />
               Mridangam - Sri Kiran R. Pai <br />
-              I would like to continue to recognize the talents of our
-              musicians. Kiran R. Pai is a B-HIGH graded mridangam artist from
-              All India Radio Chennai. He began his journey of learning
-              mridangam from the institution Kalabhavan in Cochin. He later
-              received advanced training from Sri. Balakrishna Kamath. He
-              commenced his musical career in Chennai in the year 2011 from the
-              reputed Kalakshetra Foundation under gurus Sri. K.P. Anilkumar and
-              Sri. Gurubharadwaj, and completed his diploma along with Post
-              Graduation from the University of Madras. Currently, he's pursuing
-              mridangam under the guidance of Sri. Neyveli R. Narayanan. He has
-              achieved awards for the Best Mridangam Accompaniment from the
-              Spirit of Youth and the HCL Best Concert Award from the Music
-              Academy. He also won the CCRT Scholarship for Junior Artists from
-              the Ministry of Culture. Please join me in recognizing Sri Kiran
-              R. Pai. <br />
               Violin - Sri Rijesh Gopalakrishnan <br />
-              Sri Rijesh Gopalakrishnan started learning violin and vocals under
-              the tutelage of his father Gopalakrishnan Cheruvila at the age of
-              4. He started performing at the age of 8 and simultaneously
-              learned Tabala under Haris Bhai. Further, he moved to Chennai for
-              advanced training in vocal and violin at the famous Kalakshetra
-              Foundation, where he received his Diploma. Rijesh has been part of
-              national and international festivals such as the Konark Festival,
-              Soorya Festival, and Khajhraho Festival. He has visited countries
-              such as Singapore, Malaysia, Japan, and the United States to name
-              a few. He has also been performing for the past 20 years. Please
-              join me in recognizing Sri Rijesh Gopalakrishnan (clap) <br />
-              Flute- Sri Preyesh Mampoyil Kudiru Parambu <br />
-              Preyesh Mampoyil Kudiru Parambu is a passionate Carnatic flautist
-              and a disciple of Vidwan Shri Shailesh Ramamurthy. An alumnus of
-              Chembai Memorial Government Music College, Palakkad, he represents
-              the second generation of musicians in his family. His father was a
-              renowned Mridangist, and his siblings are accomplished in
-              classical dance and vocal music. Preyesh began vocal training at
-              age 7 and later trained in flute under Shri Rajagopal, Shri
-              Palakkad Krishna Iyer, and currently under Shri Shailesh
-              Ramamurthy. He also learned Mridangam from his father and
-              furthered it with Vidwans Shri Alappuzha Chandrashekaran Nair and
-              Shri Cherthala S Dinesh, earning a diploma in the instrument.
-              Preyesh has accompanied prominent dance artists like Kalakshetra
-              Rajalakshmi and Kalamandalam Preetha Rajagopal. His solo
-              performances include a 2022 recital at the Sharjah Festival and
-              appearances at the Indian Pavilion in Global Village, Dubai. He
-              also had the honor of performing with an Arabic band led by Mr.
-              Khalil Ghadri. Beyond performing, Preyesh has composed several
-              musical albums. He is currently based in the UAE and performs
-              regularly in India and abroad. Please join me in recognizing Sri
-              Preyesh Mampoyil Kudiru Parambu (clap) <br />
+              Flute - Sri Preyesh Mampoyil Kudiru Parambu <br />
+              Please refer to the Musician Page to view each of their biography.
             </p>
             <p>
               Lets welcome the dancers to introduce their first item of this
