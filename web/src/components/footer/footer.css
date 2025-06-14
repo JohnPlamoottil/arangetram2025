@@ -1,12 +1,20 @@
 .footer {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-family: "Amita";
+  font-size: 16px;
+  background-color: silver;
+}
+.footer__wrapper {
+  display: flex;
   justify-content: space-between;
   text-align: center;
   padding: 10px;
-  background-color: #f1f1f1;
   font-family: "Amita";
   font-size: 16px;
-  margin-top: 171px;
   position: relative;
   overflow: hidden;
   background-color: silver;
@@ -106,6 +114,14 @@
 .youtube-link {
   margin-left: 34px;
 }
-
+.moms_and_daughters {
+  width: 80%;
+  height: fit-content;
+  margin-top: 350px;
+  margin-right: 200px;
+}
 @media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
 }
