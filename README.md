@@ -148,9 +148,7 @@ Deepu Karunakaran is a Diploma holder in Carnatic Music and Violin from the Kala
 the Vijayalakshmi Endowment award for the best supporting vocal of the year 2008 from Krishna Gana Sabha in Chennai.
 
 
-              Next will be a solo presentation by Andrea Jerril Thomas. First, I
-              would like to invite onto the stage to say a few words.
-              <br />
+              
 
 
 # MRIDANGAM
@@ -169,276 +167,33 @@ Shri Cherthala S Dinesh, earning a diploma in the instrument. Preyesh has accomp
 
 ## Program Guide 
 
-
-
-
-
-
 # Welcome Message
-
 
 # Prayer by Priest
 
 # Few Announcements
 
-
 # Introducing Musicians
-
 
 # Prayer Song by Musicians
 
-
-
-                           Let us watch Andrea's solo performance. <br />
-              [MC2] - Next item is ‘Sada shiva Kavuthuvam’, Kauthuvams are
-              traditional invocatory pieces performed in praise of a deity,
-              blending rhythmic syllables with expressive storytelling. In this
-              item, the dancer offers reverence to Lord Sadashiva, the eternal
-              and auspicious form of Shiva — the cosmic dancer, creator, and
-              destroyer. Through dynamic movements, precise rhythm, and powerful
-              abhinaya, this piece invokes Lord Shiva’s grace and grandeur,
-              celebrating his divine energy and timeless presence in the
-              universe. Ragam: Kalyani & Talam: Sankeerna Jathi triputa talam
-
-
-
-
-
-
-
-
-
 # Solo 1 Andrea Jeril Thomas
-Ragam: Kalyani
-Talam: Sankeerna Jathi triputa talam
-
-‘Sada shiva Kavuthuvam’, Kauthuvams are traditional invocatory pieces performed in praise of a deity, blending rhythmic syllables with expressive storytelling. In this item, the dancer offers reverence to Lord Sadashiva, the eternal and auspicious form of Shiva — the cosmic dancer, creator, and destroyer. Through dynamic movements, precise rhythm, and powerful abhinaya, this piece invokes Lord Shiva’s grace and grandeur, celebrating his divine energy and timeless presence in the universe.
-
-[MC1]
-Next will be a solo presentation by Jana Scaria. First, I would
-like to invite onto the stage to say a few words.
-[ speaks]
-Let us watch Jana's solo performance.
-
-[MC(2)] ‘Esther’ is a Padam based on the biblical story of
-Esther, the beautiful Jewish queen. The dancer describes the
-story where Esther asks the king to a dinner party. The king
-was happy and granted her a wish, Esther reveals her true
-purpose and explains Haman's wicked plan to destroy her and
-her people. The King ordered to execute Haman on the gallows
-he built for Mordecai. The Story of Esther emphasizes the
-power of God, instructing us we should use his blessings to
-help others. 
-Orchestra plays Ragam
 
 # Solo 2 - Jana Scaria
-Ragam: Ragamalika
-Talam: Adi
-
-‘Esther’ is a Padam based on the biblical story of Esther, the beautiful Jewish queen. The dancer describes the story where Esther asks the king to a dinner party. The king was happy and granted her a wish, Esther reveals her true purpose and explains Haman's wicked plan to destroy her and her people. The King ordered to execute Haman on the gallows he built for Mordecai. The Story of Esther emphasizes the power of God, instructing us we should use his blessings to help others.
-
-[MC1]
-Next will be a solo presentation by Michelle Eapen. First, I
-would like to invite onto the stage to say a few words. [ speak]
-Let us watch Michelle's solo performance.
-[MC2] - ‘Durge Durge Jaya Jaya Durge’ appears to be a
-devotional phrase in Sanskrit dedicated to the goddess Durga,
-a Hindu deity symbolizing strength and protection. The words
-“Durge Durge” invoke the name of Durga twice, emphasizing
-her power. “Jaya Jaya” translates to “victory, victory,” praising
-her triumph. This phrase is commonly chanted during festivals
-like Navaratri, where Durga is celebrated for her victory over
-evil. The repetition of her name and the phrase’s meaning
-emphasize devotion and reverence. 
-Orchestra plays Ragam
-
-Solo 3 - Michelle Eapen
-Ragam: Revathi
-Talam: Adi
-
-‘Durge Durge Jaya Jaya Durge’ appears to be a devotional phrase in Sanskrit dedicated to the goddess Durga, a Hindu deity symbolizing strength and protection. The words “Durge Durge” invoke the name of Durga twice, emphasizing her power. “Jaya Jaya” translates to “victory, victory,” praising her triumph. This phrase is commonly chanted during festivals like Navaratri, where Durga is celebrated for her victory over evil. The repetition of her name and the phrase’s
-meaning emphasize devotion and reverence.
 
 ## coffee break **
 
-MC1 speaks abt Mridangist & Violinist
-(slowly saying) I would like to continue to recognize the talents
-of our musicians.
-Kiran R. Pai is a B-HIGH graded mridangam artist from All India
-Radio Chennai. He began his journey of learning mridangam
-from the institution Kalabhavan in Cochin. He later received
-advanced training from Sri. Balakrishna Kamath. He
-commenced his musical career in Chennai in the year 2011
-from the reputed Kalakshetra Foundation under gurus Sri. K.P.
-Anilkumar and Sri. Gurubharadwaj, and completed his diploma
-along with Post Graduation from the University of Madras.
-Currently, he's pursuing mridangam under the guidance of Sri.
-Neyveli R. Narayanan. He has achieved awards for the Best
-Mridangam Accompaniment from the Spirit of Youth and the
-HCL Best Concert Award from the Music Academy. He also
-won the CCRT Scholarship for Junior Artists from the Ministry
-of Culture.
-Please join me in recognizing Sri Kiran R. Pai. (clap)
-Sri Rijesh Gopalakrishnan started learning violin and vocals
-under the tutelage of his father Gopalakrishnan Cheruvila at the
-age of 4. He started performing at the age of 8 and
-simultaneously learned Tabala under Haris Bhai. Further, he
-moved to Chennai for advanced training in vocal and violin at
-the famous Kalakshetra Foundation, where he received his
-Diploma. Rijesh has been part of national and international
-festivals such as the Konark Festival, Soorya Festival, and
-Khajhraho Festival. He has visited countries such as
-Singapore, Malaysia, Japan, and the United States to name a
-few. He has also been performing for the past 20 years.
-Please join me in recognizing Sri Rijesh Gopalakrishnan
-(clap)
-Preyesh Mampoyil Kudiru Parambu is a passionate Carnatic
-flautist and a disciple of Vidwan Shri Shailesh Ramamurthy. An
-alumnus of Chembai Memorial Government Music College,
-Palakkad, he represents the second generation of musicians in
-his family. His father was a renowned Mridangist, and his
-siblings are accomplished in classical dance and vocal music.
-Preyesh began vocal training at age 7 and later trained in flute
-under Shri Rajagopal, Shri Palakkad Krishna Iyer, and currently
-under Shri Shailesh Ramamurthy. He also learned Mridangam
-from his father and furthered it with Vidwans Shri Alappuzha
-Chandrashekaran Nair and Shri Cherthala S Dinesh, earning a
-diploma in the instrument. Preyesh has accompanied prominent
-dance artists like Kalakshetra Rajalakshmi and Kalamandalam
-Preetha Rajagopal. His solo performances include a 2022
-recital at the Sharjah Festival and appearances at the Indian
-Pavilion in Global Village, Dubai. He also had the honor of
-performing with an Arabic band led by Mr. Khalil Ghadri.
-Beyond performing, Preyesh has composed several musical
-albums. He is currently based in the UAE and performs
-regularly in India and abroad.
-Please join me in recognizing Sri Preyesh Mampoyil Kudiru
-Parambu (clap)
+## Next is a musical interlude  5:35 PM to 5:42 PM 
 
-## Next is a musical interlude  5:35 PM to 5:42 PM
-This Varnam is a tribute to Kerala — a land shaped by legend, where sage Parasurama is believed to have reclaimed the earth from the sea. Through graceful movements and expressive storytelling, the dancer explores Kerala’s natural
-beauty, spiritual harmony, and rich cultural heritage. The piece celebrates the state’s classical art forms, including the dramatic elegance of Kathakali and the gentle grace of Mohiniyattam, capturing the vibrant soul of God’s Own Country. 
-
-Varnam - Group
-Ragam: Ragamalika
-Talam: Adi
-
-This Varnam is a tribute to Kerala — a land shaped by legend, where sage Parasurama is believed to have reclaimed the earth from the sea. Through graceful movements and expressive storytelling, the dancer explores Kerala’s natural beauty, spiritual harmony, and rich cultural heritage. The piece celebrates the state’s classical art forms, including the dramatic elegance of Kathakali and the gentle grace of Mohiniyattam, capturing the vibrant soul of God’s Own Country
-
-# MC1 announces intermission  5:44 PM to 6:09 PM
-We will now take a 10 minute break. Coffee is available outside
-of the theater. Please do not bring food or drink into the
-auditorium. Please be back by in the auditorium by 6:10. Thank
-you.
-# 6:19 PM - 6:20 PM
-We are now half way done with our program. I request
-everyone to be seated and to not exit while the program is still
-going on (unless it is an emergency ). Continuous movement
-will cause much disturbance for the audience trying to watch
-the program. We will now resume the program.
-
-Next is a musical interlude 
-[MC1]
-Next will be a solo presentation by Rose Thomas. First, I would
-like to invite [] onto the stage to say a few words.
-
-Let us watch Rose's solo performance.
-
-Pradosha Samayadi’ is a vibrant composition that describes the
-dance of Lord Shiva during Pradosha Samaya (bimonthly
-occasion on the thirteenth day of every fortnight in the Hindu
-calendar).The composer describes His Tandava in a very
-spectacular way and talks about how Nandi plays the
-Mridangam and Lord Ganesha plays the Nattuvangam and
-Lord Shiva dances Blissfully. Goddess Parvathi also enjoys his
-dance.
-
-Solo 1 - Rose Thomas
-Ragam: Purvi Kalyani
-Talam: Adi
-
-‘Pradosha Samayadi’ is a vibrant composition that describes the dance of Lord Shiva during Pradosha Samaya (bimonthly occasion on the thirteenth day of every fortnight in the Hindu calendar).The composer describes His Tandava in a very spectacular way and talks about how Nandi plays the Mridangam and Lord Ganesha plays the Nattuvangam and Lord Shiva dances Blissfully. Goddess Parvathi also enjoys his dance.
-
-[MC1]
-Next will be a solo presentation by Jenna Plamoottil. First, I
-would like to invite onto the stage to say a few words. [ speak]
-Let us watch Jenna's solo performance.
-
-‘Magdalena Mariam’, is based on a renowned Malayalam poem
-by Mahakavi Vallathol Narayana Menon. It portrays a powerful
-moment from Mary Magdalene’s life — from being condemned
-as a sinner to finding redemption. As she is brought before
-Jesus to be stoned, He responds with compassion, urging the
-crowd that only one without sin may cast the first stone. The
-piece ends with Mary’s heartfelt repentance at His feet,
-symbolizing forgiveness, grace, and transformation.
+Solo 4 - Rose Thomas
 
 Solo 5 - Jenna Plamoottil
-Ragam: Ragamalika
-Talam: Adi
-
-‘Magdalena Mariam’, is based on a renowned Malayalam poem by Mahakavi Vallathol
-Narayana Menon. It portrays a powerful moment from Mary Magdalene’s life — from being condemned as a sinner to finding redemption. As she is brought before Jesus to be stoned, He responds with compassion, urging the crowd that only one without sin may cast the first stone. The piece ends with Mary’s heartfelt repentance at His feet, symbolizing forgiveness, grace, and transformation.
-
-[MC1]
-Next will be a solo presentation by Amarya Koola. First, I would
-like to invite onto the stage to say a few words.
-[ speak]
-Let us watch Amarya's solo performance.
-
-‘Tarangam’ means waves and features stories from Lord
-Krishna’s life — his childhood, playful pranks, and marriage to
-Rukmini. This piece highlights Krishna’s divine beauty and the
-deep love of the gopis. It portrays the story of Krishna’s
-headache being cured by the dust of Radha’s feet, symbolizing
-her pure, selfless devotion.
 
 Solo 6 - Amarya Koola
-Ragam: Ragamalika
-Talam: Adi
-
-‘Tarangam’ means waves and features stories from Lord Krishna’s life — his childhood, playful pranks, and marriage to Rukmini. This piece highlights Krishna’s divine beauty and the deep love of the gopis. It portrays the story of Krishna’s headache being cured by the dust of Radha’s feet, symbolizing her pure, selfless devotion.
-
-[MC1]
-Next is a musical interlude
-
-[MC1] We have come to the last item of today's performance.
-Let's hear the details of this item directly from the dancers.
-
-To conclude today’s arangetram recital we will be presenting
-Thillana. ‘Thillana’, is a vibrant finale to a Bharatanatyam
-performance. This thillana is in praise of Lord Shiva that
-combines the idea of Bhakthi rasa. 
-
-After the thillana, a short prayer is offered known as
-'Mangalam', which seeks divine blessings for the well-being of
-everybody. Thillana
 
 Thillana - Group
-Ragam: Atana
-Talam: Adi
-
-‘Thillana’, is a vibrant finale to a Bharatanatyam performance. This thillana is in praise of Lord Shiva that combines the idea of Bhakthi rasa.
 
 Mangalam
-A short prayer seeking divine blessings for the well-being of everyone.
-
-[MC]
-I would like to invite the Guru of the artists and the Artistic
-Director of Soorya Dance School, Smt. Jinoo Varghese, to the
-stage
-
-[Jinoo] Vote of Thanks, Gift presentations (musicans) and
-plaque presentations to the dancers.
-
-Gift presentations.... 
-
-[MC1] Thank you all for being such a great audience. 
-
-We would like to extend our Thanks to CLC college for this excellent
-theatre and a special thanks to & team for their excellent
-support. Thank you, and have a good night!
-
 
 ## Video mp4 and LIVE link youtube
 
