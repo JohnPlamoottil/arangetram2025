@@ -1,5 +1,27 @@
 .musician_container {
   background-color: tan;
-  opacity: 80%;
+  opacity: 95%;
   z-index: auto;
+  display: block;
+  margin: 60px 316px 34px 309px;
+  font-family: "Amita";
+  font-weight: bold;
+}
+.title {
+  padding: 12px 0px 0px 0px;
+  font-family: "Amita";
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+.india__map {
+  size: 54px;
+}
+
+.accordion-text {
+  font-weight: bold;
+  color: black;
+  padding: 27px 66px 48px 74px;
 }

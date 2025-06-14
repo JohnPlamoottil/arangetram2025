@@ -1,27 +1,191 @@
 import React from "react";
 import Navigation from "../../navigation-links/navigation-links";
 import "./orchestra.css"; // optional for styling
+import Footer from "../../footer/footer";
+import dances_india from "../../../assets/dances_india.png";
 
 const Orchestra = () => {
+  function handleClick(e) {
+    const button = e.target;
+    button.classList.toggle("slide");
+    const panel = button.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  }
   return (
     <div>
       <Navigation />
+
+      <section className="questions">
+        <h2 className="title_FAQ">Four Musicians (Orchestra)</h2>
+        <button className="accordion" onClick={handleClick}>
+          Vocals - Sri.Deepu Karunakaran
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            Biography <br />
+            Deepu Karunakaran is a Diploma holder in Carnatic Music and Violin
+            from the Kalakshetra Foundation. He started learning music at the
+            age of 5 under Guru Janardhanan Potty. He has performed in many
+            countries with leading Bharatanatyam artists as well as Kalakshetra
+            artists. His strongest role is as a vocalist, and in this capacity,
+            he has toured all over the world. He has been teaching Carnatic
+            music to many students in India. He has won the Central Government
+            Of India Scholarship for Classical Vocal from 2000 to 2002. He is
+            also a recipient of the Vijayalakshmi Endowment award for the best
+            supporting vocal of the year 2008 from Krishna Gana Sabha in
+            Chennai. <br />
+            MC introducing Vocalist: <br />
+            Melodious Vocals by Sri Deepu Karunakaran is a Diploma holder in
+            Carnatic Music and Violin from Kalakshetra Foundation. He started
+            learning music at the age of 5 under Guru Janardhanan Potty. Further
+            learned Vocal from Later under Late Shri Vairamangalam. S.
+            Lakshminarayanan, Violin from Shri. Pakkala Ramadas, Lec in
+            Kalakshetra. He has performed with the most eminent Indian Classical
+            Dancers such as the Dhananjayans, Leela Samson, Prof.C.V
+            Chandrasekhar, Priyadarshini Govind, Sreelatha Vinod, Shobhana,
+            Sheejith Krishna, Shijith Nambiar, Kiran Subrahmanyam. He has
+            performed in many countries with leading bharatanatyam artistes as
+            well as Kalakshetra artistes. His strongest role is as a vocalist,
+            and in this capacity he has toured all over the world. He has been
+            teaching Carnatic music for many students in India. He has won the
+            Central Government Of India Scholarship for Classical Vocal, in the
+            year 2000-2002. Recipient of the Vijayalakshmi Endowment award for
+            the best supporting vocal of the year 2008 from Krishna Gana Sabha,
+            Chennai Please join me in recognizing Sri Deepu Karunakaran <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Mridangam - Sri Kiran R. Pai
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            Biography <br />
+            <a
+              href="https://www.instagram.com/kiran_r_pai/?hl=en"
+              target="Kirans Social"
+              rel="noopener no referrer"
+            >
+              {" "}
+              @kiran_r_pai
+            </a>{" "}
+            <br />
+            Kiran R. Pai is a B-HIGH graded mridangam artist from All India
+            Radio Chennai. He began his journey of learning mridangam from the
+            institution Kalabhavan in Cochin. He later received advanced
+            training from Sri. Balakrishna Kamath. He commenced his musical
+            career in Chennai in the year 2011 from the reputed Kalakshetra
+            Foundation under gurus Sri. K.P. Anilkumar and Sri. Gurubharadwaj,
+            and completed his diploma along with Post Graduation from the
+            University of Madras. Currently, he's pursuing mridangam under the
+            guidance of Sri. Neyveli R. Narayanan. He has achieved awards for
+            the Best Mridangam Accompaniment from the Spirit of Youth and the
+            HCL Best Concert Award from the Music Academy. He also won the CCRT
+            Scholarship for Junior Artists from the Ministry of Culture. <br />
+            MC introducing Drummer <br />I would like to continue to recognize
+            the talents of our musicians. <br />
+            Please join me in recognizing Sri Kiran R. Pai. <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Violinist - Sri Rijesh Gopalakrishnan
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            Biography <br />
+            Sri Rijesh Gopalakrishnan started learning violin and vocals under
+            the tutelage of his father Gopalakrishnan Cheruvila at the age of 4.
+            He started performing at the age of 8 and simultaneously learned
+            Tabala under Haris Bhai. Further, he moved to Chennai for advanced
+            training in vocal and violin at the famous Kalakshetra Foundation,
+            where he received his Diploma. Rijesh has been part of national and
+            international festivals such as the Konark Festival, Soorya
+            Festival, and Khajhraho Festival. He has visited countries such as
+            Singapore, Malaysia, Japan, and the United States to name a few. He
+            has also been performing for the past 20 years. <br />
+            MC introducing Violinist <br />
+            Please join me in recognizing Sri Rijesh Gopalakrishnan <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Flautist - Sri Preyesh Mampoyil Kudiru Parambu
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            Biography <br />
+            Preyesh Mampoyil Kudiru Parambu is a passionate Carnatic flautist
+            and a disciple of Vidwan Shri Shailesh Ramamurthy. An alumnus of
+            Chembai Memorial Government Music College, Palakkad, he represents
+            the second generation of musicians in his family. His father was a
+            renowned Mridangist, and his siblings are accomplished in classical
+            dance and vocal music. Preyesh began vocal training at age 7 and
+            later trained in flute under Shri Rajagopal, Shri Palakkad Krishna
+            Iyer, and currently under Shri Shailesh Ramamurthy. He also learned
+            Mridangam from his father and furthered it with Vidwans Shri
+            Alappuzha Chandrashekaran Nair and Shri Cherthala S Dinesh, earning
+            a diploma in the instrument. Preyesh has accompanied prominent dance
+            artists like Kalakshetra Rajalakshmi and Kalamandalam Preetha
+            Rajagopal. His solo performances include a 2022 recital at the
+            Sharjah Festival and appearances at the Indian Pavilion in Global
+            Village, Dubai. He also had the honor of performing with an Arabic
+            band led by Mr. Khalil Ghadri. Beyond performing, Preyesh has
+            composed several musical albums. He is currently based in the UAE
+            and performs regularly in India and abroad. <br />
+            MC introducing Flautist <br />
+            Please join me in recognizing Sri Preyesh Mampoyil Kudiru Parambu{" "}
+            <br />
+          </p>
+        </div>
+      </section>
       <div className="musician_container">
-        <h1>NATTUVANGAM</h1>
-        <p>
-          <b>Smt. Jinoo Varghese </b>is an accomplished dancer and instructor of
-          Bharatanatyam and is the Artistic Director of Soorya Dance School. She
-          started learning dance at the age of 5 under Guru Mohana Tulsi, and
-          she further learned Bharatanatyam under Smt. Girija Chandran. She is
-          the recipient of the merit scholarship from CCRT, New Delhi in the
-          field of Bharatanatyam. She has worked closely with many eminent gurus
-          in India on their productions all over India. She has performed as a
-          soloist at prestigious venues, receiving critical acclaim. As a
-          choreographer, she has created numerous short works and evening-length
-          productions. Through her dance academy, Soorya Dance School at
-          Northbrook, IL, she is able to put her passion for dance into action.
+        <h1 className="title">The History of Dance in India</h1>
+        <div className="center-image">
+          <img className="india__map" src={dances_india} />
+        </div>
+        <p className="accordion-text">
+          <strong>
+            {" "}
+            The history of Indian dance is a rich tapestry woven with spiritual,
+            cultural, and artistic traditions that span thousands of years. Its
+            roots trace back to pre-Vedic times and are formalized in the Natya
+            Shastra, an ancient Sanskrit treatise attributed to Bharata Muni,
+            which laid the foundation for Indian classical dance and drama by
+            defining essential elements like nritta (pure dance), nritya
+            (expressive dance), and natya (dramatic storytelling).
+            Traditionally, dance was a sacred offering performed in temples by
+            devadasis, women who dedicated their lives to spiritual service
+            through movement. Over time, distinct classical dance styles emerged
+            across India, each reflecting regional culture, language, and
+            devotion. There are eight officially recognized classical forms:
+            Bharatanatyam (Tamil Nadu), Kathak (North India), Kathakali and
+            Mohiniyattam (Kerala), Kuchipudi (Andhra Pradesh), Odissi (Odisha),
+            Manipuri (Manipur), and Sattriya (Assam). Each style combines
+            intricate gestures, facial expressions, rhythm, and costume to
+            convey stories—often rooted in mythology and devotion. Alongside
+            these classical styles, India’s folk and tribal dances add vibrant
+            color and diversity, often performed during festivals, harvests, and
+            community events. Dances like Bhangra and Giddha from Punjab, Garba
+            and Dandiya from Gujarat, Lavani from Maharashtra, Ghoomar from
+            Rajasthan, and Chhau from Eastern India reflect the everyday life,
+            spirit, and joy of the people. In modern times, Indian dance has
+            evolved with global influences, especially through the Indian film
+            industry. Bollywood dance, for example, merges classical, folk, and
+            Western styles into a high-energy, expressive form that has gained
+            worldwide popularity. Contemporary Indian dancers often blend
+            ballet, hip hop, and modern dance with traditional forms, creating
+            new expressions of cultural identity. Today, Indian dance thrives
+            not only on stage and screen but also in global classrooms and
+            festivals, showcasing the country's profound artistic heritage. From
+            sacred temple rituals to international performances, Indian dance
+            continues to be a dynamic and powerful form of storytelling and
+            expression.
+          </strong>
         </p>
       </div>
+      <Footer />
     </div>
   );
 };
