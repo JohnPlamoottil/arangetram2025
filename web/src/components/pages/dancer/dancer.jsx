@@ -1,5 +1,5 @@
 import React from "react";
-import "./dancer"; // optional for styling
+import "./dancer.css"; // optional for styling
 import Navigation from "../../navigation-links/navigation-links";
 
 const Dancer = () => {
