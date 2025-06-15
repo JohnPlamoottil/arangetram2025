@@ -106,9 +106,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* <p className="footer__text">
-            All Rights Reserved. Copyright {new Date().getFullYear()}
-          </p> */}
           <div className="about__circle"></div>
           <div className="about__circle about__circle_animation_blurred"></div>
         </div>
