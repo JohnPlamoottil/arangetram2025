@@ -29,14 +29,7 @@ const Instructor = () => {
             Shreemathi Smt. Jinoo Varghese <br />
             Soorya Dance School
           </h2>
-          <div className="instructor__image-container">
-            <img className="avatar" src={avatar} alt="avatar" />
-            <img
-              className="soorya_school"
-              src={soorya_dance_school}
-              alt="school"
-            />
-          </div>
+          <div className="instructor__image-container"></div>
           <img
             className="instructor_with_girls"
             src={instructor_with_girls}
@@ -46,7 +39,8 @@ const Instructor = () => {
             Instructor - Biography (click to open) <br />
           </button>
           <div className="panel_program">
-            <p>
+            <p className="accordion-text">
+              <img className="avatar" src={avatar} alt="avatar" />
               Smt. Jinoo Varghese is an accomplished dancer and instructor of
               Bharatanatyam and is the Artistic Director of Soorya Dance School.
               She started learning dance at the age of 5 under Guru Mohana
@@ -60,7 +54,14 @@ const Instructor = () => {
               dance academy, Soorya Dance School at Northbrook, IL, she is able
               to put her passion for dance into action.
             </p>
-            <p>
+            <div className="school">
+              <img
+                className="soorya_school"
+                src={soorya_dance_school}
+                alt="school"
+              />
+            </div>
+            <p className="accordion-text">
               Jinoo Varghese, the Artistic Director of Soorya Dance School is an
               accomplished exponent of Bharatanatyam and Kuchipudi style of
               dancing and well known choreographer of Indian dance forms. From
@@ -72,18 +73,12 @@ const Instructor = () => {
               Illinois.
             </p>
           </div>
-          <div className="center-image">
-            <img
-              className="instructor_with_girls_onstage"
-              src={instructor_with_girls_onstage}
-              alt="instructor_with_girls_ onstage"
-            />
-          </div>
+
           <button className="accordion_program" onClick={handleClick}>
             Nattuvangam (click to open)
           </button>
           <div className="panel_program">
-            <p>
+            <p className="accordion-text">
               Let us take a look at the talent that has gone into the creation
               of this beautiful performance. First, rhythmic beats of
               Nattuvangam by Smt. Jinoo Varghese - Smt Jinoo Varghese is an
@@ -101,6 +96,13 @@ const Instructor = () => {
               dance into action. Please join me in recognizing Smt. Jinoo
               Varghese. <br />
             </p>
+            <div className="onstage">
+              <img
+                className="instructor_with_girls_onstage"
+                src={instructor_with_girls_onstage}
+                alt="instructor_with_girls_ onstage"
+              />
+            </div>
           </div>
         </section>
       </div>

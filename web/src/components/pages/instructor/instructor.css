@@ -2,27 +2,40 @@
   width: 300px; /* or any size you want */
   height: auto;
   gap: 20px;
+  float: left;
+  margin-right: 16px;
+}
+.school {
+  align-items: center;
+  text-align: center;
 }
 .soorya_school {
   width: 508px; /* or any size you want */
-  height: 100%;
+  height: auto;
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+.onstage {
+  width: fit-content;
 }
 .instructor_with_girls_onstage {
-  width: 610%;
+  width: 100%;
 }
 
 .instructor_with_girls {
   width: 100%;
 }
 .guru_second {
-  width: 65%;
+  width: 55%;
   text-align: center;
 }
 .center-image {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 80vh; /* Full viewport height */
+
+  text-align: center;
 }
 
 .instructor__image-container {
@@ -34,6 +47,8 @@
   .avatar {
     width: 220px;
     height: auto;
+    float: left;
+    margin-right: 16px;
   }
   .soorya_school {
     flex-direction: column;
