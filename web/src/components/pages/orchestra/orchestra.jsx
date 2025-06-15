@@ -24,7 +24,7 @@ const Orchestra = () => {
       <Navigation />
 
       <section className="questions">
-        <h2 className="title_FAQ">Four Musicians (Orchestra)</h2>
+        <h2 className="title_FAQ">The Four Musicians (Orchestra)</h2>
         <button className="accordion" onClick={handleClick}>
           Vocals - Sri.Deepu Karunakaran
         </button>
