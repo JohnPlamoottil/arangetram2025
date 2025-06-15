@@ -28,7 +28,8 @@ function Home() {
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
-        <p className="dropwdown__title">Shishya</p>☰
+        <p className="dropdown__title">Shishya</p>
+        <span className="burger-icon">☰</span>
       </button>
       {menuOpen && (
         <div className="dancers">

@@ -105,10 +105,9 @@ const Footer = () => {
               <p>(847) 338-6855</p>
             </div>
           </div>
-
-          <div className="about__circle"></div>
-          <div className="about__circle about__circle_animation_blurred"></div>
         </div>
+        <div className="about__circle"></div>
+        <div className="about__circle about__circle_animation_blurred"></div>
         <div>
           <img
             className="moms_and_daughters"
@@ -116,7 +115,7 @@ const Footer = () => {
             alt="moms__daughters"
           ></img>
         </div>
-        <div>
+        <div className="left_side_block_footer">
           <Link to="/video" className="nav-link">
             Bharatanatyam Journey
           </Link>

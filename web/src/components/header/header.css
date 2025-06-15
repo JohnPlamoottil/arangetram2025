@@ -19,19 +19,9 @@
 .green_varnum_corner {
   width: 50%;
 }
-/* .right-corner REMOVED THE CORNER IMAGE -messing up the right side{
-  position: relative; Stick to screen corner */
-/* top: -120px;
-  right: 0;
-  width: 150px; /* Adjust size */
-/* height: auto;
-  image-orientation: from-image; */
-/* transform: rotate(180); Rotate as needed (270° = turn left) */
-/* transform: rotate(270deg); */
-/* -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg); */
-/* opacity: 2; slightly transparent 
-} */
+.header-content {
+  margin-right: 124px;
+}
 
 .header-text {
   display: flex;
@@ -88,12 +78,17 @@
   color: black;
   cursor: pointer;
   align-items: right;
-  background-color: #626466;
-  width: 4rem;
-  height: 2rem;
+  background-color: silver;
+  width: 197px;
+  height: 60px;
   margin-left: 47px;
 }
-
+.dropdown__title {
+  font-size: 20px;
+  margin: 0px;
+  display: inline;
+  color: indianred;
+}
 .dancers {
   display: flex;
   flex-direction: column;
@@ -106,6 +101,7 @@
   position: absolute;
   background-color: azure;
   opacity: 0.9;
+  margin-left: 46px;
 }
 
 .dancer_text {

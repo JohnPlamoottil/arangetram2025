@@ -32,8 +32,9 @@ const Header = () => {
                 Saturday, June 21st 2025 @ 3pm CST
               </h3>
               <div className="instructions">
-                Please select the appropirate dancer from the dropdown selecton
-                on the leftside of this page to view their Shishya.
+                Please select the appropirate dancer <br />
+                from the dropdown selecton <br />
+                to view their Shishya. <br />
               </div>
             </div>
           </div>
