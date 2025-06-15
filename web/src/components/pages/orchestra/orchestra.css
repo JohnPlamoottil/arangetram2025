@@ -24,4 +24,11 @@
   font-weight: bold;
   color: black;
   padding: 27px 66px 48px 74px;
+  font-size: 20px;
+}
+.musician {
+  width: 180px;
+  border-radius: 8px;
+  float: left;
+  margin-right: 16px;
 }
