@@ -61,6 +61,9 @@
   padding: 20px;
   background-color: brown;
   border-left: 4px solid #f6ff00;
+  border-right: 4px solid #f6ff00;
+  border-top: 4px solid #f6ff00;
+  border-bottom: 4px solid #f6ff00;
   font-family: "Georgia", serif;
   color: #fcebe3;
   text-align: center;
