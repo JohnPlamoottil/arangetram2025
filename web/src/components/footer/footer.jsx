@@ -114,7 +114,8 @@ const Footer = () => {
           <p className="Footer-Middle">
             Special Thanks to All of You for Attending Our Arangetram <br />
             Photos will be updated to this site in the months to follow. <br />
-            Reception with Dinner Provided at Dancer's Venue.
+            Reception with Dinner Provided at Dancer's Venue. <br />
+            All Rights Reserved. Copyright {new Date().getFullYear()}
           </p>
           <img
             className="moms_and_daughters"
