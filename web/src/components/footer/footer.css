@@ -122,6 +122,14 @@
 .left_side_block_footer {
   margin-right: 78px;
 }
+@media screen and (max-width: 1024px) {
+  .footer {
+    flex-direction: column;
+  }
+  .moms_and_daughters {
+    width: 95%;
+  }
+}
 @media screen and (max-width: 768px) {
   .footer {
     flex-direction: column;
@@ -139,14 +147,6 @@
   }
 }
 @media screen and (max-width: 390px) {
-  .footer {
-    flex-direction: column;
-  }
-  .moms_and_daughters {
-    width: 95%;
-  }
-}
-@media screen and (max-width: 1024px) {
   .footer {
     flex-direction: column;
   }

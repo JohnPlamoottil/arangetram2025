@@ -97,13 +97,18 @@ function Home() {
       <img className="home_group_photo" src={tillana} alt="group photo"></img>
       <div className="quote-container">
         <blockquote className="quote">
-          ”Yatho Hasta Thatho Drishti, Yatho Drishti“
+          “Yatho Hasta Thatho Drishti; <br />
+          Yatho Drishti Thatho Manah. <br />
+          Yatho Manah Thatho Bhaava & <br />
+          Yatho Bhaava Thatho Rasa.” <br />
         </blockquote>
         <p className="quote-meaning">
-          "Where the hands(hasta) are, go the eyes (drishti); where the eyes
-          are, goes the mind (manah); where the mind goes, there is an
-          expression of inner feeling (bhava) and where there is bhava, mood or
-          sentiment (rasa) is evoked”
+          "Where the hands(hasta) are, go the eyes (drishti); <br />
+          Where the eyes are, goes the mind (manah). <br />
+          Where the mind goes, there is an expression of inner feeling (bhava) &
+          <br />
+          Where there is bhava, mood or sentiment (rasa) is evoked”
+          <br />
         </p>
         <p className="quote-author-one">- Natya Shastra</p>
         <p className="quotetwo">
