@@ -112,15 +112,29 @@
 .youtube-link {
   margin-left: 34px;
 }
+.soorya_studio {
+  width: 300px;
+  height: 300px;
+}
+.auditorium {
+  width: 300px;
+  height: 300px;
+}
 .moms_and_daughters {
   width: 95%;
-  /* height: fit-content; */
-  /* margin-top: 10px;
-  margin-right: 200px;
-  margin-left: 1%; */
+  margin-top: 10px;
 }
 .left_side_block_footer {
   margin-right: 78px;
+}
+.Footer-Middle {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 200px;
+  font-size: 20px;
+}
+.clc__venue {
+  width: 100%;
 }
 @media screen and (max-width: 1024px) {
   .footer {
