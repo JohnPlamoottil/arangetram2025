@@ -5,6 +5,8 @@ import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import youtubelogo from "../../assets/youtubelogo.png";
 import soorya_studio from "../../assets/soorya_studio.png";
 import moms_daughters from "../../assets/moms_daughters.png";
+import clc_venue_logo from "../../assets/clc_venue_logo.png";
+import JLC_thumbnail from "../../assets/JLC_thumbnail.png";
 
 const Footer = () => {
   function handleClick(e) {
@@ -109,10 +111,20 @@ const Footer = () => {
         <div className="about__circle"></div>
         <div className="about__circle about__circle_animation_blurred"></div>
         <div>
+          <p className="Footer-Middle">
+            Special Thanks to All of You for Attending Our Arangetram <br />
+            Photos will be updated to this site in the months to follow. <br />
+            Reception with Dinner Provided at Dancer's Venue.
+          </p>
           <img
             className="moms_and_daughters"
             src={moms_daughters}
             alt="moms__daughters"
+          ></img>
+          <img
+            className="clc__venue"
+            src={clc_venue_logo}
+            alt="clc auditorium logo"
           ></img>
         </div>
         <div className="left_side_block_footer">
@@ -157,8 +169,11 @@ const Footer = () => {
               className="soorya_studio"
               src={soorya_studio}
               alt="studio location"
-              width="200"
-              height="200"
+            ></img>
+            <img
+              className="auditorium"
+              src={JLC_thumbnail}
+              alt="JLC location"
             ></img>
           </div>
         </div>
