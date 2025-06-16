@@ -17,3 +17,8 @@
 .nav-link:hover {
   text-decoration: underline;
 }
+@media screen and (max-width: 1179px) {
+  .nav-link {
+    margin-left: 39px;
+  }
+}
