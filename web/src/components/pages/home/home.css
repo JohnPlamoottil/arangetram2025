@@ -136,3 +136,43 @@
     text-align: center;
   }
 }
+@media screen and (max-width: 390px) {
+  .dropdown {
+    z-index: 10;
+    position: relative;
+    font-family: "Amita";
+    font-size: 30px;
+    color: indianred;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: silver;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content; /* or 100% if you want it to stretch */
+  }
+  .quote-container {
+    z-index: 1;
+    position: relative;
+    margin-top: 2rem; /* ✅ Add this line */
+    background-color: rgba(128, 0, 0, 0.85);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-left: 2px solid gold;
+    border-right: 2px solid gold;
+    border-radius: 10px;
+  }
+  .quote {
+    font-family: "Amita";
+    font-size: 1.4rem;
+    line-height: 2;
+    font-weight: bold;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 0.5rem;
+  }
+}
