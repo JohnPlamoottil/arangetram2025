@@ -6,13 +6,9 @@ import Footer from "../../footer/footer";
 
 const Livestream = () => {
   return (
-    <div
-      className="video-page"
-      style={{ textAlign: "center", padding: "2rem" }}
-    >
+    <div className="video-page">
       <Navigation />
       <h1 className="video-title">Our Live Performance</h1>
-      <div className="video-overlay"></div>
 
       <div className="video-wrapper">
         <img src={frameImage} alt="Frame" className="video-frame" />

@@ -1,8 +1,3 @@
-.header {
-  background-color: silver; /* silver */
-  padding: 10px 0px 3px 0px; /* top right bottom left */
-}
-
 .video-page {
   padding: 40px;
   display: flex;
@@ -14,7 +9,7 @@
 
 .video-title {
   font-size: 2rem;
-  color: #333;
+  color: indianred;
   margin-bottom: 20px;
   font-family: "Amita";
   background-color: silver;
@@ -55,4 +50,8 @@
   left: 105px;
   top: 21px;
   border: none;
+}
+.header {
+  background-color: silver; /* silver */
+  padding: 10px 0px 3px 0px; /* top right bottom left */
 }
