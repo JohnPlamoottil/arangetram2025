@@ -37,7 +37,7 @@ const Header = () => {
               <h2 className="subtitle">Bharatanatyam Arangetram</h2>
               {/* <Navigation /> */}
               <h3 className="performersheader">
-                Saturday, June 21st 2025 @ 3pm CST
+                Saturday, June 21st 2025 @ 3pm CST <br />
               </h3>
               <div className="instructions">
                 Please select the appropirate dancer <br />
