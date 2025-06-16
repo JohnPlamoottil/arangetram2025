@@ -32,3 +32,37 @@
   float: left;
   margin-right: 16px;
 }
+@media screen and (max-width: 1179px) {
+  .musician_container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .india__map {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+
+  .accordion-text {
+    color: black;
+    padding: 1.2rem;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .musician {
+    width: 180px;
+    border-radius: 8px;
+    float: left;
+    margin-right: 16px;
+  }
+}
