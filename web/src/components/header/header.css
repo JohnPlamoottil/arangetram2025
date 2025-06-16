@@ -48,9 +48,8 @@
   color: #f87171; /* indian red */
   margin-top: 8px;
   margin-bottom: 8px;
-  font-weight: 900px;
   text-align: center;
-  font-weight: bolder;
+  font-weight: 900;
 }
 .performersheader {
   font-family: "Amita";
@@ -111,6 +110,44 @@
   font-style: normal;
   font-weight: 400px;
   color: indianred;
+}
+/* SLIDING ANIMATION CSS STARTS HERE: */
+.image-wrapper {
+  overflow: hidden;
+}
+
+.slide-in {
+  width: 50px;
+  position: relative;
+  animation: slideInFromLeft 5s ease-out forwards;
+  opacity: 95%;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in {
+  width: 300px;
+  position: absolute;
+  animation: slideInFromRight 5s ease-out forwards;
+  opacity: 0;
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 1179px) {
   .header {

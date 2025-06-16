@@ -1,7 +1,6 @@
 import React from "react";
 import "./header.css";
 import Navigation from "../navigation-links/navigation-links";
-import "../../components/pages/home/slidingImage.css";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
 import green_varnum_corner from "../../assets/green_varnum_corner.png";
@@ -20,6 +19,13 @@ const Header = () => {
           src={green_varnum_corner}
           alt="varnum group"
         />
+        {/* <div className="image-wrapper">
+          <img
+            src={green_varnum_corner}
+            alt="Sliding In"
+            className="slide-in"
+          />
+        </div> */}
 
         {/* Text */}
         <div className="header-content">
