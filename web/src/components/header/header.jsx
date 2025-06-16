@@ -1,5 +1,6 @@
 import React from "react";
 import "./header.css";
+import Navigation from "../navigation-links/navigation-links";
 import "../../components/pages/home/slidingImage.css";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
@@ -8,6 +9,7 @@ import green_varnum_corner from "../../assets/green_varnum_corner.png";
 const Header = () => {
   return (
     <header className="header">
+      <Navigation />
       <div className="header-container">
         {/* Logo */}
         <img src={logo} alt="Logo" className="logo" />
@@ -23,7 +25,7 @@ const Header = () => {
         <div className="header-content">
           <div className="header-top">
             <div>
-              <h1 className="title">Soorya Dance School</h1>
+              <h1 className="title">Soorya Dance School™</h1>
               <h2 className="subtitle">Presents</h2>
               <h1 className="title main_title">Samarpanam</h1>
               <h2 className="subtitle">Bharatanatyam Arangetram</h2>
