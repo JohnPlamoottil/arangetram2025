@@ -1,3 +1,8 @@
+.venue_content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full screen height */
+}
 .calendar {
   width: 100%;
 }
