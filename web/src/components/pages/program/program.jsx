@@ -69,8 +69,7 @@ const Program = () => {
               was possible only because of the love and unwavering support of
               their parents. <br />I would like to invite the parents of the
               dancers to the stage ... <br />
-              the parents of Andrea - Jeril and Shipla Thomas ,
-              <br />
+              the parents of Andrea - Jeril and Shilpa Thomas , <br />
               the parents of Jana - Santosh and Lija Scaria , <br />
               the parents of Michelle - Priyan & Jincy Eapen , <br />
               the parents of Rose - Bejoy and Marisa Thomas , <br />
