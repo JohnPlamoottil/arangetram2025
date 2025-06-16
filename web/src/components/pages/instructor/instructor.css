@@ -43,6 +43,16 @@
   justify-content: space-between;
   align-items: center;
 }
+.campus__parking-instructor {
+  width: 653px;
+  height: 414px;
+  position: absolute;
+  text-align: center;
+  left: -1px;
+  top: 0px;
+  border: none;
+  margin-left: 1px;
+}
 @media screen and (max-width: 1179px) {
   .avatar {
     width: 220px;
@@ -61,5 +71,13 @@
   .guru_second {
     width: 77%;
     text-align: center;
+  }
+}
+@media screen and (max-width: 390px) {
+  .avatar {
+    width: 178px;
+    height: auto;
+    float: left;
+    margin-right: 16px;
   }
 }

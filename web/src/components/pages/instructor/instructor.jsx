@@ -7,6 +7,7 @@ import instructor_with_girls from "../../../assets/instructor_with_girls.png";
 import soorya_dance_school from "../../../assets/soorya_dance_school.png";
 import instructor_with_girls_onstage from "../../../assets/instructor_with_girls_onstage.png";
 import guru_second from "../../../assets/guru_second.png";
+import frameImage from "../../../assets/macbookpro.png";
 
 const Instructor = () => {
   function handleClick(e) {
@@ -102,6 +103,31 @@ const Instructor = () => {
                 src={instructor_with_girls_onstage}
                 alt="instructor_with_girls_ onstage"
               />
+            </div>
+          </div>
+          <button className="accordion" onClick={handleClick}>
+            Words of Acknowledgement for Her Students
+          </button>
+          <div className="panel">
+            <p>
+              The following clip is taken from Jinoo as a gratitude for helping
+              them grow and shape into the young women they turned out to be
+              both physically and spiritually.
+            </p>
+            <div className="video-wrapper__venue">
+              <img src={frameImage} alt="Frame" className="video-frame_venue" />
+              <div className="laptop-video-overlay"></div>
+              <div className="laptop-video-overlay__venue">
+                <iframe
+                  src="https://www.youtube.com/embed/9MvIhi4PLPo?si=Aw-tHk9SDCkkPj9R"
+                  title="Direction to Venue"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                  className="campus__parking-instructor"
+                ></iframe>
+              </div>
             </div>
           </div>
         </section>
