@@ -112,7 +112,7 @@
   color: indianred;
 }
 /* SLIDING ANIMATION CSS STARTS HERE: */
-.image-wrapper {
+/* .image-wrapper {
   overflow: hidden;
 }
 
@@ -148,7 +148,7 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
+} */
 @media screen and (max-width: 1179px) {
   .header {
     background-color: silver; /* silver */
@@ -267,7 +267,7 @@
     color: indianred;
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 390px) {
   /* Stack logo and content vertically */
   .header-container {
     flex-direction: column;
@@ -290,7 +290,7 @@
     gap: 16px; /* Space between burger and text */
   }
   .logo {
-    height: 254px;
+    height: 189px;
     width: 309px;
     object-fit: contain;
     margin-right: 50px;
@@ -298,7 +298,7 @@
   }
   .green_varnum_corner {
     opacity: 2px;
-    width: 50%;
+    width: 89%;
   }
   .dropdown {
     display: block;
@@ -307,6 +307,7 @@
     border: none;
     color: white;
     cursor: pointer;
+    background-color: silver;
   }
 
   /* Hide nav links by default on mobile */
@@ -327,5 +328,28 @@
   .nav-link {
     padding: 10px 10px 10px 10px;
     border-bottom: 1px solid #333;
+  }
+  .dancers {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    font-size: 30px;
+    color: indianred;
+    width: 200px;
+    font-family: "Amita", "Arial", sans-serif;
+    position: absolute;
+    background-color: azure;
+    opacity: 0.9;
+    margin-left: 46px;
+  }
+
+  .dancer_text {
+    font-family: "Amita", "Arial", sans-serif;
+    font-size: 19px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400px;
+    color: indianred;
   }
 }
