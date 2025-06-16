@@ -28,7 +28,7 @@
   width: 100%;
 }
 .guru_second {
-  width: 77%;
+  width: 55%;
   text-align: center;
 }
 .center-image {
@@ -43,7 +43,7 @@
   justify-content: space-between;
   align-items: center;
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 1179px) {
   .avatar {
     width: 220px;
     height: auto;
@@ -57,5 +57,9 @@
   }
   .instructor__image-container {
     flex-direction: column;
+  }
+  .guru_second {
+    width: 77%;
+    text-align: center;
   }
 }
