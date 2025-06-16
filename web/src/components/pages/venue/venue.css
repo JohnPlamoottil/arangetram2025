@@ -137,4 +137,8 @@
   .panel {
     font-size: 0.95rem;
   }
+  .group__photo__venue {
+    width: 95%;
+    margin: 111px 25px 25px 25px;
+  }
 }

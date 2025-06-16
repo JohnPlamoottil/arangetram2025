@@ -6,6 +6,7 @@ import Footer from "../../footer/footer";
 import June2025 from "../../../assets/June2025.jpg";
 import venue from "../../../assets/venue.png";
 import frameImage from "../../../assets/macbookpro.png";
+import tillana_venue from "../../../assets/tillana_venue.png";
 
 const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 
@@ -130,6 +131,11 @@ const Venue = () => {
           </div>
         </div>
       </section>
+      <img
+        className="group__photo__venue"
+        src={tillana_venue}
+        alt="group center"
+      ></img>
 
       <Footer />
     </div>
