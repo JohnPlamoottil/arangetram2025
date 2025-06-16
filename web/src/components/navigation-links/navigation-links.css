@@ -4,6 +4,7 @@
   font-family: "Amita", "Arial", sans-serif;
   background-color: silver;
   justify-content: center;
+  box-sizing: border-box;
 }
 .nav-link {
   font-size: 23px;
@@ -20,5 +21,52 @@
 @media screen and (max-width: 1179px) {
   .nav-link {
     margin-left: 39px;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    background: #eee;
+    padding: 1rem;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-sizing: border-box;
+  }
+  .nav-link {
+    font-size: 23px;
+    display: flex;
+    color: indianred;
+    text-decoration: none;
+    font-family: "Amita", sans-serif;
+    font-weight: 900;
+    opacity: 50%;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* Hide nav links by default on mobile */
+  .nav-links {
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* When menu is open, display links */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Optional: Make links full width on mobile */
+  .nav-link {
+    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid #333;
   }
 }
