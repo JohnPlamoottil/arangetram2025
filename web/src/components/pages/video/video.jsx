@@ -14,8 +14,8 @@ const Video = () => {
       <h2 className="video-subtitle">Kalashetra Competition 2019</h2>
       <div className="video-overlay"></div>
 
-      <div className="video-wrapper">
-        <img src={frameImage} alt="Frame" className="video-frame" />
+      <div className="video-wrapper__video">
+        <img src={frameImage} alt="Frame" className="video-frame_video" />
         <iframe
           src="https://www.youtube.com/embed/btN6NSrr9H4"
           title="Bharatanatyam 2019"

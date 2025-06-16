@@ -172,7 +172,7 @@ const Footer = () => {
               alt="studio location"
             ></img>
             <img
-              className="auditorium"
+              className="auditorium__footer"
               src={JLC_thumbnail}
               alt="JLC location"
             ></img>

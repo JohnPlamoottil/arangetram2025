@@ -29,10 +29,10 @@ Check-Off List
 - [x] [FAQ souce] (https://www.w3schools.com/howto/howto_js_accordion.asp)
 - [x] Program Page (use Jinoos agenda in Read Me)
 - [x] Guru Page 
-- [ ] Orchestra Page
+- [x] Orchestra Page
 - [ ] venue page 
 - [x] drone footage of CLC entry (or photo montage)
-- [ ] calendar June2025
+- [x] calendar June2025
 - [x] livestream link PENDING
 - [x] guestbook (backend work)
 - [ ] Postman setup after all data is put into site  
@@ -124,41 +124,22 @@ added on June3
 ## Instructor - Biography 
 
 ## Address location street view (google API)
-James Lumber Center for the Performing Arts
-Performing Arts Theater in Grayslake, Illinois
-College of Lake County Grayslake Campus
-Address: 19351 W Washington St, Grayslake, IL 60030
-Phone: (847) 543-2300
+
 
 ## Venue
-The James Lumber Center is a multi-functional, premier performing arts venue, committed to the principles of access, inclusion, diversity and equity in our center partnerships, department staffing, facility scheduling, artistic programming and presentational use.
-The Performing Arts Building was officially dedicated on March 8, 1997. The first full season began in September 1997. Since then, thousands of patrons have attended events held in this beautiful facility.
 
-In August 2003, the Performing Arts Building was officially renamed the James Lumber Center for the Performing Arts, recognizing trustee James Lumber, who served on the College of Lake County board for over 35 years. The James Lumber Center for the Performing Arts is a project of the College of Lake County Foundation.
+
+
+
 
 ## Musicians 
 # VOCAL
-Deepu Karunakaran is a Diploma holder in Carnatic Music and Violin from the Kalakshetra Foundation. He started learning music at the age of 5 under Guru Janardhanan Potty. He has performed in many countries with leading Bharatanatyam artists as well as Kalakshetra artists. His strongest role is as a vocalist, and in this capacity, he has toured all over the world. He has been teaching Carnatic music to many students in India. He has won the Central Government Of India Scholarship for Classical V ocal from 2000 to 2002. He is also a recipient of
-the Vijayalakshmi Endowment award for the best supporting vocal of the year 2008 from Krishna Gana Sabha in Chennai.
-
-
-              
-
 
 # MRIDANGAM
-Kiran R. Pai is a B-HIGH graded mridangam artist from All India Radio Chennai. He began his journey of learning mridangam from the institution Kalabhavan in Cochin. He later received advanced training from Sri. Balakrishna Kamath. He commenced his musical career in Chennai in the year 2011 from the reputed
-Kalakshetra Foundation under gurus Sri. K.P. Anilkumar and Sri. Gurubharadwaj, and completed his diploma along with Post Graduation from the University of Madras. Currently, he's pursuing mridangam under the guidance of Sri. Neyveli R. Narayanan. He has achieved awards for the Best Mridangam Accompaniment from
-the Spirit of Y outh and the HCL Best Concert Award from the Music Academy. He also won the CCRT Scholarship for Junior Artists from the Ministry of Culture.
-[instagram profile] <https://www.instagram.com/kiran_r_pai/?hl=en>;
 
 # VIOLINIST
-Sri Rijesh Gopalakrishnan started learning violin and vocals under the tutelage of his father Gopalakrishnan Cheruvila at the age of 4. He started performing at the age of 8 and simultaneously learned T abala under Haris Bhai. Further, he moved to Chennai for advanced training in vocal and violin at the famous Kalakshetra Foundation, where he received his Diploma. Rijesh has been part of national and international festivals such as the Konark Festival, Soorya Festival, and Khajhraho Festival. He has visited countries such as Singapore,
-Malaysia, Japan, and the United States to name a few. He has also been performing for the past 20 years.
 
 # FLAUTIST
-Preyesh Mampoyil Kudiru Parambu is a passionate Carnatic flautist and a disciple of Vidwan Shri Shailesh Ramamurthy. An alumnus of Chembai Memorial Government Music College, Palakkad, he represents the second generation of musicians in his family. His father was a renowned Mridangist, and his siblings are accomplished in classical dance and vocal music. Preyesh began vocal training at age 7 and later trained in flute under Shri Rajagopal, Shri Palakkad Krishna Iyer, and currently under Shri Shailesh Ramamurthy. He also learned Mridangam from his father and furthered it with Vidwans Shri Alappuzha Chandrashekaran Nair and
-Shri Cherthala S Dinesh, earning a diploma in the instrument. Preyesh has accompanied prominent dance artists like Kalakshetra Rajalakshmi and Kalamandalam Preetha Rajagopal. His solo performances include a 2022 recital at the Sharjah Festival and appearances at the Indian Pavilion in Global Village, Dubai. He also had the honor of performing with an Arabic band led by Mr. Khalil Ghadri. Beyond performing, Preyesh has composed several musical albums. He is currently based in the UAE and performs regularly in India and abroad.
-
 
 ## Program Guide 
 

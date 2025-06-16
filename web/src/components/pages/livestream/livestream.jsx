@@ -10,8 +10,8 @@ const Livestream = () => {
       <Navigation />
       <h1 className="video-title">Our Live Performance</h1>
 
-      <div className="video-wrapper">
-        <img src={frameImage} alt="Frame" className="video-frame" />
+      <div className="video-wrapper__livestream ">
+        <img src={frameImage} alt="Frame" className="video-frame_livestream" />
         <iframe
           src="https://www.youtube.com/embed/BL1tvAUCR2A?si=e2e6u3TFYe3j0f3k"
           title="Dance Performance Dec9 2022 Jenna & Amarya +Boys"
