@@ -57,3 +57,14 @@ export default Navigation;
       // </a> 
       // a tags are basic HTML,instead use NavLinks bc its browser router efficient*/
 }
+
+/* is mobile ? this button will be seen on screen and nav links visible when not in mobile  */
+/* {isMobile ?<button
+        className="dropdown"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        <p className="dropdown__title">Shishya</p>
+        <span className="burger-icon">☰</span>
+      </button> : */
+/* : if not mobile*/
