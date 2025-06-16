@@ -34,13 +34,14 @@
 .video-wrapper {
   position: relative;
   text-align: center;
+  flex-grow: 1;
 }
 
-.video-wrapper video {
+/* .video-wrapper video {
   display: block;
   width: 100%;
   height: auto;
-}
+} */
 
 .graduation_video2025 {
   width: 756px;
@@ -54,4 +55,21 @@
 .header {
   background-color: silver; /* silver */
   padding: 10px 0px 3px 0px; /* top right bottom left */
+}
+@media screen and (max-width: 1179px) {
+  .video-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .video-wrapper {
+    flex: 1;
+  }
+
+  .footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: silver;
+  }
 }
