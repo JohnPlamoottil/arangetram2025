@@ -37,15 +37,10 @@
   right: 3px;
 }
 
-.video-wrapper {
+.video-wrapper__video {
   position: relative;
   text-align: center;
-}
-
-.video-wrapper video {
-  display: block;
-  width: 100%;
-  height: auto;
+  flex-grow: 1;
 }
 
 .competition_video2019 {
@@ -56,4 +51,9 @@
   left: 105px;
   top: 21px;
   border: none;
+}
+.video-frame_video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
