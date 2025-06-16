@@ -112,7 +112,125 @@
   font-weight: 400px;
   color: indianred;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1179px) {
+  .header {
+    background-color: silver; /* silver */
+    color: white;
+    padding: 10px 0px 3px 0px; /* top right bottom left */
+  }
+
+  .header-container {
+    padding: 2rem 1rem;
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .logo {
+    width: 140px;
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  .green_varnum_corner {
+    width: 90%;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    display: block;
+  }
+  .header-content {
+    margin-right: 124px;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 25px;
+    font-family: "Amita", cursive;
+    font-weight: 900;
+    color: brown;
+    margin: 0;
+    text-align: center;
+    position: relative;
+  }
+  .main_title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-family: "Amita";
+    color: #f87171; /* indian red */
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 900px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  .performersheader {
+    font-family: "Amita";
+    font-size: 29px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 900;
+    color: brown;
+    white-space: normal;
+  }
+  .instructions {
+    font-family: "Amita", "Arial", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 900;
+    color: black;
+  }
+
+  .dropdown {
+    display: block;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    align-items: right;
+    background-color: silver;
+    width: 197px;
+    height: 60px;
+    margin-left: 47px;
+  }
+  .dropdown__title {
+    font-size: 20px;
+    margin: 0px;
+    display: inline;
+    color: indianred;
+  }
+  .dancers {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    font-size: 50px;
+    color: indianred;
+    width: 200px;
+    font-family: "Amita", "Arial", sans-serif;
+    position: absolute;
+    background-color: azure;
+    opacity: 0.9;
+    margin-left: 46px;
+  }
+
+  .dancer_text {
+    font-family: "Amita", "Arial", sans-serif;
+    font-size: 25px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400px;
+    color: indianred;
+  }
+}
+@media screen and (max-width: 430px) {
   /* Stack logo and content vertically */
   .header-container {
     flex-direction: column;
