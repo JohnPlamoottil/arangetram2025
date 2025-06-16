@@ -31,8 +31,10 @@ const Venue = () => {
         <div className="panel">
           <p>
             Date: Saturday, June 21st 2025 <br />
-            Time: 3:00pm to 8:00pm CST <br />
-            RSVP: please submit before Friday June20 2025
+            Time: 4:00pm to 8:00pm CST (Doors open promptly at 3:30pm CST)
+            <br />
+            RSVP: please submit before Friday June20 2025 or call your respected
+            party.
             <img
               className="calendar"
               src={June2025}
