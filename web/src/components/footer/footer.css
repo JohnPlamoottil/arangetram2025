@@ -136,12 +136,22 @@
 .clc__venue {
   width: 100%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1179px) {
   .footer {
     flex-direction: column;
   }
   .moms_and_daughters {
     width: 95%;
+  }
+  .Footer-Middle {
+    display: flex;
+    margin-top: 50px;
+    margin-left: -9px;
+    font-size: 18px;
+  }
+  .clc__venue {
+    width: 100%;
+    margin-top: 100px;
   }
 }
 @media screen and (max-width: 768px) {
