@@ -115,7 +115,7 @@
   height: 100%;
   border: none;
 }
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 430px) {
   .embedded_map {
     height: 300px;
     width: 95%;
@@ -140,5 +140,22 @@
   .group__photo__venue {
     width: 95%;
     margin: 111px 25px 25px 25px;
+  }
+  .auditorium__venue {
+    width: 287px;
+    border-radius: 9px;
+    float: right;
+    margin-right: -3px;
+    margin-top: 1px;
+  }
+  .laptop-video-overlay__venue {
+    position: absolute;
+    top: 3.2%; /* Adjust to fit laptop screen position */
+    left: 11.2%;
+    width: 78.6%; /* Adjust width of the screen area */
+    height: 77.5%; /* Adjust height of the screen area */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 }
