@@ -25,8 +25,8 @@
   transition: 0.4s;
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: silver;
-  color: #8f212e;
+  background-color: black;
+  color: gold;
   font-weight: bold;
   border: none;
   border-radius: 6px;
@@ -51,16 +51,17 @@
   background-color: #ccc;
 }
 .sidenote {
-  background-color: silver;
+  background-color: black;
   font-family: "Amita";
   font-size: 15px;
   text-align: center;
-  color: indianred;
+  color: goldenrod;
 }
 /* Style the accordion panel. Note: hidden by default */
 .panel_program {
   padding: 0 18px;
-  background-color: white;
+  background-color: black;
+  text-decoration-color: gold;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
@@ -68,4 +69,15 @@
 }
 .program__Musicians {
   font-weight: bold;
+}
+@media screen and (max-width: 430px) {
+  .panel_program {
+    padding: 0 18px;
+    background-color: black;
+    text-decoration-color: white;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    font-family: "Amita";
+  }
 }

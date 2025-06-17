@@ -39,10 +39,10 @@
     margin: 0 auto;
     text-align: center;
   }
-  .title {
+  .title_orchestra {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: rgb(126, 18, 18);
+    color: gold;
   }
   .india__map {
     width: 100%;

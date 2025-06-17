@@ -54,6 +54,11 @@
   margin-left: 1px;
 }
 @media screen and (max-width: 1179px) {
+  .title_Program {
+    color: gold;
+    background-color: black;
+  }
+
   .avatar {
     width: 220px;
     height: auto;
@@ -68,6 +73,7 @@
   .instructor__image-container {
     flex-direction: column;
   }
+
   .guru_second {
     width: 77%;
     text-align: center;

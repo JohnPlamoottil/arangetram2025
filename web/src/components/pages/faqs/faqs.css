@@ -53,7 +53,8 @@
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
-  background-color: white;
+  background-color: black;
+  text-decoration-color: gold;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;

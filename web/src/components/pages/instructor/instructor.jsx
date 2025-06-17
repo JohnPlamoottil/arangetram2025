@@ -24,7 +24,7 @@ const Instructor = () => {
     <div>
       <Navigation />
       <div>
-        <section className="question">
+        <section>
           <h2 className="title_Program">
             Blessings From Guru (Instructor) <br />
             Shreemathi Smt. Jinoo Varghese <br />
@@ -37,7 +37,8 @@ const Instructor = () => {
             alt="instructor_with_girls"
           />
           <button className="accordion_program" onClick={handleClick}>
-            Instructor - Biography (click to open) <br />
+            Instructor - Biography <br />
+            (click to open) <br />
           </button>
           <div className="panel_program">
             <p className="accordion-text">
@@ -76,7 +77,8 @@ const Instructor = () => {
           </div>
 
           <button className="accordion_program" onClick={handleClick}>
-            Nattuvangam (click to open)
+            Nattuvangam <br />
+            (click to open)
           </button>
           <div className="panel_program">
             <p className="accordion-text">
