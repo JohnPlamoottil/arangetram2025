@@ -1,20 +1,43 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./guestbook.css"; // optional for styling
 import Navigation from "../../navigation-links/navigation-links";
 import Footer from "../../footer/footer";
 import group_center from "../../../assets/group_center.png";
 import "../../../vendor/fonts.css";
 
+const HOST = import.meta.env.VITE_HOST;
+
 function Guestbook() {
   const [entries, setEntries] = useState([]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const response = await fetch(`${HOST}/api/message`);
+      if (response.ok) {
+        const data = await response.json();
+        setEntries(data.messages);
+      }
+    };
+
+    fetchMessages();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newEntry = { name, message, date: new Date().toLocaleString() };
-    setEntries([newEntry, ...entries]); // prepend new entry
+    const response = await fetch(`${HOST}/api/message`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, content: message }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      setEntries([data.message, ...entries]); // prepend new entry
+    }
     setName("");
     setMessage("");
   };
@@ -49,7 +72,9 @@ function Guestbook() {
         <ul className="entries">
           {entries.map((entry, index) => (
             <li key={index}>
-              <strong>{entry.name}</strong> ({entry.date})<p>{entry.message}</p>
+              <strong>{entry.name}</strong> (
+              {new Date(entry.createdAt).toLocaleString()})
+              <p>{entry.content}</p>
             </li>
           ))}
         </ul>
