@@ -36,8 +36,9 @@ Check-Off List
 - [x] guestbook (backend work)
 - [x] Rendor setup after all data is put into site  June14
 - [x]Footer on all the pages June11 2026
-- [ ] 390px media query iPhone12 Pro
-- [ ] 430px media query. iPhone14Pro Max
+- [x] 390px media query iPhone12 Pro
+- [x] 430px media query. iPhone14Pro Max
+- [x] 768px media query. iPad
 - [x] 1179px media query. iPhone15
 
 ### Performers
