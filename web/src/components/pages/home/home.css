@@ -110,9 +110,6 @@
   color: white;
 }
 @media screen and (max-width: 430px) {
-  .top_till_green_picture {
-    width: 64%;
-  }
   .dance_bkgd_outer_box {
     display: flex;
     justify-content: center;

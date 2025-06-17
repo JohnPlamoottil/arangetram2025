@@ -1,3 +1,7 @@
+* {
+  outline: 1px dotted red;
+}
+
 .faq-form {
   max-width: 600px;
   margin: 2rem auto;

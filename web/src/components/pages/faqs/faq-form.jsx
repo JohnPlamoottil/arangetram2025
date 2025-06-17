@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import "./faqs/faq-form.css";
+import "./faq-form.css";
 
 const FAQForm = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,12 @@ const FAQForm = () => {
     e.preventDefault();
 
     emailjs
-      .send("your_service_id", "your_template_id", formData, "your_public_key")
+      .send(
+        "service_avsd38s",
+        "template_nb9x01n",
+        formData,
+        "16lkLTGP8jiCXyrHM"
+      )
       .then(() => {
         setStatus("✅ Thank you! Your question was submitted.");
         setFormData({ question: "", name: "", email: "" });

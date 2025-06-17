@@ -3,6 +3,7 @@ import Navigation from "../../navigation-links/navigation-links";
 import "./faqs.css";
 import Footer from "../../footer/footer";
 import margam from "../../../assets/margam.png";
+import FAQForm from "./faq-form";
 
 const FAQs = () => {
   function handleClick(e) {
@@ -109,39 +110,41 @@ const FAQs = () => {
         </div>
       </section>
       <img className="margam" src={margam} alt="group center"></img>
-      <div className="faq-form">
-        <p className="faq-instructions">
-          If you have any more questions concerning the event, please send them
-          using the form below:
-        </p>
-        <p className="faq-instructions">
-          We’ll update the site with the answer.
-        </p>
-
-        <form>
-          <label className="form_question">
-            Question*
-            <textarea className="faq-textarea" name="question" required />
-          </label>
-
-          <div className="contact">
-            <label className="form_name">
-              Name* <input type="text" name="name" required />
-            </label>
-
-            <label className="form_email">
-              Email* <input type="email" name="email" required />
-            </label>
-          </div>
-
-          <button className="form_submit" type="submit">
-            Send Message
-          </button>
-        </form>
-      </div>
+      <FAQForm />
       <Footer />
     </div>
   );
 };
 
 export default FAQs;
+
+// <div className="faq-form">
+//   <p className="faq-instructions">
+//     If you have any more questions concerning the event, please send them
+//     using the form below:
+//   </p>
+//   <p className="faq-instructions">
+//     We’ll update the site with the answer.
+//   </p>
+
+//   <form>
+//     <label className="form_question">
+//       Question*
+//       <textarea className="faq-textarea" name="question" required />
+//     </label>
+
+//     <div className="contact">
+//       <label className="form_name">
+//         Name* <input type="text" name="name" required />
+//       </label>
+
+//       <label className="form_email">
+//         Email* <input type="email" name="email" required />
+//       </label>
+//     </div>
+
+//     <button className="form_submit" type="submit">
+//       Send Message
+//     </button>
+//   </form>
+// </div>
