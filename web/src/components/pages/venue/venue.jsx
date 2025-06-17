@@ -82,7 +82,7 @@ const Venue = () => {
           </p>
         </div>
         <button className="accordion" onClick={handleClick}>
-          Interactive Map - powered by GoogleMaps
+          Interactive Map
         </button>
         <div className="map__panel">
           <p className="map-instructions">
@@ -107,7 +107,7 @@ const Venue = () => {
           </div>
         </div>
         <button className="accordion" onClick={handleClick}>
-          Timelapse Video Explaining Campus Parking
+          Campus Parking
         </button>
         <div className="panel">
           <p>
