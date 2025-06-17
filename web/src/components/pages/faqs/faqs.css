@@ -89,8 +89,8 @@
 .faq-instructions {
   font-family: "Amita";
   font-size: 20px;
-  color: black;
-  background-color: silver;
+  color: gold;
+  background-image: url(../../../assets/temple.png);
   margin: 0;
 }
 
