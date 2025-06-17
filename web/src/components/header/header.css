@@ -32,7 +32,7 @@
   font-size: 25px;
   font-family: "Amita", cursive;
   font-weight: 900;
-  color: goldenrod;
+  color: rgb(126, 18, 18);
   margin: 0;
   text-align: center;
   position: relative;
@@ -45,7 +45,7 @@
 .subtitle {
   font-size: 1.5rem;
   font-family: "Amita";
-  color: gold;
+  color: brown;
   margin-top: 8px;
   margin-bottom: 8px;
   text-align: center;
@@ -57,7 +57,7 @@
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  color: rgb(247, 177, 2);
+  color: brown;
   white-space: normal;
 }
 .instructions {
@@ -66,7 +66,7 @@
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  color: black;
+  color: brown;
 }
 
 .dropdown {
@@ -115,7 +115,6 @@
 @media screen and (max-width: 430px) {
   .header {
     background-image: url(../../assets/temple.png);
-    color: white;
     padding: 0px 0px 0px 0px; /* top right bottom left */
   }
 
@@ -152,7 +151,7 @@
     font-size: 25px;
     font-family: "Amita", cursive;
     font-weight: 900;
-    color: dark goldenrod;
+    color: rgb(126, 18, 18);
     margin: 0;
     text-align: center;
     position: relative;
@@ -165,7 +164,7 @@
   .subtitle {
     font-size: 1.5rem;
     font-family: "Amita";
-    color: gold;
+    color: indianred;
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: 900px;
@@ -178,7 +177,7 @@
     text-align: center;
     font-style: normal;
     font-weight: 900;
-    color: rgb(247, 177, 2);
+    color: brown;
     white-space: normal;
   }
   .instructions {
@@ -187,7 +186,7 @@
     text-align: center;
     font-style: normal;
     font-weight: 900;
-    color: yellowgreen;
+    color: brown;
   }
 
   .dropdown {
