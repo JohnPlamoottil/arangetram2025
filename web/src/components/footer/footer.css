@@ -159,7 +159,7 @@
     width: 95%;
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 440px) {
   .footer {
     padding: 1rem;
     background-color: #f3f3f3;
@@ -169,6 +169,7 @@
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    box-sizing: border-box;
   }
   .footer__wrapper {
     width: 100%;
