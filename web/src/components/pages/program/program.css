@@ -74,7 +74,7 @@
   .panel_program {
     padding: 0 18px;
     background-color: black;
-    text-decoration-color: white;
+    color: white;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.2s ease-out;
