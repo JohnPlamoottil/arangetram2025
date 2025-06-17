@@ -9,10 +9,10 @@
 
 .video-title {
   font-size: 2rem;
-  color: indianred;
+  color: gold;
   margin-bottom: 20px;
   font-family: "Amita";
-  background-color: silver;
+  background-image: url(../../../assets/temple.png);
 }
 
 .video-subtitle {
@@ -38,13 +38,9 @@
 }
 
 .graduation_video2025 {
-  width: 756px;
-  height: 474px;
-  position: absolute;
-  text-align: center;
-  left: 105px;
-  top: 21px;
-  border: none;
+  position: relative;
+  left: -6px;
+  top: 215px;
 }
 .header {
   background-color: silver; /* silver */
@@ -55,7 +51,7 @@
   height: auto;
   display: block;
 }
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 440px) {
   .video-page {
     display: flex;
     flex-direction: column;
@@ -69,6 +65,18 @@
   .footer {
     margin-top: auto;
     text-align: center;
-    background-color: silver;
+    background-color: rgb(36, 35, 35);
+    background-image: url(../../../assets/temple.png);
+  }
+  .graduation_video2025 {
+    position: relative;
+    left: -6px;
+    top: -205px;
+  }
+  .video-frame_livestream {
+    width: 144%;
+    height: auto;
+    display: block;
+    margin-left: -74px;
   }
 }

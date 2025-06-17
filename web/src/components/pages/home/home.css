@@ -4,24 +4,16 @@
   background-image: url(../assets/Temple.png);
 }
 .dance_bkgd {
-  position: relative;
+  /* position: relative;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 56;
+  width: 86%;
   height: 100%;
   background-size: cover;
   background-position: center;
   opacity: 0.3; /* Adjust to control transparency */
-  z-index: 0;
+  /* z-index: 0; */
 }
-/* .performers {
-  font-family: "Amita", "Arial", sans-serif;
-  font-size: 25px;
-  text-align: left;
-  font-style: normal;
-  font-weight: 900;
-  color: indianred;
-} */
 
 .home_group_photo {
   display: flex;
@@ -53,22 +45,20 @@
 .burger-icon {
   font-size: 24px;
   margin-left: 8px;
-  color: indianred;
+  color: gold;
 }
 .quote-container {
   max-width: 800px;
+  padding-right: 0px;
+  padding-left: 0px;
   margin: 40px auto;
   padding: 20px;
-  background-color: brown;
+  background-color: rgb(0, 0, 0);
   border-left: 4px solid #f6ff00;
-  border-right: 4px solid #f6ff00;
-  border-top: 4px solid #f6ff00;
-  border-bottom: 4px solid #f6ff00;
-  font-family: "Georgia", serif;
-  color: #fcebe3;
+  font-family: "Amita";
   text-align: center;
   margin: 0 auto;
-  width: auto;
+  width: 55%;
   font-size: 40px;
   text-align: center;
   padding-right: 500px;
@@ -83,7 +73,6 @@
   color: white;
   display: flex;
   justify-content: center;
-  /* background-color: rgb(140 90 90 / 52%); */
 }
 
 .quote-meaning {
@@ -95,7 +84,6 @@
   justify-content: center;
   margin-left: 5px;
   margin-right: 5px;
-  /* background-color: rgb(140 90 90 / 52%); */
 }
 
 .quote-author-one {
@@ -113,7 +101,6 @@
   color: white;
   display: flex;
   justify-content: center;
-  /* background-color: rgb(140 90 90 / 52%); */
 }
 
 .quote-author-two {
@@ -122,18 +109,101 @@
   font-size: 20px;
   color: white;
 }
-@media screen and (max-width: 1179px) {
-  .quote-container {
-    padding: 2rem 5rem;
-    margin: 0 auto;
-    max-width: 90%;
-    background-color: rgba(128, 0, 0, 0.85); /* semi-transparent dark red */
-    border: 2px solid gold;
-    border-radius: 10px;
+@media screen and (max-width: 430px) {
+  .top_till_green_picture {
+    width: 64%;
+  }
+  .dance_bkgd_outer_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dance_bkgd {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 99%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    opacity: 0.3; /* Adjust to control transparency */
+    z-index: 0;
+  }
+  .journey {
+    font-size: 1.9rem;
+    text-align: right;
+    background-image: url(../../../assets/temple.png);
+  }
+  .burger-icon {
+    font-size: 24px;
+    margin-left: 8px;
+    color: gold;
+  }
+  .slanted_green_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0px;
+    margin-left: -88px;
+  }
+  .home_group_photo {
+    width: 77%;
+    height: 100%;
+    max-width: 100%;
+    transform: rotate(4deg);
+  }
+  .quote-container {
+    padding: 0rem 0rem;
+    border: 5px solid gold;
+    margin-right: 0px;
+    margin-left: 65px;
+  }
+  .quote {
+    font-family: "Amita";
     text-align: center;
+    font-size: 16px;
+    color: gold;
+    display: flex;
+    justify-content: center;
+  }
+
+  .quote-meaning {
+    font-family: "Amita";
+    text-align: center;
+    font-size: 10px;
+    color: gold;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 15px;
+  }
+
+  .quote-author-one {
+    text-align: right;
+    font-style: italic;
+    font-size: 10px;
+    color: gold;
+    font-family: "Amita";
+    padding-right: 44px;
+  }
+
+  .quotetwo {
+    font-family: "Amita";
+    text-align: center;
+    font-size: 10px;
+    color: gold;
+    display: flex;
+    justify-content: center;
+    margin-right: 79px;
+    margin-left: 39px;
+  }
+
+  .quote-author-two {
+    text-align: right;
+    font-style: italic;
+    font-size: 10px;
+    color: gold;
+    padding-right: 44px;
   }
 }
 @media screen and (max-width: 390px) {
@@ -155,13 +225,12 @@
   .quote-container {
     z-index: 1;
     position: relative;
-    margin-top: 2rem; /* ✅ Add this line */
-    background-color: rgba(128, 0, 0, 0.85);
-    color: white;
+    background-color: black;
+    color: gold;
     text-align: center;
     padding: 1.5rem 1rem;
     border-left: 2px solid gold;
-    border-right: 2px solid gold;
+
     border-radius: 10px;
   }
   .quote {
@@ -174,5 +243,11 @@
     font-size: 1.1rem;
     line-height: 1.8;
     padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .quote-container {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 }

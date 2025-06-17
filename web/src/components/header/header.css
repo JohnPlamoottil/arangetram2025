@@ -1,7 +1,7 @@
 .header {
-  background-color: silver; /* silver */
+  background-image: url(../../assets/temple.png);
   color: white;
-  padding: 10px 0px 3px 0px; /* top right bottom left */
+  padding: 0px 0px 0px 0px; /* top right bottom left */
 }
 
 .header-container {
@@ -32,7 +32,7 @@
   font-size: 25px;
   font-family: "Amita", cursive;
   font-weight: 900;
-  color: brown;
+  color: goldenrod;
   margin: 0;
   text-align: center;
   position: relative;
@@ -45,7 +45,7 @@
 .subtitle {
   font-size: 1.5rem;
   font-family: "Amita";
-  color: #f87171; /* indian red */
+  color: gold;
   margin-top: 8px;
   margin-bottom: 8px;
   text-align: center;
@@ -57,7 +57,7 @@
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  color: brown;
+  color: rgb(247, 177, 2);
   white-space: normal;
 }
 .instructions {
@@ -109,51 +109,14 @@
   text-align: center;
   font-style: normal;
   font-weight: 400px;
-  color: indianred;
-}
-/* SLIDING ANIMATION CSS STARTS HERE: */
-/* .image-wrapper {
-  overflow: hidden;
+  color: gold;
 }
 
-.slide-in {
-  width: 50px;
-  position: relative;
-  animation: slideInFromLeft 5s ease-out forwards;
-  opacity: 95%;
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.slide-in {
-  width: 300px;
-  position: absolute;
-  animation: slideInFromRight 5s ease-out forwards;
-  opacity: 0;
-}
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-} */
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 430px) {
   .header {
-    background-color: silver; /* silver */
+    background-image: url(../../assets/temple.png);
     color: white;
-    padding: 10px 0px 3px 0px; /* top right bottom left */
+    padding: 0px 0px 0px 0px; /* top right bottom left */
   }
 
   .header-container {
@@ -161,21 +124,23 @@
     background-position: center top;
     background-size: cover;
     flex-direction: column;
+    background-image: url(../../assets/temple.png);
   }
 
   .logo {
     width: 140px;
     display: block;
     margin: 0 auto 1rem;
+    margin-top: 38px;
   }
   .green_varnum_corner {
-    width: 90%;
+    width: 103%;
     max-width: 600px;
     margin: 1.5rem auto;
     display: block;
   }
   .header-content {
-    margin-right: 124px;
+    margin-right: -9px;
   }
 
   .header-text {
@@ -187,7 +152,7 @@
     font-size: 25px;
     font-family: "Amita", cursive;
     font-weight: 900;
-    color: brown;
+    color: dark goldenrod;
     margin: 0;
     text-align: center;
     position: relative;
@@ -200,7 +165,7 @@
   .subtitle {
     font-size: 1.5rem;
     font-family: "Amita";
-    color: #f87171; /* indian red */
+    color: gold;
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: 900px;
@@ -209,20 +174,20 @@
   }
   .performersheader {
     font-family: "Amita";
-    font-size: 29px;
+    font-size: 15px;
     text-align: center;
     font-style: normal;
     font-weight: 900;
-    color: brown;
+    color: rgb(247, 177, 2);
     white-space: normal;
   }
   .instructions {
     font-family: "Amita", "Arial", sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     font-style: normal;
     font-weight: 900;
-    color: black;
+    color: yellowgreen;
   }
 
   .dropdown {
@@ -233,7 +198,7 @@
     color: black;
     cursor: pointer;
     align-items: right;
-    background-color: silver;
+    background-color: black;
     width: 197px;
     height: 60px;
     margin-left: 47px;
@@ -242,7 +207,7 @@
     font-size: 20px;
     margin: 0px;
     display: inline;
-    color: indianred;
+    color: gold;
   }
   .dancers {
     z-index: 85;
@@ -251,11 +216,10 @@
     align-items: left;
     justify-content: center;
     font-size: 50px;
-    color: indianred;
+    color: gold;
     width: 200px;
     font-family: "Amita", "Arial", sans-serif;
-    /* position: absolute; */
-    background-color: azure;
+    background-color: rgb(81, 83, 83);
     opacity: 0.9;
     margin-left: 46px;
   }
@@ -266,7 +230,7 @@
     text-align: center;
     font-style: normal;
     font-weight: 400px;
-    color: indianred;
+    color: gold;
   }
 }
 @media screen and (max-width: 390px) {
@@ -333,6 +297,45 @@
     text-align: center;
     font-style: normal;
     font-weight: 400px;
-    color: indianred;
+    color: gold;
   }
 }
+
+/* SLIDING ANIMATION CSS STARTS HERE: */
+/* .image-wrapper {
+  overflow: hidden;
+}
+
+.slide-in {
+  width: 50px;
+  position: relative;
+  animation: slideInFromLeft 5s ease-out forwards;
+  opacity: 95%;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in {
+  width: 300px;
+  position: absolute;
+  animation: slideInFromRight 5s ease-out forwards;
+  opacity: 0;
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */

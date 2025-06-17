@@ -110,7 +110,7 @@ const Footer = () => {
         </div>
         <div className="about__circle"></div>
         <div className="about__circle about__circle_animation_blurred"></div>
-        <div>
+        <div className="FooterMidde_momsdaughter_clcvenue">
           <p className="Footer-Middle">
             Special Thanks to All of You for Attending Our Arangetram <br />
             Photos will be updated to this site in the months to follow. <br />
@@ -132,7 +132,7 @@ const Footer = () => {
           <Link to="/video" className="nav-link">
             Bharatanatyam Journey
           </Link>
-          <p>Follow us on:</p>
+          <p className="class-location-title">Follow us on:</p>
           <p className="class-location">
             Soorya Dance School <br />
             Address: 1948 Raymond Dr <br />
@@ -166,16 +166,18 @@ const Footer = () => {
                 <img src={youtubelogo} alt="YouTube" width="30" height="30" />
               </a>
             </div>
-            <img
-              className="soorya_studio"
-              src={soorya_studio}
-              alt="studio location"
-            ></img>
-            <img
-              className="auditorium__footer"
-              src={JLC_thumbnail}
-              alt="JLC location"
-            ></img>
+            <div className="soorya_auditorium">
+              <img
+                className="soorya_studio"
+                src={soorya_studio}
+                alt="studio location"
+              ></img>
+              <img
+                className="auditorium__footer"
+                src={JLC_thumbnail}
+                alt="JLC location"
+              ></img>
+            </div>
           </div>
         </div>
       </div>

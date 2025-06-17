@@ -37,6 +37,14 @@ const Orchestra = () => {
               src={Deepu_Karunakaran}
               alt="deepu vocalist"
             />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             Melodious Vocals by Deepu Karunakaran is a Diploma holder in
             Carnatic Music and Violin from the Kalakshetra Foundation. He
             started learning music at the age of 5 under Guru Janardhanan Potty.
@@ -67,6 +75,12 @@ const Orchestra = () => {
             </a>{" "}
             <br />
             <img className="musician" src={Kiran_R_Pai} alt="deepu vocalist" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             Kiran R. Pai is a B-HIGH graded mridangam artist from All India
             Radio Chennai. He began his journey of learning mridangam from the
             institution Kalabhavan in Cochin. He later received advanced
@@ -94,6 +108,13 @@ const Orchestra = () => {
               src={Sri_Rijesh_Gopalakrishnan}
               alt="deepu vocalist"
             />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             Sri Rijesh Gopalakrishnan started learning violin and vocals under
             the tutelage of his father Gopalakrishnan Cheruvila at the age of 4.
             He started performing at the age of 8 and simultaneously learned
@@ -119,6 +140,13 @@ const Orchestra = () => {
               src={Preyesh_Mampoyil_Kudiru_Parambu}
               alt="deepu vocalist"
             />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             Preyesh Mampoyil Kudiru Parambu is a passionate Carnatic flautist
             and a disciple of Vidwan Shri Shailesh Ramamurthy. An alumnus of
             Chembai Memorial Government Music College, Palakkad, he represents

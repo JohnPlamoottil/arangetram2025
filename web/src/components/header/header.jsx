@@ -3,22 +3,18 @@ import "./header.css";
 import Navigation from "../navigation-links/navigation-links";
 import logo from "../../assets/logo.png";
 import "../../vendor/fonts.css";
-import green_varnum_corner from "../../assets/green_varnum_corner.png";
+import tillana from "../../assets/tillana.png";
 
 const Header = () => {
   return (
     <header className="header">
-      <Navigation />
+      {/* <Navigation /> */}
       <div className="header-container">
         {/* Logo */}
         <img src={logo} alt="Logo" className="logo" />
 
         {/* slanted group image */}
-        <img
-          className="green_varnum_corner"
-          src={green_varnum_corner}
-          alt="varnum group"
-        />
+        <img className="green_varnum_corner" src={tillana} alt="varnum group" />
         {/* <div className="image-wrapper">
           <img
             src={green_varnum_corner}

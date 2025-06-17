@@ -2,7 +2,7 @@ import "./home.css";
 import { useState } from "react";
 import Header from "../../header/header";
 import Footer from "../../footer/footer";
-import tillana from "../../../assets/tillana.png";
+import green_varnum_corner from "../../../assets/green_varnum_corner.png";
 import Navigation from "../../navigation-links/navigation-links";
 import "../../../vendor/fonts.css";
 import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -12,12 +12,14 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
-      <div>
-        <img
-          className="dance_bkgd"
-          src={dance_bkgd}
-          alt="white bkgd with 4 shadow dancers"
-        ></img>
+      <div className="top_till_green_picture">
+        <div className="dance_bkgd_outer_box">
+          <img
+            className="dance_bkgd"
+            src={dance_bkgd}
+            alt="white bkgd with 4 shadow dancers"
+          ></img>
+        </div>
 
         <Header />
         <main className="journey"></main>
@@ -94,7 +96,13 @@ function Home() {
           </Link>
         </div>
       )}
-      <img className="home_group_photo" src={tillana} alt="group photo"></img>
+      <div className="slanted_green_image">
+        <img
+          className="home_group_photo"
+          src={green_varnum_corner}
+          alt="group photo"
+        ></img>
+      </div>
       <div className="quote-container">
         <blockquote className="quote">
           “Yatho Hasta Thatho Drishti; <br />

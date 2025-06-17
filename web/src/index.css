@@ -24,6 +24,9 @@ a:hover {
 
 body {
   margin: auto;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* ✅ Prevents horizontal scroll */
   min-width: 320px;
   min-height: 100vh;
   background: url(./assets/Temple.png);

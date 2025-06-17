@@ -1,5 +1,5 @@
 .musician_container {
-  background-color: tan;
+  background-image: url(../../../assets/temple.png);
   opacity: 95%;
   z-index: auto;
   display: block;
@@ -32,7 +32,7 @@
   float: left;
   margin-right: 16px;
 }
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 430px) {
   .musician_container {
     width: 90%;
     max-width: 800px;
@@ -42,16 +42,18 @@
   .title {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    color: goldenrod;
   }
   .india__map {
     width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 1rem;
+    opacity: 75%;
   }
 
   .accordion-text {
-    color: black;
+    color: gold;
     padding: 1.2rem;
     border-radius: 8px;
     width: 100%;
@@ -60,9 +62,10 @@
     line-height: 1.6;
   }
   .musician {
-    width: 180px;
+    width: 135px;
     border-radius: 8px;
     float: left;
     margin-right: 16px;
+    align-items: center;
   }
 }

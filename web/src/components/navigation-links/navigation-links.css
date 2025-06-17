@@ -2,14 +2,14 @@
   display: flex;
   gap: 30px;
   font-family: "Amita", "Arial", sans-serif;
-  background-color: silver;
+  /* background-color: silver; */
   justify-content: center;
   box-sizing: border-box;
 }
 .nav-link {
   font-size: 23px;
   display: flex;
-  color: indianred;
+  color: gold;
   text-decoration: none;
   font-family: "Amita", sans-serif;
   font-weight: 900;
@@ -20,10 +20,10 @@
 }
 @media screen and (max-width: 430px) {
   .nav-link {
-    margin-left: 39px;
+    /* margin-left: 39px; */
   }
   .nav-links {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     gap: 0.5rem;
     background: #eee;
@@ -33,16 +33,16 @@
     left: 0;
     width: 100%;
     z-index: 999;
-    box-sizing: border-box;
+    box-sizing: border-box; */
   }
   .nav-link {
-    font-size: 23px;
+    /* font-size: 23px;
     display: flex;
-    color: indianred;
+    color: gold;
     text-decoration: none;
     font-family: "Amita", sans-serif;
     font-weight: 900;
-    opacity: 50%;
+    opacity: 75%; */
   }
 
   .nav-link:hover {
@@ -55,13 +55,16 @@
   .nav-links {
     flex-direction: column;
     margin-top: -13px;
+    margin-left: -58px;
     gap: 10px;
-    /* width: 100%; */
     position: relative;
     top: 62%; /* position below navbar header */
-    left: 0;
-    width: 100%;
-    background-color: silver;
+    left: 23px;
+    width: 95%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: black;
     display: flex;
     z-index: 59; /* 👈 ensures it stays above everything */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -81,7 +84,10 @@
 
   /* Optional: Make links full width on mobile */
   .nav-link {
-    padding: 10px 10px 10px 10px;
-    border-bottom: 1px solid #333;
+    padding: 5px 101px 10px 65px;
+    background: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    /* border-bottom: 3px solid #f7ff02; */
   }
 }

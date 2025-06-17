@@ -41,7 +41,9 @@ function Guestbook() {
             onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
-          <button type="submit">Submit</button>
+          <button className="submit" type="submit">
+            Submit
+          </button>
         </form>
 
         <ul className="entries">

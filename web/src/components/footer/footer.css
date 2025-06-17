@@ -14,12 +14,11 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 10px;
   font-family: "Amita";
   font-size: 16px;
   position: relative;
   overflow: hidden;
-  background-color: silver;
+  background-image: url(../../../assets/temple.png);
 }
 .footer__text {
   text-align: center;
@@ -27,12 +26,11 @@
 
 .box-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-
-  padding: 2rem;
+  align-items: center;
 }
 
 .box-item {
@@ -44,7 +42,7 @@
 .accordion::before {
   content: "\02795"; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
-  color: #777;
+  color: gold;
   float: right;
   margin-left: 5px;
 }
@@ -62,7 +60,7 @@
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
-  background-color: white;
+  background-color: gold;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
@@ -89,7 +87,7 @@
   width: 426px;
   height: 426px;
   border-radius: 1351%;
-  background-color: #2f80ed;
+  background-color: gold;
   position: absolute;
   top: -152px;
   left: -350px;
@@ -125,9 +123,6 @@
   margin-right: 78px;
 }
 .Footer-Middle {
-  display: flex;
-  margin-top: 50px;
-  margin-left: 200px;
   font-size: 20px;
 }
 .clc__venue {
@@ -137,13 +132,16 @@
   .footer {
     flex-direction: column;
   }
+  .FooterMidde_momsdaughter_clcvenue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .moms_and_daughters {
     width: 95%;
   }
   .Footer-Middle {
-    display: flex;
-    margin-top: 50px;
-    margin-left: -9px;
     font-size: 18px;
   }
   .clc__venue {
@@ -159,7 +157,7 @@
     width: 95%;
   }
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 430px) {
   .footer {
     padding: 1rem;
     background-color: #f3f3f3;
@@ -172,13 +170,17 @@
     box-sizing: border-box;
   }
   .footer__wrapper {
-    width: 100%;
+    width: 101%;
     display: flex;
     flex-direction: column;
-    background-color: silver;
+  }
+  .Contact_Us {
+    font-family: "Amita";
+    color: gold;
   }
   .footer__text {
     text-align: center;
+    background-image: url(../../../assets/temple.png);
   }
 
   .box-container {
@@ -200,7 +202,7 @@
   .accordion::before {
     content: "\02795"; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
-    color: #777;
+    color: white;
     float: right;
     margin-left: 5px;
   }
@@ -212,13 +214,13 @@
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .slide,
   .accordion:hover {
-    background-color: #ccc;
+    background-color: #302c2cb7;
   }
 
   /* Style the accordion panel. Note: hidden by default */
   .panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: rgb(67, 63, 63);
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.2s ease-out;
@@ -228,16 +230,16 @@
   @keyframes pulsate {
     0% {
       opacity: 0;
-      box-shadow: 0 0 0 0 rgb(183, 196, 213);
+      box-shadow: 0 0 0 0 rgb(213, 213, 183);
     }
     50% {
       opacity: 0.6;
-      box-shadow: 0 0 0 50px rgb(98, 138, 189);
+      box-shadow: 0 0 0 50px rgb(189, 172, 98);
     }
     100% {
       transform: scale(1.2);
       opacity: 0;
-      box-shadow: 0 0 0 100px rgba(47, 128, 237);
+      box-shadow: 0 0 0 100px rgba(221, 227, 40, 0.53);
     }
   }
 
@@ -245,7 +247,7 @@
     width: 426px;
     height: 426px;
     border-radius: 1351%;
-    background-color: #2f80ed;
+    background-color: gold;
     position: absolute;
     top: -152px;
     left: -350px;
@@ -265,6 +267,12 @@
   .youtube-link {
     margin-left: 34px;
   }
+  .soorya_auditorium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .soorya_studio {
     width: 300px;
     height: 300px;
@@ -275,9 +283,9 @@
   }
   .moms_and_daughters {
     width: 80%;
-    max-width: 250px;
+    max-width: 373px;
     height: auto;
-    margin: 0 auto;
+
     border-radius: 6px;
     object-fit: contain;
   }
@@ -285,13 +293,20 @@
     margin-right: 78px;
   }
   .Footer-Middle {
-    display: flex;
-    text-align: center;
-
-    font-size: 15px;
+    color: gold;
+    font-size: 10px;
   }
   .clc__venue {
     width: 80%;
+    margin-top: 45px;
+  }
+  .class-location-title {
+    color: gold;
+    margin-left: 65px;
+  }
+  .class-location {
+    color: gold;
+    margin-left: 65px;
   }
 }
 @media screen and (max-width: 390px) {
@@ -300,5 +315,8 @@
   }
   .moms_and_daughters {
     width: 95%;
+  }
+  .class-location {
+    color: gold;
   }
 }
