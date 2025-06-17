@@ -171,7 +171,7 @@ const Orchestra = () => {
         </div>
       </section>
       <div className="musician_container">
-        <h1 className="title">The History of Dance in India</h1>
+        <h1 className="title_orchestra">The History of Dance in India</h1>
         <div className="center-image">
           <img className="india__map" src={dances_india} />
         </div>
