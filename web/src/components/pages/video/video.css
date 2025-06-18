@@ -1,6 +1,6 @@
 .header {
-  background-color: silver; /* silver */
-  padding: 10px 0px 3px 0px; /* top right bottom left */
+  background-image: url(../../../assets/temple.png);
+  /* padding: 10px 0px 3px 0px; top right bottom left */
 }
 
 .video-page {
@@ -18,12 +18,12 @@
   color: gold;
   margin-bottom: 20px;
   font-family: "Amita";
-  background-color: black;
+  background-image: url(../../../assets/temple.png);
 }
 
 .video-subtitle {
   font-family: "Amita";
-  background-color: silver;
+  background-image: url(../../../assets/temple.png);
 }
 
 .video-player {
@@ -59,7 +59,7 @@
 }
 @media screen and (max-width: 430px) {
   .header {
-    background-color: black;
+    background-image: url(../../../assets/temple.png);
     padding: 10px 0px 3px 0px; /* top right bottom left */
   }
 
