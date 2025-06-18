@@ -52,6 +52,15 @@
   top: 21px;
   border: none;
 }
+.reflection {
+  width: 756px;
+  height: 474px;
+  position: absolute;
+  text-align: center;
+  left: 105px;
+  top: 21px;
+  border: none;
+}
 .video-frame_video {
   width: 100%;
   height: auto;
@@ -76,7 +85,8 @@
   .video-title {
     font-size: 2rem;
     color: gold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: 47px;
     font-family: "Amita";
     background-color: black;
   }
@@ -105,12 +115,21 @@
   }
 
   .competition_video2019 {
-    width: 756px;
-    height: 474px;
+    width: 79%;
+    height: 80%;
     position: absolute;
     text-align: center;
-    left: 105px;
-    top: 21px;
+    left: 39px;
+    top: 4px;
+    border: none;
+  }
+  .reflection {
+    width: 79%;
+    height: 80%;
+    position: absolute;
+    text-align: center;
+    left: 39px;
+    top: 4px;
     border: none;
   }
   .video-frame_video {

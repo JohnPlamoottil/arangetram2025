@@ -34,7 +34,7 @@ const Video = () => {
           title="Bharatanatyam 2019"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          className="competition_video2019"
+          className="reflection"
         ></iframe>
       </div>
     </div>
