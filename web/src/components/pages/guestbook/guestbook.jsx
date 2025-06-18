@@ -7,7 +7,7 @@ import "../../../vendor/fonts.css";
 
 const HOST = import.meta.env.VITE_HOST;
 
-function Guestbook() {
+function Guestbook({ dancerName }) {
   const [entries, setEntries] = useState([]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -44,7 +44,6 @@ function Guestbook() {
 
   return (
     <div>
-      <Navigation />
       <h2 className="guestbook">Guestbook</h2>
       <img className="group_photo" src={group_center} alt="group center"></img>
 
@@ -71,13 +70,19 @@ function Guestbook() {
         </form>
 
         <ul className="entries">
-          {entries.map((entry, index) => (
-            <li key={index}>
-              <strong>{entry.name}</strong> (
-              {new Date(entry.createdAt).toLocaleString()})
-              <p>{entry.content}</p>
-            </li>
-          ))}
+          {entries
+            .filter((entry) => {
+              console.log({ dancerName, entry });
+              return dancerName === entry.dancerName;
+              // filter for dancerName match
+            })
+            .map((entry, index) => (
+              <li key={index}>
+                <strong>{entry.name}</strong> (
+                {new Date(entry.createdAt).toLocaleString()})
+                <p>{entry.content}</p>
+              </li>
+            ))}
         </ul>
       </div>
       <Footer />
