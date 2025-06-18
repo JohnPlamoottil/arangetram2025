@@ -60,12 +60,7 @@ Performer's autobiography
 Shishya memoires: Parents Shishya for their Daughter
 
 Michelle’s Parents Shishya
-Watching Michelle grow into the graceful, confident young woman she is today has been one of our greatest joys. From her first dance class at age six to this day, her Arangetram, we have seen her dedication, resilience, and passion shine through. Dance has shaped her in so many ways—teaching her discipline, patience, and how to express herself with strength and grace.
-We are incredibly proud of her journey, not just as a dancer but as a kind, determined individual who balances so much with heart and focus. This milestone is a reflection of years of commitment, and we are so grateful to her guru, Jinoo Varghese, for guiding her with wisdom and care.
-Michelle, we love you deeply and are so proud of you. May you continue to dance through life with the same joy and purpose.
-— With love,Amma and Appa
-
-Rose’s Bharatanayam Bio: 
+June18
 
 Rose Thomas, a dedicated Bharatanatyam dancer, found passion in dance at the age of 5. She started her journey at Soorya Dance School under the careful guidance of Guru Smt. Jinoo Varghese. 
 
