@@ -66,9 +66,10 @@
   transition: max-height 0.2s ease-out;
   font-family: "Amita";
 }
-.program__Musicians {
-  font-weight: bold;
+.refer {
+  color: white;
 }
+
 @media screen and (max-width: 430px) {
   .panel_program {
     padding: 0 18px;
@@ -78,5 +79,8 @@
     max-height: 0;
     transition: max-height 0.2s ease-out;
     font-family: "Amita";
+  }
+  .refer {
+    color: white;
   }
 }
