@@ -60,6 +60,13 @@
   transition: max-height 0.2s ease-out;
   font-family: "Amita";
 }
+.margam {
+  display: flex;
+  max-width: 70%;
+  max-height: fit-content;
+  margin: 0 auto;
+}
+
 /* form styling */
 .faq-page {
   max-width: 900px;
@@ -92,13 +99,6 @@
   color: gold;
   background-image: url(../../../assets/temple.png);
   margin: 0;
-}
-
-.margam {
-  display: flex;
-  max-width: 70%;
-  max-height: fit-content;
-  margin: 0 auto;
 }
 
 .form_question {
