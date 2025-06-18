@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { Fragment, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import Home from "./components/pages/home/home";
@@ -12,10 +12,14 @@ import Livestream from "./components/pages/livestream/livestream";
 import FAQs from "./components/pages/faqs/faqs";
 import Guestbook from "./components/pages/guestbook/guestbook";
 import Dancer from "./components/pages/dancer/dancer";
+import Navigation from "./components/navigation-links/navigation-links";
+import ScrollToTop from "./components/ScrollToTop";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/video" element={<Video />} />
@@ -25,7 +29,15 @@ createRoot(document.getElementById("root")).render(
         <Route path="/venue" element={<Venue />} />
         <Route path="/livestream" element={<Livestream />} />
         <Route path="/faqs" element={<FAQs />} />
-        <Route path="/guestbook" element={<Guestbook />} />
+        <Route
+          path="/guestbook"
+          element={
+            <>
+              <Navigation />
+              <Guestbook />
+            </>
+          }
+        />
         <Route path="/dancer" element={<Dancer />} />
       </Routes>
     </Router>
