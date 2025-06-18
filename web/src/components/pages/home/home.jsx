@@ -40,7 +40,7 @@ function Home() {
             className="dancer_text"
             to={{
               pathname: "dancer",
-              search: "?dancer=Michelle",
+              search: "?dancer=michelle",
             }}
           >
             Michelle Eapen
@@ -50,7 +50,7 @@ function Home() {
             className="dancer_text"
             to={{
               pathname: "dancer",
-              search: "?dancer=Andrea",
+              search: "?dancer=andrea",
             }}
           >
             Andrea Thomas
@@ -60,7 +60,7 @@ function Home() {
             className="dancer_text"
             to={{
               pathname: "dancer",
-              search: "?dancer=Jana",
+              search: "?dancer=jana",
             }}
           >
             Jana Scaria
@@ -70,7 +70,7 @@ function Home() {
             className="dancer_text"
             to={{
               pathname: "dancer",
-              search: "?dancer=Rose",
+              search: "?dancer=rose",
             }}
           >
             Rose Thomas
@@ -80,7 +80,7 @@ function Home() {
             className="dancer_text"
             to={{
               pathname: "dancer",
-              search: "?dancer=Jenna",
+              search: "?dancer=jenna",
             }}
           >
             Jenna Plamoottil
@@ -90,7 +90,7 @@ function Home() {
             className="dancer_text"
             to={{
               pathname: "dancer",
-              search: "?dancer=Amarya",
+              search: "?dancer=amarya",
             }}
           >
             Amarya Koola
