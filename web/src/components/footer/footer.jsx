@@ -108,8 +108,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="about__circle"></div>
-        <div className="about__circle about__circle_animation_blurred"></div>
+        {/* <div className="about__circle"></div>
+        <div className="about__circle about__circle_animation_blurred"></div> */}
         <div className="FooterMidde_momsdaughter_clcvenue">
           <p className="Footer-Middle">
             Special Thanks to All of You for Attending Our Arangetram <br />
