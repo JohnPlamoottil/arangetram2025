@@ -29,10 +29,10 @@ const Header = () => {
             <div>
               <h1 className="title">Soorya Dance School™</h1>
               <h2 className="subtitle">Presents</h2>
-              <h1 className="title main_title">Samarpanam</h1>
+              <h1 className="title_main_title">Samarpanam</h1>
               <h2 className="subtitle">Bharatanatyam Arangetram</h2>
               {/* <Navigation /> */}
-              <h3 className="performersheader">
+              <h3 className="date">
                 Saturday, June 21st 2025 @ 3pm CST <br />
               </h3>
               <div className="instructions">
