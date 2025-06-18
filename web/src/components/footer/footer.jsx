@@ -7,6 +7,7 @@ import soorya_studio from "../../assets/soorya_studio.png";
 import moms_daughters from "../../assets/moms_daughters.png";
 import clc_venue_logo from "../../assets/clc_venue_logo.png";
 import JLC_thumbnail from "../../assets/JLC_thumbnail.png";
+import insta from "../../assets/insta.png";
 
 const Footer = () => {
   function handleClick(e) {
@@ -141,7 +142,7 @@ const Footer = () => {
             Phone: (224) 715-5846
           </p>
           <div>
-            <div>
+            <div className="social">
               <a
                 href="https://www.facebook.com/sooryadanceschool"
                 target="_blank"
@@ -165,6 +166,14 @@ const Footer = () => {
                 className="youtube-link"
               >
                 <img src={youtubelogo} alt="YouTube" width="30" height="30" />
+              </a>
+              <a
+                href="https://www.instagram.com/jinoovarghese?igsh=MWV2cDdsY3Vmd3RobQ==" // Replace with your actual channel URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="insta-link"
+              >
+                <img src={insta} alt="Instagram" width="40" height="40" />
               </a>
             </div>
             <div className="soorya_auditorium">

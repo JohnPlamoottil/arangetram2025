@@ -106,7 +106,7 @@
   transform: scale(1.1);
 }
 .youtube-link {
-  margin-left: 34px;
+  /* margin-left: 34px; */
 }
 .soorya_studio {
   width: 300px;
@@ -121,7 +121,7 @@
   margin-top: 10px;
 }
 .left_side_block_footer {
-  margin-right: 78px;
+  margin-right: 0px;
 }
 .class-location-title {
   color: gold;
@@ -140,6 +140,10 @@
   font-family: "Amita";
   color: gold;
 }
+.social {
+  gap: 117px;
+}
+
 @media screen and (max-width: 1179px) {
   .footer {
     flex-direction: column;
@@ -277,14 +281,13 @@
     transform: scale(1.1);
   }
   .youtube-link {
-    margin-left: 34px;
+    /* margin-left: 34px; */
   }
   .soorya_auditorium {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 84px;
   }
   .soorya_studio {
     width: 300px;
@@ -303,7 +306,7 @@
     object-fit: contain;
   }
   .left_side_block_footer {
-    margin-right: 78px;
+    margin-right: 0px;
   }
   .Footer-Middle {
     color: gold;
@@ -320,6 +323,12 @@
   .class-location {
     color: gold;
     margin-left: 65px;
+  }
+  .social {
+    display: flex;
+    flex-direction: row;
+    gap: 117px;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 390px) {
