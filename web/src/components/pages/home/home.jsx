@@ -50,7 +50,7 @@ function Home() {
             className="dancer_text"
             to={{
               pathname: "dancer",
-              search: "?dancer=andrea",
+              search: "?dancer=Andrea",
             }}
           >
             Andrea Thomas
