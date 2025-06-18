@@ -32,32 +32,34 @@
   font-size: 25px;
   font-family: "Amita", cursive;
   font-weight: 900;
-  color: rgb(126, 18, 18);
+  color: gold;
   margin: 0;
   text-align: center;
   position: relative;
 }
-.main_title {
+.title_main_title {
   font-size: 50px;
   text-align: center;
+  font-family: "Molle";
+  color: goldenrod;
 }
 
 .subtitle {
   font-size: 1.5rem;
   font-family: "Amita";
-  color: brown;
+  color: gold;
   margin-top: 8px;
   margin-bottom: 8px;
   text-align: center;
   font-weight: 900;
 }
-.performersheader {
+.date {
   font-family: "Amita";
   font-size: 29px;
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  color: brown;
+  color: goldenrod;
   white-space: normal;
 }
 .instructions {
@@ -66,7 +68,7 @@
   text-align: center;
   font-style: normal;
   font-weight: 900;
-  color: brown;
+  color: gold;
 }
 
 .dropdown {
@@ -127,13 +129,13 @@
   }
 
   .logo {
-    width: 140px;
+    width: 145px;
     display: block;
     margin: 0 auto 1rem;
-    margin-top: 38px;
+    margin-top: 1px;
   }
   .green_varnum_corner {
-    width: 103%;
+    width: 62%;
     max-width: 600px;
     margin: 1.5rem auto;
     display: block;
@@ -151,18 +153,20 @@
     font-size: 25px;
     font-family: "Amita", cursive;
     font-weight: 900;
-    color: rgb(126, 18, 18);
+    color: gold;
     margin: 0;
     text-align: center;
     position: relative;
   }
-  .main_title {
-    font-size: 50px;
+  .title_main_title {
+    font-size: 28px;
     text-align: center;
+    font-family: "Molle";
+    color: goldenrod;
   }
 
   .subtitle {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: "Amita";
     color: gold;
     margin-top: 8px;
@@ -171,22 +175,22 @@
     text-align: center;
     font-weight: bolder;
   }
-  .performersheader {
+  .date {
     font-family: "Amita";
     font-size: 15px;
     text-align: center;
     font-style: normal;
     font-weight: 900;
-    color: brown;
+    color: goldenrod;
     white-space: normal;
   }
   .instructions {
     font-family: "Amita", "Arial", sans-serif;
-    font-size: 15px;
+    font-size: 10px;
     text-align: center;
     font-style: normal;
     font-weight: 900;
-    color: brown;
+    color: gold;
   }
 
   .dropdown {
@@ -200,7 +204,7 @@
     background-color: black;
     width: 197px;
     height: 60px;
-    margin-left: 47px;
+    margin-left: 6px;
   }
   .dropdown__title {
     font-size: 20px;
@@ -220,7 +224,7 @@
     font-family: "Amita", "Arial", sans-serif;
     background-color: black;
     opacity: 0.9;
-    margin-left: 46px;
+    margin-left: 6px;
   }
 
   .dancer_text {
