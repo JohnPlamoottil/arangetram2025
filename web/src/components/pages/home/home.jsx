@@ -7,12 +7,13 @@ import Navigation from "../../navigation-links/navigation-links";
 import "../../../vendor/fonts.css";
 import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import dance_bkgd from "../../../assets/dance_bkgd.png";
+import qr_code from "../../../assets/qr_code.png";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
-      <div className="top_till_green_picture">
+      <div>
         <div className="dance_bkgd_outer_box">
           <img
             className="dance_bkgd"
@@ -125,6 +126,14 @@ function Home() {
           exclamation of thanks for the present.”
         </p>
         <p className="quote-author-two">- Amelia Atwater Rhodes</p>
+      </div>
+      <div className="QR_code_outer">
+        <div>
+          <p className="QR_code_description">
+            Share this website with others around you
+          </p>
+          <img className="QR_code" src={qr_code} alt="qr code"></img>
+        </div>
       </div>
       <Footer />
     </>
