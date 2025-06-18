@@ -5,41 +5,35 @@
   background-color: black;
   background-position: relative;
 }
-.michelle_full_pose {
-  width: 20%;
-  height: 20%;
+.outer_fullpose {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.michelle_headshot {
+.full_pose {
+  width: 20%;
+  height: 20%;
+}
+.headshot {
   width: 100%;
 }
-.michelle_solo {
+.mother_daughter {
+}
+.solo_photo {
   width: 100%;
 }
-.michelle_varnum {
+.invite_card {
   width: 100%;
 }
+.invite_card_michelle {
+  /* whatever */
+}
+.varnum_pose {
+  width: 100%;
+}
+
 @media screen and (max-width: 430px) {
   .title_dancer {
-    text-align: center;
-    font-family: "Amita";
-    color: gold;
-    background-color: black;
-    background-position: relative;
     margin-top: 39px;
-  }
-  .michelle_full_pose {
-    width: 100%;
-  }
-  .michelle_headshot {
-    width: 100%;
-  }
-  .michelle_solo {
-    width: 100%;
-  }
-  .michelle_varnum {
-    width: 100%;
   }
 }

@@ -1,107 +1,25 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 import "./dancer.css"; // optional for styling
+import { App } from "./rsvp.jsx";
 import Navigation from "../../navigation-links/navigation-links";
-import mom_michelle from "../../../assets/mom_michelle.png";
 import michelle_full from "../../../assets/michelle_full.png";
 import michelle_headshot from "../../../assets/michelle_headshot.png";
-import michelle_varnum from "../../../assets/michelle_varnum.png";
+import mom_michelle from "../../../assets/mom_michelle.png";
 import michelle_solo from "../../../assets/michelle_solo.png";
+import michelle_invitation from "../../../assets/michelle_invitation.png";
+import michelle_varnum from "../../../assets/michelle_varnum.png";
+import Guestbook from "../guestbook/guestbook.jsx";
+// import andrea_full from "../../../assets/andrea_full.png"
+// import andrea_headshot from "../../../assets/andrea_headshot.png"
+
 const dancers = {
-  Michelle: {
-    autobio: "autobio",
-    shishya: "message",
-    solo: "solo",
-    invite: "invite",
-    rsvp: "confirm",
-    button: "guestbook",
-  },
-  Andrea: {
-    autobio: "autobio",
-    shishya: "message",
-    solo: "solo",
-    invite: "invite",
-    rsvp: "confirm",
-    button: "guestbook",
-  },
-  Jana: {
-    autobio: "autobio",
-    shishya: "message",
-    solo: "solo",
-    invite: "invite",
-    rsvp: "confirm",
-    button: "guestbook",
-  },
-  Rose: {
-    autobio: "autobio",
-    shishya: "message",
-    solo: "solo",
-    invite: "invite",
-    rsvp: "confirm",
-    button: "guestbook",
-  },
-  Jenna: {
-    autobio: "autobio",
-    shishya: "message",
-    solo: "solo",
-    invite: "invite",
-    rsvp: "confirm",
-    button: "guestbook",
-  },
-  Amarya: {
-    autobio: "autobio",
-    shishya: "message",
-    solo: "solo",
-    invite: "invite",
-    rsvp: "confirm",
-    button: "guestbook",
-  },
-};
-
-const Dancer = () => {
-  const [searchParams] = useSearchParams();
-
-  const dancer = searchParams.get("dancer");
-
-  const dancerInfo = dancers[dancer];
-
-  function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
-    const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  }
-
-  return (
-    <div>
-      <div>
-        <Navigation />
-        <section className="questions">
-          <h2 className="title_dancer">Michelle Eapen</h2>
-          <h1>{dancerInfo.autobio}</h1>
-          <h3>{dancerInfo.bio}</h3>
-          <div>
-            <img
-              className="michelle_full_pose"
-              src={michelle_full}
-              alt="Michelle's Full Length Pose"
-            ></img>
-          </div>
-          <button className="accordion" onClick={handleClick}>
-            Shishya (Autobiography on Michelle)
-          </button>
-          <div className="panel">
-            <p>
-              <img
-                className="michelle_headshot"
-                src={michelle_headshot}
-                alt="Michelle's Profile"
-              ></img>
-              Michelle has been dancing since the age of six, exploring a
+  michelle: {
+    shortName: "Michelle",
+    fullName: `Michelle Eapen`,
+    fullPose: michelle_full,
+    headshot: michelle_headshot,
+    autobio: `Michelle has been dancing since the age of six, exploring a
               variety of styles including Bharatanatyam, Cinematic, and Western
               dance. She began her dance journey under Chinu Thottam, where she
               took her first steps into the world of dance. In third grade, she
@@ -122,15 +40,8 @@ const Dancer = () => {
               Today’s Arangetram represents a significant milestone in her life,
               a celebration of her hard work, passion for the art, and heartfelt
               gratitude to her teacher, family, and all who have supported her
-              along the way.
-            </p>
-          </div>
-          <button className="accordion" onClick={handleClick}>
-            Shishya (Biography from Parents)
-          </button>
-          <div className="panel">
-            <p className="">
-              Watching Michelle grow into the graceful, confident young woman
+              along the way.`,
+    shishya: `Watching Michelle grow into the graceful, confident young woman
               she is today has been one of our greatest joys. From her first
               dance class at age six to this day, her Arangetram, we have seen
               her dedication, resilience, and passion shine through. Dance has
@@ -142,22 +53,11 @@ const Dancer = () => {
               so grateful to her guru, Jinoo Varghese, for guiding her with
               wisdom and care. Michelle, we love you deeply and are so proud of
               you. May you continue to dance through life with the same joy and
-              purpose. <br />— With love, Amma and Appa
-              <img
-                className="mom_michelle"
-                src={mom_michelle}
-                alt="Mom and Michelle"
-              />
-            </p>
-          </div>
-          <button className="accordion" onClick={handleClick}>
-            Solo Performance
-          </button>
-          <div className="panel">
-            <p>Keerthanam</p>
-            <p>Michelle Eapen - 4:41pm to 5:00pm</p>
-            <p>
-              "Durgae Durgae" is a devotional piece in praise of Goddess Durga,
+              purpose. 
+              — With love, Amma and Appa`,
+    mother_daughter: mom_michelle,
+    solo_duration: `Michelle Eapen - 4:41pm to 5:00pm`,
+    solo: `Durgae Durgae" is a devotional piece in praise of Goddess Durga,
               the fierce yet compassionate protector of the universe. <br />
               The choreography highlights Durga’s divine form:
               <br />
@@ -173,77 +73,195 @@ const Dancer = () => {
               salutations to the goddess, seeking her blessings for protection,
               strength, and victory over all obstacles. <br /> Set to Ragam
               Revathi and Adi Talam, this piece blends devotion, valor, and
-              grace into one powerful performance.
+              grace into one powerful performance.`,
+    solo_photo: michelle_solo,
+    invite: michelle_invitation,
+    rsvp: "confirm",
+    button: "guestbook",
+    varnum: michelle_varnum,
+  },
+  andrea: {
+    shortName: "Andrea",
+    fullName: `Andrea Sherril Thomas`,
+    // fullPose: andrea_full,
+    // headshot: andrea_headshot,
+    autobio: ``,
+    shishya: ``,
+    // mother_daughter: mom_andrea,
+    solo: `words`,
+    // solo_photo: andrea_solo,
+    // invite: andrea_invitation,
+    rsvp: "confirm",
+    button: "guestbook",
+    // varnum: andrea_varnum,
+  },
+  jana: {
+    shortName: "Jana",
+    fullName: `Jana Scaria`,
+    // fullPose: jana_full,
+    // headshot: jana_headshot,
+    autobio: ``,
+    shishya: ``,
+    // mother_daughter: mom_jana,
+    solo: `words`,
+    // solo_photo: jana_solo,
+    // invite: jana_invitation,
+    rsvp: "confirm",
+    button: "guestbook",
+    // varnum: jana_varnum,
+  },
+  rose: {
+    shortName: "Rose",
+    fullName: `Rose Thomas`,
+    // fullPose: rose_full,
+    // headshot: rose_headshot,
+    autobio: ``,
+    shishya: ``,
+    // mother_daughter: mom_rose,
+    dance_title: `Keerthanam`,
+    solo: `words`,
+    // solo_photo: rose_solo,
+    // invite: rose_invitation,
+    rsvp: "confirm",
+    button: "guestbook",
+    // varnum: rose_varnum,
+  },
+  jenna: {
+    shortName: "Jenna",
+    fullName: `Jenna Plamoottil`,
+    // fullPose: jenna_full,
+    // headshot: jenna_headshot,
+    autobio: ``,
+    shishya: ``,
+    // mother_daughter: mom_jenna,
+    dance_title: `Keerthanam`,
+    solo: `words`,
+    // solo_photo: jenna_solo,
+    // invite: jenna_invitation,
+    rsvp: "confirm",
+    button: "guestbook",
+    // varnum: jenna_varnum,
+  },
+  amarya: {
+    shortName: "Amarya",
+    fullName: `Amarya Chirayil Koola`,
+    // fullPose: amarya_full,
+    // headshot: amarya_headshot,
+    autobio: ``,
+    shishya: ``,
+    // mother_daughter: mom_amarya,
+    solo: `words`,
+    // solo_photo: amarya_solo,
+    // invite: amarya_invitation,
+    rsvp: "confirm",
+    button: "guestbook",
+    // varnum: amarya_varnum,
+  },
+};
+
+const Dancer = () => {
+  const [searchParams] = useSearchParams();
+
+  const dancerName = searchParams.get("dancer").toLowerCase();
+
+  const dancerInfo = dancers[dancerName];
+  console.log(dancers[dancerName]);
+
+  function handleClick(e) {
+    const button = e.target;
+    button.classList.toggle("slide");
+    const panel = button.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  }
+
+  console.log(dancerInfo);
+
+  return (
+    <div>
+      <div>
+        <Navigation />
+        <section className="questions">
+          <h2 className="title_dancer">{dancerInfo.fullName}</h2>
+          <div className="outer_fullpose">
+            <img
+              className="full_pose"
+              src={dancerInfo.fullPose}
+              alt="Full Length Pose"
+            ></img>
+          </div>
+          <button className="accordion" onClick={handleClick}>
+            Shishya (Autobiography on {dancerInfo.shortName})
+          </button>
+          <div className="panel">
+            <p>
+              {dancerInfo.autobio}
               <img
-                className="michelle_solo"
-                src={michelle_solo}
-                alt="Michelles Solo"
+                className="headshot"
+                src={dancerInfo.headshot}
+                alt="headshot"
+              ></img>
+            </p>
+          </div>
+          <button className="accordion" onClick={handleClick}>
+            Shishya (Biography from Parents)
+          </button>
+          <div className="panel">
+            <p>
+              {dancerInfo.shishya}
+              <img
+                className="mother_daughter"
+                src={dancerInfo.mother_daughter}
+                alt={`Mom and ${dancerInfo.shortName}`}
+              />
+            </p>
+          </div>
+          <button className="accordion" onClick={handleClick}>
+            Solo Performance
+          </button>
+          <div className="panel">
+            <p>{dancerInfo.solo_duration}</p>
+            <p>{dancerInfo.solo}</p>
+            <p>
+              <img
+                className="solo_photo"
+                src={dancerInfo.solo_photo}
+                alt="solo_photo"
               ></img>
             </p>
           </div>
           <button className="accordion" onClick={handleClick}>
             Invitation Card
           </button>
-          <div className="">
-            <p className="">..</p>
-            <div className=""></div>
-          </div>
-          <button className="accordion" onClick={handleClick}>
-            RSVP Confirmation
-          </button>
           <div className="panel">
-            <p>Modal for RSVP and buttton linking to guestbook page</p>
+            <p className="">
+              <img
+                className={`invite_card invite_card_${dancerName}`}
+                src={dancerInfo.invite}
+                alt="invitation"
+              ></img>
+              Dinner to Follow After the Performance
+            </p>
+          </div>
+          <div className="accordion" onClick={handleClick}>
+            {dancerInfo.RSVP}
+          </div>
+          <div className="panel">
+            <App />
+            <p></p>
+            <a href="/guestbook">Guestbook</a>
           </div>
           <img
-            className="michelle_varnum"
-            src={michelle_varnum}
-            alt="Michelle's sitting pose"
+            className="varnum_pose"
+            src={dancerInfo.varnum}
+            alt="sitting pose"
           ></img>
+          <Guestbook dancerName={dancerName} />
         </section>
       </div>
-      <section className="questions">
-        <h2 className="title_Andrea">Andrea Jerril Thomas</h2>
-        <button className="accordion" onClick={handleClick}>
-          ..
-        </button>
-        <div className="panel">
-          <p>
-            ..
-            <br />
-            ..
-          </p>
-        </div>
-        <button className="accordion" onClick={handleClick}>
-          ..
-        </button>
-        <div className="panel">
-          <p className="">
-            ..
-            {/* <img className="" alt="" /> */}
-          </p>
-        </div>
-        <button className="accordion" onClick={handleClick}>
-          ..
-        </button>
-        <div className="panel">
-          <p>..</p>
-          <p>..</p>
-          <p>..</p>
-        </div>
-        <button className="accordion" onClick={handleClick}>
-          ..
-        </button>
-        <div className="">
-          <p className="">..</p>
-          <div className=""></div>
-        </div>
-        <button className="accordion" onClick={handleClick}>
-          ..
-        </button>
-        <div className="panel">
-          <p>..</p>
-        </div>
-      </section>
     </div>
   );
 };
