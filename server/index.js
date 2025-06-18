@@ -27,12 +27,12 @@ app.get("/api/message", async (req, res) => {
 });
 
 app.post("/api/message", async (req, res) => {
-  const { name, content } = req.body;
-  if (!name || !content) {
+  const { dancerName, name, content } = req.body;
+  if (!dancerName || !name || !content) {
     return res.status(400).json({ error: "Name and message are required" });
   }
 
-  const newMessage = new Message({ name, content });
+  const newMessage = new Message({ dancerName, name, content });
 
   try {
     await newMessage.save();
