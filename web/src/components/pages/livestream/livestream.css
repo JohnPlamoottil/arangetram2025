@@ -17,7 +17,8 @@
 
 .video-subtitle {
   font-family: "Amita";
-  background-color: silver;
+  background-image: url(../../../assets/temple.png);
+  color: gold;
 }
 
 .video-player {
@@ -39,13 +40,12 @@
 
 .graduation_video2025 {
   position: relative;
-  left: -6px;
-  top: 215px;
+  left: -4px;
+  width: 77%;
+  top: -359px;
+  height: 165%;
 }
-.header {
-  background-color: silver; /* silver */
-  padding: 10px 0px 3px 0px; /* top right bottom left */
-}
+
 .video-frame_livestream {
   width: 100%;
   height: auto;
@@ -70,8 +70,9 @@
   }
   .graduation_video2025 {
     position: relative;
-    left: -6px;
-    top: -205px;
+    left: -17px;
+    width: 109%;
+    top: -259px;
   }
   .video-frame_livestream {
     width: 144%;

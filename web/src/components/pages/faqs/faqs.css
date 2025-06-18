@@ -14,7 +14,6 @@
 .accordion {
   font-family: "Amita";
   font-size: 24px;
-  color: #444;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -35,7 +34,7 @@
 .accordion::before {
   content: "\02795"; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
-  color: rgba(9, 9, 9, 0.7);
+  color: white;
   float: right;
   margin-left: 5px;
 }
@@ -48,13 +47,14 @@
 .slide,
 .accordion:hover {
   background-color: #ccc;
+  color: brown;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
   background-color: black;
-  text-decoration-color: gold;
+  color: gold;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
@@ -104,8 +104,8 @@
 .form_question {
   font-family: "Amita";
   font-size: 24px;
-  color: #8f212e;
-  background-color: silver;
+  color: goldenrod;
+  background-color: black;
   width: 100%;
   box-sizing: border-box;
 }
@@ -116,15 +116,15 @@
 .form_name {
   font-family: "Amita";
   font-size: 24px;
-  color: #8f212e;
-  background-color: silver;
+  color: gold;
+  background-color: black;
 }
 
 .form_email {
   font-family: "Amita";
   font-size: 24px;
-  color: #8f212e;
-  background-color: silver;
+  color: gold;
+  background-color: black;
 }
 
 .faq-answer {

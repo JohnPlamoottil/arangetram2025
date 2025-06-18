@@ -6,7 +6,7 @@
   width: 100vw;
   font-family: "Amita";
   font-size: 16px;
-  background-color: silver;
+  background-color: black;
   margin-top: 72px;
 }
 .footer__wrapper {
@@ -42,7 +42,7 @@
 .accordion::before {
   content: "\02795"; /* Unicode character for "plus" sign (+) */
   font-size: 13px;
-  color: gold;
+  color: brown;
   float: right;
   margin-left: 5px;
 }
@@ -55,19 +55,20 @@
 .slide,
 .accordion:hover {
   background-color: #ccc;
+  color: brown;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
-  background-color: gold;
+  background-color: #ccc;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
   font-family: "Amita";
 }
 
-@keyframes pulsate {
+/* @keyframes pulsate {
   0% {
     opacity: 0;
     box-shadow: 0 0 0 0 rgb(183, 196, 213);
@@ -81,9 +82,9 @@
     opacity: 0;
     box-shadow: 0 0 0 100px rgba(47, 128, 237);
   }
-}
+} */
 
-.about__circle {
+/* .about__circle {
   width: 426px;
   height: 426px;
   border-radius: 1351%;
@@ -92,7 +93,7 @@
   top: -152px;
   left: -350px;
   z-index: 1;
-}
+} */
 
 .about__circle_animation_blurred {
   animation: pulsate 1.3s ease-in-out infinite both;
@@ -122,11 +123,22 @@
 .left_side_block_footer {
   margin-right: 78px;
 }
+.class-location-title {
+  color: gold;
+}
+.class-location {
+  color: gold;
+}
 .Footer-Middle {
   font-size: 20px;
+  color: gold;
 }
 .clc__venue {
   width: 100%;
+}
+.Contact_Us {
+  font-family: "Amita";
+  color: gold;
 }
 @media screen and (max-width: 1179px) {
   .footer {
@@ -227,7 +239,7 @@
     font-family: "Amita";
   }
 
-  @keyframes pulsate {
+  /* @keyframes pulsate {
     0% {
       opacity: 0;
       box-shadow: 0 0 0 0 rgb(213, 213, 183);
@@ -252,7 +264,7 @@
     top: -152px;
     left: -350px;
     z-index: 1;
-  }
+  } */
 
   .about__circle_animation_blurred {
     animation: pulsate 1.3s ease-in-out infinite both;

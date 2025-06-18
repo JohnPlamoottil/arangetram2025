@@ -2,7 +2,6 @@
   display: flex;
   gap: 30px;
   font-family: "Amita", "Arial", sans-serif;
-  /* background-color: silver; */
   justify-content: center;
   box-sizing: border-box;
 }

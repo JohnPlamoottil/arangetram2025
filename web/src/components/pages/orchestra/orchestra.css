@@ -16,13 +16,19 @@
   text-align: center;
   margin-top: 50px;
 }
+.title_orchestra {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: gold;
+  text-align: center;
+}
 .india__map {
   size: 54px;
 }
 
 .accordion-text {
   font-weight: bold;
-  color: black;
+  color: gold;
   padding: 27px 66px 48px 74px;
   font-size: 20px;
 }

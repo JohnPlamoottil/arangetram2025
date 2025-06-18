@@ -26,15 +26,14 @@
 .dropdown {
   font-family: "Amita";
   font-size: 30px;
-  color: indianred;
+  color: gold;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: silver;
+  background-color: black;
   padding: 8px 12px;
   border: none;
   border-radius: 5px;
-  color: white;
   width: fit-content; /* or 100% if you want it to stretch */
 }
 .dropdown-text {
@@ -48,6 +47,7 @@
   color: gold;
 }
 .quote-container {
+  flex-direction: row;
   max-width: 800px;
   padding-right: 0px;
   padding-left: 0px;
@@ -150,6 +150,7 @@
     transform: rotate(4deg);
   }
   .quote-container {
+    flex-direction: row;
     padding: 0rem 0rem;
     border: 5px solid gold;
     margin-right: 0px;
@@ -209,17 +210,21 @@
     position: relative;
     font-family: "Amita";
     font-size: 30px;
-    color: indianred;
+    color: gold;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: silver;
+    background-color: black;
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
     width: fit-content; /* or 100% if you want it to stretch */
   }
   .quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     z-index: 1;
     position: relative;
     background-color: black;

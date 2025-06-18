@@ -54,13 +54,13 @@
   font-family: "Amita";
   font-size: 15px;
   text-align: center;
-  color: goldenrod;
+  color: white;
 }
 /* Style the accordion panel. Note: hidden by default */
 .panel_program {
   padding: 0 18px;
   background-color: black;
-  text-decoration-color: gold;
+  color: gold;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
@@ -73,7 +73,7 @@
   .panel_program {
     padding: 0 18px;
     background-color: black;
-    color: white;
+    color: gold;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.2s ease-out;
