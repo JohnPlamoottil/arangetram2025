@@ -5,6 +5,22 @@
   background-color: black;
   background-position: relative;
 }
+.michelle_full_pose {
+  width: 20%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.michelle_headshot {
+  width: 100%;
+}
+.michelle_solo {
+  width: 100%;
+}
+.michelle_varnum {
+  width: 100%;
+}
 @media screen and (max-width: 430px) {
   .title_dancer {
     text-align: center;
@@ -12,5 +28,18 @@
     color: gold;
     background-color: black;
     background-position: relative;
+    margin-top: 39px;
+  }
+  .michelle_full_pose {
+    width: 100%;
+  }
+  .michelle_headshot {
+    width: 100%;
+  }
+  .michelle_solo {
+    width: 100%;
+  }
+  .michelle_varnum {
+    width: 100%;
   }
 }
