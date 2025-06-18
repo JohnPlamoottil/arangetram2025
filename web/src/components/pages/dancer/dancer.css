@@ -1,0 +1,16 @@
+.title_dancer {
+  text-align: center;
+  font-family: "Amita";
+  color: gold;
+  background-color: black;
+  background-position: relative;
+}
+@media screen and (max-width: 430px) {
+  .title_dancer {
+    text-align: center;
+    font-family: "Amita";
+    color: gold;
+    background-color: black;
+    background-position: relative;
+  }
+}
