@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import "./rsvp.css";
-// import rsvp from "./rsvp.jsx";
-function App() {
+
+export function App() {
   const [showRSVP, setShowRSVP] = useState(false);
 
   return (
     <div>
       <button onClick={() => setShowRSVP(true)}>RSVP Now</button>
-      <RSVP isOpen={showRSVP} onClose={() => setShowRSVP(false)} />
+      <RSVPModal isOpen={showRSVP} onClose={() => setShowRSVP(false)} />
     </div>
   );
 }
 
-const RSVPModal = ({ isOpen, onClose }) => {
+export const RSVPModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -43,6 +43,3 @@ const RSVPModal = ({ isOpen, onClose }) => {
     </div>
   );
 };
-
-// export default RSVPModal;
-// export default App;
