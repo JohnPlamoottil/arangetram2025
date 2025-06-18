@@ -6,13 +6,12 @@
 .title_Program {
   text-align: center;
   font-family: "Amita";
-  color: indianred;
-  background-color: silver;
+  color: gold;
+  background-color: black;
   background-position: relative;
 }
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion_program {
-  background-color: #eee;
   font-family: "Amita";
   font-size: 24px;
   color: #444;
@@ -48,7 +47,7 @@
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .slide,
 .accordion:hover {
-  background-color: #ccc;
+  background-color: black;
 }
 .sidenote {
   background-color: black;
