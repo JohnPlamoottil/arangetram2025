@@ -53,7 +53,8 @@ function Guestbook() {
         <form className="guestbook" onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Your Name"
+            className="name_textfield"
+            placeholder="Your Name + Family Members, Surname"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
