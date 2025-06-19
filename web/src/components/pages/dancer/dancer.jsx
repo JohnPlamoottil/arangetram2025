@@ -216,7 +216,7 @@ You have not only honored the tradition—you have made it your own, and through
   },
   amarya: {
     shortName: "Amarya",
-    fullName: `Amarya Chirayil Koola`,
+    fullName: `Amarya Koola`,
     fullPose: amarya_full,
     headshot: amarya_headshot,
     autobio: `Amarya, a sixteen-year-old passionate Bharatanatyam dancer, began her journey at the age of five under the guidance of Guru Smt. Jinoo Varghese at the Soorya Dance School. Over the years, her love for dance has flourished as she trained in cinematic dance under Varsha Vijayan.
