@@ -31,7 +31,7 @@ function Guestbook({ dancerName }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, content: message }),
+      body: JSON.stringify({ name, message: message }),
     });
 
     if (response.ok) {
