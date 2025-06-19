@@ -116,6 +116,17 @@
   height: 100%;
   border: none;
 }
+.bottom__group__photo__venue {
+  width: 95%;
+  margin: 19px -57px 16px 14px;
+}
+.trio {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto;
+}
 @media screen and (max-width: 430px) {
   .embedded_map {
     height: 300px;
@@ -138,7 +149,7 @@
   .panel {
     font-size: 0.95rem;
   }
-  .group__photo__venue {
+  .bottom__group__photo__venue {
     width: 95%;
     margin: 19px -57px 16px 14px;
   }
@@ -157,6 +168,9 @@
     height: 204px;
     left: -5px;
     top: -15px;
+  }
+  .trio {
+    width: 68%;
   }
 }
 @media screen and (max-width: 768px) {

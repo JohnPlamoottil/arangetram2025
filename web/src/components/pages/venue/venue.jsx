@@ -7,6 +7,7 @@ import June2025 from "../../../assets/June2025.jpg";
 import venue from "../../../assets/venue.png";
 import frameImage from "../../../assets/macbookpro.png";
 import tillana_venue from "../../../assets/tillana_venue.png";
+import trio from "../../../assets/trio.png";
 
 const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 
@@ -26,6 +27,9 @@ const Venue = () => {
       <Navigation />
       <section className="questions">
         <h2 className="title_FAQ">Venue (Date & Location)</h2>
+        <div>
+          <img className="trio" src={trio} alt="amarya rose jenna" />
+        </div>
         <button className="accordion" onClick={handleClick}>
           Save the Date
         </button>
@@ -132,11 +136,11 @@ const Venue = () => {
         </div>
       </section>
       <img
-        className="group__photo__venue"
+        className="botton__group__photo__venue"
         src={tillana_venue}
         alt="group center"
       ></img>
-
+      <Navigation />
       <Footer />
     </div>
   );
