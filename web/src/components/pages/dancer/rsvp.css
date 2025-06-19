@@ -12,7 +12,7 @@
 }
 
 .rsvp-modal {
-  background: #fff;
+  background: black;
   padding: 2rem;
   border-radius: 12px;
   width: 400px;
@@ -28,14 +28,15 @@
   right: 1rem;
   background: transparent;
   border: none;
-  font-size: 1.5rem;
+  font-size: 16px;
   cursor: pointer;
+  color: white;
 }
 
 .rsvp-title {
   margin-bottom: 1rem;
   text-align: center;
-  color: #8b0000;
+  color: gold;
 }
 
 .rsvp-form label {
@@ -46,7 +47,7 @@
 
 .rsvp-form input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0px;
   margin-top: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -55,8 +56,8 @@
 .submit-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: #8b0000;
-  color: #fff;
+  background-color: silver;
+  color: brown;
   border: none;
   border-radius: 6px;
   cursor: pointer;
