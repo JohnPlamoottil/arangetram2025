@@ -35,12 +35,14 @@ Check-Off List
 - [x] livestream link PENDING
 - [x] guestbook (backend work)
 - [x] Rendor setup after all data is put into site  June14
-- [x]Footer on all the pages June11 2026
-- [ ] 390px media query iPhone12 Pro
+- [x] Footer on all the pages June11 2026
+- [x] REMOVE 390px media query iPhone12 Pro
 - [x] 430px media query. iPhone14Pro Max
 - [ ] 768px media query. iPad
+- [ ] fix home styles and only apply styles for smaller screen in media queries
 - [x] remove 1179px media screen its not iPhone15
 - [x] jinoo thank you speech video  
+- [ ] reflection video
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
