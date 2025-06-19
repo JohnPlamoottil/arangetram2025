@@ -44,8 +44,8 @@
   overflow: hidden;
 }
 .campus__parking {
-  width: 653px;
-  height: 414px;
+  width: 305px;
+  height: 193px;
   position: absolute;
   text-align: center;
   left: -1px;
@@ -139,7 +139,7 @@
   }
   .group__photo__venue {
     width: 95%;
-    margin: 111px 25px 25px 25px;
+    margin: 19px -57px 16px 14px;
   }
   .auditorium__venue {
     width: 287px;
