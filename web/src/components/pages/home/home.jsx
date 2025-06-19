@@ -11,6 +11,7 @@ import qr_code from "../../../assets/qr_code.png";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <div>
@@ -39,7 +40,7 @@ function Home() {
           <Link
             className="dancer_text"
             to={{
-              pathname: "dancer",
+              pathname: "/dancer",
               search: "?dancer=michelle",
             }}
           >
@@ -49,7 +50,7 @@ function Home() {
           <Link
             className="dancer_text"
             to={{
-              pathname: "dancer",
+              pathname: "/dancer",
               search: "?dancer=andrea",
             }}
           >
@@ -59,7 +60,7 @@ function Home() {
           <Link
             className="dancer_text"
             to={{
-              pathname: "dancer",
+              pathname: "/dancer",
               search: "?dancer=jana",
             }}
           >
@@ -69,7 +70,7 @@ function Home() {
           <Link
             className="dancer_text"
             to={{
-              pathname: "dancer",
+              pathname: "/dancer",
               search: "?dancer=rose",
             }}
           >
@@ -79,7 +80,7 @@ function Home() {
           <Link
             className="dancer_text"
             to={{
-              pathname: "dancer",
+              pathname: "/dancer",
               search: "?dancer=jenna",
             }}
           >
@@ -89,7 +90,7 @@ function Home() {
           <Link
             className="dancer_text"
             to={{
-              pathname: "dancer",
+              pathname: "/dancer",
               search: "?dancer=amarya",
             }}
           >
