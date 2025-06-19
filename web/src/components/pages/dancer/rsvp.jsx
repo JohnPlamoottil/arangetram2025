@@ -16,9 +16,11 @@ export const RSVPModal = ({ isOpen, onClose }) => {
       [e.target.name]: e.target.value,
     }));
   };
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSending(true); // Start spinner
 
     // Send to organizer
     emailjs
@@ -33,6 +35,9 @@ export const RSVPModal = ({ isOpen, onClose }) => {
       })
       .catch(() => {
         setStatus("❌ Submission failed. Please try again.");
+      })
+      .finally(() => {
+        setIsSending(false); // Stop spinner
       });
 
     // Send confirmation to guest
@@ -97,9 +102,13 @@ export const RSVPModal = ({ isOpen, onClose }) => {
               required
             />
           </label>
-          <button type="submit" className="submit-btn">
-            Confirm RSVP
-          </button>
+          {isSending ? (
+            <p className="loading-message">Sending your RSVP...</p>
+          ) : (
+            <button type="submit" className="submit-btn">
+              Confirm RSVP
+            </button>
+          )}
         </form>
       </div>
     </div>

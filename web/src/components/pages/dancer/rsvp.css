@@ -55,7 +55,12 @@
   border: none;
   border-radius: 6px;
 }
-
+.loading-message {
+  text-align: center;
+  font-style: italic;
+  color: orange;
+  margin-bottom: 1rem;
+}
 @media screen and (max-width: 430px) {
   .rsvp-modal {
     padding: 1rem;
