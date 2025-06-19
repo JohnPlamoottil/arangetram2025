@@ -20,6 +20,7 @@ export const RSVPModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Send to organizer
     emailjs
       .send(
         "service_avsd38s",
@@ -29,11 +30,27 @@ export const RSVPModal = ({ isOpen, onClose }) => {
       )
       .then(() => {
         setStatus("✅ Thank you! Your RSVP has been submitted.");
-        setFormData({ name: "", email: "", guests: "" });
       })
       .catch(() => {
         setStatus("❌ Submission failed. Please try again.");
       });
+
+    // Send confirmation to guest
+    emailjs
+      .send(
+        "service_avsd38s",
+        "template_rsvp_guest",
+        formData,
+        "16lkLTGP8jiCXyrHM"
+      )
+      .then(() => {
+        console.log("Confirmation email sent to guest.");
+      })
+      .catch(() => {
+        console.log("Failed to send confirmation to guest.");
+      });
+
+    setFormData({ name: "", email: "", guests: "" });
   };
 
   if (!isOpen) return null;
