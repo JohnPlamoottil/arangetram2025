@@ -44,8 +44,8 @@
   overflow: hidden;
 }
 .campus__parking {
-  width: 305px;
-  height: 193px;
+  width: 653px;
+  height: 414px;
   position: absolute;
   text-align: center;
   left: -1px;
@@ -149,23 +149,11 @@
     margin-top: 1px;
   }
   .laptop-video-overlay__venue {
-    position: absolute;
-    top: 3.2%; /* Adjust to fit laptop screen position */
-    left: 11.2%;
-    width: 78.6%; /* Adjust width of the screen area */
-    height: 77.5%; /* Adjust height of the screen area */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* any changes to iPhone view */
   }
   .campus__parking {
     width: 265px;
     height: 204px;
-    position: absolute;
-    text-align: center;
     left: -45px;
-    top: 0px;
-    border: none;
-    margin-left: 1px;
   }
 }
