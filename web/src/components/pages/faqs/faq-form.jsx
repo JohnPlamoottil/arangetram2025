@@ -40,7 +40,10 @@ const FAQForm = () => {
         If you have any more questions concerning the event, please send them
         using the form below:
       </p>
-      <p className="faq-instructions">We’ll update the site with the answer.</p>
+      <p className="faq-instructions">
+        We’ll email you back shortly with the answer and update the site
+        shortly.
+      </p>
 
       {status && <p className="form-status">{status}</p>}
 
