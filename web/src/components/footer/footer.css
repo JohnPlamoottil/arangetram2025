@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 87vw;
+  width: 98vw;
   font-family: "Amita";
   font-size: 16px;
   background-color: black;
@@ -187,6 +187,7 @@
     gap: 1rem;
     align-items: center;
     box-sizing: border-box;
+    width: 87vw;
   }
   .footer__wrapper {
     width: 101%;
