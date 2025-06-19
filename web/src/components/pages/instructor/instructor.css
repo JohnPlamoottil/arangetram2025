@@ -44,16 +44,16 @@
   align-items: center;
 }
 .campus__parking-instructor {
-  width: 653px;
+  width: 702px;
   height: 414px;
   position: absolute;
   text-align: center;
-  left: -1px;
-  top: 0px;
+  left: -4px;
+  top: 2px;
   border: none;
-  margin-left: 1px;
+  margin-left: 3px;
 }
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 430px) {
   .title_Program {
     color: gold;
     background-color: black;
@@ -77,6 +77,14 @@
   .guru_second {
     width: 77%;
     text-align: center;
+  }
+  .campus__parking-instructor {
+    width: 306px;
+    height: 266px;
+    left: -1px;
+    top: -37px;
+
+    margin-left: 1px;
   }
 }
 @media screen and (max-width: 390px) {

@@ -121,8 +121,8 @@ const Instructor = () => {
               <div className="laptop-video-overlay"></div>
               <div className="laptop-video-overlay__venue">
                 <iframe
-                  src="https://www.youtube.com/embed/9MvIhi4PLPo?si=Aw-tHk9SDCkkPj9R"
-                  title="Direction to Venue"
+                  src="https://www.youtube.com/embed/Gl9EwnTNI4g?si=AMNi-rQbllg1U4q3"
+                  title="Instructor Thank You Speech"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
