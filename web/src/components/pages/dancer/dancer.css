@@ -10,8 +10,16 @@
   justify-content: center;
   align-items: center;
 }
-.full_pose {
-  width: 20%;
+.full_pose_michelle {
+  width: 48%;
+  height: 20%;
+}
+.full_pose_andrea {
+  width: 87%;
+  height: 20%;
+}
+.full_pose_jana {
+  width: 87%;
   height: 20%;
 }
 .headshot {
