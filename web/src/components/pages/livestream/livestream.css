@@ -67,6 +67,7 @@
     text-align: center;
     background-color: rgb(36, 35, 35);
     background-image: url(../../../assets/temple.png);
+    width: 100%;
   }
   .graduation_video2025 {
     position: relative;
