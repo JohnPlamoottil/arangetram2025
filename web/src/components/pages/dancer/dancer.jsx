@@ -200,9 +200,7 @@ Through every dance class, every sore muscle, and every late night spent perfect
 We are endlessly thankful to her beloved guru, Jinoo Varghese, whose guidance, patience, and unwavering belief in her has played an invaluable role in this journey. She has nurtured not only her dance, but her spirit, and we are forever grateful.
 To our dear family and friends—thank you for walking this path with us. Whether it was driving to classes, encouraging her through tough rehearsals, or simply cheering her on—you have been part of her story in more ways than you know.
 And to our daughter Jenna, Watching you grow over the past 11 years has been the most blessed journey. We thank God for blessing us with you, and for the wonderful person that you are. We cannot begin to explain how proud we are of you, for being able to manage your extreme dance schedule with school, sports, clubs, and all church related activities. You have become a wonderful leader, both confident and capable. Through your leadership, we see your heart, your strength, and your love for this beautiful tradition. Dance has given you a wonderful foundation, and we hope that as you continue to grow, you use those values and teachings in everything you do. May your feet always find rhythm, and your soul always find joy in the dance. Your grace on stage is matched only by your humility. 
-You have not only honored the tradition—you have made it your own, and through your expression, you have given all of us a glimpse of something timeless and divine. Never forget how far you have come, how deeply you are loved, and how brightly your light shines. 
-With all our love,
-Amma & Dad`,
+You have not only honored the tradition—you have made it your own, and through your expression, you have given all of us a glimpse of something timeless and divine. Never forget how far you have come, how deeply you are loved, and how brightly your light shines. With all our love, Amma & Dad`,
     mother_daughter: mom_jenna,
     dance_title: `Keerthanam`,
     solo_duration: `Jenna J Plamoottil - 10min`,
