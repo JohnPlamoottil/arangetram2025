@@ -70,18 +70,16 @@
     width: 100%;
   }
   .graduation_video2025 {
-    width: 114%;
+    width: 91%;
     height: 80%;
     position: absolute;
     text-align: center;
-    left: -23px;
+    left: 13px;
     top: 4px;
     border: none;
   }
   .video-frame_livestream {
-    width: 144%;
-    height: auto;
-    display: block;
-    margin-left: -74px;
+    width: 118%;
+    margin-left: -32px;
   }
 }
