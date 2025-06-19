@@ -46,4 +46,8 @@ input[type="email"] {
   cursor: pointer;
 }
 @media screen and (max-width: 430px) {
+  /* iPhone */
+}
+@media screen and (max-width: 768px) {
+  /* iPad screen */
 }

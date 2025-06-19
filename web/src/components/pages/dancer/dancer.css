@@ -57,3 +57,6 @@
     margin-top: 39px;
   }
 }
+@media screen and (max-width: 768px) {
+  /* iPad screen */
+}

@@ -353,3 +353,6 @@
     background-color: black;
   }
 }
+@media screen and (max-width: 768px) {
+  /* iPad screen */
+}

@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px dotted red;
-}
+} */
 .footer {
   display: flex;
   flex-direction: column;
@@ -169,6 +169,7 @@
   }
 }
 @media screen and (max-width: 768px) {
+  /* ipad */
   .footer {
     flex-direction: column;
   }

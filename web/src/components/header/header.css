@@ -303,6 +303,9 @@
     color: gold;
   }
 }
+@media screen and (max-width: 768px) {
+  /* iPad screen */
+}
 
 /* SLIDING ANIMATION CSS STARTS HERE: */
 /* .image-wrapper {
