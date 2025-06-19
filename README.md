@@ -10,7 +10,7 @@ Check-Off List
 - [x] sort thru photos c jenna - June3-4-5
 - [x] one group photo for Home page 
 - [x] in the Program page, use same from brochure
-- [ ] image for each dancer for their page 
+- [x] image for each dancer for their page 
 - [x] biography 
 - [x] andrea bio
 - [x] andrea shishya
@@ -21,9 +21,9 @@ Check-Off List
 - [x] jenna bio 
 - [x] jenna shishya
 - [x] rose bio
-- [ ] rose shishya - Mally chechi has attiude problem 
+- [x] rose shishya - Mally chechi has attiude problem - chatGPT produced response
 - [x] amarya bio
-- [ ] amarya shishya - John said he will get it wed nite
+- [x] amarya shishya - John said he will get it wed nite - john said use chatGPT to formulate a response
 - [x] FAQ page (dropdown and form)
 - [x] [FAQ souce] 
 - [x] Program Page (use Jinoos agenda in Read Me)
