@@ -117,6 +117,11 @@
   color: gold;
   text-align: center;
 }
+.QR_code_outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .QR_code {
   width: 27%;
   margin-left: 523px;
@@ -218,10 +223,7 @@
     padding-right: 44px;
   }
   .QR_code_description {
-    font-family: "Amita";
     font-size: 13px;
-    color: gold;
-    text-align: center;
   }
   .QR_code {
     width: 41%;
