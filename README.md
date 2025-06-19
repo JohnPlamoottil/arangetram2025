@@ -43,6 +43,11 @@ Check-Off List
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
+### Outline on all Items.. just paste into any css file
+* {
+  outline: 1px dotted red;
+} *
+
 ### Performers
 (Pictures of dancers animation CSS)
 1. Michelle Eapen - 1
@@ -103,42 +108,19 @@ Jennas Shishya
 
 Andreas bio 
 
-Andrea is a vibrant and multi-talented
-15-year-old artist. An incoming sophomore at Stevenson High School, she began her Bharatanatyam journey at the age of 5 under the guidance of Guru Smt. Jinoo Varghese and continues to train with dedication and passion. In addition to Bharatanatyam, Andrea is also trained in cinematic, ballet, and hip hop dance styles, allowing her to explore movement across cultures and genres. Andrea also has a deep love for music and performance. She plays the violin, electric guitar, and electric-bass, and draws inspiration from a wide range of musical styles fueling her creativity and sense of rhythm in unexpected ways.
-Andrea is also a student-athlete, proudly representing her school as a varsity wrestler a testament to her discipline, resilience, and drive both on and off the mat. As an active participant in school cultural events, she continues to balance her artistic and athletic passions with grace, commitment, and enthusiasm.
-Driven by a strong desire to make a difference, Andrea aspires to pursue a career in the medical field, where she hopes to explore meaningful ways to help and serve humanity. Her compassion, curiosity, and sense of purpose are at the heart of everything she does.
-She extends her heartfelt thanks to her beloved Guru, jinoo Varghese, for her unwavering support and mentorship for nurturing Andrea's classical roots while inspiring her to grow as a confident, well-rounded
-artist
+
 
 Andreas mom note to her! Shilpa and Jeril:
 
-Watching our Andrea grow has been one of the greatest joys of our lives. From her earliest days, she has carried a quiet strength and a soft heart — gentle in nature, yet bold in spirit. She is calm and composed in public, but in the company of those she loves, her playful, mischievous side shines through. Among her closest friends, she is loud, confident, and full of life — never afraid to speak her mind and lift others up.
 
-She gives selflessly, often putting others’ happiness before her own. Whether it's a toy, time, or a piece of her favorite treat, she never hesitates to share. At home, she’s the cool big sister — teasing, laughing, and playing endlessly with her little brother, finding joy in simply being with him (and often in annoying him too!). She is soft-spoken but firm, kind but fearless — a beautiful balance that makes her truly special.
-
-Dance has been a constant in her life — a space where her inner world comes alive. Over the years, it has helped her find grace, discipline, and deep connection to tradition. Through every movement and every expression, we see her love for the art and the quiet dedication behind it.
-
-As parents, we feel truly blessed to watch her grow into the young woman she is — full of heart, full of spirit, and full of promise.
-
-With love and pride,
-Appa & Amma
 
 Jana’s bio 
 
-Jana Ann Scaria began dancing at the young age of five. She started her Bharatanatyam journey under the guidance of Guru Smt. Jinoo Varghese, while also learning Cinematic and Western dance at the Syro Malabar Cultural Academy under Sreevidhya Vijayan and Varsha Vijayan. Over the years, she has competed in many events, such as CMA, Kalakshetra, and the Syro Malabar Youth Festival, earning numerous awards. She also performs annually at the Syro Malabar Perunnal. In addition to dance, Jana enjoys playing volleyball. She has played on her school team for the past two years and has been a member of the club team “The Edge” for three years. Along with her involvement in dance and athletics, Jana is a talented violinist and a member of her middle school orchestra. Her favorite subjects in school include math and science. Jana will be a freshman at John Hersey High School this coming fall and is very excited to take the next step in her academic journey. Jana has the opportunity to complete her Arangetram today, thanks to God’s grace, her guru’s guidance, her loved ones’ support, and her own hard work.
+
 
 Jana’s parents note 
 
-Our dearest Jana,
 
-Today, as you take the stage for your Arangetram, our hearts are filled with pride, joy, and deep gratitude. This milestone is not just a performance it is the culmination of years of dedication, discipline, and passion. We have witnessed your journey the early lessons, the aching feet, the endless hours of practice and we are amazed at the grace, strength, and maturity you bring to your art.
-
-Your Arangetram is a celebration of tradition and talent, but more than that, it is a reflection of your inner light and hard work. You’ve shown us what it means to stay committed to a goal and to honor culture with devotion and sincerity.
-
-We are incredibly proud of the dancer you’ve become, but even more proud of the beautiful person you are humble, kind, and determined. May this performance be the beginning of many more achievements and a lifelong love for the arts.
-
-With all our love and blessings,
-Appai & Amma
 ## History of Bharatanatyam
 used June4
 
