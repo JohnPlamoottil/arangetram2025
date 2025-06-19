@@ -46,7 +46,7 @@ FAQ documentation for accordion dropdown
 ### Outline on all Items.. just paste into any css file
 * {
   outline: 1px dotted red;
-} *
+} 
 
 ### Performers
 (Pictures of dancers animation CSS)
