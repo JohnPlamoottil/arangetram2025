@@ -40,6 +40,7 @@ Check-Off List
 - [x] 430px media query. iPhone14Pro Max
 - [ ] 768px media query. iPad
 - [x] remove 1179px media screen its not iPhone15
+- [x] jinoo thank you speech video  
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
