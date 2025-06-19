@@ -344,11 +344,11 @@ const Dancer = () => {
             <span className="burger-icon">☰</span>
           </button>
           {menuOpen && (
-            <div className="dancers">
+            <div className="dancers" onClick={() => setMenuOpen(false)}>
               <Link
                 className="dancer_text"
                 to={{
-                  pathname: "dancer",
+                  pathname: "/dancer",
                   search: "?dancer=michelle",
                 }}
               >
@@ -358,7 +358,7 @@ const Dancer = () => {
               <Link
                 className="dancer_text"
                 to={{
-                  pathname: "dancer",
+                  pathname: "/dancer",
                   search: "?dancer=andrea",
                 }}
               >
@@ -368,7 +368,7 @@ const Dancer = () => {
               <Link
                 className="dancer_text"
                 to={{
-                  pathname: "dancer",
+                  pathname: "/dancer",
                   search: "?dancer=jana",
                 }}
               >
@@ -378,7 +378,7 @@ const Dancer = () => {
               <Link
                 className="dancer_text"
                 to={{
-                  pathname: "dancer",
+                  pathname: "/dancer",
                   search: "?dancer=rose",
                 }}
               >
@@ -388,7 +388,7 @@ const Dancer = () => {
               <Link
                 className="dancer_text"
                 to={{
-                  pathname: "dancer",
+                  pathname: "/dancer",
                   search: "?dancer=jenna",
                 }}
               >
@@ -398,7 +398,7 @@ const Dancer = () => {
               <Link
                 className="dancer_text"
                 to={{
-                  pathname: "dancer",
+                  pathname: "/dancer",
                   search: "?dancer=amarya",
                 }}
               >
