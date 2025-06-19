@@ -318,16 +318,16 @@
   }
   .class-location-title {
     color: gold;
-    margin-left: 65px;
+    margin-left: 3px;
   }
   .class-location {
     color: gold;
-    margin-left: 65px;
+    margin-left: 0px;
   }
   .social {
     display: flex;
     flex-direction: row;
-    gap: 117px;
+    gap: 79px;
     justify-content: center;
   }
 }
