@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import "./dancer.css"; // optional for styling
 import Guestbook from "../guestbook/guestbook.jsx";
 import { RSVPModal } from "./rsvp";
+import { Link } from "react-router-dom";
 import Navigation from "../../navigation-links/navigation-links";
 
 import michelle_full from "../../../assets/michelle_full.png";
@@ -262,6 +263,7 @@ const Dancer = () => {
     }
   }
   const [showRSVP, setShowRSVP] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div>
@@ -333,10 +335,81 @@ const Dancer = () => {
           <button className="accordion" onClick={() => setShowRSVP(true)}>
             RSVP
           </button>
+          <button
+            className="dropdown"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <p className="dropdown__title">Shishya</p>
+            <span className="burger-icon">☰</span>
+          </button>
+          {menuOpen && (
+            <div className="dancers">
+              <Link
+                className="dancer_text"
+                to={{
+                  pathname: "dancer",
+                  search: "?dancer=michelle",
+                }}
+              >
+                Michelle Eapen
+              </Link>
+
+              <Link
+                className="dancer_text"
+                to={{
+                  pathname: "dancer",
+                  search: "?dancer=andrea",
+                }}
+              >
+                Andrea Thomas
+              </Link>
+
+              <Link
+                className="dancer_text"
+                to={{
+                  pathname: "dancer",
+                  search: "?dancer=jana",
+                }}
+              >
+                Jana Scaria
+              </Link>
+
+              <Link
+                className="dancer_text"
+                to={{
+                  pathname: "dancer",
+                  search: "?dancer=rose",
+                }}
+              >
+                Rose Thomas
+              </Link>
+
+              <Link
+                className="dancer_text"
+                to={{
+                  pathname: "dancer",
+                  search: "?dancer=jenna",
+                }}
+              >
+                Jenna Plamoottil
+              </Link>
+
+              <Link
+                className="dancer_text"
+                to={{
+                  pathname: "dancer",
+                  search: "?dancer=amarya",
+                }}
+              >
+                Amarya Koola
+              </Link>
+            </div>
+          )}
           <div className="panel">
             <RSVPModal isOpen={showRSVP} onClose={() => setShowRSVP(false)} />
             <p>RSVP</p>
-            <a href="/guestbook">Home</a>
+            <Link to="/guestbook">Shishya</Link>
           </div>
           <img
             className="varnum_pose"
