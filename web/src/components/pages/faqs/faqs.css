@@ -224,6 +224,7 @@
   .accordion:hover {
     background-color: silver;
     color: brown;
+    width: 100;
   }
 
   /* Style the accordion panel. Note: hidden by default */
