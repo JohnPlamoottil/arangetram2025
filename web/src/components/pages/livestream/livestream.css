@@ -43,7 +43,6 @@
   left: 12%; /* Adjust based on frame */
   width: 76%; /* Adjust width to match the screen */
   height: 54%; /* Adjust height for screen window */
-  pointer-events: none; /* optional to prevent hover interference */
 }
 
 .graduation_video2025 {
