@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./ComingSoon.css";
+import "./coming_soon.css";
 
 const ComingSoon = (message) => {
   const calculateTimeLeft = () => {

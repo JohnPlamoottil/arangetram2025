@@ -14,7 +14,7 @@ import Guestbook from "./components/pages/guestbook/guestbook";
 import Dancer from "./components/pages/dancer/dancer";
 import Navigation from "./components/navigation-links/navigation-links";
 import ScrollToTop from "./components/ScrollToTop";
-import ComingSoon from "./components/comingSoon/comingsoon";
+import ComingSoon from "./components/coming_soon/coming_soon";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
