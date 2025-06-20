@@ -24,7 +24,6 @@ const Livestream = () => {
           ></iframe>
         </div>
       </div>
-      <Navigation />
       <Footer />
     </div>
   );
