@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./coming_soon.css";
+import Navigation from "../navigation-links/navigation-links";
 
-const ComingSoon = (message) => {
+const ComingSoon = ({ message }) => {
   const calculateTimeLeft = () => {
-    const targetDate = "2025-07-01T00:00:00";
+    const targetDate = "2025-06-21T00:14:00";
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {};
 
@@ -33,8 +34,19 @@ const ComingSoon = (message) => {
 
   return (
     <div className="coming-soon-container">
-      <h1>🚧 Page Unavailable</h1>
-      <p>{message || "This page will be available on Saturday June21 2025 "}</p>
+      <Navigation />
+      <div className="title_unavail">
+        <h1>
+          Page Unavailable <br />
+          🚧 🚧{" "}
+        </h1>
+      </div>
+      <p className="subtitle">
+        This page will be available on .... <br />
+        Saturday June21 2025 2pm
+        <br />
+        {message || ""}
+      </p>
 
       {timeLeft ? (
         <div className="countdown">
