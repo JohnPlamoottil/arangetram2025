@@ -13,7 +13,7 @@ import FAQs from "./components/pages/faqs/faqs";
 import Guestbook from "./components/pages/guestbook/guestbook";
 import Dancer from "./components/pages/dancer/dancer";
 import Navigation from "./components/navigation-links/navigation-links";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/scroll_to_top";
 import ComingSoon from "./components/coming_soon/coming_soon";
 
 createRoot(document.getElementById("root")).render(
