@@ -137,6 +137,7 @@ const Instructor = () => {
       <div className="center-image">
         <img className="guru_second" src={guru_second} alt="centered" />
       </div>
+      <Navigation />
       <Footer />
     </div>
   );

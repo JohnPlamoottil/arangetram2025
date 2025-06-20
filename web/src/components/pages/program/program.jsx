@@ -41,7 +41,9 @@ const Program = () => {
               everyone be seated during the program to avoid any disruption. We
               also ask that you please silence your cell phones as it will also
               be a disruption to the program. Coffee will be available in the
-              Hallway by 5pm. Please be sure to grab a brochure on your way in.
+              Hallway by 5pm. Please be sure to grab a brochure on your way in
+              and have your phone pulled up with this website as you can follow
+              along the program on this page.
             </p>
           </div>
           <button className="accordion_program" onClick={handleClick}>
@@ -67,10 +69,11 @@ const Program = () => {
               the parents of Amarya - John and Latha Chirayil Koola <br />
               Thank you to all of the parents for all of your hardwork. For any
               function, the presence of priests is important for God's blessing.
-              I respectfully invite Rev. Fr.Jerry Mathew, to the stage to bless
-              this occasion. I would like to invite Rev. Fr.Jerry to offer a
-              short prayer. I would like to invite Reverend Vicar Jerry Mathew
-              for the welcome address on behalf of the parents.
+              I respectfully invite Rev. Fr.Jerry Mathew, Fr. Thomas
+              Kadukappillil, and Fr. Joel Pius to the stage to bless this
+              occasion. I would like to invite Rev. Fr.Jerry to offer a short
+              prayer. I would like to invite Reverend Vicar Jerry Mathew for the
+              welcome address on behalf of the parents.
             </p>
           </div>
           <button className="accordion_program" onClick={handleClick}>
@@ -464,6 +467,7 @@ const Program = () => {
           </div>
         </section>
       </div>
+      <Navigation />
       <Footer />
     </div>
   );

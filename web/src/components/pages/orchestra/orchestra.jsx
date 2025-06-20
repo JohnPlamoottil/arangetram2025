@@ -220,6 +220,7 @@ const Orchestra = () => {
           </strong>
         </p>
       </div>
+      <Navigation />
       <Footer />
     </div>
   );

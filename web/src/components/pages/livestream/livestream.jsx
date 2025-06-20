@@ -22,6 +22,7 @@ const Livestream = () => {
           className="graduation_video2025"
         ></iframe>
       </div>
+      <Navigation />
       <Footer />
     </div>
   );
