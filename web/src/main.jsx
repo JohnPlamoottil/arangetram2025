@@ -36,11 +36,11 @@ createRoot(document.getElementById("root")).render(
         <Route path="/video" element={<ComingSoon message={"Video"} />} />
         {/* <Route path="/video" element={<Video />} /> */}
 
-        <Route
+        {/* <Route
           path="/livestream"
           element={<ComingSoon message={"Livestream"} />}
-        />
-        {/* <Route path="/livestream" element={<Livestream />} /> */}
+        /> */}
+        <Route path="/livestream" element={<Livestream />} />
 
         <Route
           path="/orchestra"
@@ -76,6 +76,6 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>
 );
 {
-  /* Restricted pages: Program, Instructor, Video, Livestream, Orchestra */
-  // Allowed pages before June21: home, venue, FAQ, guestbook, dancers */
+  /* Restricted pages: Program, Instructor, Video,  Orchestra */
+  // Allowed pages before June21: home, venue, FAQ, guestbook, dancers, Livestream, */
 }

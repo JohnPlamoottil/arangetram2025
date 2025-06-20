@@ -37,13 +37,24 @@
   text-align: center;
   flex-grow: 1;
 }
+.outer_graduation_video2025 {
+  position: absolute;
+  top: 13.5%; /* Adjust based on frame */
+  left: 12%; /* Adjust based on frame */
+  width: 76%; /* Adjust width to match the screen */
+  height: 54%; /* Adjust height for screen window */
+  pointer-events: none; /* optional to prevent hover interference */
+}
 
 .graduation_video2025 {
-  position: relative;
-  left: -4px;
-  width: 77%;
-  top: -359px;
-  height: 165%;
+  width: 757px;
+  height: 482px;
+  position: absolute;
+  text-align: center;
+  left: -9px;
+  top: -65px;
+  border: none;
+  margin-left: 1px;
 }
 
 .video-frame_livestream {
@@ -70,12 +81,12 @@
     width: 100%;
   }
   .graduation_video2025 {
-    width: 91%;
-    height: 80%;
-    position: absolute;
+    width: 129%;
+    height: 146%;
+    position: relative;
     text-align: center;
-    left: 13px;
-    top: 4px;
+    left: -39px;
+    top: -28px;
     border: none;
   }
   .video-frame_livestream {
