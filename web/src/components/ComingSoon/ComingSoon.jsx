@@ -1,0 +1,63 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./ComingSoon.css";
+
+const ComingSoon = (message) => {
+  const calculateTimeLeft = () => {
+    const targetDate = "2025-07-01T00:00:00";
+    const difference = +new Date(targetDate) - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    } else {
+      timeLeft = null;
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="coming-soon-container">
+      <h1>🚧 Page Unavailable</h1>
+      <p>
+        {message ||
+          "This page will be available soon. Please check back later!"}
+      </p>
+
+      {timeLeft ? (
+        <div className="countdown">
+          <h2>Launching In:</h2>
+          <div className="timer">
+            <span>{timeLeft.days}d </span>
+            <span>{timeLeft.hours}h </span>
+            <span>{timeLeft.minutes}m </span>
+            <span>{timeLeft.seconds}s</span>
+          </div>
+        </div>
+      ) : (
+        <p>🎉 The page is now available!</p>
+      )}
+
+      <Link to="/" className="home-button">
+        Back to Home
+      </Link>
+    </div>
+  );
+};
+
+export default ComingSoon;
