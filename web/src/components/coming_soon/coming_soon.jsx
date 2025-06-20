@@ -34,10 +34,7 @@ const ComingSoon = (message) => {
   return (
     <div className="coming-soon-container">
       <h1>🚧 Page Unavailable</h1>
-      <p>
-        {message ||
-          "This page will be available soon. Please check back later!"}
-      </p>
+      <p>{message || "This page will be available on Saturday June21 2025 "}</p>
 
       {timeLeft ? (
         <div className="countdown">
