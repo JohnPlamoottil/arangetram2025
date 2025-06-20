@@ -9,6 +9,16 @@ const BackgroundAudio = () => {
     }
   }, []);
 
+  useEffect(() => {
+    function handleClick() {
+      audioRef.current.play();
+    }
+
+    document.addEventListener("click", handleClick);
+
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
+
   return (
     <audio ref={audioRef} autoPlay loop preload="auto">
       <source src="/bkgd_music.mp3" type="audio/mpeg" />
