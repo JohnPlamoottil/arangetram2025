@@ -21,7 +21,7 @@ const FAQForm = () => {
     emailjs
       .send(
         "service_avsd38s",
-        "template_nb9x01n",
+        "template_9iq69d6",
         formData,
         "16lkLTGP8jiCXyrHM"
       )
