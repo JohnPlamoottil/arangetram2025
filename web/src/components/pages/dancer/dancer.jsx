@@ -297,11 +297,13 @@ const Dancer = () => {
           <div className="panel">
             <p>
               {dancerInfo.shishya}
-              <img
-                className="mother_daughter"
-                src={dancerInfo.mother_daughter}
-                alt={`Mom and ${dancerInfo.shortName}`}
-              />
+              <div className="outer_mother_daughter">
+                <img
+                  className={`mother_daughter mom_daughter_${dancerInfo.dancerName}`}
+                  src={dancerInfo.mother_daughter}
+                  alt={`Mom and ${dancerInfo.shortName}`}
+                />
+              </div>
             </p>
           </div>
           <button className="accordion" onClick={handleClick}>

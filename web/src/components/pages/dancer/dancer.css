@@ -37,7 +37,17 @@
 .headshot {
   width: 100%;
 }
-.mother_daughter {
+.outer_mother_daughter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120%;
+}
+.mother_daughter_jenna {
+  width: 30%;
+}
+.mother_daughter_amarya {
+  width: 50%;
 }
 .solo_photo {
   width: 100%;
@@ -55,6 +65,12 @@
 @media screen and (max-width: 430px) {
   .title_dancer {
     margin-top: 39px;
+  }
+  .mother_daughter_jenna {
+    width: 10%;
+  }
+  .varnum_pose {
+    width: 101%;
   }
 }
 @media screen and (max-width: 768px) {
