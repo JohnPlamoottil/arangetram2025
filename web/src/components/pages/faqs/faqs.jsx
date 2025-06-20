@@ -111,6 +111,7 @@ const FAQs = () => {
       </section>
       <img className="margam" src={margam} alt="group center"></img>
       <FAQForm />
+      <Navigation />;
       <Footer />
     </div>
   );

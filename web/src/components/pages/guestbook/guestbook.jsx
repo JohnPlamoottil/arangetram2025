@@ -46,7 +46,6 @@ function Guestbook({ dancerName }) {
     <div>
       <h2 className="guestbook">Guestbook</h2>
       <img className="group_photo" src={group_center} alt="group center"></img>
-
       <div className="guestbook">
         <h2>Guestbook</h2>
         <form className="guestbook" onSubmit={handleSubmit}>
@@ -85,6 +84,7 @@ function Guestbook({ dancerName }) {
             ))}
         </ul>
       </div>
+      <Navigation />;
       <Footer />
     </div>
   );
