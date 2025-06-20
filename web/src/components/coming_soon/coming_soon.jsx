@@ -5,7 +5,7 @@ import Navigation from "../navigation-links/navigation-links";
 
 const ComingSoon = ({ message }) => {
   const calculateTimeLeft = () => {
-    const targetDate = "2025-06-21T00:14:00";
+    const targetDate = "2025-06-21 T14:00:00";
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {};
 
