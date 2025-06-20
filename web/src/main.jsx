@@ -15,38 +15,26 @@ import Dancer from "./components/pages/dancer/dancer";
 import Navigation from "./components/navigation-links/navigation-links";
 import ScrollToTop from "./components/scroll_to_top";
 import ComingSoon from "./components/coming_soon/coming_soon";
+import BackgroundAudio from "./components/background_audio";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
       <ScrollToTop />
+      <BackgroundAudio />
 
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/program" element={<ComingSoon message={"Program"} />} />
-        {/* <Route path="/program" element={<Program />} /> */}
+        <Route path="/program" element={<Program />} />
 
-        <Route
-          path="/instructor"
-          element={<ComingSoon message={"Instructor"} />}
-        />
-        {/* <Route path="/instructor" element={<Instructor />} /> */}
+        <Route path="/instructor" element={<Instructor />} />
 
-        <Route path="/video" element={<ComingSoon message={"Video"} />} />
-        {/* <Route path="/video" element={<Video />} /> */}
+        <Route path="/video" element={<Video />} />
 
-        {/* <Route
-          path="/livestream"
-          element={<ComingSoon message={"Livestream"} />}
-        /> */}
         <Route path="/livestream" element={<Livestream />} />
 
-        <Route
-          path="/orchestra"
-          element={<ComingSoon message={"Orchestra"} />}
-        />
-        {/* <Route path="/orchestra" element={<Orchestra />} /> */}
+        <Route path="/orchestra" element={<Orchestra />} />
 
         <Route
           path="/videos"
@@ -78,4 +66,17 @@ createRoot(document.getElementById("root")).render(
 {
   /* Restricted pages: Program, Instructor, Video,  Orchestra */
   // Allowed pages before June21: home, venue, FAQ, guestbook, dancers, Livestream, */
+}
+// these links makes the pages Unavailable upon manual turn on by replasing each router for these below: //
+{
+  /* <Route path="/livestream" element={<ComingSoon message={"Livestream"} />} /> */
+}
+{
+  /* <Route path="/instructor" element={<ComingSoon message={"Instructor"} />} />; */
+}
+{
+  /* <Route path="/orchestra" element={<ComingSoon message={"Orchestra"} />} /> */
+}
+{
+  /* <Route path="/video" element={<ComingSoon message={"Video"} />} /> */
 }
