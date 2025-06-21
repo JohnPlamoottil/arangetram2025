@@ -39,10 +39,10 @@ Check-Off List
 - [x] REMOVE 390px media query iPhone12 Pro
 - [x] 430px media query. iPhone14Pro Max
 - [ ] 768px media query. iPad
-- [ ] fix home styles and only apply styles for smaller screen in media queries
+- [x] fix home styles and only apply styles for smaller screen in media queries
 - [x] remove 1179px media screen its not iPhone15
 - [x] jinoo thank you speech video  
-- [ ] reflection video
+- [x] reflection video
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
@@ -141,15 +141,15 @@ added on June3
 
 ## Next is a musical interlude  5:35 PM to 5:42 PM 
 
-Solo 4 - Rose Thomas
+# Solo 4 - Rose Thomas
 
-Solo 5 - Jenna Plamoottil
+# Solo 5 - Jenna Plamoottil
 
-Solo 6 - Amarya Koola
+# Solo 6 - Amarya Koola
 
-Thillana - Group
+# Thillana - Group
 
-Mangalam
+# Mangalam
 
 ## Video mp4 and LIVE link youtube
 
