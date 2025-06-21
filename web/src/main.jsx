@@ -37,7 +37,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/orchestra" element={<Orchestra />} />
 
         <Route
-          path="/videos"
+          path="/video"
           element={
             <ComingSoon
               message="Video gallery launches July 1!"
