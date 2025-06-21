@@ -109,7 +109,7 @@ const dancers = {
   },
   andrea: {
     shortName: "Andrea",
-    fullName: `Andrea Sherril Thomas`,
+    fullName: `Andrea Jeril Thomas`,
     fullPose: andrea_full,
     headshot: andrea_headshot,
     autobio: `Andrea is a vibrant and multi-talented 15-year-old artist. An incoming sophomore at Stevenson High School, she began her Bharatanatyam journey at the age of 5 under the guidance of Guru Jinoo Varghese and continues to train with dedication and passion.
