@@ -42,7 +42,16 @@ createRoot(document.getElementById("root")).render(
             <ComingSoon
               message="Video gallery launches July 1!"
               targetDate="2025-07-01T00:00:00"
-            />
+            >
+              <div>
+                <Navigation />
+                <h1>Video Gallery</h1>
+                <p>
+                  This is the videoe gallery content that will be available on
+                  July 1st, 2025.
+                </p>
+              </div>
+            </ComingSoon>
           }
         />
 
