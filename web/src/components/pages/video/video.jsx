@@ -5,8 +5,9 @@ import frameImage from "../../../assets/macbookpro.png";
 import ComingSoon from "../../coming_soon/coming_soon";
 
 const Video = () => {
-  // automatically makes the page available on Sat June21 2pm CST //
-  if (new Date() < new Date("2025-06-21T00:14:00")) {
+  // automatically makes the page available on Sat June21 6pm CST //
+  if (new Date() < new Date("2025-06-21 T18:00:00")) {
+    console.log(new Date());
     return <ComingSoon message={"Video"} />;
   } else {
     return (
@@ -16,7 +17,7 @@ const Video = () => {
       >
         <Navigation />
         <h1 className="video-title">Dance Memories - Reflection ~2015-2025</h1>
-        <h2 className="video-subtitle">Kalashetra Competition 2019</h2>
+        <h2 className="video-subtitle">Kalakshetra Competition 2019</h2>
         <div className="video-overlay"></div>
 
         <div className="video-wrapper__video">
@@ -35,8 +36,8 @@ const Video = () => {
         <div className="video-wrapper__video">
           <img src={frameImage} alt="Frame" className="video-frame_video" />
           <iframe
-            src="https://www.youtube.com/embed/btN6NSrr9H4"
-            title="Bharatanatyam 2019"
+            src="https://www.youtube.com/embed/-yZseWMFdKM?si=9j6NdfWQ0mwEA4l7"
+            title="Reflection Video Arangetram"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="reflection"
