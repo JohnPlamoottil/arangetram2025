@@ -3,10 +3,27 @@ import { Link } from "react-router-dom";
 import "./coming_soon.css";
 import Navigation from "../navigation-links/navigation-links";
 
-const ComingSoon = ({ message }) => {
+const ComingSoon = ({ message, targetDate, children }) => {
   const calculateTimeLeft = () => {
-    const targetDate = "2025-06-21 T14:00:00";
-    const difference = +new Date(targetDate) - +new Date();
+    // if targetDate is provided, use it; otherwise calculate tmrw at 2:00 pm CST //
+    let targetDateTime;
+
+    if (targetDate) {
+      targetDateTime = new Date(targetDate);
+    } else {
+      //Calculate today at 2pm CST
+      const today = new Date();
+      today.setDate(today.getDate() + 0);
+
+      // Create a date string for today at 2pmCST
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const day = String(today.getDate()).padStart(2, "0");
+      const cstDateString = `${year}-${month}-${day}T14:00:00-06:00`; // 2:00 PM CST
+
+      targetDateTime = new Date(cstDateString);
+    }
+    const difference = +targetDateTime - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -30,7 +47,12 @@ const ComingSoon = ({ message }) => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
+
+  // If timer has reached zero and children are provided, render the actual content
+  if (!timeLeft && children) {
+    return children;
+  }
 
   return (
     <div className="coming-soon-container">
@@ -43,7 +65,9 @@ const ComingSoon = ({ message }) => {
       </div>
       <p className="subtitle">
         This page will be available on .... <br />
-        Saturday June21 2025 2pm
+        {targetDate
+          ? new Date(targetDate).toLocaleDateString()
+          : "Today at 2:00 PM CST"}
         <br />
         {message || ""}
       </p>
@@ -70,3 +94,6 @@ const ComingSoon = ({ message }) => {
 };
 
 export default ComingSoon;
+
+// const targetDate = "2025-06-21 T14:00:00";
+// const difference = +new Date(targetDate) - new Date();
