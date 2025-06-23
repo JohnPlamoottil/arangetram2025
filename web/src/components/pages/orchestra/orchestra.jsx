@@ -7,7 +7,7 @@ import Deepu_Karunakaran from "../../../assets/Deepu_Karunakaran.jpg";
 import Kiran_R_Pai from "../../../assets/Kiran_R_Pai.jpg";
 import Sri_Rijesh_Gopalakrishnan from "../../../assets/Sri_Rijesh_Gopalakrishnan.jpg";
 import Preyesh_Mampoyil_Kudiru_Parambu from "../../../assets/Preyesh_Mampoyil_Kudiru_Parambu.jpg";
-import ComingSoon from "../../coming_soon/coming_soon";
+// import ComingSoon from "../../coming_soon/coming_soon"; available full time
 
 const Orchestra = () => {
   function handleClick(e) {
@@ -20,7 +20,8 @@ const Orchestra = () => {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   }
-  const orchestraContent = (
+  // const orchestraContent = (
+  return (
     <div>
       <Navigation />
 
@@ -225,7 +226,7 @@ const Orchestra = () => {
       <Footer />
     </div>
   );
-  return <ComingSoon message="Musician">{orchestraContent}</ComingSoon>;
+  // return <ComingSoon message="Musician">{orchestraContent}</ComingSoon>;
 };
 
 export default Orchestra;
