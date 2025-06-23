@@ -131,7 +131,7 @@ function Home() {
       <div className="QR_code_outer">
         <div>
           <p className="QR_code_description">
-            Share this website with others around you
+            Expired QR Code - Share this website LINK with others around you
           </p>
           <img className="QR_code" src={qr_code} alt="qr code"></img>
         </div>
