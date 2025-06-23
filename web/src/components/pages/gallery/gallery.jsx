@@ -16,18 +16,53 @@ const Gallery = () => {
     }
   }
   const galleryContent = (
+    // return (
     <div>
       <Navigation />
 
       <section className="questions">
         <h2 className="title_FAQ">Photo Album</h2>
         <button className="accordion" onClick={handleClick}>
-          Sols: Michelle, Andrea, Jana
+          Lobby Decorations
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Auditorium (Audience Clips)
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Pushpanjali
         </button>
         <div className="panel">
           <p className="accordion-text">
             <br />
             <img className="musician" alt="deepu vocalist" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Solos: Michelle, Andrea, Jana
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            <br />
+            <img className="musician" alt="first 3 solos" />
             <br />
             <br />
             <br />
@@ -45,15 +80,6 @@ const Gallery = () => {
         <div className="panel">
           <p className="accordion-text">
             <br />
-            <a
-              href="https://www.instagram.com/kiran_r_pai/?hl=en"
-              target="Kirans Social"
-              rel="noopener no referrer"
-            >
-              {" "}
-              @kiran_r_pai
-            </a>{" "}
-            <br />
             <img className="musician" alt="deepu vocalist" />
             <br />
             <br />
@@ -61,9 +87,12 @@ const Gallery = () => {
             <br />
             <br />
             <br />
-            .. <br />
+            <br />
+            <br />
+            <br />
           </p>
         </div>
+
         <button className="accordion" onClick={handleClick}>
           Solos: Rose, Jenna, Amarya
         </button>
@@ -86,9 +115,8 @@ const Gallery = () => {
         </button>
         <div className="panel">
           <p className="accordion-text">
-            Biography of Preyesh Mampoyil Kudiru Parambu
             <br />
-            <img className="musician" alt="deepu vocalist" />
+            <img className="musician" alt="purple dress" />
             <br />
             <br />
             <br />
@@ -100,26 +128,74 @@ const Gallery = () => {
             <br />
           </p>
         </div>
+        <button className="accordion" onClick={handleClick}>
+          Reception Photos
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            <br />
+          </p>
+        </div>
       </section>
       <div className="musician_container">
-        <h1 className="title_orchestra">The History of Dance in India</h1>
-        <div className="center-image">
-          <img className="india__map" />
+        <h1 className="title_orchestra">Video Clips</h1>
+        <button className="accordion" onClick={handleClick}>
+          Cumulation of Speeches
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            <br />
+          </p>
         </div>
-        <p className="accordion-text">
-          <strong>
-            {" "}
-            . <br />
+        <button className="accordion" onClick={handleClick}>
+          Pushpanjali Videoclip
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
             <br />
-            . <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Solo #1, #2, #3 Videoclip
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
             <br />
-            . <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Varnum Videoclip
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
             <br />
-            .. <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Solo #4, #5, #6 Videoclip
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
             <br />
-            ..
-          </strong>
-        </p>
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Thillana Videoclip
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            <br />
+          </p>
+        </div>
+        <button className="accordion" onClick={handleClick}>
+          Gift & Award Recognition Videoclip
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            <br />
+          </p>
+        </div>
+        <p className="accordion-text"></p>
       </div>
       <Navigation />
       <Footer />
