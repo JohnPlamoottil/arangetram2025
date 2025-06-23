@@ -39,7 +39,7 @@ const Navigation = () => {
       </NavLink>
 
       <NavLink to="/gallery" className="nav-link">
-        Photo Gallery
+        Gallery
       </NavLink>
     </nav>
   );
