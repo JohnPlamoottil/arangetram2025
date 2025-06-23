@@ -5,7 +5,8 @@ import frameImage from "../../../assets/macbookpro.png";
 import ComingSoon from "../../coming_soon/coming_soon";
 
 const Video = () => {
-  const videoContent = (
+  // const videoContent = (
+  return (
     <div
       className="video-page"
       style={{ textAlign: "center", padding: "2rem" }}
@@ -41,7 +42,7 @@ const Video = () => {
       <Navigation />
     </div>
   );
-  return <ComingSoon message="Reflection Videos">{videoContent}</ComingSoon>;
+  // return <ComingSoon message="Reflection Videos">{videoContent}</ComingSoon>;
 };
 
 export default Video;
