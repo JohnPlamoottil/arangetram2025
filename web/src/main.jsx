@@ -16,7 +16,7 @@ import Navigation from "./components/navigation-links/navigation-links";
 import ScrollToTop from "./components/scroll_to_top";
 import ComingSoon from "./components/coming_soon/coming_soon";
 import BackgroundAudio from "./components/background_audio";
-
+import Gallery from "./components/pages/gallery/gallery.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
@@ -68,6 +68,10 @@ createRoot(document.getElementById("root")).render(
           }
         />
         <Route path="/dancer" element={<Dancer />} />
+
+        <Route path="/venue" element={<Venue />} />
+
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </Router>
   </StrictMode>
