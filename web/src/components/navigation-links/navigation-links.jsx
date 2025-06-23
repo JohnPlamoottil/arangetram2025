@@ -37,6 +37,10 @@ const Navigation = () => {
       <NavLink to="/guestbook" className="nav-link">
         Guestbook
       </NavLink>
+
+      <NavLink to="/gallery" className="nav-link">
+        Photo Gallery
+      </NavLink>
     </nav>
   );
 };
