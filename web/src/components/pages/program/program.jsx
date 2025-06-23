@@ -16,7 +16,8 @@ const Program = () => {
     }
   }
 
-  const programContent = (
+  // const programContent = (
+  return (
     <div>
       <Navigation />
       <section className="question">
@@ -462,9 +463,9 @@ const Program = () => {
       <Footer />
     </div>
   );
-  return (
-    <ComingSoon message="Program (Repertoire)">{programContent}</ComingSoon>
-  );
+  // return (
+  // <ComingSoon message="Program (Repertoire)">{programContent}</ComingSoon>
+  // );
 };
 
 export default Program;
