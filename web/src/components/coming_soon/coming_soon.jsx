@@ -5,36 +5,23 @@ import Navigation from "../navigation-links/navigation-links";
 
 const ComingSoon = ({ message, targetDate, children }) => {
   const calculateTimeLeft = () => {
-    // if targetDate is provided, use it; otherwise calculate tmrw at 2:00 pm CST //
-    let targetDateTime;
+    // Fixed launch date: July 1, 2025 at 3:00 PM CST (which is 8:00 PM UTC)
+    const targetDate = new Date("2025-07-01T20:00:00Z"); // UTC time
 
-    if (targetDate) {
-      targetDateTime = new Date(targetDate);
-    } else {
-      //Calculate today at 2pm CST
-      const today = new Date();
-      today.setDate(today.getDate() + 0);
+    const now = new Date();
+    const difference = targetDate - now;
 
-      // Create a date string for today at 2pmCST
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, "0");
-      const day = String(today.getDate()).padStart(2, "0");
-      const cstDateString = `${year}-${month}-${day}T14:00:00-06:00`; // 2:00 PM CST
-
-      targetDateTime = new Date(cstDateString);
-    }
-    const difference = +targetDateTime - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
       timeLeft = {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
         seconds: Math.floor((difference / 1000) % 60),
       };
     } else {
-      timeLeft = null;
+      timeLeft = null; // countdown ended
     }
 
     return timeLeft;
@@ -59,15 +46,17 @@ const ComingSoon = ({ message, targetDate, children }) => {
       <Navigation />
       <div className="title_unavail">
         <h1>
-          Page Unavailable <br />
-          🚧 🚧{" "}
+          🚧
+          <br />
+          Photo Page Unavailable <br />
+          🚧{" "}
         </h1>
       </div>
       <p className="subtitle">
         This page will be available on .... <br />
         {targetDate
           ? new Date(targetDate).toLocaleDateString()
-          : "Today at 2:00 PM CST"}
+          : "July 1st at 3:00 PM CST"}
         <br />
         {message || ""}
       </p>
