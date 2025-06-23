@@ -8,7 +8,7 @@ import soorya_dance_school from "../../../assets/soorya_dance_school.png";
 import instructor_with_girls_onstage from "../../../assets/instructor_with_girls_onstage.png";
 import guru_second from "../../../assets/guru_second.png";
 import frameImage from "../../../assets/macbookpro.png";
-import ComingSoon from "../../coming_soon/coming_soon";
+// import ComingSoon from "../../coming_soon/coming_soon"; AVAILABLE FULL TIME
 
 const Instructor = () => {
   function handleClick(e) {
@@ -22,7 +22,8 @@ const Instructor = () => {
     }
   }
 
-  const instructorContent = (
+  // const instructorContent = (
+  return (
     <div>
       <Navigation />
       <div>
@@ -144,7 +145,7 @@ const Instructor = () => {
     </div>
   );
 
-  return <ComingSoon message="Guru">{instructorContent}</ComingSoon>;
+  // return <ComingSoon message="Guru">{instructorContent}</ComingSoon>;
 };
 
 export default Instructor;
