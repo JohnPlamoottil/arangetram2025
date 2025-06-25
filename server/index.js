@@ -19,10 +19,13 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
+// Multer setup for image upload
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 // Routes
 app.get("/api/message", async (req, res) => {
   const messages = await Message.find({}).sort({ createdAt: "desc" });
-
   res.status(200).json({ messages });
 });
 
@@ -36,11 +39,34 @@ app.post("/api/message", async (req, res) => {
 
   try {
     await newMessage.save();
-
     res.status(201).json({ message: newMessage });
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "Unable to save message" });
+  }
+});
+
+// Image upload route
+app.post("/api/upload", upload.single("image"), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: "No image uploaded" });
+  }
+
+  const newMessage = new Message({
+    name: req.body.name || "Unknown",
+    content: req.body.content || "Image upload",
+    image: {
+      data: req.file.buffer,
+      contentType: req.file.mimetype,
+    },
+  });
+
+  try {
+    await newMessage.save();
+    res.status(201).json({ message: "Image uploaded successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Unable to upload image" });
   }
 });
 
