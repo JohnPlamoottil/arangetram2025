@@ -15,11 +15,39 @@ const Gallery = () => {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   }
-  const galleryContent = (
-    // return (
+  // const galleryContent = (
+  async function handleImageUpload(e) {
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    const formData = new FormData();
+
+    formData.append("image", file);
+
+    try {
+      const response = await fetch("http://localhost:8080/api/upload", {
+        method: "POST",
+
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Image uploaded successfully!");
+      } else {
+        alert(`Error: ${result.error}`);
+      }
+    } catch (error) {
+      console.error("Upload error:", error);
+
+      alert("Failed to upload image.");
+    }
+  }
+  return (
     <div>
       <Navigation />
-
       <section className="questions">
         <h2 className="title_FAQ">Photo Album</h2>
         <button className="accordion" onClick={handleClick}>
@@ -29,6 +57,7 @@ const Gallery = () => {
           <p className="accordion-text">
             <br />
           </p>
+          <input type="file" onChange={handleImageUpload} />
         </div>
         <button className="accordion" onClick={handleClick}>
           Auditorium (Audience Clips)
@@ -37,24 +66,14 @@ const Gallery = () => {
           <p className="accordion-text">
             <br />
           </p>
+          <input type="file" onChange={handleImageUpload} />
         </div>
         <button className="accordion" onClick={handleClick}>
           Pushpanjali
         </button>
         <div className="panel">
-          <p className="accordion-text">
-            <br />
-            <img className="musician" alt="deepu vocalist" />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </p>
+          <p className="accordion-text"></p>
+          <input type="file" onChange={handleImageUpload} />
         </div>
         <button className="accordion" onClick={handleClick}>
           Solos: Michelle, Andrea, Jana
@@ -63,52 +82,23 @@ const Gallery = () => {
           <p className="accordion-text">
             <br />
             <img className="musician" alt="first 3 solos" />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
           </p>
+          <input type="file" onChange={handleImageUpload} />
         </div>
         <button className="accordion" onClick={handleClick}>
           Varnum
         </button>
         <div className="panel">
-          <p className="accordion-text">
-            <br />
-            <img className="musician" alt="deepu vocalist" />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </p>
+          <p className="accordion-text"></p>
+          <input type="file" onChange={handleImageUpload} />
         </div>
 
         <button className="accordion" onClick={handleClick}>
           Solos: Rose, Jenna, Amarya
         </button>
         <div className="panel">
-          <p className="accordion-text">
-            <br />
-            <img className="musician" alt="deepu vocalist" />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </p>
+          <p className="accordion-text"></p>
+          <input type="file" onChange={handleImageUpload} />
         </div>
         <button className="accordion" onClick={handleClick}>
           Thillana
@@ -116,17 +106,8 @@ const Gallery = () => {
         <div className="panel">
           <p className="accordion-text">
             <br />
-            <img className="musician" alt="purple dress" />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            ..
-            <br />
           </p>
+          <input type="file" onChange={handleImageUpload} />
         </div>
         <button className="accordion" onClick={handleClick}>
           Reception Photos
@@ -135,6 +116,7 @@ const Gallery = () => {
           <p className="accordion-text">
             <br />
           </p>
+          <input type="file" onChange={handleImageUpload} />
         </div>
       </section>
       <div className="musician_container">
@@ -148,7 +130,7 @@ const Gallery = () => {
           </p>
         </div>
         <button className="accordion" onClick={handleClick}>
-          Pushpanjali Videoclip
+          Pushpanjali Video Clip
         </button>
         <div className="panel">
           <p className="accordion-text">
@@ -172,36 +154,52 @@ const Gallery = () => {
           </p>
         </div>
         <button className="accordion" onClick={handleClick}>
-          Solo #4, #5, #6 Videoclip
+          // Solo #4, #5, #6 Videoclip //{" "}
         </button>
+        //{" "}
         <div className="panel">
+          //{" "}
           <p className="accordion-text">
-            <br />
+            // <br />
+            //{" "}
           </p>
+          //{" "}
         </div>
+        //{" "}
         <button className="accordion" onClick={handleClick}>
-          Thillana Videoclip
+          // Thillana Videoclip //{" "}
         </button>
+        //{" "}
         <div className="panel">
+          //{" "}
           <p className="accordion-text">
-            <br />
+            // <br />
+            //{" "}
           </p>
+          //{" "}
         </div>
+        //{" "}
         <button className="accordion" onClick={handleClick}>
-          Gift & Award Recognition Videoclip
+          // Gift & Award Recognition Videoclip //{" "}
         </button>
+        //{" "}
         <div className="panel">
+          //{" "}
           <p className="accordion-text">
-            <br />
+            // <br />
+            //{" "}
           </p>
+          //{" "}
         </div>
-        <p className="accordion-text"></p>
+        // <p className="accordion-text"></p>
+        //{" "}
       </div>
-      <Navigation />
-      <Footer />
+      // <Navigation />
+      // <Footer />
+      //{" "}
     </div>
   );
-  return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
+  // return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
 };
 
 export default Gallery;
