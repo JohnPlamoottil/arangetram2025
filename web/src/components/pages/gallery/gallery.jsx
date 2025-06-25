@@ -154,49 +154,39 @@ const Gallery = () => {
           </p>
         </div>
         <button className="accordion" onClick={handleClick}>
-          // Solo #4, #5, #6 Videoclip //{" "}
+          Solo #4, #5, #6 Videoclip
         </button>
-        //{" "}
         <div className="panel">
-          //{" "}
-          <p className="accordion-text">
-            // <br />
-            //{" "}
-          </p>
-          //{" "}
+          <p className="accordion-text"></p>
         </div>
-        //{" "}
         <button className="accordion" onClick={handleClick}>
-          // Thillana Videoclip //{" "}
+          Thillana Videoclip
         </button>
-        //{" "}
         <div className="panel">
-          //{" "}
           <p className="accordion-text">
-            // <br />
-            //{" "}
+            <br />
           </p>
-          //{" "}
         </div>
-        //{" "}
         <button className="accordion" onClick={handleClick}>
-          // Gift & Award Recognition Videoclip //{" "}
+          Gift & Award Recognition Videoclip
         </button>
-        //{" "}
         <div className="panel">
-          //{" "}
           <p className="accordion-text">
-            // <br />
-            //{" "}
+            <br />
           </p>
-          //{" "}
         </div>
-        // <p className="accordion-text"></p>
-        //{" "}
+        <button className="accordion" onClick={handleClick}>
+          Vote of Thanks Videoclip
+        </button>
+        <div className="panel">
+          <p className="accordion-text">
+            <br />
+          </p>
+        </div>
+        <p className="accordion-text"></p>
       </div>
-      // <Navigation />
-      // <Footer />
-      //{" "}
+      <Navigation />
+      <Footer />
     </div>
   );
   // return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
