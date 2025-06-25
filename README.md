@@ -43,6 +43,10 @@ Check-Off List
 - [x] remove 1179px media screen its not iPhone15
 - [x] jinoo thank you speech video  
 - [x] reflection video
+- [ ] focus on uploading a photo to mongo DB 
+- [ ] how to fetch that img from mongo DB andd displaying in the frontend
+- [ ] making the uploads specif to the accordian 
+- [ ] set up scheme in Atlas for the various categories 
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
