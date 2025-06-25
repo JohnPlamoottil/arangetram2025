@@ -7,6 +7,16 @@ const messageSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-const Message = mongoose.model("Message", messageSchema);
+const imageSchema = new mongoose.Schema({
+  name: String,
+  content: String,
+  image: {
+    data: Buffer,
+    contentType: String,
+  },
+});
 
-module.exports = Message;
+const Message = mongoose.model("Message", messageSchema);
+const Image = mongoose.model("Image", imageSchema);
+
+module.exports = { Message, Image };

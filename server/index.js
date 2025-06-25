@@ -1,11 +1,12 @@
 // server/index.js
+const multer = require("multer");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 const mongoose = require("mongoose");
 
-const Message = require("./messages");
+const { Message, Image } = require("./messages");
 
 const app = express();
 const PORT = 8080;
@@ -52,7 +53,7 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
     return res.status(400).json({ error: "No image uploaded" });
   }
 
-  const newMessage = new Message({
+  const newImage = new Image({
     name: req.body.name || "Unknown",
     content: req.body.content || "Image upload",
     image: {
@@ -62,7 +63,7 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
   });
 
   try {
-    await newMessage.save();
+    await newImage.save();
     res.status(201).json({ message: "Image uploaded successfully" });
   } catch (err) {
     console.error(err);
