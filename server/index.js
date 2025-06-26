@@ -54,11 +54,12 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
   }
 
   const newImage = new Image({
-    name: req.body.name || "Unknown",
-    content: req.body.content || "Image upload",
+    name: req.body.name || "Anonymous",
+    content: req.body.content || "No description",
     image: {
       data: req.file.buffer,
       contentType: req.file.mimetype,
+      originalName: req.file.originalname,
     },
   });
 

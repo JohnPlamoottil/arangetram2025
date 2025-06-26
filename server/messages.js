@@ -8,11 +8,29 @@ const messageSchema = new mongoose.Schema({
 });
 
 const imageSchema = new mongoose.Schema({
-  name: String,
-  content: String,
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  content: {
+    type: String,
+    required: false, // optional message or description
+  },
   image: {
-    data: Buffer,
-    contentType: String,
+    data: Buffer, // raw binary data from multer.memoryStorage()
+    contentType: {
+      type: String,
+      required: true, // e.g., 'image/jpeg'
+    },
+    originalName: {
+      type: String,
+      required: false, // e.g., 'photo.jpg'
+    },
+  },
+  uploadedAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 
