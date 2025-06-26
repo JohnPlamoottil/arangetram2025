@@ -44,9 +44,10 @@ Check-Off List
 - [x] jinoo thank you speech video  
 - [x] reflection video
 - [x] focus on uploading a photo to mongo DB 
-- [ ] how to fetch that img from mongo DB andd displaying in the frontend
-- [ ] making the uploads specif to the accordian 
-- [ ] set up scheme in Atlas for the various categories 
+- [x] how to fetch that img from mongo DB andd displaying in the frontend
+- [ ] making the uploads specific to the accordian 
+- [x] set up schema in Mongoose for the various categories 
+- [ ] need to test in postman
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
