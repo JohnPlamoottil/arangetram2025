@@ -54,7 +54,7 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
   }
 
   const newImage = new Image({
-    name: req.body.name || "Anonymous",
+    name: "version2",
     content: req.body.content || "No description",
     image: {
       data: req.file.buffer,
@@ -69,6 +69,24 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Unable to upload image" });
+  }
+});
+
+// GET all uploaded images
+app.get("/api/images", async (req, res) => {
+  try {
+    const images = await Image.find({}).sort({ _id: -1 });
+    // Convert image buffer to base64 so it can be rendered in <img> tags
+    const processedImages = images.map((img) => ({
+      name: img.name,
+      content: img.content,
+      contentType: img.image.contentType,
+      imageBase64: img.image.data.toString("base64"),
+    }));
+    res.status(200).json({ images: processedImages });
+  } catch (err) {
+    console.error("Error fetching images:", err);
+    res.status(500).json({ error: "Unable to fetch images" });
   }
 });
 
