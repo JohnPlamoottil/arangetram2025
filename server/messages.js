@@ -28,6 +28,11 @@ const imageSchema = new mongoose.Schema({
       required: false, // e.g., 'photo.jpg'
     },
   },
+  category: {
+    type: String,
+    required: true, // e.g., 'lobby', 'auditorium', etc.
+    trim: true,
+  },
   uploadedAt: {
     type: Date,
     default: Date.now,

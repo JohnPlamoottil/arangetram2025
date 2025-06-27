@@ -1,77 +1,120 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../../navigation-links/navigation-links";
-import "./gallery.css";
 import Footer from "../../footer/footer";
-import ComingSoon from "../../coming_soon/coming_soon";
+import "./gallery.css";
+
+const PHOTO_SECTIONS = [
+  { key: "lobby", label: "Lobby Decorations" },
+  {
+    key: "auditorium",
+    label: "Auditorium (Audience Clips)",
+    showGallery: true,
+  },
+  { key: "pushpanjali", label: "Pushpanjali" },
+  { key: "solos1", label: "Solos: Michelle, Andrea, Jana" },
+  { key: "varnum", label: "Varnum" },
+  { key: "solos2", label: "Solos: Rose, Jenna, Amarya" },
+  { key: "thillana", label: "Thillana" },
+  { key: "reception", label: "Reception Photos" },
+];
+
+const VIDEO_SECTIONS = [
+  { key: "speeches", label: "Cumulation of Speeches" },
+  { key: "pushpanjali", label: "Pushpanjali Video Clip" },
+  { key: "solos", label: "Solo #1, #2, #3 Videoclip" },
+  { key: "varnum", label: "Varnum Videoclip" },
+  { key: "solos2", label: "Solo #4, #5, #6 Videoclip" },
+  { key: "thillana", label: "Thillana Videoclip" },
+  { key: "awards", label: "Gift & Award Recognition Videoclip" },
+  { key: "thanks", label: "Vote of Thanks Videoclip" },
+];
+
+const AccordionSection = ({ label, children, onClick }) => (
+  <>
+    <button className="accordion" onClick={onClick}>
+      {label}
+    </button>
+    <div className="panel">{children}</div>
+  </>
+);
 
 const Gallery = () => {
-  const [images, setImages] = useState([]);
+  const [imagesByCategory, setImagesByCategory] = useState({});
 
-  /**
-   * Fetch the list of images from the API and store in state.
-   */
+  // Fetch images and organize by category
   const loadImages = async () => {
     try {
+      console.log("Fetching images...");
       const res = await fetch("http://localhost:8080/api/images");
       const data = await res.json();
-      if (res.ok) {
-        setImages(data.images);
+      console.log("API Response:", data);
+
+      if (res.ok && data.images) {
+        console.log("Number of images received:", data.images.length);
+
+        // Group images by category
+        const categorizedImages = data.images.reduce((acc, img) => {
+          const category = img.category || "uncategorized";
+          console.log(`Image category: ${category}`, img);
+          if (!acc[category]) {
+            acc[category] = [];
+          }
+          acc[category].push(img);
+          return acc;
+        }, {});
+
+        console.log("Categorized images:", categorizedImages);
+        setImagesByCategory(categorizedImages);
       } else {
-        console.error("Failed to load images:", data.error);
+        console.error("Failed to load images:", data.error || "Unknown error");
       }
     } catch (err) {
       console.error("Error fetching images:", err);
     }
   };
 
-  // Load images once when the component mounts
   useEffect(() => {
     loadImages();
   }, []);
 
-  /**
-   * Accordion open / close handler
-   */
-  function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
-    const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  }
+  // Accordion toggle
+  const handleAccordionClick = (e) => {
+    const btn = e.target;
+    btn.classList.toggle("slide");
+    const panel = btn.nextElementSibling;
+    panel.style.maxHeight = panel.style.maxHeight
+      ? null
+      : panel.scrollHeight + "px";
+  };
 
-  /**
-   * Upload a single image to the backend and refresh the list on success.
-   */
-  async function handleImageUpload(e) {
-    const file = e.target.files[0];
+  // Image upload handler with category
+  const handleImageUpload = async (e, category) => {
+    const file = e.target.files?.[0];
     if (!file) return;
 
     const formData = new FormData();
     formData.append("image", file);
+    formData.append("category", category);
 
     try {
-      const response = await fetch("http://localhost:8080/api/upload", {
+      const res = await fetch("http://localhost:8080/api/upload", {
         method: "POST",
         body: formData,
       });
-
-      const result = await response.json();
-
-      if (response.ok) {
+      const { error } = await res.json();
+      if (res.ok) {
         alert("Image uploaded successfully!");
-        loadImages(); // refresh gallery
+        loadImages(); // Reload images to show the new upload
+        // Clear the file input
+        e.target.value = "";
       } else {
-        alert(`Error: ${result.error}`);
+        alert(`Error: ${error}`);
       }
-    } catch (error) {
-      console.error("Upload error:", error);
+    } catch (err) {
+      console.error("Upload error:", err);
       alert("Failed to upload image.");
     }
-  }
+  };
 
   return (
     <div>
@@ -79,186 +122,71 @@ const Gallery = () => {
 
       <section className="questions">
         <h2 className="title_FAQ">Photo Album</h2>
+        {PHOTO_SECTIONS.map(({ key, label, showGallery }) => (
+          <AccordionSection
+            key={key}
+            label={label}
+            onClick={handleAccordionClick}
+          >
+            {/* Display images for this category */}
+            <div className="gallery-grid">
+              {imagesByCategory[key]?.length > 0 ? (
+                imagesByCategory[key].map((img, index) => {
+                  console.log(`Rendering image for ${key}:`, img);
+                  return (
+                    <img
+                      key={`${key}-${index}-${img.imageBase64?.slice(0, 20)}`}
+                      src={`data:${img.contentType};base64,${img.imageBase64}`}
+                      alt={img.name || `${label} image`}
+                      className="gallery-img"
+                      onLoad={() =>
+                        console.log(`Image loaded successfully for ${key}`)
+                      }
+                      onError={(e) =>
+                        console.error(`Failed to load image for ${key}:`, e)
+                      }
+                    />
+                  );
+                })
+              ) : (
+                <p>No images uploaded yet for this section.</p>
+              )}
+            </div>
 
-        {/* Lobby */}
-        <button className="accordion" onClick={handleClick}>
-          Lobby Decorations
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Auditorium */}
-        <button className="accordion" onClick={handleClick}>
-          Auditorium (Audience Clips)
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-
-          {/* Display images here */}
-          <div className="gallery-grid">
-            {images.map((img) => (
-              <img
-                key={img.imageBase64.slice(0, 20)}
-                src={`data:${img.contentType};base64,${img.imageBase64}`}
-                alt={img.name}
-                className="gallery-img"
+            {/* Upload input for this specific category */}
+            <div className="upload-section">
+              <label htmlFor={`upload-${key}`} className="upload-label">
+                Upload image for {label}:
+              </label>
+              <input
+                id={`upload-${key}`}
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleImageUpload(e, key)}
               />
-            ))}
-          </div>
-
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Pushpanjali */}
-        <button className="accordion" onClick={handleClick}>
-          Pushpanjali
-        </button>
-        <div className="panel">
-          <p className="accordion-text"></p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Solos 1 */}
-        <button className="accordion" onClick={handleClick}>
-          Solos: Michelle, Andrea, Jana
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-            <img className="musician" alt="first 3 solos" />
-          </p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Varnum */}
-        <button className="accordion" onClick={handleClick}>
-          Varnum
-        </button>
-        <div className="panel">
-          <p className="accordion-text"></p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Solos 2 */}
-        <button className="accordion" onClick={handleClick}>
-          Solos: Rose, Jenna, Amarya
-        </button>
-        <div className="panel">
-          <p className="accordion-text"></p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Thillana */}
-        <button className="accordion" onClick={handleClick}>
-          Thillana
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Reception */}
-        <button className="accordion" onClick={handleClick}>
-          Reception Photos
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
+            </div>
+          </AccordionSection>
+        ))}
       </section>
 
-      {/* Video Clips */}
       <div className="musician_container">
         <h1 className="title_orchestra">Video Clips</h1>
-
-        <button className="accordion" onClick={handleClick}>
-          Cumulation of Speeches
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Pushpanjali Video Clip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Solo #1, #2, #3 Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Varnum Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Solo #4, #5, #6 Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text"></p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Thillana Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Gift & Award Recognition Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Vote of Thanks Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-        <p className="accordion-text"></p>
+        {VIDEO_SECTIONS.map(({ key, label }) => (
+          <AccordionSection
+            key={key}
+            label={label}
+            onClick={handleAccordionClick}
+          >
+            {/* Placeholder content */}
+            <p>Video content coming soon...</p>
+          </AccordionSection>
+        ))}
       </div>
 
       <Navigation />
       <Footer />
     </div>
   );
-  // If you want to show a coming soon placeholder instead, wrap like below:
-  // return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
 };
 
 export default Gallery;
