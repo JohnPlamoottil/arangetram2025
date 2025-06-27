@@ -6,14 +6,51 @@ import ComingSoon from "../../coming_soon/coming_soon";
 
 /* ---------- CONFIG ---------- */
 const PHOTO_SECTIONS = [
-  { key: "lobby", label: "Lobby Decorations" },
-  { key: "auditorium", label: "Auditorium (Audience Clips)" },
-  { key: "pushpanjali", label: "Pushpanjali" },
-  { key: "solos1", label: "Solos: Michelle, Andrea, Jana" },
-  { key: "varnum", label: "Varnum" },
-  { key: "solos2", label: "Solos: Rose, Jenna, Amarya" },
-  { key: "thillana", label: "Thillana" },
-  { key: "reception", label: "Reception Photos" },
+  {
+    key: "lobby",
+    description: "Please upload any pictures you took relevent to ",
+    label: "Lobby Decorations",
+  },
+  {
+    key: "auditorium",
+    description: "Please upload any pictures you took relevent to inside the",
+    label: "Auditorium (Audience Clips)",
+  },
+  {
+    key: "pushpanjali",
+    description:
+      "Please upload any pictures you took relevent to the first group performance, ",
+    label: "Pushpanjali",
+  },
+  {
+    key: "solos1",
+    description:
+      "Please upload any pictures you took relevent to the first three  ",
+    label: "Solos: Michelle, Andrea, Jana",
+  },
+  {
+    key: "varnum",
+    description:
+      "Please upload any pictures you took relevent to the Centerpiece,",
+    label: "Varnum",
+  },
+  {
+    key: "solos2",
+    description:
+      "Please upload any pictures you took relevent to the second three  ",
+    label: "Solos: Rose, Jenna, Amarya",
+  },
+  {
+    key: "thillana",
+    description:
+      "Please upload any pictures you took relevent to the finale group performance  ",
+    label: "Thillana",
+  },
+  {
+    key: "reception",
+    description: "Please upload any pictures you took during the ",
+    label: "Reception",
+  },
 ];
 
 const VIDEO_SECTIONS = [
@@ -57,6 +94,7 @@ const Gallery = () => {
           (acc[cat] = acc[cat] || []).push(img);
           return acc;
         }, {});
+        console.log(grouped);
         setImagesByCategory(grouped);
       } else {
         console.error("Failed to load images:", data.error || "Unknown error");
@@ -176,12 +214,16 @@ const Gallery = () => {
           </p>
         )}
 
-        {PHOTO_SECTIONS.map(({ key, label }) => (
+        {PHOTO_SECTIONS.map(({ key, label, description }) => (
           <AccordionSection
             key={key}
             label={label}
             onClick={handleAccordionClick}
           >
+            <p>
+              {description}
+              {label}
+            </p>
             <div style={gridCSS}>
               {(imagesByCategory[key] || []).map((img, idx) => (
                 <div
