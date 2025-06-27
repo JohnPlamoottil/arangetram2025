@@ -39,9 +39,13 @@ const AccordionSection = ({ label, children, onClick }) => (
 /* ---------- MAIN COMPONENT ---------- */
 const Gallery = () => {
   const [imagesByCategory, setImagesByCategory] = useState({});
+  const [selectedFiles, setSelectedFiles] = useState({}); // { cat: File }
+  const [uploading, setUploading] = useState({}); // { cat: bool }
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   /* ---- Fetch & group images ---- */
   const loadImages = async () => {
+    setIsRefreshing(true);
     try {
       const res = await fetch("http://localhost:8080/api/images");
       const data = await res.json();
@@ -58,6 +62,8 @@ const Gallery = () => {
       }
     } catch (err) {
       console.error("Error fetching images:", err);
+    } finally {
+      setIsRefreshing(false);
     }
   };
 
@@ -75,11 +81,18 @@ const Gallery = () => {
       : `${panel.scrollHeight}px`;
   };
 
-  /* ---- Upload ---- */
-  const handleImageUpload = async (e, category) => {
+  /* ---- Select file (does not auto-upload) ---- */
+  const handleFileSelect = (e, category) => {
     const file = e.target.files?.[0];
+    setSelectedFiles((prev) => ({ ...prev, [category]: file }));
+  };
+
+  /* ---- Upload on button click ---- */
+  const handleUploadClick = async (category) => {
+    const file = selectedFiles[category];
     if (!file) return;
 
+    setUploading((p) => ({ ...p, [category]: true }));
     const fd = new FormData();
     fd.append("image", file);
     fd.append("category", category);
@@ -92,29 +105,39 @@ const Gallery = () => {
       const { error } = await res.json();
       if (res.ok) {
         alert("Image uploaded successfully!");
-        loadImages();
-        e.target.value = ""; // reset file input
+        setSelectedFiles((p) => ({ ...p, [category]: undefined })); // clear chosen file
       } else {
         alert(`Error: ${error}`);
       }
     } catch (err) {
       console.error("Upload error:", err);
       alert("Failed to upload image.");
+    } finally {
+      setUploading((p) => ({ ...p, [category]: false }));
+      loadImages(); // refresh AFTER button returns to normal
     }
   };
 
-  /* ---- Grid styles (inline to avoid extra CSS edits) ---- */
-  const gridStyle = {
+  /* ---- Grid styles ---- */
+  const gridCSS = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fill,minmax(180px,1fr))",
-    gap: "10px",
-    marginTop: "10px",
+    gap: 10,
+    marginTop: 10,
   };
-  const imageStyle = {
+  const imgCSS = {
     width: "100%",
-    height: "180px",
+    height: 180,
     objectFit: "cover",
-    borderRadius: "6px",
+    borderRadius: 6,
+  };
+  const btnCSS = {
+    color: "#fff",
+    background: "#0070f3",
+    border: "none",
+    padding: "6px 12px",
+    borderRadius: 4,
+    cursor: "pointer",
   };
 
   /* ---------- JSX ---------- */
@@ -124,6 +147,11 @@ const Gallery = () => {
 
       <section className="questions">
         <h2 className="title_FAQ">Photo Album</h2>
+        {isRefreshing && (
+          <p style={{ fontStyle: "italic", marginBottom: 10 }}>
+            Refreshing images…
+          </p>
+        )}
 
         {PHOTO_SECTIONS.map(({ key, label }) => (
           <AccordionSection
@@ -131,32 +159,39 @@ const Gallery = () => {
             label={label}
             onClick={handleAccordionClick}
           >
-            {/* --- Images grid --- */}
-            <div style={gridStyle}>
+            <div style={gridCSS}>
               {(imagesByCategory[key] || []).map((img, idx) => (
                 <img
                   key={`${key}-${idx}-${img.imageBase64?.slice(0, 15)}`}
                   src={`data:${img.contentType};base64,${img.imageBase64}`}
                   alt={img.name || `${label} image`}
-                  style={imageStyle}
+                  style={imgCSS}
                 />
               ))}
             </div>
 
-            {/* --- Upload input --- */}
-            <div style={{ marginTop: "8px" }}>
-              <label
-                htmlFor={`upload-${key}`}
-                style={{ display: "block", marginBottom: "4px" }}
-              >
-                Upload image for {label}:
-              </label>
+            {/* ---- File chooser & upload ---- */}
+            <div
+              style={{
+                marginTop: 8,
+                display: "flex",
+                gap: 8,
+                alignItems: "center",
+              }}
+            >
               <input
-                id={`upload-${key}`}
+                id={`file-${key}`}
                 type="file"
                 accept="image/*"
-                onChange={(e) => handleImageUpload(e, key)}
+                onChange={(e) => handleFileSelect(e, key)}
               />
+              <button
+                style={btnCSS}
+                onClick={() => handleUploadClick(key)}
+                disabled={!selectedFiles[key] || uploading[key]}
+              >
+                {uploading[key] ? "Uploading…" : "Upload"}
+              </button>
             </div>
           </AccordionSection>
         ))}
