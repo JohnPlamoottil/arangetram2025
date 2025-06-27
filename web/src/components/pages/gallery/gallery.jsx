@@ -1,264 +1,273 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../../navigation-links/navigation-links";
-import "./gallery.css";
 import Footer from "../../footer/footer";
+import "./gallery.css";
 import ComingSoon from "../../coming_soon/coming_soon";
 
-const Gallery = () => {
-  const [images, setImages] = useState([]);
+/* ---------- CONFIG ---------- */
+const PHOTO_SECTIONS = [
+  { key: "lobby", label: "Lobby Decorations" },
+  { key: "auditorium", label: "Auditorium (Audience Clips)" },
+  { key: "pushpanjali", label: "Pushpanjali" },
+  { key: "solos1", label: "Solos: Michelle, Andrea, Jana" },
+  { key: "varnum", label: "Varnum" },
+  { key: "solos2", label: "Solos: Rose, Jenna, Amarya" },
+  { key: "thillana", label: "Thillana" },
+  { key: "reception", label: "Reception Photos" },
+];
 
-  /**
-   * Fetch the list of images from the API and store in state.
-   */
+const VIDEO_SECTIONS = [
+  { key: "speeches", label: "Cumulation of Speeches" },
+  { key: "pushpanjali", label: "Pushpanjali Video Clip" },
+  { key: "solos", label: "Solo #1, #2, #3 Videoclip" },
+  { key: "varnum", label: "Varnum Videoclip" },
+  { key: "solos2", label: "Solo #4, #5, #6 Videoclip" },
+  { key: "thillana", label: "Thillana Videoclip" },
+  { key: "awards", label: "Gift & Award Recognition Videoclip" },
+  { key: "thanks", label: "Vote of Thanks Videoclip" },
+];
+
+/* ---------- REUSABLE ACCORDION ---------- */
+const AccordionSection = ({ label, children, onClick }) => (
+  <>
+    <button className="accordion" onClick={onClick}>
+      {label}
+    </button>
+    <div className="panel">{children}</div>
+  </>
+);
+
+/* ---------- MAIN COMPONENT ---------- */
+const Gallery = () => {
+  const [imagesByCategory, setImagesByCategory] = useState({});
+  const [selectedFiles, setSelectedFiles] = useState({}); // { cat: File }
+  const [uploading, setUploading] = useState({}); // { cat: bool }
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  /* ---- Fetch & group images ---- */
   const loadImages = async () => {
+    setIsRefreshing(true);
     try {
       const res = await fetch("http://localhost:8080/api/images");
       const data = await res.json();
-      if (res.ok) {
-        setImages(data.images);
+
+      if (res.ok && data.images) {
+        const grouped = data.images.reduce((acc, img) => {
+          const cat = img.category || "uncategorized";
+          (acc[cat] = acc[cat] || []).push(img);
+          return acc;
+        }, {});
+        setImagesByCategory(grouped);
       } else {
-        console.error("Failed to load images:", data.error);
+        console.error("Failed to load images:", data.error || "Unknown error");
       }
     } catch (err) {
       console.error("Error fetching images:", err);
+    } finally {
+      setIsRefreshing(false);
     }
   };
 
-  // Load images once when the component mounts
+  const handleDeleteImage = async (imageId) => {
+    if (!window.confirm("Are you sure you want to delete this image?")) return;
+
+    try {
+      const res = await fetch(`http://localhost:8080/api/images/${imageId}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Image deleted successfully");
+        loadImages(); // refresh list
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (err) {
+      console.error("Delete failed:", err);
+      alert("Failed to delete image.");
+    }
+  };
+
   useEffect(() => {
     loadImages();
   }, []);
 
-  /**
-   * Accordion open / close handler
-   */
-  function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
-    const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  }
+  /* ---- Accordion toggle ---- */
+  const handleAccordionClick = (e) => {
+    const btn = e.target;
+    const panel = btn.nextElementSibling;
+    btn.classList.toggle("slide");
+    panel.style.maxHeight = panel.style.maxHeight
+      ? null
+      : `${panel.scrollHeight}px`;
+  };
 
-  /**
-   * Upload a single image to the backend and refresh the list on success.
-   */
-  async function handleImageUpload(e) {
-    const file = e.target.files[0];
+  /* ---- Select file (does not auto-upload) ---- */
+  const handleFileSelect = (e, category) => {
+    const file = e.target.files?.[0];
+    setSelectedFiles((prev) => ({ ...prev, [category]: file }));
+  };
+
+  /* ---- Upload on button click ---- */
+  const handleUploadClick = async (category) => {
+    const file = selectedFiles[category];
     if (!file) return;
 
-    const formData = new FormData();
-    formData.append("image", file);
+    setUploading((p) => ({ ...p, [category]: true }));
+    const fd = new FormData();
+    fd.append("image", file);
+    fd.append("category", category);
 
     try {
-      const response = await fetch("http://localhost:8080/api/upload", {
+      const res = await fetch("http://localhost:8080/api/upload", {
         method: "POST",
-        body: formData,
+        body: fd,
       });
-
-      const result = await response.json();
-
-      if (response.ok) {
+      const { error } = await res.json();
+      if (res.ok) {
         alert("Image uploaded successfully!");
-        loadImages(); // refresh gallery
+        setSelectedFiles((p) => ({ ...p, [category]: undefined })); // clear chosen file
       } else {
-        alert(`Error: ${result.error}`);
+        alert(`Error: ${error}`);
       }
-    } catch (error) {
-      console.error("Upload error:", error);
+    } catch (err) {
+      console.error("Upload error:", err);
       alert("Failed to upload image.");
+    } finally {
+      setUploading((p) => ({ ...p, [category]: false }));
+      loadImages(); // refresh AFTER button returns to normal
     }
-  }
+  };
 
+  /* ---- Grid styles ---- */
+  const gridCSS = {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill,minmax(180px,1fr))",
+    gap: 10,
+    marginTop: 10,
+  };
+  const imgCSS = {
+    width: "100%",
+    height: 180,
+    objectFit: "cover",
+    borderRadius: 6,
+  };
+  const btnCSS = {
+    color: "#fff",
+    background: "#0070f3",
+    border: "none",
+    padding: "6px 12px",
+    borderRadius: 4,
+    cursor: "pointer",
+  };
+
+  // const galleryContent = (
+  /* ---------- JSX ---------- */
   return (
     <div>
       <Navigation />
 
       <section className="questions">
         <h2 className="title_FAQ">Photo Album</h2>
-
-        {/* Lobby */}
-        <button className="accordion" onClick={handleClick}>
-          Lobby Decorations
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
+        {isRefreshing && (
+          <p style={{ fontStyle: "italic", marginBottom: 10 }}>
+            Refreshing images…
           </p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
+        )}
 
-        {/* Auditorium */}
-        <button className="accordion" onClick={handleClick}>
-          Auditorium (Audience Clips)
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
+        {PHOTO_SECTIONS.map(({ key, label }) => (
+          <AccordionSection
+            key={key}
+            label={label}
+            onClick={handleAccordionClick}
+          >
+            <div style={gridCSS}>
+              {(imagesByCategory[key] || []).map((img, idx) => (
+                <div
+                  key={`${key}-${idx}-${img.imageBase64?.slice(0, 15)}`}
+                  style={{ position: "relative" }}
+                >
+                  <img
+                    src={`data:${img.contentType};base64,${img.imageBase64}`}
+                    alt={img.name || `${label} image`}
+                    style={imgCSS}
+                  />
+                  <button
+                    onClick={() => handleDeleteImage(img._id)}
+                    title="Delete image"
+                    style={{
+                      position: "absolute",
+                      top: 6,
+                      right: 6,
+                      background: "rgba(0,0,0,0.7)",
+                      border: "none",
+                      borderRadius: "50%",
+                      color: "#fff",
+                      width: 24,
+                      height: 24,
+                      fontWeight: "bold",
+                      fontSize: "16px",
+                      cursor: "pointer",
+                      lineHeight: "22px",
+                      textAlign: "center",
+                      padding: 0,
+                    }}
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
 
-          {/* Display images here */}
-          <div className="gallery-grid">
-            {images.map((img) => (
-              <img
-                key={img.imageBase64.slice(0, 20)}
-                src={`data:${img.contentType};base64,${img.imageBase64}`}
-                alt={img.name}
-                className="gallery-img"
+            {/* ---- File chooser & upload ---- */}
+            <div
+              style={{
+                marginTop: 8,
+                display: "flex",
+                gap: 8,
+                alignItems: "center",
+              }}
+            >
+              <input
+                id={`file-${key}`}
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleFileSelect(e, key)}
               />
-            ))}
-          </div>
-
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Pushpanjali */}
-        <button className="accordion" onClick={handleClick}>
-          Pushpanjali
-        </button>
-        <div className="panel">
-          <p className="accordion-text"></p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Solos 1 */}
-        <button className="accordion" onClick={handleClick}>
-          Solos: Michelle, Andrea, Jana
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-            <img className="musician" alt="first 3 solos" />
-          </p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Varnum */}
-        <button className="accordion" onClick={handleClick}>
-          Varnum
-        </button>
-        <div className="panel">
-          <p className="accordion-text"></p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Solos 2 */}
-        <button className="accordion" onClick={handleClick}>
-          Solos: Rose, Jenna, Amarya
-        </button>
-        <div className="panel">
-          <p className="accordion-text"></p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Thillana */}
-        <button className="accordion" onClick={handleClick}>
-          Thillana
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
-
-        {/* Reception */}
-        <button className="accordion" onClick={handleClick}>
-          Reception Photos
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-          <input type="file" onChange={handleImageUpload} />
-        </div>
+              <button
+                style={btnCSS}
+                onClick={() => handleUploadClick(key)}
+                disabled={!selectedFiles[key] || uploading[key]}
+              >
+                {uploading[key] ? "Uploading…" : "Upload"}
+              </button>
+            </div>
+          </AccordionSection>
+        ))}
       </section>
 
-      {/* Video Clips */}
       <div className="musician_container">
         <h1 className="title_orchestra">Video Clips</h1>
-
-        <button className="accordion" onClick={handleClick}>
-          Cumulation of Speeches
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Pushpanjali Video Clip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Solo #1, #2, #3 Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Varnum Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Solo #4, #5, #6 Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text"></p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Thillana Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Gift & Award Recognition Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-
-        <button className="accordion" onClick={handleClick}>
-          Vote of Thanks Videoclip
-        </button>
-        <div className="panel">
-          <p className="accordion-text">
-            <br />
-          </p>
-        </div>
-        <p className="accordion-text"></p>
+        {VIDEO_SECTIONS.map(({ key, label }) => (
+          <AccordionSection
+            key={key}
+            label={label}
+            onClick={handleAccordionClick}
+          >
+            <p>Video content coming soon…</p>
+          </AccordionSection>
+        ))}
       </div>
 
       <Navigation />
       <Footer />
     </div>
   );
-  // If you want to show a coming soon placeholder instead, wrap like below:
+
   // return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
 };
 
 export default Gallery;
+
+// If you want to show a coming soon placeholder instead, wrap like below:
