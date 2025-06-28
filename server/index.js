@@ -3,9 +3,10 @@ const multer = require("multer");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const sharp = require("sharp");
 dotenv.config();
 const mongoose = require("mongoose");
-
+const cloudinary = require("cloudinary").v2;
 const { Message, Image } = require("./messages");
 
 const app = express();
@@ -55,6 +56,28 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
 
   if (!req.file) {
     return res.status(400).json({ error: "No image uploaded" });
+  }
+
+  // Compress image to 2MB
+  try {
+    let quality = 80;
+    let compressedBuffer;
+    // Try progressively lower qualities until under 2MB
+    for (let i = 0; i < 5; i++) {
+      compressedBuffer = await sharp(req.file.buffer)
+        .resize({ width: 1200 }) // resize to reduce pixels if needed
+        .jpeg({ quality })
+        .toBuffer();
+
+      if (compressedBuffer.length <= 2 * 1024 * 1024) break; // under 2MB
+      quality -= 10; // reduce quality and try again
+    }
+
+    if (compressedBuffer.length > 2 * 1024 * 1024) {
+      console.log("Could not compress image under 2MB");
+    }
+  } catch (err) {
+    console.log("Failed to compress image");
   }
 
   const category = req.body.category;
@@ -162,6 +185,7 @@ app.delete("/api/images/:id", async (req, res) => {
     res.status(500).json({ error: "Unable to delete image" });
   }
 });
+// i think this is a duplicate ... delete this lines189-200
 app.delete("/api/images/:id", async (req, res) => {
   try {
     const deleted = await Image.findByIdAndDelete(req.params.id);
