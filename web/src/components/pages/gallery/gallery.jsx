@@ -236,6 +236,7 @@ const Gallery = () => {
                     style={imgCSS}
                   />
                   <button
+                    className="trash_button"
                     onClick={() => handleDeleteImage(img._id)}
                     title="Delete image"
                     style={{
