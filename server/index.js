@@ -130,6 +130,7 @@ app.get("/api/images", async (req, res) => {
         contentType: img.image.contentType,
         imageBase64: img.image.data.toString("base64"),
         uploadedAt: img.uploadedAt,
+        _id: img._id,
       };
       console.log(
         `Processed image: ${processedImg.name}, category: ${processedImg.category}`
