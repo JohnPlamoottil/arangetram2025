@@ -48,6 +48,24 @@ app.post("/api/message", async (req, res) => {
   }
 });
 
+//setup Cloudinary
+cloudinary.config({
+  cloud_name: "dw51dkkc9",
+  secure: true,
+});
+
+const url = cloudinary.url(
+  "https://res.cloudinary.com/dw51dkkc9/video/upload/v1751172647/IMG_7977_pushpanjali_jvlnx9.mov",
+  {
+    transformation: [
+      {
+        fetch_format: "auto",
+      },
+    ],
+  }
+);
+// console.log(url);
+
 // Image upload route
 app.post("/api/upload", upload.single("image"), async (req, res) => {
   console.log("Upload request received");
