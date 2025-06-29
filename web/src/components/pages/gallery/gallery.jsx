@@ -178,6 +178,26 @@ const Gallery = () => {
     }
   };
 
+  // image expanding modal
+  const [modalImage, setModalImage] = useState(null);
+
+  const handleImageClick = (img) => {
+    setModalImage(img);
+  };
+
+  const handleCloseModal = () => {
+    setModalImage(null);
+  };
+
+  // Optional: close on ESC
+  useEffect(() => {
+    const escHandler = (e) => {
+      if (e.key === "Escape") handleCloseModal();
+    };
+    window.addEventListener("keydown", escHandler);
+    return () => window.removeEventListener("keydown", escHandler);
+  }, []);
+
   /* ---- Grid styles ---- */
   const gridCSS = {
     display: "grid",
@@ -234,6 +254,7 @@ const Gallery = () => {
                     src={`data:${img.contentType};base64,${img.imageBase64}`}
                     alt={img.name || `${label} image`}
                     style={imgCSS}
+                    onClick={() => handleImageClick(img)}
                   />
                   <button
                     className="trash_button"
@@ -302,7 +323,50 @@ const Gallery = () => {
           </AccordionSection>
         ))}
       </div>
-
+      {modalImage && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+          onClick={handleCloseModal}
+        >
+          <img
+            src={`data:${modalImage.contentType};base64,${modalImage.imageBase64}`}
+            alt={modalImage.name}
+            style={{
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+              borderRadius: "8px",
+              boxShadow: "0 0 10px #000",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            onClick={handleCloseModal}
+            style={{
+              position: "absolute",
+              top: 20,
+              right: 30,
+              fontSize: 32,
+              background: "none",
+              border: "none",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            ×
+          </button>
+        </div>
+      )}
       <Navigation />
       <Footer />
     </div>
