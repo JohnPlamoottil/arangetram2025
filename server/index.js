@@ -21,11 +21,11 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-// Multer setup for image upload
+// Multer setup for image upload .. index.js
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-// Routes
+// Routes ... router.post("/", controller method)
 app.get("/api/message", async (req, res) => {
   const messages = await Message.find({}).sort({ createdAt: "desc" });
   res.status(200).json({ messages });
@@ -48,7 +48,7 @@ app.post("/api/message", async (req, res) => {
   }
 });
 
-//setup Cloudinary
+//setup Cloudinary .. goes in utils.js 
 cloudinary.config({
   cloud_name: "dw51dkkc9",
   secure: true,
@@ -59,6 +59,7 @@ const url = cloudinary.url(
   {
     transformation: [
       {
+        quality: "auto",
         fetch_format: "auto",
       },
     ],
@@ -66,7 +67,8 @@ const url = cloudinary.url(
 );
 // console.log(url);
 
-// Image upload route
+// Image upload route .. index.js
+
 app.post("/api/upload", upload.single("image"), async (req, res) => {
   console.log("Upload request received");
   console.log("File:", req.file);
