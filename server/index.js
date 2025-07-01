@@ -1,3 +1,4 @@
+// index.js
 // FILE: index.js
 // Cloudinary credentials are now loaded from environment variables
 
@@ -9,7 +10,7 @@ const sharp = require("sharp");
 dotenv.config();
 const mongoose = require("mongoose");
 const cloudinary = require("cloudinary").v2;
-const { Message, Image } = require("./messages");
+const { Message, Image, Video } = require("./messages");
 
 const app = express();
 const PORT = 8080;
@@ -138,6 +139,73 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
   }
 });
 
+// Video upload route with Cloudinary integration
+app.post("/api/upload-video", upload.single("video"), async (req, res) => {
+  console.log("Video upload request received");
+  console.log("File:", req.file);
+  console.log("Body:", req.body);
+
+  if (!req.file) {
+    return res.status(400).json({ error: "No video uploaded" });
+  }
+
+  const category = req.body.category;
+  if (!category) {
+    return res.status(400).json({ error: "Category is required" });
+  }
+
+  try {
+    console.log(`Uploading video to Cloudinary for category: ${category}`);
+
+    // Upload to Cloudinary
+    const uploadResult = await new Promise((resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream(
+          {
+            resource_type: "video",
+            folder: `dance-gallery-videos/${category}`, // organize by category in Cloudinary
+            public_id: `${category}_${Date.now()}`, // unique filename
+            quality: "auto:good", // Cloudinary's automatic quality optimization
+          },
+          (error, result) => {
+            if (error) {
+              console.error("Cloudinary video upload error:", error);
+              reject(error);
+            } else {
+              console.log(
+                "Cloudinary video upload success:",
+                result.secure_url
+              );
+              resolve(result);
+            }
+          }
+        )
+        .end(req.file.buffer);
+    });
+
+    // Save video metadata to MongoDB (with Cloudinary URL instead of binary data)
+    const newVideo = new Video({
+      name: req.file.originalname || "uploaded-video",
+      content: req.body.content || "No description",
+      category: category,
+      cloudinaryUrl: uploadResult.secure_url,
+      cloudinaryPublicId: uploadResult.public_id,
+      contentType: req.file.mimetype,
+      originalName: req.file.originalname,
+    });
+
+    await newVideo.save();
+    console.log("Video metadata saved successfully to MongoDB");
+    res.status(201).json({
+      message: "Video uploaded successfully",
+      videoUrl: uploadResult.secure_url,
+    });
+  } catch (err) {
+    console.error("Error uploading video:", err);
+    res.status(500).json({ error: "Unable to upload video" });
+  }
+});
+
 // GET all uploaded images - Now fetching Cloudinary URLs
 app.get("/api/images", async (req, res) => {
   try {
@@ -176,6 +244,44 @@ app.get("/api/images", async (req, res) => {
   }
 });
 
+// GET all uploaded videos - Now fetching Cloudinary URLs
+app.get("/api/videos", async (req, res) => {
+  try {
+    console.log("Fetching all videos...");
+
+    const videos = await Video.find({})
+      .lean()
+      .limit(100)
+      .select(
+        "name content category cloudinaryUrl contentType originalName uploadedAt"
+      );
+
+    console.log(`Found ${videos.length} videos in database`);
+
+    // Transform the data to match frontend expectations
+    const processedVideos = videos.map((video) => {
+      const processedVideo = {
+        name: video.name,
+        content: video.content,
+        category: video.category,
+        contentType: video.contentType,
+        videoUrl: video.cloudinaryUrl, // Cloudinary URL instead of base64
+        uploadedAt: video.uploadedAt,
+        _id: video._id,
+      };
+      console.log(
+        `Processed video: ${processedVideo.name}, category: ${processedVideo.category}`
+      );
+      return processedVideo;
+    });
+
+    res.status(200).json({ videos: processedVideos });
+  } catch (err) {
+    console.error("Error fetching videos:", err);
+    res.status(500).json({ error: "Unable to fetch videos" });
+  }
+});
+
 // GET images by specific category
 app.get("/api/images/:category", async (req, res) => {
   try {
@@ -203,6 +309,36 @@ app.get("/api/images/:category", async (req, res) => {
   } catch (err) {
     console.error("Error fetching images by category:", err);
     res.status(500).json({ error: "Unable to fetch images" });
+  }
+});
+
+// GET videos by specific category
+app.get("/api/videos/:category", async (req, res) => {
+  try {
+    const { category } = req.params;
+    console.log(`Fetching videos for category: ${category}`);
+
+    const videos = await Video.find({ category })
+      .lean()
+      .limit(50)
+      .select(
+        "name content category cloudinaryUrl contentType originalName uploadedAt"
+      );
+
+    const processedVideos = videos.map((video) => ({
+      name: video.name,
+      content: video.content,
+      category: video.category,
+      contentType: video.contentType,
+      videoUrl: video.cloudinaryUrl,
+      uploadedAt: video.uploadedAt,
+      _id: video._id,
+    }));
+
+    res.status(200).json({ videos: processedVideos });
+  } catch (err) {
+    console.error("Error fetching videos by category:", err);
+    res.status(500).json({ error: "Unable to fetch videos" });
   }
 });
 
@@ -237,6 +373,42 @@ app.delete("/api/images/:id", async (req, res) => {
   } catch (err) {
     console.error("Delete error:", err);
     res.status(500).json({ error: "Unable to delete image" });
+  }
+});
+
+// Delete video - Now also removes from Cloudinary
+app.delete("/api/videos/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const video = await Video.findById(id);
+    if (!video) {
+      return res.status(404).json({ error: "Video not found" });
+    }
+
+    // Delete from Cloudinary if public_id exists
+    if (video.cloudinaryPublicId) {
+      try {
+        await cloudinary.uploader.destroy(video.cloudinaryPublicId, {
+          resource_type: "video",
+        });
+        console.log(
+          `Deleted video from Cloudinary: ${video.cloudinaryPublicId}`
+        );
+      } catch (cloudinaryError) {
+        console.error("Error deleting from Cloudinary:", cloudinaryError);
+        // Continue with MongoDB deletion even if Cloudinary deletion fails
+      }
+    }
+
+    // Delete from MongoDB
+    await Video.findByIdAndDelete(id);
+    console.log(`Deleted video from MongoDB: ${id}`);
+
+    res.status(200).json({ message: "Video deleted successfully" });
+  } catch (err) {
+    console.error("Delete error:", err);
+    res.status(500).json({ error: "Unable to delete video" });
   }
 });
 

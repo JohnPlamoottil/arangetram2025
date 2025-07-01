@@ -1,3 +1,4 @@
+// gallery.jsx
 import React, { useState, useEffect } from "react";
 import Navigation from "../../navigation-links/navigation-links";
 import Footer from "../../footer/footer";
@@ -77,8 +78,11 @@ const AccordionSection = ({ label, children, onClick }) => (
 /* ---------- MAIN COMPONENT ---------- */
 const Gallery = () => {
   const [imagesByCategory, setImagesByCategory] = useState({});
+  const [videosByCategory, setVideosByCategory] = useState({});
   const [selectedFiles, setSelectedFiles] = useState({}); // { cat: File }
+  const [selectedVideoFiles, setSelectedVideoFiles] = useState({}); // { cat: File }
   const [uploading, setUploading] = useState({}); // { cat: bool }
+  const [uploadingVideos, setUploadingVideos] = useState({}); // { cat: bool }
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   /* ---- Fetch & group images ---- */
@@ -106,6 +110,28 @@ const Gallery = () => {
     }
   };
 
+  /* ---- Fetch & group videos ---- */
+  const loadVideos = async () => {
+    try {
+      const res = await fetch("http://localhost:8080/api/videos");
+      const data = await res.json();
+
+      if (res.ok && data.videos) {
+        const grouped = data.videos.reduce((acc, video) => {
+          const cat = video.category || "uncategorized";
+          (acc[cat] = acc[cat] || []).push(video);
+          return acc;
+        }, {});
+        console.log(grouped);
+        setVideosByCategory(grouped);
+      } else {
+        console.error("Failed to load videos:", data.error || "Unknown error");
+      }
+    } catch (err) {
+      console.error("Error fetching videos:", err);
+    }
+  };
+
   const handleDeleteImage = async (imageId) => {
     if (!window.confirm("Are you sure you want to delete this image?")) return;
 
@@ -127,8 +153,30 @@ const Gallery = () => {
     }
   };
 
+  const handleDeleteVideo = async (videoId) => {
+    if (!window.confirm("Are you sure you want to delete this video?")) return;
+
+    try {
+      const res = await fetch(`http://localhost:8080/api/videos/${videoId}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Video deleted successfully");
+        loadVideos(); // refresh list
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (err) {
+      console.error("Delete failed:", err);
+      alert("Failed to delete video.");
+    }
+  };
+
   useEffect(() => {
     loadImages();
+    loadVideos();
   }, []);
 
   /* ---- Accordion toggle ---- */
@@ -145,6 +193,11 @@ const Gallery = () => {
   const handleFileSelect = (e, category) => {
     const file = e.target.files?.[0];
     setSelectedFiles((prev) => ({ ...prev, [category]: file }));
+  };
+
+  const handleVideoFileSelect = (e, category) => {
+    const file = e.target.files?.[0];
+    setSelectedVideoFiles((prev) => ({ ...prev, [category]: file }));
   };
 
   /* ---- Upload on button click ---- */
@@ -176,6 +229,37 @@ const Gallery = () => {
       alert("Failed to upload image.");
     } finally {
       setUploading((p) => ({ ...p, [category]: false }));
+    }
+  };
+
+  const handleVideoUploadClick = async (category) => {
+    const file = selectedVideoFiles[category];
+    if (!file) return;
+
+    setUploadingVideos((p) => ({ ...p, [category]: true }));
+    const fd = new FormData();
+    fd.append("video", file);
+    fd.append("category", category);
+
+    try {
+      const res = await fetch("http://localhost:8080/api/upload-video", {
+        method: "POST",
+        body: fd,
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Video uploaded successfully!");
+        setSelectedVideoFiles((p) => ({ ...p, [category]: undefined })); // clear chosen file
+        loadVideos(); // refresh videos immediately
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (err) {
+      console.error("Upload error:", err);
+      alert("Failed to upload video.");
+    } finally {
+      setUploadingVideos((p) => ({ ...p, [category]: false }));
     }
   };
 
@@ -213,6 +297,11 @@ const Gallery = () => {
     borderRadius: 6,
     cursor: "pointer", // indicate clickable
   };
+  const videoCSS = {
+    width: "100%",
+    height: 180,
+    borderRadius: 6,
+  };
   const btnCSS = {
     color: "#fff",
     background: "#0070f3",
@@ -223,7 +312,6 @@ const Gallery = () => {
   };
 
   /* ---------- JSX ---------- */
-  // const galleryContent = (
   return (
     <div>
       <Navigation />
@@ -327,7 +415,73 @@ const Gallery = () => {
             label={label}
             onClick={handleAccordionClick}
           >
-            <p>Video content coming soon…</p>
+            <p>Please upload any videos you took relevant to {label}</p>
+            <div style={gridCSS}>
+              {(videosByCategory[key] || []).map((video, idx) => (
+                <div
+                  key={`${key}-${idx}-${video._id}`}
+                  style={{ position: "relative" }}
+                >
+                  <video
+                    src={video.videoUrl}
+                    style={videoCSS}
+                    controls
+                    onError={(e) => {
+                      console.error("Video failed to load:", video.videoUrl);
+                      e.target.style.opacity = 0.5;
+                    }}
+                  />
+                  <button
+                    className="trash_button"
+                    onClick={() => handleDeleteVideo(video._id)}
+                    title="Delete video"
+                    style={{
+                      position: "absolute",
+                      top: 6,
+                      right: 6,
+                      background: "rgba(0,0,0,0.7)",
+                      border: "none",
+                      borderRadius: "50%",
+                      color: "#fff",
+                      width: 24,
+                      height: 24,
+                      fontWeight: "bold",
+                      fontSize: "16px",
+                      cursor: "pointer",
+                      lineHeight: "22px",
+                      textAlign: "center",
+                      padding: 0,
+                    }}
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* ---- Video file chooser & upload ---- */}
+            <div
+              style={{
+                marginTop: 8,
+                display: "flex",
+                gap: 8,
+                alignItems: "center",
+              }}
+            >
+              <input
+                id={`video-file-${key}`}
+                type="file"
+                accept="video/*"
+                onChange={(e) => handleVideoFileSelect(e, key)}
+              />
+              <button
+                style={btnCSS}
+                onClick={() => handleVideoUploadClick(key)}
+                disabled={!selectedVideoFiles[key] || uploadingVideos[key]}
+              >
+                {uploadingVideos[key] ? "Uploading…" : "Upload"}
+              </button>
+            </div>
           </AccordionSection>
         ))}
       </div>
@@ -382,8 +536,6 @@ const Gallery = () => {
       <Footer />
     </div>
   );
-
-  // return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
 };
 
 export default Gallery;
