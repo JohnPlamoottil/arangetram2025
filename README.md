@@ -48,6 +48,8 @@ Check-Off List
 - [x] making the uploads specific to the accordian 
 - [x] set up schema in Mongoose for the various categories 
 - [x] need to test in postman
+- [ ] allow multiple uploads of images and video at one time
+- [ ] its roating images sideways
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
