@@ -519,7 +519,7 @@ app.get("/api/images", async (req, res) => {
         contentType: img.contentType,
         imageUrl: img.cloudinaryUrl, // Cloudinary URL instead of base64
         uploadedAt: img.uploadedAt,
-        _id: img._id,
+        // _id: img._id, // functionality to enable delete image from gallery
       };
       console.log(
         `Processed image: ${processedImg.name}, category: ${processedImg.category}`
