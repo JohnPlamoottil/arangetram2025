@@ -73,7 +73,7 @@ app.post("/api/message", async (req, res) => {
   }
 });
 
-// Image upload route with Cloudinary integration
+// Image upload route with Cloudinary integration and rotation fix
 app.post("/api/upload", uploadImage.single("image"), async (req, res) => {
   console.log("Upload request received");
   console.log("File:", req.file);
@@ -89,13 +89,14 @@ app.post("/api/upload", uploadImage.single("image"), async (req, res) => {
   }
 
   try {
-    // Compress image to optimize for Cloudinary upload
+    // Compress image to optimize for Cloudinary upload with EXIF orientation handling
     let quality = 80;
     let compressedBuffer;
 
     // Try progressively lower qualities until under 2MB
     for (let i = 0; i < 5; i++) {
       compressedBuffer = await sharp(req.file.buffer)
+        .rotate() // This automatically rotates the image based on EXIF orientation data
         .resize({ width: 1200 }) // resize to reduce pixels if needed
         .jpeg({ quality })
         .toBuffer();
@@ -116,6 +117,8 @@ app.post("/api/upload", uploadImage.single("image"), async (req, res) => {
             public_id: `${category}_${Date.now()}`, // unique filename
             quality: "auto:good", // Cloudinary's automatic quality optimization
             fetch_format: "auto", // Cloudinary's automatic format optimization
+            // Ensure Cloudinary doesn't try to auto-rotate again
+            flags: "keep_attribution",
           },
           (error, result) => {
             if (error) {
