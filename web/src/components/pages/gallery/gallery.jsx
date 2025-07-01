@@ -223,7 +223,8 @@ const Gallery = () => {
   };
 
   /* ---------- JSX ---------- */
-  return (
+  const galleryContent = (
+    // return (
     <div>
       <Navigation />
 
@@ -381,6 +382,8 @@ const Gallery = () => {
       <Footer />
     </div>
   );
+
+  return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
 };
 
 export default Gallery;
