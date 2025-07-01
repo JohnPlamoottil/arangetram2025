@@ -24,9 +24,23 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-// Multer setup for image upload
+// Multer setup for file upload with size limits
 const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
+
+// Different upload configs for images vs videos
+const uploadImage = multer({
+  storage: storage,
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB limit for images
+  },
+});
+
+const uploadVideo = multer({
+  storage: storage,
+  limits: {
+    fileSize: 100 * 1024 * 1024, // 100MB limit for videos (Cloudinary free tier limit)
+  },
+});
 
 // Configure Cloudinary with env variables
 cloudinary.config({
@@ -60,7 +74,7 @@ app.post("/api/message", async (req, res) => {
 });
 
 // Image upload route with Cloudinary integration
-app.post("/api/upload", upload.single("image"), async (req, res) => {
+app.post("/api/upload", uploadImage.single("image"), async (req, res) => {
   console.log("Upload request received");
   console.log("File:", req.file);
   console.log("Body:", req.body);
@@ -139,11 +153,9 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
   }
 });
 
-// Video upload route with Cloudinary integration
-app.post("/api/upload-video", upload.single("video"), async (req, res) => {
+// Video upload route with Cloudinary integration and size checking
+app.post("/api/upload-video", uploadVideo.single("video"), async (req, res) => {
   console.log("Video upload request received");
-  console.log("File:", req.file);
-  console.log("Body:", req.body);
 
   if (!req.file) {
     return res.status(400).json({ error: "No video uploaded" });
@@ -154,10 +166,37 @@ app.post("/api/upload-video", upload.single("video"), async (req, res) => {
     return res.status(400).json({ error: "Category is required" });
   }
 
+  // Check file size (100MB = 104,857,600 bytes)
+  const maxSize = 100 * 1024 * 1024; // 100MB
+  if (req.file.size > maxSize) {
+    console.log(
+      `Video file too large: ${req.file.size} bytes (${(
+        req.file.size /
+        1024 /
+        1024
+      ).toFixed(2)}MB)`
+    );
+    return res.status(413).json({
+      error: `Video file is too large. Maximum size is 100MB, but your file is ${(
+        req.file.size /
+        1024 /
+        1024
+      ).toFixed(2)}MB. Please compress the video before uploading.`,
+    });
+  }
+
+  console.log(`File size: ${(req.file.size / 1024 / 1024).toFixed(2)}MB`);
+  console.log("File:", {
+    originalname: req.file.originalname,
+    mimetype: req.file.mimetype,
+    size: req.file.size,
+  });
+  console.log("Body:", req.body);
+
   try {
     console.log(`Uploading video to Cloudinary for category: ${category}`);
 
-    // Upload to Cloudinary
+    // Upload to Cloudinary with additional options for video optimization
     const uploadResult = await new Promise((resolve, reject) => {
       cloudinary.uploader
         .upload_stream(
@@ -166,6 +205,11 @@ app.post("/api/upload-video", upload.single("video"), async (req, res) => {
             folder: `dance-gallery-videos/${category}`, // organize by category in Cloudinary
             public_id: `${category}_${Date.now()}`, // unique filename
             quality: "auto:good", // Cloudinary's automatic quality optimization
+            // Add video-specific optimizations
+            transformation: [
+              { quality: "auto:good" },
+              { fetch_format: "auto" },
+            ],
           },
           (error, result) => {
             if (error) {
@@ -202,7 +246,24 @@ app.post("/api/upload-video", upload.single("video"), async (req, res) => {
     });
   } catch (err) {
     console.error("Error uploading video:", err);
-    res.status(500).json({ error: "Unable to upload video" });
+
+    // Provide more specific error messages
+    if (err.http_code === 413) {
+      res.status(413).json({
+        error:
+          "Video file is too large for Cloudinary. Please compress the video to under 100MB and try again.",
+      });
+    } else if (err.message && err.message.includes("timeout")) {
+      res.status(408).json({
+        error:
+          "Video upload timed out. Please try with a smaller file or check your internet connection.",
+      });
+    } else {
+      res.status(500).json({
+        error:
+          "Unable to upload video. Please try again or contact support if the problem persists.",
+      });
+    }
   }
 });
 
@@ -410,6 +471,19 @@ app.delete("/api/videos/:id", async (req, res) => {
     console.error("Delete error:", err);
     res.status(500).json({ error: "Unable to delete video" });
   }
+});
+
+// Error handling middleware for multer file size errors
+app.use((error, req, res, next) => {
+  if (error instanceof multer.MulterError) {
+    if (error.code === "LIMIT_FILE_SIZE") {
+      return res.status(413).json({
+        error:
+          "File too large. Images must be under 10MB and videos must be under 100MB.",
+      });
+    }
+  }
+  next(error);
 });
 
 // Start server
