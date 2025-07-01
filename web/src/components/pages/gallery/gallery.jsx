@@ -1,3 +1,4 @@
+// gallery.jsx
 import React, { useState, useEffect } from "react";
 import Navigation from "../../navigation-links/navigation-links";
 import Footer from "../../footer/footer";
@@ -77,8 +78,13 @@ const AccordionSection = ({ label, children, onClick }) => (
 /* ---------- MAIN COMPONENT ---------- */
 const Gallery = () => {
   const [imagesByCategory, setImagesByCategory] = useState({});
-  const [selectedFiles, setSelectedFiles] = useState({}); // { cat: File }
+  const [videosByCategory, setVideosByCategory] = useState({});
+  const [selectedFiles, setSelectedFiles] = useState({}); // { cat: FileList }
+  const [selectedVideoFiles, setSelectedVideoFiles] = useState({}); // { cat: FileList }
   const [uploading, setUploading] = useState({}); // { cat: bool }
+  const [uploadingVideos, setUploadingVideos] = useState({}); // { cat: bool }
+  const [uploadProgress, setUploadProgress] = useState({}); // { cat: { current: number, total: number } }
+  const [videoUploadProgress, setVideoUploadProgress] = useState({}); // { cat: { current: number, total: number } }
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   /* ---- Fetch & group images ---- */
@@ -106,6 +112,28 @@ const Gallery = () => {
     }
   };
 
+  /* ---- Fetch & group videos ---- */
+  const loadVideos = async () => {
+    try {
+      const res = await fetch("http://localhost:8080/api/videos");
+      const data = await res.json();
+
+      if (res.ok && data.videos) {
+        const grouped = data.videos.reduce((acc, video) => {
+          const cat = video.category || "uncategorized";
+          (acc[cat] = acc[cat] || []).push(video);
+          return acc;
+        }, {});
+        console.log(grouped);
+        setVideosByCategory(grouped);
+      } else {
+        console.error("Failed to load videos:", data.error || "Unknown error");
+      }
+    } catch (err) {
+      console.error("Error fetching videos:", err);
+    }
+  };
+
   const handleDeleteImage = async (imageId) => {
     if (!window.confirm("Are you sure you want to delete this image?")) return;
 
@@ -127,8 +155,30 @@ const Gallery = () => {
     }
   };
 
+  const handleDeleteVideo = async (videoId) => {
+    if (!window.confirm("Are you sure you want to delete this video?")) return;
+
+    try {
+      const res = await fetch(`http://localhost:8080/api/videos/${videoId}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Video deleted successfully");
+        loadVideos(); // refresh list
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (err) {
+      console.error("Delete failed:", err);
+      alert("Failed to delete video.");
+    }
+  };
+
   useEffect(() => {
     loadImages();
+    loadVideos();
   }, []);
 
   /* ---- Accordion toggle ---- */
@@ -141,41 +191,133 @@ const Gallery = () => {
       : `${panel.scrollHeight}px`;
   };
 
-  /* ---- Select file (does not auto-upload) ---- */
+  /* ---- Select multiple files ---- */
   const handleFileSelect = (e, category) => {
-    const file = e.target.files?.[0];
-    setSelectedFiles((prev) => ({ ...prev, [category]: file }));
+    const files = e.target.files;
+    setSelectedFiles((prev) => ({ ...prev, [category]: files }));
   };
 
-  /* ---- Upload on button click ---- */
+  const handleVideoFileSelect = (e, category) => {
+    const files = e.target.files;
+    setSelectedVideoFiles((prev) => ({ ...prev, [category]: files }));
+  };
+
+  /* ---- Upload multiple images ---- */
   const handleUploadClick = async (category) => {
-    const file = selectedFiles[category];
-    if (!file) return;
+    const files = selectedFiles[category];
+    if (!files || files.length === 0) return;
 
     setUploading((p) => ({ ...p, [category]: true }));
+    setUploadProgress((p) => ({
+      ...p,
+      [category]: { current: 0, total: files.length },
+    }));
+
     const fd = new FormData();
-    fd.append("image", file);
+
+    // Append all files to FormData
+    for (let i = 0; i < files.length; i++) {
+      fd.append("images", files[i]);
+    }
     fd.append("category", category);
 
     try {
-      const res = await fetch("http://localhost:8080/api/upload", {
+      const res = await fetch("http://localhost:8080/api/upload-multiple", {
         method: "POST",
         body: fd,
       });
       const data = await res.json();
 
       if (res.ok) {
-        alert("Image uploaded successfully!");
-        setSelectedFiles((p) => ({ ...p, [category]: undefined })); // clear chosen file
-        loadImages(); // refresh images immediately
+        const { successful, failed, errors } = data;
+
+        // Show result message
+        if (failed === 0) {
+          alert(`All ${successful} images uploaded successfully!`);
+        } else if (successful === 0) {
+          alert(`Failed to upload all images. ${failed} errors occurred.`);
+        } else {
+          alert(
+            `${successful} images uploaded successfully, ${failed} failed.`
+          );
+        }
+
+        // Log errors for debugging
+        if (errors && errors.length > 0) {
+          console.error("Upload errors:", errors);
+        }
       } else {
         alert(`Error: ${data.error}`);
       }
     } catch (err) {
       console.error("Upload error:", err);
-      alert("Failed to upload image.");
+      alert("Failed to upload images.");
     } finally {
+      setSelectedFiles((p) => ({ ...p, [category]: null })); // clear chosen files
       setUploading((p) => ({ ...p, [category]: false }));
+      setUploadProgress((p) => ({ ...p, [category]: null }));
+      loadImages(); // refresh images
+    }
+  };
+
+  /* ---- Upload multiple videos ---- */
+  const handleVideoUploadClick = async (category) => {
+    const files = selectedVideoFiles[category];
+    if (!files || files.length === 0) return;
+
+    setUploadingVideos((p) => ({ ...p, [category]: true }));
+    setVideoUploadProgress((p) => ({
+      ...p,
+      [category]: { current: 0, total: files.length },
+    }));
+
+    const fd = new FormData();
+
+    // Append all files to FormData
+    for (let i = 0; i < files.length; i++) {
+      fd.append("videos", files[i]);
+    }
+    fd.append("category", category);
+
+    try {
+      const res = await fetch(
+        "http://localhost:8080/api/upload-multiple-videos",
+        {
+          method: "POST",
+          body: fd,
+        }
+      );
+      const data = await res.json();
+
+      if (res.ok) {
+        const { successful, failed, errors } = data;
+
+        // Show result message
+        if (failed === 0) {
+          alert(`All ${successful} videos uploaded successfully!`);
+        } else if (successful === 0) {
+          alert(`Failed to upload all videos. ${failed} errors occurred.`);
+        } else {
+          alert(
+            `${successful} videos uploaded successfully, ${failed} failed.`
+          );
+        }
+
+        // Log errors for debugging
+        if (errors && errors.length > 0) {
+          console.error("Upload errors:", errors);
+        }
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (err) {
+      console.error("Upload error:", err);
+      alert("Failed to upload videos.");
+    } finally {
+      setSelectedVideoFiles((p) => ({ ...p, [category]: null })); // clear chosen files
+      setUploadingVideos((p) => ({ ...p, [category]: false }));
+      setVideoUploadProgress((p) => ({ ...p, [category]: null }));
+      loadVideos(); // refresh videos
     }
   };
 
@@ -213,6 +355,11 @@ const Gallery = () => {
     borderRadius: 6,
     cursor: "pointer", // indicate clickable
   };
+  const videoCSS = {
+    width: "100%",
+    height: 180,
+    borderRadius: 6,
+  };
   const btnCSS = {
     color: "#fff",
     background: "#0070f3",
@@ -223,8 +370,8 @@ const Gallery = () => {
   };
 
   /* ---------- JSX ---------- */
-  // const galleryContent = (
-  return (
+  const galleryContent = (
+    // return (
     <div>
       <Navigation />
 
@@ -292,28 +439,43 @@ const Gallery = () => {
               ))}
             </div>
 
-            {/* ---- File chooser & upload ---- */}
+            {/* ---- Multiple file chooser & upload ---- */}
             <div
               style={{
                 marginTop: 8,
                 display: "flex",
+                flexDirection: "column",
                 gap: 8,
-                alignItems: "center",
               }}
             >
-              <input
-                id={`file-${key}`}
-                type="file"
-                accept="image/*"
-                onChange={(e) => handleFileSelect(e, key)}
-              />
-              <button
-                style={btnCSS}
-                onClick={() => handleUploadClick(key)}
-                disabled={!selectedFiles[key] || uploading[key]}
-              >
-                {uploading[key] ? "Uploading…" : "Upload"}
-              </button>
+              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                <input
+                  id={`file-${key}`}
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  onChange={(e) => handleFileSelect(e, key)}
+                />
+                <button
+                  style={btnCSS}
+                  onClick={() => handleUploadClick(key)}
+                  disabled={!selectedFiles[key] || uploading[key]}
+                >
+                  {uploading[key] ? "Uploading…" : "Upload All"}
+                </button>
+              </div>
+
+              {selectedFiles[key] && selectedFiles[key].length > 0 && (
+                <p style={{ fontSize: "14px", color: "#666", margin: 0 }}>
+                  {selectedFiles[key].length} image(s) selected
+                </p>
+              )}
+
+              {uploadProgress[key] && (
+                <div style={{ fontSize: "14px", color: "#0070f3" }}>
+                  Uploading all files...
+                </div>
+              )}
             </div>
           </AccordionSection>
         ))}
@@ -327,7 +489,89 @@ const Gallery = () => {
             label={label}
             onClick={handleAccordionClick}
           >
-            <p>Video content coming soon…</p>
+            <p>Please upload any videos you took relevant to {label}</p>
+            <div style={gridCSS}>
+              {(videosByCategory[key] || []).map((video, idx) => (
+                <div
+                  key={`${key}-${idx}-${video._id}`}
+                  style={{ position: "relative" }}
+                >
+                  <video
+                    src={video.videoUrl}
+                    style={videoCSS}
+                    controls
+                    onError={(e) => {
+                      console.error("Video failed to load:", video.videoUrl);
+                      e.target.style.opacity = 0.5;
+                    }}
+                  />
+                  <button
+                    className="trash_button"
+                    onClick={() => handleDeleteVideo(video._id)}
+                    title="Delete video"
+                    style={{
+                      position: "absolute",
+                      top: 6,
+                      right: 6,
+                      background: "rgba(0,0,0,0.7)",
+                      border: "none",
+                      borderRadius: "50%",
+                      color: "#fff",
+                      width: 24,
+                      height: 24,
+                      fontWeight: "bold",
+                      fontSize: "16px",
+                      cursor: "pointer",
+                      lineHeight: "22px",
+                      textAlign: "center",
+                      padding: 0,
+                    }}
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* ---- Multiple video file chooser & upload ---- */}
+            <div
+              style={{
+                marginTop: 8,
+                display: "flex",
+                flexDirection: "column",
+                gap: 8,
+              }}
+            >
+              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                <input
+                  id={`video-file-${key}`}
+                  type="file"
+                  accept="video/*"
+                  multiple
+                  onChange={(e) => handleVideoFileSelect(e, key)}
+                />
+                <button
+                  style={btnCSS}
+                  onClick={() => handleVideoUploadClick(key)}
+                  disabled={!selectedVideoFiles[key] || uploadingVideos[key]}
+                >
+                  {uploadingVideos[key] ? "Uploading…" : "Upload All"}
+                </button>
+              </div>
+
+              {selectedVideoFiles[key] &&
+                selectedVideoFiles[key].length > 0 && (
+                  <p style={{ fontSize: "14px", color: "#666", margin: 0 }}>
+                    {selectedVideoFiles[key].length} video(s) selected
+                  </p>
+                )}
+
+              {videoUploadProgress[key] && (
+                <div style={{ fontSize: "14px", color: "#0070f3" }}>
+                  Uploading all files...
+                </div>
+              )}
+            </div>
           </AccordionSection>
         ))}
       </div>
@@ -383,7 +627,7 @@ const Gallery = () => {
     </div>
   );
 
-  // return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
+  return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
 };
 
 export default Gallery;
