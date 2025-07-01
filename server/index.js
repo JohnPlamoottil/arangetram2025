@@ -48,7 +48,7 @@ app.post("/api/message", async (req, res) => {
   }
 });
 
-//setup Cloudinary .. goes in utils.js 
+//setup Cloudinary .. goes in utils.js
 cloudinary.config({
   cloud_name: "dw51dkkc9",
   secure: true,
@@ -191,8 +191,6 @@ app.get("/api/images/:category", async (req, res) => {
     res.status(500).json({ error: "Unable to fetch images" });
   }
 });
-<<<<<<< HEAD
-=======
 //  delete icon for images
 app.delete("/api/images/:id", async (req, res) => {
   const { id } = req.params;
@@ -221,7 +219,6 @@ app.delete("/api/images/:id", async (req, res) => {
     res.status(500).json({ error: "Failed to delete image" });
   }
 });
->>>>>>> dev
 
 // Start server
 app.listen(PORT, () => {
