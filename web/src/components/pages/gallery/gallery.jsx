@@ -79,10 +79,12 @@ const AccordionSection = ({ label, children, onClick }) => (
 const Gallery = () => {
   const [imagesByCategory, setImagesByCategory] = useState({});
   const [videosByCategory, setVideosByCategory] = useState({});
-  const [selectedFiles, setSelectedFiles] = useState({}); // { cat: File }
-  const [selectedVideoFiles, setSelectedVideoFiles] = useState({}); // { cat: File }
+  const [selectedFiles, setSelectedFiles] = useState({}); // { cat: FileList }
+  const [selectedVideoFiles, setSelectedVideoFiles] = useState({}); // { cat: FileList }
   const [uploading, setUploading] = useState({}); // { cat: bool }
   const [uploadingVideos, setUploadingVideos] = useState({}); // { cat: bool }
+  const [uploadProgress, setUploadProgress] = useState({}); // { cat: { current: number, total: number } }
+  const [videoUploadProgress, setVideoUploadProgress] = useState({}); // { cat: { current: number, total: number } }
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   /* ---- Fetch & group images ---- */
@@ -189,77 +191,133 @@ const Gallery = () => {
       : `${panel.scrollHeight}px`;
   };
 
-  /* ---- Select file (does not auto-upload) ---- */
+  /* ---- Select multiple files ---- */
   const handleFileSelect = (e, category) => {
-    const file = e.target.files?.[0];
-    setSelectedFiles((prev) => ({ ...prev, [category]: file }));
+    const files = e.target.files;
+    setSelectedFiles((prev) => ({ ...prev, [category]: files }));
   };
 
   const handleVideoFileSelect = (e, category) => {
-    const file = e.target.files?.[0];
-    setSelectedVideoFiles((prev) => ({ ...prev, [category]: file }));
+    const files = e.target.files;
+    setSelectedVideoFiles((prev) => ({ ...prev, [category]: files }));
   };
 
-  /* ---- Upload on button click ---- */
+  /* ---- Upload multiple images ---- */
   const handleUploadClick = async (category) => {
-    const file = selectedFiles[category];
-    if (!file) return;
+    const files = selectedFiles[category];
+    if (!files || files.length === 0) return;
 
     setUploading((p) => ({ ...p, [category]: true }));
+    setUploadProgress((p) => ({
+      ...p,
+      [category]: { current: 0, total: files.length },
+    }));
+
     const fd = new FormData();
-    fd.append("image", file);
+
+    // Append all files to FormData
+    for (let i = 0; i < files.length; i++) {
+      fd.append("images", files[i]);
+    }
     fd.append("category", category);
 
     try {
-      const res = await fetch("http://localhost:8080/api/upload", {
+      const res = await fetch("http://localhost:8080/api/upload-multiple", {
         method: "POST",
         body: fd,
       });
       const data = await res.json();
 
       if (res.ok) {
-        alert("Image uploaded successfully!");
-        setSelectedFiles((p) => ({ ...p, [category]: undefined })); // clear chosen file
-        loadImages(); // refresh images immediately
+        const { successful, failed, errors } = data;
+
+        // Show result message
+        if (failed === 0) {
+          alert(`All ${successful} images uploaded successfully!`);
+        } else if (successful === 0) {
+          alert(`Failed to upload all images. ${failed} errors occurred.`);
+        } else {
+          alert(
+            `${successful} images uploaded successfully, ${failed} failed.`
+          );
+        }
+
+        // Log errors for debugging
+        if (errors && errors.length > 0) {
+          console.error("Upload errors:", errors);
+        }
       } else {
         alert(`Error: ${data.error}`);
       }
     } catch (err) {
       console.error("Upload error:", err);
-      alert("Failed to upload image.");
+      alert("Failed to upload images.");
     } finally {
+      setSelectedFiles((p) => ({ ...p, [category]: null })); // clear chosen files
       setUploading((p) => ({ ...p, [category]: false }));
+      setUploadProgress((p) => ({ ...p, [category]: null }));
+      loadImages(); // refresh images
     }
   };
 
+  /* ---- Upload multiple videos ---- */
   const handleVideoUploadClick = async (category) => {
-    const file = selectedVideoFiles[category];
-    if (!file) return;
+    const files = selectedVideoFiles[category];
+    if (!files || files.length === 0) return;
 
     setUploadingVideos((p) => ({ ...p, [category]: true }));
+    setVideoUploadProgress((p) => ({
+      ...p,
+      [category]: { current: 0, total: files.length },
+    }));
+
     const fd = new FormData();
-    fd.append("video", file);
+
+    // Append all files to FormData
+    for (let i = 0; i < files.length; i++) {
+      fd.append("videos", files[i]);
+    }
     fd.append("category", category);
 
     try {
-      const res = await fetch("http://localhost:8080/api/upload-video", {
-        method: "POST",
-        body: fd,
-      });
+      const res = await fetch(
+        "http://localhost:8080/api/upload-multiple-videos",
+        {
+          method: "POST",
+          body: fd,
+        }
+      );
       const data = await res.json();
 
       if (res.ok) {
-        alert("Video uploaded successfully!");
-        setSelectedVideoFiles((p) => ({ ...p, [category]: undefined })); // clear chosen file
-        loadVideos(); // refresh videos immediately
+        const { successful, failed, errors } = data;
+
+        // Show result message
+        if (failed === 0) {
+          alert(`All ${successful} videos uploaded successfully!`);
+        } else if (successful === 0) {
+          alert(`Failed to upload all videos. ${failed} errors occurred.`);
+        } else {
+          alert(
+            `${successful} videos uploaded successfully, ${failed} failed.`
+          );
+        }
+
+        // Log errors for debugging
+        if (errors && errors.length > 0) {
+          console.error("Upload errors:", errors);
+        }
       } else {
         alert(`Error: ${data.error}`);
       }
     } catch (err) {
       console.error("Upload error:", err);
-      alert("Failed to upload video.");
+      alert("Failed to upload videos.");
     } finally {
+      setSelectedVideoFiles((p) => ({ ...p, [category]: null })); // clear chosen files
       setUploadingVideos((p) => ({ ...p, [category]: false }));
+      setVideoUploadProgress((p) => ({ ...p, [category]: null }));
+      loadVideos(); // refresh videos
     }
   };
 
@@ -380,28 +438,43 @@ const Gallery = () => {
               ))}
             </div>
 
-            {/* ---- File chooser & upload ---- */}
+            {/* ---- Multiple file chooser & upload ---- */}
             <div
               style={{
                 marginTop: 8,
                 display: "flex",
+                flexDirection: "column",
                 gap: 8,
-                alignItems: "center",
               }}
             >
-              <input
-                id={`file-${key}`}
-                type="file"
-                accept="image/*"
-                onChange={(e) => handleFileSelect(e, key)}
-              />
-              <button
-                style={btnCSS}
-                onClick={() => handleUploadClick(key)}
-                disabled={!selectedFiles[key] || uploading[key]}
-              >
-                {uploading[key] ? "Uploading…" : "Upload"}
-              </button>
+              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                <input
+                  id={`file-${key}`}
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  onChange={(e) => handleFileSelect(e, key)}
+                />
+                <button
+                  style={btnCSS}
+                  onClick={() => handleUploadClick(key)}
+                  disabled={!selectedFiles[key] || uploading[key]}
+                >
+                  {uploading[key] ? "Uploading…" : "Upload All"}
+                </button>
+              </div>
+
+              {selectedFiles[key] && selectedFiles[key].length > 0 && (
+                <p style={{ fontSize: "14px", color: "#666", margin: 0 }}>
+                  {selectedFiles[key].length} image(s) selected
+                </p>
+              )}
+
+              {uploadProgress[key] && (
+                <div style={{ fontSize: "14px", color: "#0070f3" }}>
+                  Uploading all files...
+                </div>
+              )}
             </div>
           </AccordionSection>
         ))}
@@ -459,28 +532,44 @@ const Gallery = () => {
               ))}
             </div>
 
-            {/* ---- Video file chooser & upload ---- */}
+            {/* ---- Multiple video file chooser & upload ---- */}
             <div
               style={{
                 marginTop: 8,
                 display: "flex",
+                flexDirection: "column",
                 gap: 8,
-                alignItems: "center",
               }}
             >
-              <input
-                id={`video-file-${key}`}
-                type="file"
-                accept="video/*"
-                onChange={(e) => handleVideoFileSelect(e, key)}
-              />
-              <button
-                style={btnCSS}
-                onClick={() => handleVideoUploadClick(key)}
-                disabled={!selectedVideoFiles[key] || uploadingVideos[key]}
-              >
-                {uploadingVideos[key] ? "Uploading…" : "Upload"}
-              </button>
+              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                <input
+                  id={`video-file-${key}`}
+                  type="file"
+                  accept="video/*"
+                  multiple
+                  onChange={(e) => handleVideoFileSelect(e, key)}
+                />
+                <button
+                  style={btnCSS}
+                  onClick={() => handleVideoUploadClick(key)}
+                  disabled={!selectedVideoFiles[key] || uploadingVideos[key]}
+                >
+                  {uploadingVideos[key] ? "Uploading…" : "Upload All"}
+                </button>
+              </div>
+
+              {selectedVideoFiles[key] &&
+                selectedVideoFiles[key].length > 0 && (
+                  <p style={{ fontSize: "14px", color: "#666", margin: 0 }}>
+                    {selectedVideoFiles[key].length} video(s) selected
+                  </p>
+                )}
+
+              {videoUploadProgress[key] && (
+                <div style={{ fontSize: "14px", color: "#0070f3" }}>
+                  Uploading all files...
+                </div>
+              )}
             </div>
           </AccordionSection>
         ))}

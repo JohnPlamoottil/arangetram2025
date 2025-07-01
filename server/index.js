@@ -73,9 +73,9 @@ app.post("/api/message", async (req, res) => {
   }
 });
 
-// Image upload route with Cloudinary integration and rotation fix
+// Single image upload route (keeping existing functionality)
 app.post("/api/upload", uploadImage.single("image"), async (req, res) => {
-  console.log("Upload request received");
+  console.log("Single image upload request received");
   console.log("File:", req.file);
   console.log("Body:", req.body);
 
@@ -156,9 +156,124 @@ app.post("/api/upload", uploadImage.single("image"), async (req, res) => {
   }
 });
 
-// Video upload route with Cloudinary integration and size checking
+// Multiple images upload route
+app.post(
+  "/api/upload-multiple",
+  uploadImage.array("images", 20),
+  async (req, res) => {
+    console.log("Multiple images upload request received");
+    console.log("Files count:", req.files?.length || 0);
+    console.log("Body:", req.body);
+
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({ error: "No images uploaded" });
+    }
+
+    const category = req.body.category;
+    if (!category) {
+      return res.status(400).json({ error: "Category is required" });
+    }
+
+    const results = [];
+    const errors = [];
+
+    for (let i = 0; i < req.files.length; i++) {
+      const file = req.files[i];
+
+      try {
+        console.log(
+          `Processing image ${i + 1}/${req.files.length}: ${file.originalname}`
+        );
+
+        // Compress image to optimize for Cloudinary upload with EXIF orientation handling
+        let quality = 80;
+        let compressedBuffer;
+
+        // Try progressively lower qualities until under 2MB
+        for (let j = 0; j < 5; j++) {
+          compressedBuffer = await sharp(file.buffer)
+            .rotate() // This automatically rotates the image based on EXIF orientation data
+            .resize({ width: 1200 }) // resize to reduce pixels if needed
+            .jpeg({ quality })
+            .toBuffer();
+
+          if (compressedBuffer.length <= 2 * 1024 * 1024) break; // under 2MB
+          quality -= 10; // reduce quality and try again
+        }
+
+        // Upload to Cloudinary
+        const uploadResult = await new Promise((resolve, reject) => {
+          cloudinary.uploader
+            .upload_stream(
+              {
+                resource_type: "image",
+                folder: `dance-gallery/${category}`,
+                public_id: `${category}_${Date.now()}_${i}`, // unique filename with index
+                quality: "auto:good",
+                fetch_format: "auto",
+                flags: "keep_attribution",
+              },
+              (error, result) => {
+                if (error) {
+                  console.error(
+                    `Cloudinary upload error for ${file.originalname}:`,
+                    error
+                  );
+                  reject(error);
+                } else {
+                  console.log(
+                    `Cloudinary upload success for ${file.originalname}:`,
+                    result.secure_url
+                  );
+                  resolve(result);
+                }
+              }
+            )
+            .end(compressedBuffer);
+        });
+
+        // Save image metadata to MongoDB
+        const newImage = new Image({
+          name: file.originalname || "uploaded-image",
+          content: req.body.content || "No description",
+          category: category,
+          cloudinaryUrl: uploadResult.secure_url,
+          cloudinaryPublicId: uploadResult.public_id,
+          contentType: file.mimetype,
+          originalName: file.originalname,
+        });
+
+        await newImage.save();
+        console.log(`Image metadata saved for ${file.originalname}`);
+
+        results.push({
+          originalName: file.originalname,
+          imageUrl: uploadResult.secure_url,
+          success: true,
+        });
+      } catch (err) {
+        console.error(`Error uploading ${file.originalname}:`, err);
+        errors.push({
+          originalName: file.originalname,
+          error: err.message || "Upload failed",
+          success: false,
+        });
+      }
+    }
+
+    res.status(201).json({
+      message: `Processed ${req.files.length} images`,
+      successful: results.length,
+      failed: errors.length,
+      results: results,
+      errors: errors,
+    });
+  }
+);
+
+// Single video upload route (keeping existing functionality)
 app.post("/api/upload-video", uploadVideo.single("video"), async (req, res) => {
-  console.log("Video upload request received");
+  console.log("Single video upload request received");
 
   if (!req.file) {
     return res.status(400).json({ error: "No video uploaded" });
@@ -269,6 +384,117 @@ app.post("/api/upload-video", uploadVideo.single("video"), async (req, res) => {
     }
   }
 });
+
+// Multiple videos upload route
+app.post(
+  "/api/upload-multiple-videos",
+  uploadVideo.array("videos", 10),
+  async (req, res) => {
+    console.log("Multiple videos upload request received");
+    console.log("Files count:", req.files?.length || 0);
+    console.log("Body:", req.body);
+
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({ error: "No videos uploaded" });
+    }
+
+    const category = req.body.category;
+    if (!category) {
+      return res.status(400).json({ error: "Category is required" });
+    }
+
+    const results = [];
+    const errors = [];
+    const maxSize = 100 * 1024 * 1024; // 100MB
+
+    for (let i = 0; i < req.files.length; i++) {
+      const file = req.files[i];
+
+      try {
+        console.log(
+          `Processing video ${i + 1}/${req.files.length}: ${file.originalname}`
+        );
+
+        // Check file size
+        if (file.size > maxSize) {
+          throw new Error(
+            `File too large: ${(file.size / 1024 / 1024).toFixed(
+              2
+            )}MB (max 100MB)`
+          );
+        }
+
+        // Upload to Cloudinary
+        const uploadResult = await new Promise((resolve, reject) => {
+          cloudinary.uploader
+            .upload_stream(
+              {
+                resource_type: "video",
+                folder: `dance-gallery-videos/${category}`,
+                public_id: `${category}_${Date.now()}_${i}`, // unique filename with index
+                quality: "auto:good",
+                transformation: [
+                  { quality: "auto:good" },
+                  { fetch_format: "auto" },
+                ],
+              },
+              (error, result) => {
+                if (error) {
+                  console.error(
+                    `Cloudinary upload error for ${file.originalname}:`,
+                    error
+                  );
+                  reject(error);
+                } else {
+                  console.log(
+                    `Cloudinary upload success for ${file.originalname}:`,
+                    result.secure_url
+                  );
+                  resolve(result);
+                }
+              }
+            )
+            .end(file.buffer);
+        });
+
+        // Save video metadata to MongoDB
+        const newVideo = new Video({
+          name: file.originalname || "uploaded-video",
+          content: req.body.content || "No description",
+          category: category,
+          cloudinaryUrl: uploadResult.secure_url,
+          cloudinaryPublicId: uploadResult.public_id,
+          contentType: file.mimetype,
+          originalName: file.originalname,
+        });
+
+        await newVideo.save();
+        console.log(`Video metadata saved for ${file.originalname}`);
+
+        results.push({
+          originalName: file.originalname,
+          videoUrl: uploadResult.secure_url,
+          success: true,
+        });
+      } catch (err) {
+        console.error(`Error uploading ${file.originalname}:`, err);
+        errors.push({
+          originalName: file.originalname,
+          error: err.message || "Upload failed",
+          success: false,
+        });
+      }
+    }
+
+    res.status(201).json({
+      message: `Processed ${req.files.length} videos`,
+      successful: results.length,
+      failed: errors.length,
+      results: results,
+      errors: errors,
+    });
+  }
+);
 
 // GET all uploaded images - Now fetching Cloudinary URLs
 app.get("/api/images", async (req, res) => {
