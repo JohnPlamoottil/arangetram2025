@@ -162,19 +162,20 @@ const Gallery = () => {
         method: "POST",
         body: fd,
       });
-      const { error } = await res.json();
+      const data = await res.json();
+
       if (res.ok) {
         alert("Image uploaded successfully!");
         setSelectedFiles((p) => ({ ...p, [category]: undefined })); // clear chosen file
+        loadImages(); // refresh images immediately
       } else {
-        alert(`Error: ${error}`);
+        alert(`Error: ${data.error}`);
       }
     } catch (err) {
       console.error("Upload error:", err);
       alert("Failed to upload image.");
     } finally {
       setUploading((p) => ({ ...p, [category]: false }));
-      loadImages(); // refresh AFTER button returns to normal
     }
   };
 
@@ -210,6 +211,7 @@ const Gallery = () => {
     height: 180,
     objectFit: "cover",
     borderRadius: 6,
+    cursor: "pointer", // indicate clickable
   };
   const btnCSS = {
     color: "#fff",
@@ -220,7 +222,6 @@ const Gallery = () => {
     cursor: "pointer",
   };
 
-  // const galleryContent = (
   /* ---------- JSX ---------- */
   return (
     <div>
@@ -247,14 +248,20 @@ const Gallery = () => {
             <div style={gridCSS}>
               {(imagesByCategory[key] || []).map((img, idx) => (
                 <div
-                  key={`${key}-${idx}-${img.imageBase64?.slice(0, 15)}`}
+                  key={`${key}-${idx}-${img._id}`}
                   style={{ position: "relative" }}
                 >
+                  {/* Now using Cloudinary URL directly instead of base64 */}
                   <img
-                    src={`data:${img.contentType};base64,${img.imageBase64}`}
+                    src={img.imageUrl}
                     alt={img.name || `${label} image`}
                     style={imgCSS}
                     onClick={() => handleImageClick(img)}
+                    onError={(e) => {
+                      console.error("Image failed to load:", img.imageUrl);
+                      e.target.style.opacity = 0.5;
+                      e.target.alt = "Image failed to load";
+                    }}
                   />
                   <button
                     className="trash_button"
@@ -323,6 +330,8 @@ const Gallery = () => {
           </AccordionSection>
         ))}
       </div>
+
+      {/* Image Modal - Now uses Cloudinary URL */}
       {modalImage && (
         <div
           style={{
@@ -340,7 +349,7 @@ const Gallery = () => {
           onClick={handleCloseModal}
         >
           <img
-            src={`data:${modalImage.contentType};base64,${modalImage.imageBase64}`}
+            src={modalImage.imageUrl}
             alt={modalImage.name}
             style={{
               maxWidth: "90vw",
@@ -367,14 +376,11 @@ const Gallery = () => {
           </button>
         </div>
       )}
+
       <Navigation />
       <Footer />
     </div>
   );
-
-  // return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
 };
 
 export default Gallery;
-
-// If you want to show a coming soon placeholder instead, wrap like below:

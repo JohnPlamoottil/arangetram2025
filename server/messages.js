@@ -1,3 +1,6 @@
+// FILE: messages.js
+// this is our schema file for all things, not just messages
+
 const mongoose = require("mongoose");
 
 const messageSchema = new mongoose.Schema({
@@ -17,16 +20,23 @@ const imageSchema = new mongoose.Schema({
     type: String,
     required: false, // optional message or description
   },
-  image: {
-    data: Buffer, // raw binary data from multer.memoryStorage()
-    contentType: {
-      type: String,
-      required: true, // e.g., 'image/jpeg'
-    },
-    originalName: {
-      type: String,
-      required: false, // e.g., 'photo.jpg'
-    },
+  // Cloudinary fields (replacing the large binary data storage)
+  cloudinaryUrl: {
+    type: String,
+    required: true, // URL to access the image on Cloudinary
+  },
+  cloudinaryPublicId: {
+    type: String,
+    required: true, // Cloudinary's public ID for the image (needed for deletion)
+  },
+  // Keep some metadata for reference
+  contentType: {
+    type: String,
+    required: true, // e.g., 'image/jpeg'
+  },
+  originalName: {
+    type: String,
+    required: false, // e.g., 'photo.jpg'
   },
   category: {
     type: String,

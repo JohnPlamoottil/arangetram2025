@@ -1,4 +1,6 @@
-// server/index.js
+// FILE: index.js
+// Cloudinary credentials are now loaded from environment variables
+
 const multer = require("multer");
 const express = require("express");
 const cors = require("cors");
@@ -21,11 +23,19 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-// Multer setup for image upload .. index.js
+// Multer setup for image upload
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-// Routes ... router.post("/", controller method)
+// Configure Cloudinary with env variables
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  secure: true,
+});
+
+// Routes
 app.get("/api/message", async (req, res) => {
   const messages = await Message.find({}).sort({ createdAt: "desc" });
   res.status(200).json({ messages });
@@ -48,27 +58,7 @@ app.post("/api/message", async (req, res) => {
   }
 });
 
-//setup Cloudinary .. goes in utils.js
-cloudinary.config({
-  cloud_name: "dw51dkkc9",
-  secure: true,
-});
-
-const url = cloudinary.url(
-  "https://res.cloudinary.com/dw51dkkc9/video/upload/v1751172647/IMG_7977_pushpanjali_jvlnx9.mov",
-  {
-    transformation: [
-      {
-        quality: "auto",
-        fetch_format: "auto",
-      },
-    ],
-  }
-);
-// console.log(url);
-
-// Image upload route .. index.js
-
+// Image upload route with Cloudinary integration
 app.post("/api/upload", upload.single("image"), async (req, res) => {
   console.log("Upload request received");
   console.log("File:", req.file);
@@ -78,10 +68,16 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
     return res.status(400).json({ error: "No image uploaded" });
   }
 
-  // Compress image to 2MB
+  const category = req.body.category;
+  if (!category) {
+    return res.status(400).json({ error: "Category is required" });
+  }
+
   try {
+    // Compress image to optimize for Cloudinary upload
     let quality = 80;
     let compressedBuffer;
+
     // Try progressively lower qualities until under 2MB
     for (let i = 0; i < 5; i++) {
       compressedBuffer = await sharp(req.file.buffer)
@@ -93,62 +89,77 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
       quality -= 10; // reduce quality and try again
     }
 
-    if (compressedBuffer.length > 2 * 1024 * 1024) {
-      console.log("Could not compress image under 2MB");
-    }
-  } catch (err) {
-    console.log("Failed to compress image");
-  }
+    console.log(`Uploading image to Cloudinary for category: ${category}`);
 
-  const category = req.body.category;
-  if (!category) {
-    return res.status(400).json({ error: "Category is required" });
-  }
+    // Upload to Cloudinary
+    const uploadResult = await new Promise((resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream(
+          {
+            resource_type: "image",
+            folder: `dance-gallery/${category}`, // organize by category in Cloudinary
+            public_id: `${category}_${Date.now()}`, // unique filename
+            quality: "auto:good", // Cloudinary's automatic quality optimization
+            fetch_format: "auto", // Cloudinary's automatic format optimization
+          },
+          (error, result) => {
+            if (error) {
+              console.error("Cloudinary upload error:", error);
+              reject(error);
+            } else {
+              console.log("Cloudinary upload success:", result.secure_url);
+              resolve(result);
+            }
+          }
+        )
+        .end(compressedBuffer);
+    });
 
-  console.log(`Uploading image to category: ${category}`);
-
-  const newImage = new Image({
-    name: req.file.originalname || "uploaded-image",
-    content: req.body.content || "No description",
-    category: category,
-    image: {
-      data: req.file.buffer,
+    // Save image metadata to MongoDB (with Cloudinary URL instead of binary data)
+    const newImage = new Image({
+      name: req.file.originalname || "uploaded-image",
+      content: req.body.content || "No description",
+      category: category,
+      cloudinaryUrl: uploadResult.secure_url,
+      cloudinaryPublicId: uploadResult.public_id,
       contentType: req.file.mimetype,
       originalName: req.file.originalname,
-    },
-  });
+    });
 
-  try {
     await newImage.save();
-    console.log("Image saved successfully");
-    res.status(201).json({ message: "Image uploaded successfully" });
+    console.log("Image metadata saved successfully to MongoDB");
+    res.status(201).json({
+      message: "Image uploaded successfully",
+      imageUrl: uploadResult.secure_url,
+    });
   } catch (err) {
-    console.error("Error saving image:", err);
+    console.error("Error uploading image:", err);
     res.status(500).json({ error: "Unable to upload image" });
   }
 });
 
-// GET all uploaded images with category information - Optimized version
+// GET all uploaded images - Now fetching Cloudinary URLs
 app.get("/api/images", async (req, res) => {
   try {
     console.log("Fetching all images...");
-    // Use lean() to get plain JavaScript objects instead of Mongoose documents
-    // This reduces memory usage significantly
+
     const images = await Image.find({})
       .lean()
       .limit(100)
-      .select("name content category image.contentType image.data uploadedAt");
+      .select(
+        "name content category cloudinaryUrl contentType originalName uploadedAt"
+      );
 
     console.log(`Found ${images.length} images in database`);
 
-    // Convert image buffer to base64 so it can be rendered in <img> tags
+    // Transform the data to match frontend expectations
     const processedImages = images.map((img) => {
       const processedImg = {
         name: img.name,
         content: img.content,
         category: img.category,
-        contentType: img.image.contentType,
-        imageBase64: img.image.data.toString("base64"),
+        contentType: img.contentType,
+        imageUrl: img.cloudinaryUrl, // Cloudinary URL instead of base64
         uploadedAt: img.uploadedAt,
         _id: img._id,
       };
@@ -165,7 +176,7 @@ app.get("/api/images", async (req, res) => {
   }
 });
 
-// Optional: GET images by specific category - Optimized version
+// GET images by specific category
 app.get("/api/images/:category", async (req, res) => {
   try {
     const { category } = req.params;
@@ -174,15 +185,18 @@ app.get("/api/images/:category", async (req, res) => {
     const images = await Image.find({ category })
       .lean()
       .limit(50)
-      .select("name content category image.contentType image.data uploadedAt");
+      .select(
+        "name content category cloudinaryUrl contentType originalName uploadedAt"
+      );
 
     const processedImages = images.map((img) => ({
       name: img.name,
       content: img.content,
       category: img.category,
-      contentType: img.image.contentType,
-      imageBase64: img.image.data.toString("base64"),
+      contentType: img.contentType,
+      imageUrl: img.cloudinaryUrl,
       uploadedAt: img.uploadedAt,
+      _id: img._id,
     }));
 
     res.status(200).json({ images: processedImages });
@@ -191,32 +205,38 @@ app.get("/api/images/:category", async (req, res) => {
     res.status(500).json({ error: "Unable to fetch images" });
   }
 });
-//  delete icon for images
+
+// Delete image - Now also removes from Cloudinary
 app.delete("/api/images/:id", async (req, res) => {
   const { id } = req.params;
 
   try {
-    const deletedImage = await Image.findByIdAndDelete(id);
-    if (!deletedImage) {
+    const image = await Image.findById(id);
+    if (!image) {
       return res.status(404).json({ error: "Image not found" });
     }
-    res.status(200).json({ message: "Image deleted" });
+
+    // Delete from Cloudinary if public_id exists
+    if (image.cloudinaryPublicId) {
+      try {
+        await cloudinary.uploader.destroy(image.cloudinaryPublicId);
+        console.log(
+          `Deleted image from Cloudinary: ${image.cloudinaryPublicId}`
+        );
+      } catch (cloudinaryError) {
+        console.error("Error deleting from Cloudinary:", cloudinaryError);
+        // Continue with MongoDB deletion even if Cloudinary deletion fails
+      }
+    }
+
+    // Delete from MongoDB
+    await Image.findByIdAndDelete(id);
+    console.log(`Deleted image from MongoDB: ${id}`);
+
+    res.status(200).json({ message: "Image deleted successfully" });
   } catch (err) {
     console.error("Delete error:", err);
     res.status(500).json({ error: "Unable to delete image" });
-  }
-});
-// i think this is a duplicate ... delete this lines189-200
-app.delete("/api/images/:id", async (req, res) => {
-  try {
-    const deleted = await Image.findByIdAndDelete(req.params.id);
-    if (!deleted) {
-      return res.status(404).json({ error: "Image not found" });
-    }
-    res.status(200).json({ message: "Deleted successfully" });
-  } catch (err) {
-    console.error("Delete error:", err);
-    res.status(500).json({ error: "Failed to delete image" });
   }
 });
 
