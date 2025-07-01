@@ -48,6 +48,9 @@ Check-Off List
 - [x] making the uploads specific to the accordian 
 - [x] set up schema in Mongoose for the various categories 
 - [x] need to test in postman
+- [ ] rotation of images
+- [ ] multiple image upload and video 
+- [ ] have videos compressed before uploading .. max limit is 100MB
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
