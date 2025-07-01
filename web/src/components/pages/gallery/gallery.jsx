@@ -2,17 +2,55 @@ import React, { useState, useEffect } from "react";
 import Navigation from "../../navigation-links/navigation-links";
 import Footer from "../../footer/footer";
 import "./gallery.css";
+import ComingSoon from "../../coming_soon/coming_soon";
 
 /* ---------- CONFIG ---------- */
 const PHOTO_SECTIONS = [
-  { key: "lobby", label: "Lobby Decorations" },
-  { key: "auditorium", label: "Auditorium (Audience Clips)" },
-  { key: "pushpanjali", label: "Pushpanjali" },
-  { key: "solos1", label: "Solos: Michelle, Andrea, Jana" },
-  { key: "varnum", label: "Varnum" },
-  { key: "solos2", label: "Solos: Rose, Jenna, Amarya" },
-  { key: "thillana", label: "Thillana" },
-  { key: "reception", label: "Reception Photos" },
+  {
+    key: "lobby",
+    description: "Please upload any pictures you took relevent to ",
+    label: "Lobby Decorations",
+  },
+  {
+    key: "auditorium",
+    description: "Please upload any pictures you took relevent to inside the",
+    label: "Auditorium (Audience Clips)",
+  },
+  {
+    key: "pushpanjali",
+    description:
+      "Please upload any pictures you took relevent to the first group performance, ",
+    label: "Pushpanjali",
+  },
+  {
+    key: "solos1",
+    description:
+      "Please upload any pictures you took relevent to the first three  ",
+    label: "Solos: Michelle, Andrea, Jana",
+  },
+  {
+    key: "varnum",
+    description:
+      "Please upload any pictures you took relevent to the Centerpiece,",
+    label: "Varnum",
+  },
+  {
+    key: "solos2",
+    description:
+      "Please upload any pictures you took relevent to the second three  ",
+    label: "Solos: Rose, Jenna, Amarya",
+  },
+  {
+    key: "thillana",
+    description:
+      "Please upload any pictures you took relevent to the finale group performance  ",
+    label: "Thillana",
+  },
+  {
+    key: "reception",
+    description: "Please upload any pictures you took during the ",
+    label: "Reception",
+  },
 ];
 
 const VIDEO_SECTIONS = [
@@ -56,6 +94,7 @@ const Gallery = () => {
           (acc[cat] = acc[cat] || []).push(img);
           return acc;
         }, {});
+        console.log(grouped);
         setImagesByCategory(grouped);
       } else {
         console.error("Failed to load images:", data.error || "Unknown error");
@@ -64,6 +103,27 @@ const Gallery = () => {
       console.error("Error fetching images:", err);
     } finally {
       setIsRefreshing(false);
+    }
+  };
+
+  const handleDeleteImage = async (imageId) => {
+    if (!window.confirm("Are you sure you want to delete this image?")) return;
+
+    try {
+      const res = await fetch(`http://localhost:8080/api/images/${imageId}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Image deleted successfully");
+        loadImages(); // refresh list
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (err) {
+      console.error("Delete failed:", err);
+      alert("Failed to delete image.");
     }
   };
 
@@ -118,6 +178,26 @@ const Gallery = () => {
     }
   };
 
+  // image expanding modal
+  const [modalImage, setModalImage] = useState(null);
+
+  const handleImageClick = (img) => {
+    setModalImage(img);
+  };
+
+  const handleCloseModal = () => {
+    setModalImage(null);
+  };
+
+  // Optional: close on ESC
+  useEffect(() => {
+    const escHandler = (e) => {
+      if (e.key === "Escape") handleCloseModal();
+    };
+    window.addEventListener("keydown", escHandler);
+    return () => window.removeEventListener("keydown", escHandler);
+  }, []);
+
   /* ---- Grid styles ---- */
   const gridCSS = {
     display: "grid",
@@ -140,6 +220,7 @@ const Gallery = () => {
     cursor: "pointer",
   };
 
+  // const galleryContent = (
   /* ---------- JSX ---------- */
   return (
     <div>
@@ -153,20 +234,53 @@ const Gallery = () => {
           </p>
         )}
 
-        {PHOTO_SECTIONS.map(({ key, label }) => (
+        {PHOTO_SECTIONS.map(({ key, label, description }) => (
           <AccordionSection
             key={key}
             label={label}
             onClick={handleAccordionClick}
           >
+            <p>
+              {description}
+              {label}
+            </p>
             <div style={gridCSS}>
               {(imagesByCategory[key] || []).map((img, idx) => (
-                <img
+                <div
                   key={`${key}-${idx}-${img.imageBase64?.slice(0, 15)}`}
-                  src={`data:${img.contentType};base64,${img.imageBase64}`}
-                  alt={img.name || `${label} image`}
-                  style={imgCSS}
-                />
+                  style={{ position: "relative" }}
+                >
+                  <img
+                    src={`data:${img.contentType};base64,${img.imageBase64}`}
+                    alt={img.name || `${label} image`}
+                    style={imgCSS}
+                    onClick={() => handleImageClick(img)}
+                  />
+                  <button
+                    className="trash_button"
+                    onClick={() => handleDeleteImage(img._id)}
+                    title="Delete image"
+                    style={{
+                      position: "absolute",
+                      top: 6,
+                      right: 6,
+                      background: "rgba(0,0,0,0.7)",
+                      border: "none",
+                      borderRadius: "50%",
+                      color: "#fff",
+                      width: 24,
+                      height: 24,
+                      fontWeight: "bold",
+                      fontSize: "16px",
+                      cursor: "pointer",
+                      lineHeight: "22px",
+                      textAlign: "center",
+                      padding: 0,
+                    }}
+                  >
+                    ×
+                  </button>
+                </div>
               ))}
             </div>
 
@@ -209,11 +323,58 @@ const Gallery = () => {
           </AccordionSection>
         ))}
       </div>
-
+      {modalImage && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+          onClick={handleCloseModal}
+        >
+          <img
+            src={`data:${modalImage.contentType};base64,${modalImage.imageBase64}`}
+            alt={modalImage.name}
+            style={{
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+              borderRadius: "8px",
+              boxShadow: "0 0 10px #000",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            onClick={handleCloseModal}
+            style={{
+              position: "absolute",
+              top: 20,
+              right: 30,
+              fontSize: 32,
+              background: "none",
+              border: "none",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            ×
+          </button>
+        </div>
+      )}
       <Navigation />
       <Footer />
     </div>
   );
+
+  // return <ComingSoon message="Gallery">{galleryContent}</ComingSoon>;
 };
 
 export default Gallery;
+
+// If you want to show a coming soon placeholder instead, wrap like below:

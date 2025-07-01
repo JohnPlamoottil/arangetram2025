@@ -1,4 +1,4 @@
-# Arangetram Performance 2025
+# Arangetram Performance 2025 - MVP list
 Check-Off List
 - [x] video page 
 - [x] quote
@@ -45,9 +45,9 @@ Check-Off List
 - [x] reflection video
 - [x] focus on uploading a photo to mongo DB 
 - [x] how to fetch that img from mongo DB andd displaying in the frontend
-- [ ] making the uploads specific to the accordian 
+- [x] making the uploads specific to the accordian 
 - [x] set up schema in Mongoose for the various categories 
-- [ ] need to test in postman
+- [x] need to test in postman
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 

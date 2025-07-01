@@ -8,6 +8,7 @@ import "../../../vendor/fonts.css";
 import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import dance_bkgd from "../../../assets/dance_bkgd.png";
 import qr_code from "../../../assets/qr_code.png";
+import qr_code_two from "../../../assets/qr_code_two.jpg";
 
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -134,6 +135,10 @@ function Home() {
             Expired QR Code - Share this website LINK with others around you
           </p>
           <img className="QR_code" src={qr_code} alt="qr code"></img>
+          <p className="QR_code_description">
+            Reactivated QR Code - Share this website with others around you
+          </p>
+          <img className="QR_code" src={qr_code_two} alt="qr code"></img>
         </div>
       </div>
       <Footer />

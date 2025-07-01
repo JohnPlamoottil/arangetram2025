@@ -3,9 +3,10 @@ const multer = require("multer");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const sharp = require("sharp");
 dotenv.config();
 const mongoose = require("mongoose");
-
+const cloudinary = require("cloudinary").v2;
 const { Message, Image } = require("./messages");
 
 const app = express();
@@ -20,11 +21,11 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-// Multer setup for image upload
+// Multer setup for image upload .. index.js
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-// Routes
+// Routes ... router.post("/", controller method)
 app.get("/api/message", async (req, res) => {
   const messages = await Message.find({}).sort({ createdAt: "desc" });
   res.status(200).json({ messages });
@@ -47,7 +48,27 @@ app.post("/api/message", async (req, res) => {
   }
 });
 
-// Image upload route with category support
+//setup Cloudinary .. goes in utils.js 
+cloudinary.config({
+  cloud_name: "dw51dkkc9",
+  secure: true,
+});
+
+const url = cloudinary.url(
+  "https://res.cloudinary.com/dw51dkkc9/video/upload/v1751172647/IMG_7977_pushpanjali_jvlnx9.mov",
+  {
+    transformation: [
+      {
+        quality: "auto",
+        fetch_format: "auto",
+      },
+    ],
+  }
+);
+// console.log(url);
+
+// Image upload route .. index.js
+
 app.post("/api/upload", upload.single("image"), async (req, res) => {
   console.log("Upload request received");
   console.log("File:", req.file);
@@ -55,6 +76,28 @@ app.post("/api/upload", upload.single("image"), async (req, res) => {
 
   if (!req.file) {
     return res.status(400).json({ error: "No image uploaded" });
+  }
+
+  // Compress image to 2MB
+  try {
+    let quality = 80;
+    let compressedBuffer;
+    // Try progressively lower qualities until under 2MB
+    for (let i = 0; i < 5; i++) {
+      compressedBuffer = await sharp(req.file.buffer)
+        .resize({ width: 1200 }) // resize to reduce pixels if needed
+        .jpeg({ quality })
+        .toBuffer();
+
+      if (compressedBuffer.length <= 2 * 1024 * 1024) break; // under 2MB
+      quality -= 10; // reduce quality and try again
+    }
+
+    if (compressedBuffer.length > 2 * 1024 * 1024) {
+      console.log("Could not compress image under 2MB");
+    }
+  } catch (err) {
+    console.log("Failed to compress image");
   }
 
   const category = req.body.category;
@@ -107,6 +150,7 @@ app.get("/api/images", async (req, res) => {
         contentType: img.image.contentType,
         imageBase64: img.image.data.toString("base64"),
         uploadedAt: img.uploadedAt,
+        _id: img._id,
       };
       console.log(
         `Processed image: ${processedImg.name}, category: ${processedImg.category}`
@@ -147,6 +191,37 @@ app.get("/api/images/:category", async (req, res) => {
     res.status(500).json({ error: "Unable to fetch images" });
   }
 });
+<<<<<<< HEAD
+=======
+//  delete icon for images
+app.delete("/api/images/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deletedImage = await Image.findByIdAndDelete(id);
+    if (!deletedImage) {
+      return res.status(404).json({ error: "Image not found" });
+    }
+    res.status(200).json({ message: "Image deleted" });
+  } catch (err) {
+    console.error("Delete error:", err);
+    res.status(500).json({ error: "Unable to delete image" });
+  }
+});
+// i think this is a duplicate ... delete this lines189-200
+app.delete("/api/images/:id", async (req, res) => {
+  try {
+    const deleted = await Image.findByIdAndDelete(req.params.id);
+    if (!deleted) {
+      return res.status(404).json({ error: "Image not found" });
+    }
+    res.status(200).json({ message: "Deleted successfully" });
+  } catch (err) {
+    console.error("Delete error:", err);
+    res.status(500).json({ error: "Failed to delete image" });
+  }
+});
+>>>>>>> dev
 
 // Start server
 app.listen(PORT, () => {
