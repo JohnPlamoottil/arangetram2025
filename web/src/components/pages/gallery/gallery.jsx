@@ -5,6 +5,8 @@ import Footer from "../../footer/footer";
 import "./gallery.css";
 import ComingSoon from "../../coming_soon/coming_soon";
 
+const HOST = import.meta.env.VITE_HOST;
+
 /* ---------- CONFIG ---------- */
 const PHOTO_SECTIONS = [
   {
@@ -91,7 +93,7 @@ const Gallery = () => {
   const loadImages = async () => {
     setIsRefreshing(true);
     try {
-      const res = await fetch("http://localhost:8080/api/images");
+      const res = await fetch(`${HOST}/api/images`);
       const data = await res.json();
 
       if (res.ok && data.images) {
@@ -115,7 +117,7 @@ const Gallery = () => {
   /* ---- Fetch & group videos ---- */
   const loadVideos = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/videos");
+      const res = await fetch(`${HOST}/api/videos`);
       const data = await res.json();
 
       if (res.ok && data.videos) {
@@ -138,7 +140,7 @@ const Gallery = () => {
     if (!window.confirm("Are you sure you want to delete this image?")) return;
 
     try {
-      const res = await fetch(`http://localhost:8080/api/images/${imageId}`, {
+      const res = await fetch(`${HOST}/api/images/${imageId}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -159,7 +161,7 @@ const Gallery = () => {
     if (!window.confirm("Are you sure you want to delete this video?")) return;
 
     try {
-      const res = await fetch(`http://localhost:8080/api/videos/${videoId}`, {
+      const res = await fetch(`${HOST}/api/videos/${videoId}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -222,7 +224,7 @@ const Gallery = () => {
     fd.append("category", category);
 
     try {
-      const res = await fetch("http://localhost:8080/api/upload-multiple", {
+      const res = await fetch(`${HOST}/api/upload-multiple`, {
         method: "POST",
         body: fd,
       });
@@ -280,13 +282,10 @@ const Gallery = () => {
     fd.append("category", category);
 
     try {
-      const res = await fetch(
-        "http://localhost:8080/api/upload-multiple-videos",
-        {
-          method: "POST",
-          body: fd,
-        }
-      );
+      const res = await fetch(`${HOST}/api/upload-multiple-videos`, {
+        method: "POST",
+        body: fd,
+      });
       const data = await res.json();
 
       if (res.ok) {
