@@ -376,6 +376,14 @@ const Gallery = () => {
 
       <section className="questions">
         <h2 className="title_FAQ">Photo Album</h2>
+        <a
+          href="https://moderndigital.pixieset.com/arangetram2025/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gallery-button"
+        >
+          View Photo Gallery
+        </a>
         {isRefreshing && (
           <p style={{ fontStyle: "italic", marginBottom: 10 }}>
             Refreshing images…
@@ -438,7 +446,7 @@ const Gallery = () => {
               ))}
             </div>
 
-            {/* ---- Multiple file chooser & upload ---- */}
+            {/* ---- Multiple picture chooser & upload ---- */}
             <div
               style={{
                 marginTop: 8,
@@ -541,7 +549,7 @@ const Gallery = () => {
                 gap: 8,
               }}
             >
-              <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <div className="upload-box">
                 <input
                   id={`video-file-${key}`}
                   type="file"

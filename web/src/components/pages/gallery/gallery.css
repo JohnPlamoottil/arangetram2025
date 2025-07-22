@@ -1,1 +1,24 @@
+.upload-box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.gallery-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
 
+.gallery-button:hover {
+  background-color: #005bbb;
+}
+@media screen and (max-width: 430px) {
+  .upload-box {
+    flex-direction: column;
+  }
+}
