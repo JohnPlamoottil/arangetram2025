@@ -416,6 +416,7 @@ app.post(
         );
 
         // Check file size
+
         if (file.size > maxSize) {
           throw new Error(
             `File too large: ${(file.size / 1024 / 1024).toFixed(

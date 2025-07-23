@@ -5,9 +5,10 @@
 }
 .gallery-button {
   display: inline-block;
+  font-family: "Amita";
   padding: 10px 20px;
-  background-color: #0070f3;
-  color: white;
+  background-color: black;
+  color: gold;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
