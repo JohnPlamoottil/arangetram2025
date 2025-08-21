@@ -1,7 +1,7 @@
 # Arangetram Performance 2025 - MVP list
 Check-Off List
 - [x] video page 
-- [x] quote
+- [x] quote.  added on June3
 - [x] dropdown selection and using Link tag 
 - [x] Nav Links updated from a tags
 - [x] navigation header on all pages 
@@ -15,7 +15,7 @@ Check-Off List
 - [x] andrea bio
 - [x] andrea shishya
 - [x] michelle bio
-- [x] michelle shishya
+- [x] michelle shishya. June18
 - [x] jana bio
 - [x] jana shishya
 - [x] jenna bio 
@@ -24,7 +24,7 @@ Check-Off List
 - [x] rose shishya - Mally chechi has attiude problem - chatGPT produced response
 - [x] amarya bio
 - [x] amarya shishya - John said he will get it wed nite - john said use chatGPT to formulate a response
-- [x] FAQ page (dropdown and form)
+- [x] FAQ page (dropdown and form). used June4
 - [x] [FAQ souce] 
 - [x] Program Page (use Jinoos agenda in Read Me)
 - [x] Guru Page 
@@ -55,7 +55,7 @@ Check-Off List
 - [x] rotation of images
 - [ ] multiple image upload and video 
 - [ ] have videos compressed before uploading .. max limit is 100MB
->>>>>>> dev
+dev
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
@@ -81,23 +81,16 @@ Performer's autobiography
 Shishya memoires: Parents Shishya for their Daughter
 
 Michelle’s Parents Shishya
-June18
-
 
 rose Shishya - pending
 
 Amarya’s Bharatanayam bio:
 
-
-
 john and latha shishya - PENDING
 
 RSVP section form to fill out per each dancer
 
-
 Jenna Bharatanayam bio: 
-
-
 
 Jennas Shishya
 
@@ -108,66 +101,6 @@ Andreas mom note to her! Shilpa and Jeril:
 Jana’s bio 
 
 Jana’s parents note 
-
-
-## History of Bharatanatyam
-used June4
-
-## History of Arangetram
-used June4
-
-## Quote
-added on June3
-
-## Instructor - Biography 
-
-## Address location street view (google API)
-
-## Venue
-
-## Musicians 
-# VOCAL
-
-# MRIDANGAM
-
-# VIOLINIST
-
-# FLAUTIST
-
-## Program Guide 
-
-# Welcome Message
-
-# Prayer by Priest
-
-# Few Announcements
-
-# Introducing Musicians
-
-# Prayer Song by Musicians
-
-# Solo 1 Andrea Jeril Thomas
-
-# Solo 2 - Jana Scaria
-
-## coffee break **
-
-## Next is a musical interlude  5:35 PM to 5:42 PM 
-
-# Solo 4 - Rose Thomas
-
-# Solo 5 - Jenna Plamoottil
-
-# Solo 6 - Amarya Koola
-
-# Thillana - Group
-
-# Mangalam
-
-## Video mp4 and LIVE link youtube
-
-## Guest Book Comment section 
-
 
 Currently, two official plugins are available:
 
