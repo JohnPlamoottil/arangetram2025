@@ -115,7 +115,7 @@ const Footer = () => {
           <p className="Footer-Middle">
             Special Thanks to All of You for Attending Our Arangetram <br />
             <br />
-            Photos will be updated to this site in the months to follow. <br />
+            Photos updated in the Gallery Page. <br />
             <br />
             Reception with Dinner Provided at Dancer's Venue. <br />
           </p>
