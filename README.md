@@ -1,5 +1,6 @@
-# Arangetram Performance 2025 - MVP list
-Check-Off List
+# Arangetram Performance 2025 - Final Project Submission
+
+### Check-Off List
 - [x] video page 
 - [x] quote.  added on June3
 - [x] dropdown selection and using Link tag 
