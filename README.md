@@ -1,5 +1,8 @@
-# Arangetram Performance 2025 - MVP list
-Check-Off List
+# Bharatanatyam Arangetram Samarpanam 2025 
+# Final Project Submission 
+- Submitted August 25 2025
+
+## Check-Off List
 - [x] video page 
 - [x] quote.  added on June3
 - [x] dropdown selection and using Link tag 
@@ -49,17 +52,18 @@ Check-Off List
 - [x] set up schema in Mongoose for the various categories 
 - [x] need to test in postman
 <<<<<<< HEAD
-- [ ] allow multiple uploads of images and video at one time
-- [ ] its roating images sideways
+- [x] allow multiple uploads of images and video at one time
+- [x] its roating images sideways
 =======
 - [x] rotation of images
-- [ ] multiple image upload and video 
+- [x] multiple image upload and video 
 - [ ] have videos compressed before uploading .. max limit is 100MB
 dev
+- [ ] have photo images compressed to allow pages to load faster
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
-### Outline on all Items.. just paste into any css file
+### Outline on all Items.. just paste into footer css file
 * {
   outline: 1px dotted red;
 } 
@@ -78,29 +82,31 @@ FAQ documentation for accordion dropdown
 2. dancer updates 
 
 Performer's autobiography
-Shishya memoires: Parents Shishya for their Daughter
+ - COMPLETED
 
-Michelle’s Parents Shishya
+Shishya memoires: Parents Shishya 
 
-rose Shishya - pending
+Michelle’s Parents Shishya - COMPLETED
 
-Amarya’s Bharatanayam bio:
+rose Shishya  - COMPLETED
 
-john and latha shishya - PENDING
+Amarya’s Bharatanayam bio - COMPLETED
 
-RSVP section form to fill out per each dancer
+john and latha shishya - COMPLETED
 
-Jenna Bharatanayam bio: 
+RSVP section form to fill out per each dancer - COMPLETED
 
-Jennas Shishya
+Jenna Bharatanayam bio - COMPLETED
 
-Andreas bio 
+Jennas Shishya - COMPLETED
 
-Andreas mom note to her! Shilpa and Jeril:
+Andreas bio - COMPLETED 
 
-Jana’s bio 
+Andreas parent Shilpa and Jeril - COMPLETED
 
-Jana’s parents note 
+Jana’s bio - COMPLETED
+
+Jana’s parents note - COMPLETED 
 
 Currently, two official plugins are available:
 
