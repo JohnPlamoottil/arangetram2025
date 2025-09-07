@@ -10,6 +10,8 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: gold;
+  border: 5px;
+  border-color: gold;
 }
 
 .group_photo {
