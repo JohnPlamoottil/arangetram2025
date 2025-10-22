@@ -10,13 +10,34 @@ import JLC_thumbnail from "../../assets/JLC_thumbnail.png";
 import insta from "../../assets/insta.png";
 
 const Footer = () => {
+  React.useEffect(() => {
+    function handleOutsideClick(e) {
+      if (!e.target.closest(".accordion") && !e.target.closest(".panel")) {
+        const allPanels = document.querySelectorAll(".panel");
+        const allButtons = document.querySelectorAll(".accordion");
+        allPanels.forEach((panel) => (panel.style.maxHeight = null));
+        allButtons.forEach((button) => button.classList.remove("slide"));
+      }
+    }
+
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
   function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
-    const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
+    e.stopPropagation();
+    const button = e.currentTarget;
+    const isOpen = button.classList.contains("slide");
+
+    // Close all other panels first
+    const allPanels = document.querySelectorAll(".panel");
+    const allButtons = document.querySelectorAll(".accordion");
+    allPanels.forEach((panel) => (panel.style.maxHeight = null));
+    allButtons.forEach((btn) => btn.classList.remove("slide"));
+
+    if (!isOpen) {
+      const panel = button.nextElementSibling;
+      button.classList.add("slide");
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   }

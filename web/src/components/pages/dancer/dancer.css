@@ -1,78 +1,172 @@
 .title_dancer {
   text-align: center;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   color: gold;
   background-color: black;
   background-position: relative;
 }
+/* FULL POSE PICTURE ON TOP OF PAGE 
+ OUTER_FULLPOSE IS THE OUTER DIV FOLLEWED BY INDIVIDUAL FULL POSE WITH NAMES*/
+
 .outer_fullpose {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+  width: 65%;
 }
+
 .full_pose_michelle {
-  width: 48%;
-  height: 20%;
+  display: flex;
+  margin: 0 auto;
+  width: 30%;
 }
 .full_pose_andrea {
-  width: 87%;
-  height: 20%;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
 }
 .full_pose_jana {
-  width: 87%;
-  height: 20%;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
 }
 .full_pose_rose {
-  width: 87%;
-  height: 20%;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
 }
 .full_pose_jenna {
-  width: 87%;
-  height: 20%;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
 }
 .full_pose_amarya {
-  width: 87%;
-  height: 20%;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
 }
+/* Autobiography headshots */
 .headshot {
-  width: 100%;
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
 }
+/* Autobiography panel layout TEXT : photo left, text right */
+.autobio-panel {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.autobio-photo {
+  flex: 0 0 35%;
+}
+.autobio-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.autobio-text {
+  flex: 1 1 65%;
+  text-align: left;
+}
+
+/* Biography with Parents PHOTO */
 .outer_mother_daughter {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 120%;
+  margin: 0 auto;
+  width: 50%;
 }
 .mom_daughter_jenna {
   width: 30%;
-}
-.mom_daughter_amarya {
-  width: 50%;
-}
-.solo_photo {
-  width: 100%;
-}
-.invite_card {
-  width: 100%;
-}
-.invite_card_michelle {
-  /* whatever */
-}
-.varnum_pose {
-  width: 100%;
+  display: flex;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 430px) {
-  .title_dancer {
-    margin-top: 39px;
-  }
-  .mom_daughter_jenna {
-    width: 10%;
-  }
-  .varnum_pose {
-    width: 101%;
-  }
+.mom_daughter_amarya {
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }
+/* Shishya panel layout: photo left, text right */
+.shishya-panel {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.shishya-photo {
+  flex: 0 0 40%;
+}
+.shishya-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.shishya-text {
+  flex: 1 1 60%;
+  text-align: left;
+}
+
+/* SOLO PORTRAIT */
+.solo_photo {
+  width: 30%;
+  display: flex;
+  margin: 0 auto;
+}
+/* Solo performance: text left, photo right */
+.solo-panel {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.solo-text {
+  flex: 1 1 60%;
+  text-align: left;
+}
+.solo-photo {
+  flex: 0 0 40%;
+}
+.solo-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* INVITATION CARD */
+.invite_card {
+  width: 50%;
+  display: flex;
+  margin: 0 auto;
+}
+/* BOTTOM PHOTO JUST B4 EACH OF THEIR GB */
+.varnum_pose {
+  width: 30%;
+  display: flex;
+  margin: 0 auto;
+}
+
+/* SCREEN RESOLUTIONS  */
 @media screen and (max-width: 768px) {
-  /* iPad screen */
+  /* iPad screen
+  all dimensions look good in 768 iPad resolution */
+}
+@media screen and (max-width: 430px) {
+  .autobio-panel {
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .shishya-panel {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .solo-panel {
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+  }
+  .invite_card {
+    width: 60%;
+  }
 }

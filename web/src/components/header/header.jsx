@@ -41,6 +41,11 @@ const Header = () => {
                 from the dropdown selecton <br />
                 to view their Shishya & RSVP <br />
               </div>
+              <p className="QR_code_description">
+                {" "}
+                Please Visit Our 'Bharatanatyam Journey' <br />
+                Below in the Footer-Right Side
+              </p>
             </div>
           </div>
         </div>

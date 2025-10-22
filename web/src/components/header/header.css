@@ -40,13 +40,13 @@
 .title_main_title {
   font-size: 50px;
   text-align: center;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   color: goldenrod;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   color: gold;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -54,7 +54,7 @@
   font-weight: 900;
 }
 .date {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 29px;
   text-align: center;
   font-style: normal;
@@ -254,7 +254,7 @@
   /* Show burger icon */
   .header-top {
     flex-direction: row;
-    justify-content: flex-start; /* Align to the left */
+    justify-content: center; /* Align to the left */
     align-items: right;
     gap: 16px; /* Space between burger and text */
   }
@@ -305,6 +305,17 @@
 }
 @media screen and (max-width: 768px) {
   /* iPad screen */
+}
+
+@media screen and (max-width: 1280px) {
+  /* iPad screen */
+  .header-content {
+    margin: 0;
+  }
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* SLIDING ANIMATION CSS STARTS HERE: */

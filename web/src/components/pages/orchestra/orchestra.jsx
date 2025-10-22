@@ -2,31 +2,72 @@ import React from "react";
 import Navigation from "../../navigation-links/navigation-links";
 import "./orchestra.css"; // optional for styling
 import Footer from "../../footer/footer";
-import dances_india from "../../../assets/dances_india.png";
+import orchestra_happy from "../../../assets/orchestra_happy.png";
 import Deepu_Karunakaran from "../../../assets/Deepu_Karunakaran.jpg";
 import Kiran_R_Pai from "../../../assets/Kiran_R_Pai.jpg";
+import drummer from "../../../assets/drummer.png";
 import Sri_Rijesh_Gopalakrishnan from "../../../assets/Sri_Rijesh_Gopalakrishnan.jpg";
 import Preyesh_Mampoyil_Kudiru_Parambu from "../../../assets/Preyesh_Mampoyil_Kudiru_Parambu.jpg";
+import dances_india from "../../../assets/dances_india.png";
+import orchestra_serious from "../../../assets/orchestra_serious.png";
+
 // import ComingSoon from "../../coming_soon/coming_soon"; available full time
 
 const Orchestra = () => {
+  React.useEffect(() => {
+    // Handle clicks outside of accordion
+    function handleOutsideClick(e) {
+      // Only close if click is outside any accordion or panel
+      if (!e.target.closest(".accordion") && !e.target.closest(".panel")) {
+        const allPanels = document.querySelectorAll(".panel");
+        const allButtons = document.querySelectorAll(".accordion");
+
+        // Close all panels and remove slide class
+        allPanels.forEach((panel) => (panel.style.maxHeight = null));
+        allButtons.forEach((button) => button.classList.remove("slide"));
+      }
+    }
+
+    // Add click listener to document
+    document.addEventListener("click", handleOutsideClick);
+
+    // Cleanup on unmount
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
   function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
-    const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
+    e.stopPropagation(); // Prevent outside click handler from firing
+
+    const button = e.currentTarget;
+    const isOpen = button.classList.contains("slide");
+
+    // Close all other panels first
+    const allPanels = document.querySelectorAll(".panel");
+    const allButtons = document.querySelectorAll(".accordion");
+
+    allPanels.forEach((panel) => (panel.style.maxHeight = null));
+    allButtons.forEach((btn) => btn.classList.remove("slide"));
+
+    // If this panel wasn't open, open it
+    if (!isOpen) {
+      const panel = button.nextElementSibling;
+      button.classList.add("slide");
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   }
+
   // const orchestraContent = (
   return (
     <div>
       <Navigation />
 
-      <section className="questions">
+      <section className="main_title_bar">
         <h2 className="title_FAQ">The Four Musicians (Orchestra)</h2>
+        <img
+          className="musicians_group_photo_happy"
+          src={orchestra_happy}
+          alt="photo of 4 musicians at the show"
+        ></img>
         <button className="accordion" onClick={handleClick}>
           Vocals - Sri.Deepu Karunakaran
         </button>
@@ -39,13 +80,6 @@ const Orchestra = () => {
               src={Deepu_Karunakaran}
               alt="deepu vocalist"
             />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <br />
             Melodious Vocals by Deepu Karunakaran is a Diploma holder in
             Carnatic Music and Violin from the Kalakshetra Foundation. He
@@ -78,11 +112,6 @@ const Orchestra = () => {
             <br />
             <img className="musician" src={Kiran_R_Pai} alt="deepu vocalist" />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             Kiran R. Pai is a B-HIGH graded mridangam artist from All India
             Radio Chennai. He began his journey of learning mridangam from the
             institution Kalabhavan in Cochin. He later received advanced
@@ -94,8 +123,15 @@ const Orchestra = () => {
             guidance of Sri. Neyveli R. Narayanan. He has achieved awards for
             the Best Mridangam Accompaniment from the Spirit of Youth and the
             HCL Best Concert Award from the Music Academy. He also won the CCRT
-            Scholarship for Junior Artists from the Ministry of Culture. <br />
-            Please join me in recognizing Sri Kiran R. Pai. <br />
+            Scholarship for Junior Artists from the Ministry of Culture.
+            <img
+              className="drummer"
+              src={drummer}
+              alt="photo of Kiran drumming at show"
+            ></img>
+            <br />
+            Please join me in recognizing Sri Kiran R. Pai.
+            <br />
           </p>
         </div>
         <button className="accordion" onClick={handleClick}>
@@ -111,12 +147,6 @@ const Orchestra = () => {
               alt="deepu vocalist"
             />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             Sri Rijesh Gopalakrishnan started learning violin and vocals under
             the tutelage of his father Gopalakrishnan Cheruvila at the age of 4.
             He started performing at the age of 8 and simultaneously learned
@@ -126,8 +156,10 @@ const Orchestra = () => {
             international festivals such as the Konark Festival, Soorya
             Festival, and Khajhraho Festival. He has visited countries such as
             Singapore, Malaysia, Japan, and the United States to name a few. He
-            has also been performing for the past 20 years. <br />
-            Please join me in recognizing Sri Rijesh Gopalakrishnan <br />
+            has also been performing for the past 20 years.
+            <br />
+            Please join me in recognizing Sri Rijesh Gopalakrishnan
+            <br />
           </p>
         </div>
         <button className="accordion" onClick={handleClick}>
@@ -142,12 +174,6 @@ const Orchestra = () => {
               src={Preyesh_Mampoyil_Kudiru_Parambu}
               alt="deepu vocalist"
             />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <br />
             Preyesh Mampoyil Kudiru Parambu is a passionate Carnatic flautist
             and a disciple of Vidwan Shri Shailesh Ramamurthy. An alumnus of
@@ -167,6 +193,7 @@ const Orchestra = () => {
             band led by Mr. Khalil Ghadri. Beyond performing, Preyesh has
             composed several musical albums. He is currently based in the UAE
             and performs regularly in India and abroad. <br />
+            <br />
             Please join me in recognizing Sri Preyesh Mampoyil Kudiru Parambu{" "}
             <br />
           </p>
@@ -221,6 +248,11 @@ const Orchestra = () => {
             and powerful form of storytelling and expression.
           </strong>
         </p>
+        <img
+          className="orchestra_serious"
+          src={orchestra_serious}
+          alt="alternate photo of musicians at show"
+        ></img>
       </div>
       <Navigation />
       <Footer />

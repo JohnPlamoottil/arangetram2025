@@ -1,11 +1,11 @@
-.question {
+.main_title_bar {
   max-width: 880px;
   padding: 0 0;
   margin: 0 auto;
 }
 .title_Program {
   text-align: center;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   margin-top: 58px;
   color: gold;
   background-color: black;
@@ -13,7 +13,7 @@
 }
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion_program {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 24px;
   color: #444;
   cursor: pointer;
@@ -52,7 +52,7 @@
 }
 .sidenote {
   background-color: black;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 15px;
   text-align: center;
   color: white;
@@ -65,10 +65,35 @@
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
 }
 .refer {
   color: white;
+}
+.varnum_group_performance {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+}
+.audience {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  width: 50%;
+}
+.firedrill {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  padding: 50px 50px;
+}
+@media screen and (max-width: 768px) {
+  /* iPad screen */
+  .audience {
+    width: 55%;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 430px) {
@@ -79,12 +104,9 @@
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.2s ease-out;
-    font-family: "Amita";
+    font-family: "Amita", cursive;
   }
   .refer {
     color: white;
   }
-}
-@media screen and (max-width: 768px) {
-  /* iPad screen */
 }

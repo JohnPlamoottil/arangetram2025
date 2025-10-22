@@ -76,6 +76,7 @@ export const RSVPModal = ({ isOpen, onClose }) => {
             <input
               type="text"
               name="name"
+              placeholder="enter your household name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -86,6 +87,7 @@ export const RSVPModal = ({ isOpen, onClose }) => {
             <input
               type="email"
               name="email"
+              placeholder="enter your full email"
               value={formData.email}
               onChange={handleChange}
               required
@@ -96,6 +98,7 @@ export const RSVPModal = ({ isOpen, onClose }) => {
             <input
               type="number"
               name="guests"
+              placeholder="total number of guests attending"
               value={formData.guests}
               onChange={handleChange}
               min="1"

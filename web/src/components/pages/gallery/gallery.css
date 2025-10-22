@@ -1,3 +1,10 @@
+.gallery-directions {
+  font-family: "Amita";
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .upload-box {
   display: flex;
   gap: 8px;
@@ -5,13 +12,13 @@
 }
 .gallery-button {
   display: inline-block;
-  font-family: "Amita";
   padding: 10px 20px;
-  background-color: black;
+  font-family: "Amita";
   color: gold;
   text-decoration: none;
-  border-radius: 6px;
   font-weight: bold;
+  background-color: black;
+  border-radius: 6px;
   transition: background 0.3s ease;
 }
 

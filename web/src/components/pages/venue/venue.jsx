@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "../../navigation-links/navigation-links";
 import "./venue.css";
-import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
+import { APIProvider, Map, AdvancedMarker } from "@vis.gl/react-google-maps";
 import Footer from "../../footer/footer";
 import June2025 from "../../../assets/June2025.jpg";
 import venue from "../../../assets/venue.png";
@@ -12,23 +12,94 @@ import trio from "../../../assets/trio.png";
 const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 
 const Venue = () => {
+  React.useEffect(() => {
+    // Handle clicks outside of accordion
+    function handleOutsideClick(e) {
+      // Only close if click is outside any accordion or panels
+      if (
+        !e.target.closest(".accordion") &&
+        !e.target.closest(".panel") &&
+        !e.target.closest(".map__panel")
+      ) {
+        const allPanels = document.querySelectorAll(".panel, .map__panel");
+        const allButtons = document.querySelectorAll(".accordion");
+
+        // Close all panels and remove slide class
+        allPanels.forEach((panel) => (panel.style.maxHeight = null));
+        allButtons.forEach((button) => button.classList.remove("slide"));
+      }
+    }
+
+    // Add click listener to document
+    document.addEventListener("click", handleOutsideClick);
+
+    // Cleanup on unmount
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
+  // Setup YT player for campus iframe to control background audio
+  React.useEffect(() => {
+    function setupVenuePlayer() {
+      if (!(window.YT && window.YT.Player)) return;
+      const player = new window.YT.Player("venue-yt", {
+        events: {
+          onStateChange: (e) => {
+            const controller = window.BackgroundAudioController;
+            if (!controller) return;
+            if (e.data === window.YT.PlayerState.PLAYING) controller.pause();
+            else if (
+              e.data === window.YT.PlayerState.PAUSED ||
+              e.data === window.YT.PlayerState.ENDED
+            )
+              controller.play();
+          },
+        },
+      });
+      return () => {
+        try {
+          player && player.destroy && player.destroy();
+        } catch {
+          /* ignore */
+        }
+      };
+    }
+
+    if (window.YT && window.YT.Player) setupVenuePlayer();
+    else window.onYouTubeIframeAPIReady = setupVenuePlayer;
+  }, []);
+
   function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
-    const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
+    e.stopPropagation(); // Prevent outside click handler from firing
+
+    const button = e.currentTarget;
+    const isOpen = button.classList.contains("slide");
+
+    // Close all other panels first
+    const allPanels = document.querySelectorAll(".panel, .map__panel");
+    const allButtons = document.querySelectorAll(".accordion");
+
+    allPanels.forEach((panel) => (panel.style.maxHeight = null));
+    allButtons.forEach((btn) => btn.classList.remove("slide"));
+
+    // If this panel wasn't open, open it
+    if (!isOpen) {
+      const panel = button.nextElementSibling;
+      button.classList.add("slide");
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   }
+
   return (
     <div className="venue_content">
       <Navigation />
       <section className="questions">
         <h2 className="title_FAQ">Venue (Date & Location)</h2>
         <div>
-          <img className="trio" src={tillana_venue} alt="amarya rose jenna" />
+          <img
+            className="tillana_group"
+            src={tillana_venue}
+            alt="group center"
+          />
         </div>
         <button className="accordion" onClick={handleClick}>
           Save the Date
@@ -55,7 +126,7 @@ const Venue = () => {
             James Lumber Center for the Performing Arts <br />
             Performing Arts Theater in Grayslake, Illinois <br />
             College of Lake County Grayslake Campus <br />
-            Address: 19351 W Washington St, Grayslake, IL 60030 <br />
+            Address: 19351 W Washington St <br /> Grayslake, IL 60030 <br />
             Phone: (847) 543-2300
             <img className="auditorium__venue" src={venue} alt="auditorium" />
           </p>
@@ -99,8 +170,9 @@ const Venue = () => {
                 style={{ width: "100%", height: "100%" }}
                 zoom={15}
                 center={{ lat: 42.354492334658644, lng: -88.01122761349113 }}
+                mapId="2f2b36b07486a7e7bcc92e16"
               >
-                <Marker
+                <AdvancedMarker
                   position={{
                     lat: 42.354492334658644,
                     lng: -88.01122761349113,
@@ -120,26 +192,18 @@ const Venue = () => {
           </p>
           <div className="video-wrapper__venue">
             <img src={frameImage} alt="Frame" className="video-frame_venue" />
-            <div className="laptop-video-overlay"></div>
-            <div className="laptop-video-overlay__venue">
-              <iframe
-                src="https://www.youtube.com/embed/9MvIhi4PLPo?si=Aw-tHk9SDCkkPj9R"
-                title="Direction to Venue"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="no-referrer"
-                allowFullScreen
-                className="campus__parking"
-              ></iframe>
-            </div>
+
+            <iframe
+              id="venue-yt"
+              src="https://www.youtube.com/embed/9MvIhi4PLPo?si=Aw-tHk9SDCkkPj9R&enablejsapi=1&modestbranding=1&rel=0"
+              title="Direction to Venue"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="campus__parking"
+            ></iframe>
           </div>
         </div>
       </section>
-      <img
-        className="botton__group__photo__venue"
-        src={trio}
-        alt="group center"
-      ></img>
+      <img className="trio" src={trio} alt="amarya rose jenna"></img>
       <Navigation />
       <Footer />
     </div>

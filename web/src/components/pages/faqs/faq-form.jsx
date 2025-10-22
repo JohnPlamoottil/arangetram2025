@@ -54,6 +54,7 @@ const FAQForm = () => {
           <textarea
             className="faq-textarea"
             name="question"
+            placeholder="Type your brief question here..."
             value={formData.question}
             onChange={handleChange}
             required
@@ -67,6 +68,7 @@ const FAQForm = () => {
             <input
               type="text"
               name="name"
+              placeholder="First & Last Name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -79,6 +81,7 @@ const FAQForm = () => {
             <input
               type="email"
               name="email"
+              placeholder="write out your full email"
               value={formData.email}
               onChange={handleChange}
               required

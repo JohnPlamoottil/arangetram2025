@@ -3,15 +3,34 @@ import Navigation from "../../navigation-links/navigation-links";
 import ComingSoon from "../../coming_soon/coming_soon";
 import "./program.css"; // optional for styling
 import Footer from "../../footer/footer";
+import varnum from "../../../assets/varnum.png";
+import firedrill from "../../../assets/firedrill.png";
+import audience from "../../../assets/audience.png";
 
 const Program = () => {
   function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
+    const button = e.currentTarget; // use currentTarget to reliably get the button
     const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
+
+    // Determine whether this panel is currently open
+    const isOpen = button.classList.contains("slide");
+
+    // Close all other panels and remove 'slide' class from other buttons
+    const allButtons = document.querySelectorAll(".accordion_program");
+    const allPanels = document.querySelectorAll(".panel_program");
+    allButtons.forEach((b) => {
+      if (b !== button) b.classList.remove("slide");
+    });
+    allPanels.forEach((p) => {
+      if (p !== panel) p.style.maxHeight = null;
+    });
+
+    // Toggle the clicked panel
+    if (isOpen) {
+      button.classList.remove("slide");
       panel.style.maxHeight = null;
     } else {
+      button.classList.add("slide");
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   }
@@ -20,7 +39,7 @@ const Program = () => {
   return (
     <div>
       <Navigation />
-      <section className="question">
+      <section className="main_title_bar">
         <h2 className="title_Program">
           Program Schedule (Repertoire) <br />
           Doors will open at 3:30pm CST
@@ -135,9 +154,9 @@ const Program = () => {
             Mridangam - Sri Kiran R. Pai <br />
             Violin - Sri Rijesh Gopalakrishnan <br />
             Flute - Sri Preyesh Mampoyil Kudiru Parambu <br />
-            <p className="refer">
-              Please refer to the Musician Page to view each of their biography.
-            </p>
+          </p>
+          <p className="refer">
+            Please refer to the Musician Page to view each of their biography.
           </p>
           <p>
             Lets welcome the dancers to introduce their first item of this
@@ -298,6 +317,11 @@ const Program = () => {
             grace of Mohiniyattam, capturing the vibrant soul of God’s Own
             Country
           </p>
+          <img
+            className="varnum_group_performance"
+            src={varnum}
+            alt="photo from actual performance"
+          ></img>
         </div>
         <button className="accordion_program" onClick={handleClick}>
           Intermission
@@ -318,10 +342,22 @@ const Program = () => {
           </p>
         </div>
         <button className="accordion_program" onClick={handleClick}>
-          Musical Interlude
+          Musical Interlude / Fire Alarm
         </button>
         <div className="panel_program">
           <p>Next is a musical interlude 6:21-6:25pm</p>
+          <img
+            className="firedrill"
+            src={firedrill}
+            alt="photo showing front of CLC due to firedrill lasting 2.5hrs"
+          ></img>
+          <p>
+            {" "}
+            During the speeches for Rose Thomas, Sania was interrupted by a
+            firedrill which lasted for about two and half hours because a pipe
+            bursted in the mens restroom located in a separate building on
+            campus
+          </p>
         </div>
         <button className="accordion_program" onClick={handleClick}>
           Solo 4 - Rose Thomas
@@ -459,6 +495,7 @@ const Program = () => {
           </p>
         </div>
       </section>
+      <img className="audience" src={audience} alt="audience group photo"></img>
       <Navigation />
       <Footer />
     </div>

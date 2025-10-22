@@ -19,22 +19,29 @@
 }
 .onstage {
   width: fit-content;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 .instructor_with_girls_onstage {
-  width: 100%;
+  width: 57%;
+  text-align: center;
+  margin-bottom: 54px;
 }
 
 .instructor_with_girls {
-  width: 100%;
+  width: 55%;
+  text-align: center;
 }
 .guru_second {
   width: 55%;
   text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 .center-image {
   display: flex;
   justify-content: center;
-
   text-align: center;
 }
 
@@ -43,15 +50,23 @@
   justify-content: space-between;
   align-items: center;
 }
-.campus__parking-instructor {
-  width: 702px;
-  height: 414px;
+.thank_you_by_instructor {
+  width: 72%;
+  height: 78%;
   position: absolute;
   text-align: center;
-  left: -4px;
-  top: 2px;
+  left: -15px;
+  top: 16px;
   border: none;
-  margin-left: 3px;
+  margin-left: 142px;
+}
+@media screen and (max-width: 768px) {
+  /* iPad screen */
+  .thank_you_by_instructor {
+    width: 78%;
+    height: 80%;
+    margin-left: 89px;
+  }
 }
 @media screen and (max-width: 430px) {
   .title_Program {
@@ -73,28 +88,31 @@
   .instructor__image-container {
     flex-direction: column;
   }
-
-  .guru_second {
-    width: 77%;
+  .instructor_with_girls {
+    width: 100%;
     text-align: center;
   }
-  .campus__parking-instructor {
-    width: 306px;
-    height: 266px;
-    left: -1px;
-    top: -37px;
-
-    margin-left: 1px;
+  .guru_second {
+    width: 65%;
+    text-align: center;
+    margin-top: 18px;
+  }
+  .thank_you_by_instructor {
+    width: 295px;
+    height: 185px;
+    left: 17px;
+    top: 7px;
+    margin-left: 29px;
   }
 }
 @media screen and (max-width: 390px) {
+  .thank_you_by_instructor {
+    width: 260px;
+  }
   .avatar {
     width: 178px;
     height: auto;
     float: left;
     margin-right: 16px;
   }
-}
-@media screen and (max-width: 768px) {
-  /* iPad screen */
 }

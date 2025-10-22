@@ -6,19 +6,48 @@ import margam from "../../../assets/margam.png";
 import FAQForm from "./faq-form";
 
 const FAQs = () => {
+  React.useEffect(() => {
+    // Handle clicks outside of accordion
+    function handleOutsideClick(e) {
+      // Only close if click is outside any accordion or panel
+      if (!e.target.closest(".accordion") && !e.target.closest(".panel")) {
+        const allPanels = document.querySelectorAll(".panel");
+        const allButtons = document.querySelectorAll(".accordion");
+
+        // Close all panels and remove slide class
+        allPanels.forEach((panel) => (panel.style.maxHeight = null));
+        allButtons.forEach((button) => button.classList.remove("slide"));
+      }
+    }
+
+    // Add click listener to document
+    document.addEventListener("click", handleOutsideClick);
+
+    // Cleanup on unmount
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
   function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
-    const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
+    e.stopPropagation(); // Prevent outside click handler from firing
+
+    const button = e.currentTarget;
+    const isOpen = button.classList.contains("slide");
+
+    // Close all other panels first
+    const allPanels = document.querySelectorAll(".panel");
+    const allButtons = document.querySelectorAll(".accordion");
+
+    allPanels.forEach((panel) => (panel.style.maxHeight = null));
+    allButtons.forEach((btn) => btn.classList.remove("slide"));
+
+    // If this panel wasn't open, open it
+    if (!isOpen) {
+      const panel = button.nextElementSibling;
+      button.classList.add("slide");
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   }
-  // first off theres is an eventhandler called handle click that will handle any clickEvent on the button on the page
-  // now the function takes in an event as a function,
-  // this is how we make the page dynamic
+
   return (
     <div>
       <Navigation />;

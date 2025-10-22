@@ -6,8 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 98vw;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 16px;
   background-color: black;
   margin-top: 72px;
@@ -17,16 +16,15 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 16px;
   position: relative;
   overflow: hidden;
-  background-image: url(../../../assets/temple.png);
+  background-color: black;
 }
 .footer__text {
   text-align: center;
 }
-
 .box-container {
   display: flex;
   flex-direction: column;
@@ -68,49 +66,9 @@
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
 }
 
-/* @keyframes pulsate {
-  0% {
-    opacity: 0;
-    box-shadow: 0 0 0 0 rgb(183, 196, 213);
-  }
-  50% {
-    opacity: 0.6;
-    box-shadow: 0 0 0 50px rgb(98, 138, 189);
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-    box-shadow: 0 0 0 100px rgba(47, 128, 237);
-  }
-} */
-
-/* .about__circle {
-  width: 426px;
-  height: 426px;
-  border-radius: 1351%;
-  background-color: gold;
-  position: absolute;
-  top: -152px;
-  left: -350px;
-  z-index: 1;
-} */
-
-.about__circle_animation_blurred {
-  animation: pulsate 1.3s ease-in-out infinite both;
-}
-
-.facebook-link svg {
-  transition: transform 0.2s ease;
-}
-.facebook-link:hover svg {
-  transform: scale(1.1);
-}
-.youtube-link {
-  /* margin-left: 34px; */
-}
 .soorya_studio {
   width: 300px;
   height: 300px;
@@ -137,66 +95,58 @@
   color: gold;
 }
 .clc__venue {
-  width: 100%;
+  width: 64%;
+  margin-top: 100px;
 }
 .Contact_Us {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   color: gold;
 }
 .social {
-  gap: 117px;
+  display: flex;
+  flex-direction: row;
+  gap: 79px;
+  justify-content: center;
 }
 
-@media screen and (max-width: 1179px) {
-  .footer {
-    flex-direction: column;
-  }
-  .FooterMidde_momsdaughter_clcvenue {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+@media screen and (max-width: 768px) {
+  /* ipad */
+
   .moms_and_daughters {
-    width: 95%;
-  }
-  .Footer-Middle {
-    font-size: 18px;
+    width: 102%;
+    margin-top: -34px;
   }
   .clc__venue {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 46px;
   }
-}
-@media screen and (max-width: 768px) {
-  /* ipad */
-  .footer {
-    flex-direction: column;
+  .soorya_studio {
+    width: 150px;
+    height: 150px;
   }
-  .moms_and_daughters {
-    width: 95%;
+  .auditorium__footer {
+    width: 150px;
+    height: 150px;
+  }
+
+  .social {
+    gap: 39px;
   }
 }
 @media screen and (max-width: 430px) {
   .footer {
-    padding: 1rem;
-    background-color: #f3f3f3;
     text-align: center;
     font-size: 0.95rem;
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
     align-items: center;
     box-sizing: border-box;
-    width: 87vw;
+    padding-top: 15%;
   }
   .footer__wrapper {
-    width: 101%;
-    display: flex;
     flex-direction: column;
   }
   .Contact_Us {
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     color: gold;
   }
   .footer__text {
@@ -205,31 +155,12 @@
   }
 
   .box-container {
-    display: flex;
     flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-
     padding: 2rem;
   }
 
-  .box-item {
-    width: max-content;
-    margin: 0 auto;
-    max-width: 500px;
-  }
-
   .accordion::before {
-    content: "\02795"; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
     color: white;
-    float: right;
-    margin-left: 5px;
-  }
-
-  .slide::before {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
   }
 
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -240,53 +171,17 @@
 
   /* Style the accordion panel. Note: hidden by default */
   .panel {
-    padding: 0 18px;
+    padding: 0 0px;
     background-color: rgb(67, 63, 63);
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.2s ease-out;
-    font-family: "Amita";
   }
-
-  /* @keyframes pulsate {
-    0% {
-      opacity: 0;
-      box-shadow: 0 0 0 0 rgb(213, 213, 183);
-    }
-    50% {
-      opacity: 0.6;
-      box-shadow: 0 0 0 50px rgb(189, 172, 98);
-    }
-    100% {
-      transform: scale(1.2);
-      opacity: 0;
-      box-shadow: 0 0 0 100px rgba(221, 227, 40, 0.53);
-    }
-  }
-
-  .about__circle {
-    width: 426px;
-    height: 426px;
-    border-radius: 1351%;
-    background-color: gold;
-    position: absolute;
-    top: -152px;
-    left: -350px;
-    z-index: 1;
-  } */
-
   .about__circle_animation_blurred {
     animation: pulsate 1.3s ease-in-out infinite both;
   }
-
   .facebook-link svg {
     transition: transform 0.2s ease;
   }
   .facebook-link:hover svg {
     transform: scale(1.1);
-  }
-  .youtube-link {
-    /* margin-left: 34px; */
   }
   .soorya_auditorium {
     display: flex;
@@ -294,56 +189,24 @@
     align-items: center;
     flex-direction: column;
   }
-  .soorya_studio {
-    width: 300px;
-    height: 300px;
-  }
-  .auditorium__footer {
-    width: 300px;
-    height: 300px;
-  }
   .moms_and_daughters {
     width: 80%;
     max-width: 373px;
     height: auto;
-
     border-radius: 6px;
     object-fit: contain;
   }
-  .left_side_block_footer {
-    margin-right: 0px;
-  }
   .Footer-Middle {
-    color: gold;
-    font-size: 10px;
+    font-size: 14px;
   }
   .clc__venue {
     width: 80%;
     margin-top: 45px;
   }
   .class-location-title {
-    color: gold;
     margin-left: 3px;
   }
   .class-location {
-    color: gold;
     margin-left: 0px;
-  }
-  .social {
-    display: flex;
-    flex-direction: row;
-    gap: 79px;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 390px) {
-  .footer {
-    flex-direction: column;
-  }
-  .moms_and_daughters {
-    width: 95%;
-  }
-  .class-location {
-    color: gold;
   }
 }

@@ -1,6 +1,6 @@
 /* in App.css or Guestbook.css */
 .guestbook {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   text-align: center;
   font-size: 25px;
   max-width: 600px;
@@ -10,8 +10,6 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: gold;
-  border: 5px;
-  border-color: gold;
 }
 
 .group_photo {
@@ -29,7 +27,7 @@
 
 .guestbook input,
 .guestbook textarea {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 25px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -42,9 +40,18 @@
   text-align: left;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
   margin-left: 12px;
   width: 95%;
+}
+
+.entries li {
+  padding: 1rem 0;
+  border-bottom: 1px solid gold;
+  margin-bottom: 1rem;
+}
+
+.entries li:last-child {
+  border-bottom: none;
 }
 .name_textfield {
   font-size: 5px;
@@ -56,7 +63,7 @@
 }
 @media screen and (max-width: 430px) {
   .guestbook {
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     text-align: center;
     font-size: 25px;
     max-width: 600px;
@@ -83,7 +90,7 @@
 
   .guestbook input,
   .guestbook textarea {
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     font-size: 16px;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -95,10 +102,19 @@
     padding: 0;
     text-align: left;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid #ddd;
     font-size: 19px;
     margin-left: 12px;
     width: 95%;
+  }
+
+  .entries li {
+    padding: 1rem 0;
+    border-bottom: 1px solid gold;
+    margin-bottom: 1rem;
+  }
+
+  .entries li:last-child {
+    border-bottom: none;
   }
   .name_textfield {
     width: 94%;

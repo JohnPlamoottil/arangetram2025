@@ -5,14 +5,14 @@
 }
 .title_FAQ {
   text-align: center;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   color: gold;
   background-color: black;
   background-position: relative;
 }
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 24px;
   cursor: pointer;
   padding: 18px;
@@ -58,7 +58,7 @@
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
 }
 .margam {
   display: flex;
@@ -94,7 +94,7 @@
   font-size: 1rem;
 }
 .faq-instructions {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 20px;
   color: gold;
   background-image: url(../../../assets/temple.png);
@@ -102,7 +102,7 @@
 }
 
 .form_question {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 24px;
   color: goldenrod;
   background-color: black;
@@ -114,14 +114,14 @@
   gap: 25px;
 }
 .form_name {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 24px;
   color: gold;
   background-color: black;
 }
 
 .form_email {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 24px;
   color: gold;
   background-color: black;
@@ -146,7 +146,7 @@
 }
 
 .faq-textarea {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 25px;
   width: 100%;
   margin: 0 auto;
@@ -159,7 +159,7 @@
   min-height: fit-content;
   padding: 8px;
   margin-top: 5px;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 25px;
   width: 100%;
   box-sizing: border-box;
@@ -168,14 +168,24 @@
 .form_submit {
   margin: 10px auto;
   max-width: 880px;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 24px;
   display: flex;
 }
+@media screen and (max-width: 768px) {
+  /* iPad screen */
+  .accordion {
+    width: 100%;
+  }
+
+  .panel {
+    width: 89%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
 @media screen and (max-width: 430px) {
   .title_FAQ {
-    text-align: center;
-    font-family: "Amita";
     margin-top: 43px;
     color: gold;
     background-color: black;
@@ -185,28 +195,6 @@
     width: 320px;
   }
 
-  /* Style the buttons that are used to open and close the accordion panel */
-  .accordion {
-    font-family: "Amita";
-    font-size: 24px;
-    color: black;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: rgba(9, 9, 9, 0.7);
-    color: gold;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    display: block;
-  }
   .accordion::before {
     content: "\02795"; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
@@ -230,12 +218,9 @@
   /* Style the accordion panel. Note: hidden by default */
   .panel {
     padding: 0 18px;
-    background-color: black;
-    color: gold;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.2s ease-out;
-    font-family: "Amita";
   }
   /* form styling */
   .faq-page {
@@ -264,7 +249,7 @@
     font-size: 1rem;
   }
   .faq-instructions {
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     font-size: 20px;
     color: goldenrod;
     background-image: url(../../../assets//temple.png);
@@ -280,7 +265,7 @@
   }
 
   .form_question {
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     font-size: 24px;
     color: gold;
     background-color: black;
@@ -292,14 +277,14 @@
     gap: 25px;
   }
   .form_name {
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     font-size: 24px;
     color: gold;
     background-color: black;
   }
 
   .form_email {
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     font-size: 24px;
     color: gold;
     background-color: black;
@@ -324,7 +309,7 @@
   }
 
   .faq-textarea {
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     font-size: 25px;
     width: 100%;
     margin: 0 auto;
@@ -337,7 +322,7 @@
     min-height: fit-content;
     padding: 8px;
     margin-top: 5px;
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     font-size: 25px;
     width: 100%;
     box-sizing: border-box;
@@ -346,13 +331,10 @@
   .form_submit {
     margin: 10px auto;
     max-width: 880px;
-    font-family: "Amita";
+    font-family: "Amita", cursive;
     font-size: 24px;
     display: flex;
     color: gold;
     background-color: black;
   }
-}
-@media screen and (max-width: 768px) {
-  /* iPad screen */
 }

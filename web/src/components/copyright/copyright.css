@@ -6,15 +6,12 @@
   color: gold;
   margin: 0 auto;
   text-align: center;
-}
-
-@media screen and (max-width: 430px) {
-  .copyright__text {
-    color: gold;
-    margin: 0 auto;
-    text-align: center;
-  }
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   /* iPad screen */
+}
+
+@media screen and (max-width: 430px) {
+  /* iPhone screen */
 }

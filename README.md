@@ -41,7 +41,7 @@
 - [x] Footer on all the pages June11 2026
 - [x] REMOVE 390px media query iPhone12 Pro
 - [x] 430px media query. iPhone14Pro Max
-- [ ] 768px media query. iPad
+- [x] 768px media query. iPad - Completed Oct21 2025
 - [x] fix home styles and only apply styles for smaller screen in media queries
 - [x] remove 1179px media screen its not iPhone15
 - [x] jinoo thank you speech video  
@@ -57,9 +57,8 @@
 =======
 - [x] rotation of images
 - [x] multiple image upload and video 
-- [ ] have videos compressed before uploading .. max limit is 100MB
-dev
-- [ ] have photo images compressed to allow pages to load faster
+- [x] have videos compressed before uploading .. max limit is 100MB - found out Sept2025
+- [x] have photo images compressed to allow pages to load faster - Completed Aug 26 2025
 (https://www.w3schools.com/howtohowto_js_accordion.asp)
 FAQ documentation for accordion dropdown
 
@@ -116,3 +115,79 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+----------------------------------------------------
+## Getting started / Startup instructions
+
+Follow these steps to run the project locally (backend + frontend).
+
+Prerequisites
+- Node.js (v16+ recommended) and npm (or yarn)
+- (Optional) MongoDB if you plan to use the server-side database
+- (Optional) Cloudinary account and credentials if you use image/video uploads
+
+1) Install dependencies
+
+From the repository root run:
+
+```bash
+# install server deps
+cd server
+npm install
+
+# install web (frontend) deps
+cd ../web
+npm install
+```
+
+2) Add environment variables
+
+- Server: create `server/.env` with the following (example):
+
+```
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/bharatanatyam
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
+- Frontend (Vite): create `web/.env` with client variables prefixed by `VITE_`:
+
+```
+VITE_API_BASE=http://localhost:5000
+VITE_FALLBACK_IMAGE=/src/assets/avatar.jpg
+```
+
+3) Run in development (two terminals)
+
+Terminal A (backend):
+
+```bash
+cd server
+# If the project has a dev script (nodemon), use it; otherwise run node
+npm run dev || node index.js
+```
+
+Terminal B (frontend):
+
+```bash
+cd web
+npm run dev
+```
+
+4) Build for production
+
+```bash
+cd web
+npm run build
+
+# Serve the built files from web/dist using a static server or integrate with server/
+```
+
+Notes and troubleshooting
+- Vite client env vars must start with `VITE_` and require restarting the dev server after changes.
+- Do not expose secrets in client-side env vars (VITE_* are bundled into the client).
+- If the frontend cannot reach the backend verify `VITE_API_BASE` matches the server URL and check CORS configuration on the server.
+- For Cloudinary uploads, ensure credentials are present in `server/.env` and that the Cloudinary helper is configured in `server/services/cloudinary.js`.
+

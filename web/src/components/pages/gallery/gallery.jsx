@@ -16,7 +16,7 @@ const PHOTO_SECTIONS = [
   },
   {
     key: "auditorium",
-    description: "Please upload any pictures you took relevent to inside the",
+    description: "Please upload any pictures you took inside the ",
     label: "Auditorium (Audience Clips)",
   },
   {
@@ -181,16 +181,35 @@ const Gallery = () => {
   useEffect(() => {
     loadImages();
     loadVideos();
+    // add outside click listener to close accordion panels
+    function handleOutsideClick(e) {
+      if (!e.target.closest(".accordion") && !e.target.closest(".panel")) {
+        const allPanels = document.querySelectorAll(".panel");
+        const allButtons = document.querySelectorAll(".accordion");
+        allPanels.forEach((panel) => (panel.style.maxHeight = null));
+        allButtons.forEach((button) => button.classList.remove("slide"));
+      }
+    }
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
   }, []);
 
   /* ---- Accordion toggle ---- */
   const handleAccordionClick = (e) => {
-    const btn = e.target;
-    const panel = btn.nextElementSibling;
-    btn.classList.toggle("slide");
-    panel.style.maxHeight = panel.style.maxHeight
-      ? null
-      : `${panel.scrollHeight}px`;
+    e.stopPropagation();
+    const btn = e.currentTarget;
+    const isOpen = btn.classList.contains("slide");
+
+    const allPanels = document.querySelectorAll(".panel");
+    const allButtons = document.querySelectorAll(".accordion");
+    allPanels.forEach((panel) => (panel.style.maxHeight = null));
+    allButtons.forEach((button) => button.classList.remove("slide"));
+
+    if (!isOpen) {
+      const panel = btn.nextElementSibling;
+      btn.classList.add("slide");
+      panel.style.maxHeight = `${panel.scrollHeight}px`;
+    }
   };
 
   /* ---- Select multiple files ---- */
@@ -374,8 +393,13 @@ const Gallery = () => {
     <div>
       <Navigation />
 
-      <section className="questions">
+      <section className="main_title_bar">
         <h2 className="title_FAQ">Photo Album</h2>
+        <p className="gallery-directions">
+          After expanding an individual photo, press ESC to view next photo in
+          the dropdown. <br />
+          Users are unable to delete photos.
+        </p>
         <a
           href="https://moderndigital.pixieset.com/arangetram2025/"
           target="_blank"

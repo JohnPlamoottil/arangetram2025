@@ -1,80 +1,166 @@
 .musician_container {
   background-image: url(../../../assets/temple.png);
-  opacity: 95%;
+  opacity: 0.95;
   z-index: auto;
-  display: block;
-  margin: 60px 316px 34px 309px;
-  font-family: "Amita";
+  margin: 60px auto;
+  padding: 20px;
+  max-width: 1100px;
+  font-family: "Amita", cursive;
   font-weight: bold;
+  text-align: center;
 }
+
 .title {
-  padding: 12px 0px 0px 0px;
-  font-family: "Amita";
+  padding: 12px 0 0 0;
+  font-family: "Amita", cursive;
   font-size: 45px;
   display: flex;
   justify-content: center;
   text-align: center;
   margin-top: 50px;
 }
+.musicians_group_photo_happy {
+  display: flex;
+  margin: 0 auto;
+  width: 60%;
+}
+
 .title_orchestra {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: gold;
   text-align: center;
 }
+
 .india__map {
-  size: 54px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem auto;
 }
 
 .accordion-text {
   font-weight: bold;
   color: gold;
-  padding: 27px 66px 48px 74px;
+  padding: 27px 66px;
   font-size: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
 }
+
 .musician {
   width: 180px;
   border-radius: 8px;
-  float: left;
-  margin-right: 16px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 8px 16px;
 }
+
+.drummer {
+  display: flex;
+  margin: 0 auto;
+  width: 39%;
+}
+.orchestra_serious {
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+}
+
+/* Responsive: tablet */
+@media screen and (max-width: 768px) {
+  .main_title_bar {
+    padding: 5% 5%;
+  }
+  .musician_container {
+    margin: 40px 16px;
+    padding: 16px;
+  }
+
+  .accordion {
+    width: 100%;
+  }
+
+  .panel {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .accordion-text {
+    padding: 1rem 1.2rem;
+    font-size: 16px;
+    line-height: 1.6;
+    width: 100%;
+    max-width: 720px;
+    box-sizing: border-box;
+    margin: 0.5rem auto;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .india__map {
+    max-width: 80%;
+    margin: 1rem auto;
+  }
+
+  .musician {
+    width: 140px;
+  }
+  .orchestra_serious {
+    width: 75%;
+  }
+}
+
+/* Responsive: small/mobile */
 @media screen and (max-width: 430px) {
   .musician_container {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    margin: 20px 8px;
+    padding: 12px;
   }
+
+  .title {
+    font-size: 2rem;
+  }
+
   .title_orchestra {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: gold;
+    font-size: 1.6rem;
   }
+
   .india__map {
     width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 1rem;
-    opacity: 75%;
+    opacity: 0.75;
+  }
+
+  .panel {
+    margin: 0 auto;
   }
 
   .accordion-text {
     color: gold;
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: 8px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0.5rem auto;
   }
+
   .musician {
-    width: 135px;
-    border-radius: 8px;
-    float: left;
-    margin-right: 16px;
-    align-items: center;
+    width: 120px;
+    margin-right: 8px;
   }
-}
-@media screen and (max-width: 768px) {
-  /* iPad screen */
+  .orchestra_serious {
+    width: 84%;
+  }
 }

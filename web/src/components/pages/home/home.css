@@ -3,50 +3,44 @@
   text-align: right;
   background-image: url(../assets/Temple.png);
 }
-.dance_bkgd {
-  position: relative;
-  top: 0;
-  left: 56;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3; /* Adjust to control transparency */
-  z-index: 0;
-}
 
 .home_group_photo {
   display: flex;
   margin: 0 auto;
   justify-content: center;
-  width: 48%;
-  height: 100%;
+  align-items: center; /* avoid stretching children vertically */
+  width: 86%;
   max-width: 100%;
+  height: auto; /* avoid forcing full height which can stretch images */
   transform: rotate(9deg);
 }
-.dropdown {
-  font-family: "Amita";
-  font-size: 30px;
-  color: gold;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: black;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  width: fit-content; /* or 100% if you want it to stretch */
-}
-.dropdown-text {
-  margin: 0;
-  font-family: "Amita";
-  font-size: 25px;
-}
-.burger-icon {
+.burger_icon {
+  /* display: flex;
+  justify-content: center; */
   font-size: 24px;
   margin-left: 8px;
   color: gold;
 }
+.dropdown {
+  font-family: "Amita", cursive;
+  font-size: 30px;
+  color: gold;
+  background-color: black;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.dancers {
+  z-index: 100;
+}
+
+.dropdown-text {
+  margin: 0;
+  font-family: "Amita", cursive;
+  font-size: 25px;
+}
+
 .quote-container {
   flex-direction: row;
   max-width: 800px;
@@ -56,19 +50,19 @@
   padding: 20px;
   background-color: rgb(0, 0, 0);
   border-left: 4px solid #f6ff00;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   text-align: center;
   margin: 0 auto;
-  width: 55%;
+  /* width: 100%; */
   font-size: 40px;
   text-align: center;
-  padding-right: 500px;
-  padding-left: 500px;
+  /* padding-right: 500px; */
+  /* padding-left: 500px; */
   opacity: 93%;
 }
 
 .quote {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   text-align: center;
   font-size: 25px;
   color: white;
@@ -77,7 +71,7 @@
 }
 
 .quote-meaning {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   text-align: center;
   font-size: 18px;
   color: white;
@@ -92,11 +86,11 @@
   font-style: italic;
   font-size: 20px;
   color: white;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
 }
 
 .quotetwo {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   text-align: center;
   font-size: 20px;
   color: white;
@@ -112,7 +106,7 @@
 }
 
 .QR_code_description {
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   font-size: 25px;
   color: gold;
   text-align: center;
@@ -121,78 +115,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.QR_code {
+.QR_code_one {
   width: 27%;
-  margin-left: 523px;
 }
+.QR_code_two {
+  width: 27%;
+}
+@media screen and (max-width: 768px) {
+  /*iPad screen looks good*/
+}
+
 @media screen and (max-width: 430px) {
-  .dance_bkgd_outer_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .dance_bkgd {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3; /* Adjust to control transparency */
-    z-index: 0;
-  }
-  .journey {
-    font-size: 1.9rem;
-    text-align: right;
-    background-image: url(../../../assets/temple.png);
-  }
-  .burger-icon {
-    font-size: 24px;
-    margin-left: 8px;
-    color: gold;
-  }
-  .slanted_green_image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0px;
-    margin-left: -88px;
-  }
-  .home_group_photo {
-    width: 86%;
-    height: 100%;
-    max-width: 100%;
-    transform: rotate(9deg);
-    margin-top: 43px;
-  }
   .quote-container {
-    flex-direction: row;
-    padding: 0rem 0rem;
-    border: 5px solid gold;
-    margin-right: 0px;
-    margin-left: 65px;
+    padding: 0.5rem;
+    border: 3px solid gold;
+    margin: 0 1rem;
   }
   .quote {
-    font-family: "Amita";
-    text-align: center;
     font-size: 16px;
     color: gold;
-    display: flex;
-    justify-content: center;
   }
 
   .quote-meaning {
-    font-family: "Amita";
-    text-align: center;
     font-size: 10px;
     color: gold;
-    display: flex;
-    justify-content: center;
-    margin-left: 5px;
-    margin-right: 15px;
   }
 
   .quote-author-one {
@@ -200,19 +148,15 @@
     font-style: italic;
     font-size: 10px;
     color: gold;
-    font-family: "Amita";
-    padding-right: 44px;
+    font-family: "Amita", cursive;
+    margin-right: 20px;
   }
 
   .quotetwo {
-    font-family: "Amita";
     text-align: center;
     font-size: 10px;
     color: gold;
-    display: flex;
-    justify-content: center;
-    margin-right: 79px;
-    margin-left: 39px;
+    margin: 0 20px; /*top right bottom left */
   }
 
   .quote-author-two {
@@ -220,65 +164,6 @@
     font-style: italic;
     font-size: 10px;
     color: gold;
-    padding-right: 44px;
+    margin-right: 20px;
   }
-  .QR_code_description {
-    font-size: 13px;
-  }
-  .QR_code {
-    width: 41%;
-    margin-left: 114px;
-  }
-}
-@media screen and (max-width: 390px) {
-  .dropdown {
-    z-index: 10;
-    position: relative;
-    font-family: "Amita";
-    font-size: 30px;
-    color: gold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: black;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    width: fit-content; /* or 100% if you want it to stretch */
-  }
-  .quote-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    z-index: 1;
-    position: relative;
-    background-color: black;
-    color: gold;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    border-left: 2px solid gold;
-
-    border-radius: 10px;
-  }
-  .quote {
-    font-family: "Amita";
-    font-size: 1.4rem;
-    line-height: 2;
-    font-weight: bold;
-    max-width: 500px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    padding: 0.5rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .quote-container {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  /* iPad screen */
 }

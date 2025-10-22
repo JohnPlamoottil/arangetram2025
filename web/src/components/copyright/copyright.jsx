@@ -2,7 +2,7 @@ import "./copyright.css";
 
 const Copyright = () => {
   return (
-    <div className="copyright">
+    <div>
       <p className="copyright__text">
         All Rights Reserved™ Copyright© {new Date().getFullYear()}®
       </p>

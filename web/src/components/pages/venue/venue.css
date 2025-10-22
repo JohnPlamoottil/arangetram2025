@@ -3,56 +3,71 @@
   flex-direction: column;
   min-height: 100vh; /* Full screen height */
 }
+
 .calendar {
   width: 100%;
 }
+
+/* base: allow elements to scale fluidly */
 .auditorium__venue {
   width: 516px;
+  max-width: 100%;
   border-radius: 8px;
   float: right;
-  margin-right: 0px;
+  margin-right: 0;
   margin-top: -128px;
+  box-sizing: border-box;
 }
+
 .venue__text {
   font-size: 13px;
 }
+
 .map-instructions {
   font-weight: bold;
   margin-bottom: 1rem;
   color: gold;
 }
+
 .map__panel {
   padding: 0 18px;
   background-color: black;
-  overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
-  font-family: "Amita";
+  font-family: "Amita", cursive;
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
 }
+
+/* clean & fluid embedded map */
 .embedded_map {
-  margin: 18px 136px 100px -13px;
+  margin: 18px auto 100px;
   text-align: center;
   width: 100%;
   max-width: 800px;
   height: 400px;
-  margin: 0 auto;
   border: 2px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
+  box-sizing: border-box;
 }
+
+/* campus parking: keep absolute on large screens but constrain */
 .campus__parking {
-  width: 653px;
-  height: 414px;
+  width: 595px;
+  max-width: 100%;
+  height: 377px;
   position: absolute;
   text-align: center;
-  left: -1px;
-  top: 0px;
+  left: 129px;
+  top: 20px;
   border: none;
-  margin-left: 1px;
+  margin-left: -8px;
+  box-sizing: border-box;
 }
+
+/* video layout: make fluid and centered */
 .video-section {
   background-color: #ffffff;
   padding: 1.5rem;
@@ -60,26 +75,32 @@
   max-width: 900px;
   margin: 2rem auto;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
+
 .video-wrapper__venue {
   position: relative;
   max-width: 903px;
   margin: 2rem auto;
-  width: 111%;
-  left: -14px;
-}
-.video-wrapper iframe {
-  position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  left: 0;
+  box-sizing: border-box;
 }
-.video-frame_venue {
+
+.video-wrapper iframe {
   width: 100%;
   height: auto;
   display: block;
 }
+
+.video-frame_venue {
+  width: 93%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .laptop-video-overlay {
   position: absolute;
   top: 10.2%;
@@ -101,6 +122,7 @@
   display: block;
   background: transparent;
 }
+
 .laptop-video-overlay__venue {
   position: absolute;
   top: 3.2%; /* Adjust to fit laptop screen position */
@@ -111,31 +133,149 @@
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
+
 .laptop-video-overlay__venue frame {
   width: 100%;
   height: 100%;
   border: none;
 }
-.bottom__group__photo__venue {
-  width: 95%;
-  margin: 19px -57px 16px 14px;
-}
-.trio {
-  width: 95%;
+
+.tillana_group {
+  width: 89%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-self: center;
   margin: 0 auto;
+  box-sizing: border-box;
 }
+
+.trio {
+  width: 29%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Responsive: <= 900px - make layout more fluid and centered */
+@media screen and (max-width: 900px) {
+  .auditorium__venue {
+    float: none;
+    width: 56%;
+    max-width: 516px;
+    margin: -60px auto 0; /* smaller negative lift to keep visual overlap */
+    padding: 8px;
+  }
+
+  .embedded_map {
+    height: 360px;
+    max-width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .video-wrapper__venue {
+    width: 100%;
+    left: 0;
+  }
+
+  .video-frame_venue {
+    width: 100%;
+  }
+
+  .campus__parking {
+    /* reduce size on narrower screens but keep absolute positioning for layout */
+    width: 520px;
+    height: 340px;
+    left: 0;
+    top: 0;
+    margin-left: 0;
+  }
+
+  .trio {
+    width: 100%;
+    width: 40%;
+  }
+}
+
+/* Responsive: <= 768px - tablet adjustments */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    gap: 0.5%;
+    font-size: 1rem;
+  }
+  .main_title_bar {
+    padding: 5% 5%;
+  }
+  .auditorium__venue {
+    float: none;
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+    max-width: 420px;
+    margin: 0 auto -10px;
+    padding: 8px 8px 8px 8px;
+    margin-top: 0;
+  }
+
+  .venue__text {
+    right: auto;
+    text-align: center;
+  }
+
+  .laptop-video-overlay__venue {
+    top: 4%;
+    left: 12%;
+    width: 70%;
+  }
+
+  .embedded_map {
+    height: 320px;
+    max-width: 88%;
+  }
+
+  .campus__parking {
+    position: absolute;
+    max-width: 521px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    top: 3%;
+    left: 10%;
+    right: 10%;
+    width: 120%;
+    height: 77%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .video-section {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .tillana_group {
+    width: 95%;
+  }
+
+  .trio {
+    width: 60%;
+  }
+}
+
+/* Responsive: <= 430px - mobile */
 @media screen and (max-width: 430px) {
   .embedded_map {
     height: 300px;
     width: 95%;
+    max-width: 95%;
   }
 
   .map-instructions {
     font-size: 0.95rem;
   }
+
   .video-section {
     padding: 1rem;
     margin: 1.5rem auto;
@@ -149,30 +289,44 @@
   .panel {
     font-size: 0.95rem;
   }
+
   .bottom__group__photo__venue {
     width: 95%;
-    margin: 19px -57px 16px 14px;
+    margin: 19px 0 16px 0;
   }
+
   .auditorium__venue {
     width: 287px;
+    max-width: 90%;
     border-radius: 9px;
-    float: right;
-    margin-right: -3px;
+    float: none;
+    margin: 1rem auto 0;
     margin-top: 1px;
   }
+
   .laptop-video-overlay__venue {
-    /* any changes to iPhone view */
+    top: 3%;
+    left: 8%;
+    width: 84%;
   }
+
   .campus__parking {
-    width: 250px;
-    height: 204px;
-    left: -5px;
-    top: -15px;
+    position: absolute;
+    max-width: 100%;
+    width: 216px;
+    height: 151px;
+    left: 32px;
+    top: -9px;
+    margin: 0.5rem auto;
   }
+
   .trio {
-    width: 68%;
+    width: 100%;
+    max-width: 220px;
   }
-}
-@media screen and (max-width: 768px) {
-  /* iPad screen */
+
+  .tillana_group {
+    width: 100%;
+    max-width: 319px;
+  }
 }

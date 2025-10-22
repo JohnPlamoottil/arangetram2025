@@ -3,14 +3,15 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   useEffect(() => {
+    // scroll to top whenever pathname or query string changes
     window.scrollTo({
       top: 0,
-      behavior: "auto", // or 'auto' for instant scroll
+      behavior: "auto",
     });
-  }, [pathname]);
+  }, [pathname, search]);
 
   return null; // This component doesn’t render anything
 }

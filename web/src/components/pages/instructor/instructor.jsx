@@ -11,13 +11,66 @@ import frameImage from "../../../assets/macbookpro.png";
 // import ComingSoon from "../../coming_soon/coming_soon"; AVAILABLE FULL TIME
 
 const Instructor = () => {
+  React.useEffect(() => {
+    function setupInstructorPlayer() {
+      if (!(window.YT && window.YT.Player)) return;
+      const player = new window.YT.Player("instructor-yt", {
+        events: {
+          onStateChange: (e) => {
+            const controller = window.BackgroundAudioController;
+            if (!controller) return;
+            if (e.data === window.YT.PlayerState.PLAYING) controller.pause();
+            else if (
+              e.data === window.YT.PlayerState.PAUSED ||
+              e.data === window.YT.PlayerState.ENDED
+            )
+              controller.play();
+          },
+        },
+      });
+      return () => {
+        try {
+          player && player.destroy && player.destroy();
+        } catch {
+          /* ignore */
+        }
+      };
+    }
+
+    if (window.YT && window.YT.Player) setupInstructorPlayer();
+    else window.onYouTubeIframeAPIReady = setupInstructorPlayer;
+  }, []);
+  React.useEffect(() => {
+    function handleOutsideClick(e) {
+      if (
+        !e.target.closest(".accordion") &&
+        !e.target.closest(".panel") &&
+        !e.target.closest(".panel_program")
+      ) {
+        const allPanels = document.querySelectorAll(".panel, .panel_program");
+        const allButtons = document.querySelectorAll(".accordion");
+        allPanels.forEach((panel) => (panel.style.maxHeight = null));
+        allButtons.forEach((button) => button.classList.remove("slide"));
+      }
+    }
+
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
   function handleClick(e) {
-    const button = e.target;
-    button.classList.toggle("slide");
-    const panel = button.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
+    e.stopPropagation();
+    const button = e.currentTarget;
+    const isOpen = button.classList.contains("slide");
+
+    const allPanels = document.querySelectorAll(".panel, .panel_program");
+    const allButtons = document.querySelectorAll(".accordion");
+    allPanels.forEach((panel) => (panel.style.maxHeight = null));
+    allButtons.forEach((btn) => btn.classList.remove("slide"));
+
+    if (!isOpen) {
+      const panel = button.nextElementSibling;
+      button.classList.add("slide");
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   }
@@ -34,14 +87,16 @@ const Instructor = () => {
             Soorya Dance School
           </h2>
           <div className="instructor__image-container"></div>
-          <img
-            className="instructor_with_girls"
-            src={instructor_with_girls}
-            alt="instructor_with_girls"
-          />
-          <button className="accordion_program" onClick={handleClick}>
-            Instructor - Biography <br />
-            (click to open) <br />
+          <div className="center-image">
+            <img
+              className="instructor_with_girls"
+              src={instructor_with_girls}
+              alt="instructor_with_girls"
+            />
+          </div>
+
+          <button className="accordion" onClick={handleClick}>
+            Instructor - Biography
           </button>
           <div className="panel_program">
             <p className="accordion-text">
@@ -79,9 +134,8 @@ const Instructor = () => {
             </p>
           </div>
 
-          <button className="accordion_program" onClick={handleClick}>
-            Nattuvangam <br />
-            (click to open)
+          <button className="accordion" onClick={handleClick}>
+            Nattuvangam
           </button>
           <div className="panel_program">
             <p className="accordion-text">
@@ -121,18 +175,14 @@ const Instructor = () => {
             </p>
             <div className="video-wrapper__venue">
               <img src={frameImage} alt="Frame" className="video-frame_venue" />
-              <div className="laptop-video-overlay"></div>
-              <div className="laptop-video-overlay__venue">
-                <iframe
-                  src="https://www.youtube.com/embed/Gl9EwnTNI4g?si=AMNi-rQbllg1U4q3"
-                  title="Instructor Thank You Speech"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                  className="campus__parking-instructor"
-                ></iframe>
-              </div>
+              <iframe
+                id="instructor-yt"
+                src="https://www.youtube.com/embed/Gl9EwnTNI4g?si=AMNi-rQbllg1U4q3&enablejsapi=1&modestbranding=1&rel=0"
+                title="Instructor Thank You Speech"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referralpolicy="strict-origin-when-cross-origin"
+                className="thank_you_by_instructor"
+              ></iframe>
             </div>
           </div>
         </section>
