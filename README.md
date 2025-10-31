@@ -59,8 +59,8 @@
 - [x] multiple image upload and video 
 - [x] have videos compressed before uploading .. max limit is 100MB - found out Sept2025
 - [x] have photo images compressed to allow pages to load faster - Completed Aug 26 2025
-(https://www.w3schools.com/howtohowto_js_accordion.asp)
-FAQ documentation for accordion dropdown
+
+[FAQ documentation for accordion dropdown](https://www.w3schools.com/howtohowto_js_accordion.asp)
 
 ### Outline on all Items.. just paste into footer css file
 * {
